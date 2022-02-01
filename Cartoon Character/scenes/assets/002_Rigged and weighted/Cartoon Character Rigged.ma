@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
 //Name: Cartoon Character Rigged.ma
-//Last modified: Sun, Jan 30, 2022 01:46:34 AM
+//Last modified: Sun, Jan 30, 2022 09:05:16 PM
 //Codeset: 1252
 file -rdi 1 -ns "cartoonCharacter" -rfn "cartoonCharacterRN" -op "v=0;" -typ
 		 "mayaAscii" "D:/Git Repos/2640---character-creation/Cartoon Character//scenes/assets/001_Modeled and UV mapped/cartoonCharacter.ma";
@@ -15,21 +15,21 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202106180615-26a94e7f8c";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
-fileInfo "UUID" "A36AE2C1-4633-D72F-555D-E38CC93E2CE5";
+fileInfo "UUID" "47201266-4E21-2C07-685F-0395DA2B9A72";
 createNode transform -s -n "persp";
 	rename -uid "A7DDFA32-44CE-1064-6660-9594F7048C2D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -6.0747597150984269 40.160327980825144 26.944054454285535 ;
-	setAttr ".r" -type "double3" 326.06164778573736 -21971.39999997152 1.2167123101314585e-15 ;
+	setAttr ".t" -type "double3" 14.896521008535366 24.750926840510669 1.1312430691129032 ;
+	setAttr ".r" -type "double3" 1399.4616456818721 -45673.799999976778 2.2976132705481752e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "58C20D72-45AB-E61B-8918-73912574926F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 43.503179723949771;
+	setAttr ".coi" 3.8841673431597976;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -1.9321781023320432 0.87212021044234644 1.0341584920132481 ;
+	setAttr ".tp" -type "double3" 13.031669079394646 22.180956971154771 -1.0593937502315836 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -90,6 +90,7 @@ createNode joint -n "Root_Joint";
 	setAttr ".radi" 0.4417;
 createNode transform -n "eye_focus";
 	rename -uid "156364F4-4FE7-3F47-C0A0-5D84ACEE8A0E";
+	setAttr ".t" -type "double3" 0 0 -3.5527136788005009e-15 ;
 	setAttr ".rp" -type "double3" 0 33.233728376978391 23.731080119868551 ;
 	setAttr ".sp" -type "double3" 0 33.233728376978391 23.731080119868551 ;
 createNode nurbsCurve -n "eye_focusShape" -p "eye_focus";
@@ -112,20 +113,45 @@ createNode nurbsCurve -n "eye_focusShape" -p "eye_focus";
 		-0.78361162489122449 34.017340001869613 23.731080119868551
 		;
 createNode fosterParent -n "cartoonCharacterRNfosterParent1";
-	rename -uid "7C0ED040-4642-35C5-6442-93A9C3349E53";
-createNode mesh -n "GenericMesh5ShapeDeformed" -p "cartoonCharacterRNfosterParent1";
-	rename -uid "93E5135A-4214-FD3B-1F86-AEA8B307ABDD";
+	rename -uid "7F1A1DEB-47E4-0A76-0100-49A7999E578D";
+createNode scaleConstraint -n "glasses_scaleConstraint1" -p "cartoonCharacterRNfosterParent1";
+	rename -uid "0E13A540-445D-B206-BFF7-DAA0188852C8";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Head_JW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
 	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr ".bw" 3;
-	setAttr ".vcs" 2;
-	setAttr ".ai_translator" -type "string" "polymesh";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 0.99999999999999978 0.99999999999999978 1 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "glasses_parentConstraint1" -p "cartoonCharacterRNfosterParent1";
+	rename -uid "49D97F68-4E2C-354E-C421-DD8442F8D265";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Head_JW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 2.0496483760868047 0.85964516444861516 7.6616072799806397e-15 ;
+	setAttr ".tg[0].tor" -type "double3" 1.2722218725854078e-14 89.999999999999957 0 ;
+	setAttr ".lr" -type "double3" -9.541664044390544e-15 -2.5444437451708134e-14 -2.5444437451708131e-14 ;
+	setAttr ".rst" -type "double3" 2.3665827156630354e-30 0 -3.0453175672803652 ;
+	setAttr ".rsrr" -type "double3" -9.541664044390544e-15 -2.5444437451708134e-14 -2.5444437451708131e-14 ;
+	setAttr -k on ".w0";
 createNode mesh -n "GenericMesh5ShapeDeformedOrig" -p "cartoonCharacterRNfosterParent1";
 	rename -uid "71284B27-4483-F13C-DF0F-6A9FF7A24F84";
 	setAttr -k off ".v";
@@ -13110,6 +13136,20 @@ createNode mesh -n "GenericMesh5ShapeDeformedOrig" -p "cartoonCharacterRNfosterP
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".bw" 3;
 	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "GenericMesh5ShapeDeformed" -p "cartoonCharacterRNfosterParent1";
+	rename -uid "93E5135A-4214-FD3B-1F86-AEA8B307ABDD";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.81351514180122697 0.92201170359622386 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".bw" 3;
+	setAttr ".vcs" 2;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode aimConstraint -n "RightEye_aimConstraint1" -p "cartoonCharacterRNfosterParent1";
 	rename -uid "5AC4BC33-47E3-004A-FA47-43B2A253BE74";
 	addAttr -dcb 0 -ci true -sn "w0" -ln "eye_focusW0" -dv 1 -at "double";
@@ -13127,6 +13167,27 @@ createNode aimConstraint -n "RightEye_aimConstraint1" -p "cartoonCharacterRNfost
 	setAttr ".erp" yes;
 	setAttr ".a" -type "double3" 0 0 1 ;
 	setAttr ".rsrr" -type "double3" 0.29272111200558787 5.8981948596962255 -1.2997061655178398e-11 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "RightEye_parentConstraint1" -p "cartoonCharacterRNfosterParent1";
+	rename -uid "1A0E8D74-4124-04F6-8645-349711D9142C";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Head_JW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 1.5368564414715389 0.96913882372349747 0.59776080446693369 ;
+	setAttr ".tg[0].tor" -type "double3" 0.07686236909861692 91.546182331946369 -1.1958885602302823e-12 ;
+	setAttr ".lr" -type "double3" 0.076862369098609398 1.5461823319463903 -3.3561208906072075e-14 ;
+	setAttr ".rst" -type "double3" 0 0 -0.041251214707324957 ;
+	setAttr ".rsrr" -type "double3" 0.076862369098609398 1.5461823319463903 -3.3561208906072075e-14 ;
 	setAttr -k on ".w0";
 createNode aimConstraint -n "LeftEye_aimConstraint1" -p "cartoonCharacterRNfosterParent1";
 	rename -uid "78816822-4E66-F8DC-B6B1-DA8CD6C356E5";
@@ -13146,6 +13207,27 @@ createNode aimConstraint -n "LeftEye_aimConstraint1" -p "cartoonCharacterRNfoste
 	setAttr ".a" -type "double3" 0 0 1 ;
 	setAttr ".rsrr" -type "double3" 0.29274063736359246 -5.8610837259772781 -5.249157421464221e-11 ;
 	setAttr -k on ".w0";
+createNode parentConstraint -n "LeftEye_parentConstraint1" -p "cartoonCharacterRNfosterParent1";
+	rename -uid "0DB0E856-4413-D021-852B-71A10534AF51";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Head_JW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 1.5368564414715393 0.96913882372349747 -0.59397327425874957 ;
+	setAttr ".tg[0].tor" -type "double3" 0.076862722560180091 88.463609873301877 1.1731080529304379e-12 ;
+	setAttr ".lr" -type "double3" 0.076862722560169891 -1.5363901266981101 -2.5111415665877645e-14 ;
+	setAttr ".rst" -type "double3" -0.012980594353816266 0 -0.041251214707324957 ;
+	setAttr ".rsrr" -type "double3" 0.076862722560169891 -1.5363901266981101 -2.5111415665877645e-14 ;
+	setAttr -k on ".w0";
 createNode joint -n "cartoonCharacter:L_clav_J" -p "cartoonCharacterRNfosterParent1";
 	rename -uid "4213C563-4436-F18F-5B63-F093715CD41F";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13159,12 +13241,14 @@ createNode joint -n "cartoonCharacter:L_clav_J" -p "cartoonCharacterRNfosterPare
 		 4.4408920985006262e-16 1.0000000000000002 -2.2204460492503131e-16 0 -3.3306690738754676e-16 2.2204460492503165e-16 1.0000000000000002 0
 		 0.64347100000000002 27.682099999999998 -6.6613381477509392e-16 1;
 	setAttr ".radi" 0.5;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_shold_J" -p "cartoonCharacter:L_clav_J";
 	rename -uid "267D031C-447E-6BCD-D258-0DA25779460B";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
 	setAttr ".t" -type "double3" 1.9089999999999998 1.0957134152423258 -1.4613000000000005 ;
+	setAttr ".r" -type "double3" -6.2442949891436665 0.67637288603682089 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -0.091942313500644926 2.4983098224806888 -32.108306222197783 ;
@@ -13172,6 +13256,7 @@ createNode joint -n "cartoonCharacter:L_shold_J" -p "cartoonCharacter:L_clav_J";
 		 0.5314614480850649 0.84708096368929542 -0.0016031701534596893 0 0.037775497555894717 -0.021809693682667854 0.99904822158185802 0
 		 2.5524710000000006 28.777813415242324 -1.4613000000000009 1;
 	setAttr ".radi" 0.70573616322721433;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Elbow_J" -p "cartoonCharacter:L_shold_J";
 	rename -uid "C50DCF69-4200-80E8-D375-D0B1B51780B5";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13185,6 +13270,7 @@ createNode joint -n "cartoonCharacter:L_Elbow_J" -p "cartoonCharacter:L_shold_J"
 		 0.49709024965070175 0.86768380733054895 -0.0051082480917003948 0 -0.073004147217900092 0.047688385368119993 0.99619085138841212 0
 		 6.764839036398989 25.948831796608957 -1.4936734258677127 1;
 	setAttr ".radi" 0.69482708697035411;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Wrist_J" -p "cartoonCharacter:L_Elbow_J";
 	rename -uid "213FF1D0-4885-6AD9-D9CF-2B91C156638E";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13223,6 +13309,7 @@ createNode joint -n "cartoonCharacter:L_Thumb_J_1" -p "cartoonCharacter:L_Thumb_
 		 0.52944707414492176 0.8448758066301959 0.076620278323417418 0 -0.62991697245245026 0.33102543387820366 0.70258577408177436 0
 		 12.239170321611484 22.559081825529919 -0.081322520953685751 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Middle_J_2" -p "cartoonCharacter:L_Thumb_J_1";
 	rename -uid "B3626785-4638-AAEB-E88C-85BD2ECD1F44";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13236,6 +13323,7 @@ createNode joint -n "cartoonCharacter:L_Middle_J_2" -p "cartoonCharacter:L_Thumb
 		 0.52789898131590651 0.84568595468617391 0.078344952435770457 0 -0.63121490954341963 0.32895019767407302 0.70239554769394785 0
 		 12.571573542637433 22.325125738862255 0.35891592459147459 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Index_J_0" -p "cartoonCharacter:L_Wrist_J";
 	rename -uid "E5878A45-4275-184D-E742-0F87A6E9C8FD";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13248,6 +13336,7 @@ createNode joint -n "cartoonCharacter:L_Index_J_0" -p "cartoonCharacter:L_Wrist_
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 -0.071471175782003682 0.050260738034582843 0.99617555141880365 0
 		 13.117629953236486 22.154931578601403 -0.73594626532366991 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Index_J_1" -p "cartoonCharacter:L_Index_J_0";
 	rename -uid "A4347280-4B36-CCA6-9BD9-AA9B9CB4D3C6";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13261,6 +13350,7 @@ createNode joint -n "cartoonCharacter:L_Index_J_1" -p "cartoonCharacter:L_Index_
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 -0.071471175782003682 0.050260738034582843 0.99617555141880365 0
 		 13.680439703957662 21.769343934541151 -0.65772674511777107 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Middle_J_2" -p "cartoonCharacter:L_Index_J_1";
 	rename -uid "FA37BC97-4B5E-57E9-EED9-2CB84509EFAC";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13274,6 +13364,7 @@ createNode joint -n "cartoonCharacter:L_Middle_J_2" -p "cartoonCharacter:L_Index
 		 0.52660506509077487 0.85009470406623699 -0.005108770818713808 0 -0.071471213415023133 0.050260677283875295 0.99617555178389661 0
 		 14.148844253083157 21.446050081250004 -0.6161392326686933 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Middle_J_0" -p "cartoonCharacter:L_Wrist_J";
 	rename -uid "84B4D200-4432-2909-530C-4581146B77EB";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13286,6 +13377,7 @@ createNode joint -n "cartoonCharacter:L_Middle_J_0" -p "cartoonCharacter:L_Wrist
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.0026304521647700085 0.0043801777327944907 0.99998694729703275 0
 		 13.160108567238684 22.173598037073308 -1.1453601108462284 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Middle_J_1" -p "cartoonCharacter:L_Middle_J_0";
 	rename -uid "3F53AB97-40C1-6703-55E9-DA8E8D1F86BF";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13299,6 +13391,7 @@ createNode joint -n "cartoonCharacter:L_Middle_J_1" -p "cartoonCharacter:L_Middl
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.0026304521647700085 0.0043801777327944907 0.99998694729703275 0
 		 13.889634704804539 21.675779383313735 -1.1809790240418878 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Middle_J_2" -p "cartoonCharacter:L_Middle_J_1";
 	rename -uid "6D985D13-41DB-26B6-B165-38BD36D8C9FD";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13312,6 +13405,7 @@ createNode joint -n "cartoonCharacter:L_Middle_J_2" -p "cartoonCharacter:L_Middl
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.0026304521647700085 0.0043801777327944907 0.99998694729703275 0
 		 14.478244249556543 21.273817420715165 -1.1849367191719453 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Ring_J_2" -p "cartoonCharacter:L_Wrist_J";
 	rename -uid "C85899A2-4884-F483-C41E-DF977DDDB1DA";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13324,6 +13418,7 @@ createNode joint -n "cartoonCharacter:L_Ring_J_2" -p "cartoonCharacter:L_Wrist_J
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.076712060782260422 -0.041533718366364714 0.99618783869770411 0
 		 13.059249220328825 22.144147788705148 -1.5854115494440029 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Ring_J_1" -p "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2";
 	rename -uid "B2E77A3A-435E-E02A-DCB5-32A571EE8DF7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13337,6 +13432,7 @@ createNode joint -n "cartoonCharacter:L_Ring_J_1" -p "|cartoonCharacterRNfosterP
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.076712060782260422 -0.041533718366364714 0.99618783869770411 0
 		 13.664754958339097 21.729371911232072 -1.6754386853702476 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Ring_J_2" -p "cartoonCharacter:L_Ring_J_1";
 	rename -uid "3210DF7D-4727-DA9C-9C37-F8A32EE0FEBE";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13350,6 +13446,7 @@ createNode joint -n "cartoonCharacter:L_Ring_J_2" -p "cartoonCharacter:L_Ring_J_
 		 0.52660507447543681 0.85009469815871752 -0.0051087864663714308 0 0.076712031421373617 -0.041533765763428557 0.99618783898254626 0
 		 14.075204600532809 21.425949619017612 -1.7313500385140761 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Pinky_J_0" -p "cartoonCharacter:L_Wrist_J";
 	rename -uid "288ABBAD-44CB-44AE-9DC1-E591969C2857";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13362,6 +13459,7 @@ createNode joint -n "cartoonCharacter:L_Pinky_J_0" -p "cartoonCharacter:L_Wrist_
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.222564440197833 -0.1320661937518269 0.96593146259314422 0
 		 12.868546682636653 22.096659488385086 -1.9614168121072766 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Pinky_J_1" -p "cartoonCharacter:L_Pinky_J_0";
 	rename -uid "0A9D359C-4E02-8185-DBD6-A899F6FFE74D";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13375,6 +13473,7 @@ createNode joint -n "cartoonCharacter:L_Pinky_J_1" -p "cartoonCharacter:L_Pinky_
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.222564440197833 -0.1320661937518269 0.96593146259314422 0
 		 13.311655497038942 21.763396537632516 -2.1100645764856507 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Pinky_J_2" -p "cartoonCharacter:L_Pinky_J_1";
 	rename -uid "68755D37-4262-0D22-EDC1-62894FABC36B";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13388,6 +13487,7 @@ createNode joint -n "cartoonCharacter:L_Pinky_J_2" -p "cartoonCharacter:L_Pinky_
 		 0.52660507019835356 0.85009470047443303 -0.0051088420088640854 0 0.222564440197833 -0.1320661937518269 0.96593146259314422 0
 		 13.648438325772414 21.542345220512225 -2.2003134012406811 1;
 	setAttr ".radi" 0.15;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Hip_J" -p "cartoonCharacterRNfosterParent1";
 	rename -uid "41C22D98-4EED-A11B-69FE-388087793EE8";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13415,6 +13515,7 @@ createNode joint -n "cartoonCharacter:L_Knee_J" -p "cartoonCharacter:L_Hip_J";
 		 -1.4901162168817062e-08 0.078459095727844902 -0.99691733373312819 0 0.99999999999999989 1.169131919728365e-09 -1.4855226897163741e-08 0
 		 1.7255799999999992 12.114978041913847 0.01238980000000045 1;
 	setAttr ".radi" 0.89073501174840408;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Ankle_J" -p "cartoonCharacter:L_Knee_J";
 	rename -uid "9459EC1E-46F4-B7B0-B063-0CA6F36AEF1B";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13428,6 +13529,7 @@ createNode joint -n "cartoonCharacter:L_Ankle_J" -p "cartoonCharacter:L_Knee_J";
 		 1.5512813177863785e-08 0.91859158067349767 0.39520818300708899 0 -0.99999999999999989 8.6743675593480435e-09 1.9090222759748021e-08 0
 		 1.9321800000000009 1.9915280419138401 -0.60301899999999908 1;
 	setAttr ".radi" 0.58166958751189557;
+	setAttr ".liw" yes;
 createNode joint -n "cartoonCharacter:L_Ball_J" -p "cartoonCharacter:L_Ankle_J";
 	rename -uid "84A3B503-4B83-7B06-6B89-96AB1378945A";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -13440,20 +13542,21 @@ createNode joint -n "cartoonCharacter:L_Ball_J" -p "cartoonCharacter:L_Ankle_J";
 		 1.5512813177863785e-08 0.91859158067349767 0.39520818300708899 0 -0.99999999999999989 8.6743675593480435e-09 1.9090222759748021e-08 0
 		 1.93218 0.43995204191384008 2.0843800000000003 1;
 	setAttr ".radi" 0.58166958751189557;
+	setAttr ".liw" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "799BD304-47D4-90C8-65CA-1F9758C05C0F";
+	rename -uid "AB4A478F-4057-C584-F805-07986B2EC607";
 	setAttr -s 26 ".lnk";
 	setAttr -s 26 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C29FA607-458D-007D-C641-129261F2F5CA";
+	rename -uid "30C5F6C3-4AA3-BA7B-6BC6-A68D7BE320D0";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "AAC64D45-4808-CA95-EC78-B8BA43328705";
+	rename -uid "6A12EB09-488F-D773-97CD-9B8CA9B3F5B2";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "8C59C58B-40C3-9285-1584-6A91DE65450A";
+	rename -uid "7005A29A-4AD5-DAF5-268F-DA813DE0FA53";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "8D57619C-44BF-350F-F555-BC95D5F52624";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5A69790D-4F81-6792-A381-B781CBF2ABEB";
+	rename -uid "160BD5F0-44DB-97C6-D9CB-18BCC5292745";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "53433B5E-454A-3035-83DD-51AA015BC313";
 	setAttr ".g" yes;
@@ -13471,9 +13574,9 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n"
 		+ "            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n"
 		+ "            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp|perspShape\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n"
-		+ "            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n"
+		+ "            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n"
 		+ "            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n"
-		+ "            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1645\n            -height 708\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1375\n            -height 708\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n"
 		+ "            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n"
 		+ "            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
@@ -13501,8 +13604,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n"
 		+ "                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n"
 		+ "\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1645\\n    -height 708\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1645\\n    -height 708\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1375\\n    -height 708\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1375\\n    -height 708\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -13512,935 +13615,989 @@ createNode script -n "sceneConfigurationScriptNode";
 createNode reference -n "cartoonCharacterRN";
 	rename -uid "434B2DBB-4D9C-D08D-81F2-55B484EADD57";
 	setAttr ".fn[0]" -type "string" "D:/Git Repos/2640---character-creation/Cartoon Character//scenes/assets/001_Modeled and UV mapped/cartoonCharacter.ma";
-	setAttr -s 925 ".phl";
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
-	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
-	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
-	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
-	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
-	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
-	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
-	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
-	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
-	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
-	setAttr ".phl[113]" 0;
-	setAttr ".phl[114]" 0;
-	setAttr ".phl[115]" 0;
-	setAttr ".phl[116]" 0;
-	setAttr ".phl[117]" 0;
-	setAttr ".phl[118]" 0;
-	setAttr ".phl[119]" 0;
-	setAttr ".phl[120]" 0;
-	setAttr ".phl[121]" 0;
-	setAttr ".phl[122]" 0;
-	setAttr ".phl[123]" 0;
-	setAttr ".phl[124]" 0;
-	setAttr ".phl[125]" 0;
-	setAttr ".phl[126]" 0;
-	setAttr ".phl[127]" 0;
-	setAttr ".phl[128]" 0;
-	setAttr ".phl[129]" 0;
-	setAttr ".phl[130]" 0;
-	setAttr ".phl[131]" 0;
-	setAttr ".phl[132]" 0;
-	setAttr ".phl[133]" 0;
-	setAttr ".phl[134]" 0;
-	setAttr ".phl[135]" 0;
-	setAttr ".phl[136]" 0;
-	setAttr ".phl[137]" 0;
-	setAttr ".phl[138]" 0;
-	setAttr ".phl[139]" 0;
-	setAttr ".phl[140]" 0;
-	setAttr ".phl[141]" 0;
-	setAttr ".phl[142]" 0;
-	setAttr ".phl[143]" 0;
-	setAttr ".phl[144]" 0;
-	setAttr ".phl[145]" 0;
-	setAttr ".phl[146]" 0;
-	setAttr ".phl[147]" 0;
-	setAttr ".phl[148]" 0;
-	setAttr ".phl[149]" 0;
-	setAttr ".phl[150]" 0;
-	setAttr ".phl[151]" 0;
-	setAttr ".phl[152]" 0;
-	setAttr ".phl[153]" 0;
-	setAttr ".phl[154]" 0;
-	setAttr ".phl[155]" 0;
-	setAttr ".phl[156]" 0;
-	setAttr ".phl[157]" 0;
-	setAttr ".phl[158]" 0;
-	setAttr ".phl[159]" 0;
-	setAttr ".phl[160]" 0;
-	setAttr ".phl[161]" 0;
-	setAttr ".phl[162]" 0;
-	setAttr ".phl[163]" 0;
-	setAttr ".phl[164]" 0;
-	setAttr ".phl[165]" 0;
-	setAttr ".phl[166]" 0;
-	setAttr ".phl[167]" 0;
-	setAttr ".phl[168]" 0;
-	setAttr ".phl[169]" 0;
-	setAttr ".phl[170]" 0;
-	setAttr ".phl[171]" 0;
-	setAttr ".phl[172]" 0;
-	setAttr ".phl[173]" 0;
-	setAttr ".phl[174]" 0;
-	setAttr ".phl[175]" 0;
-	setAttr ".phl[176]" 0;
-	setAttr ".phl[177]" 0;
-	setAttr ".phl[178]" 0;
-	setAttr ".phl[179]" 0;
-	setAttr ".phl[180]" 0;
-	setAttr ".phl[181]" 0;
-	setAttr ".phl[182]" 0;
-	setAttr ".phl[183]" 0;
-	setAttr ".phl[184]" 0;
-	setAttr ".phl[185]" 0;
-	setAttr ".phl[186]" 0;
-	setAttr ".phl[187]" 0;
-	setAttr ".phl[188]" 0;
-	setAttr ".phl[189]" 0;
-	setAttr ".phl[190]" 0;
-	setAttr ".phl[191]" 0;
-	setAttr ".phl[192]" 0;
-	setAttr ".phl[193]" 0;
-	setAttr ".phl[194]" 0;
-	setAttr ".phl[195]" 0;
-	setAttr ".phl[196]" 0;
-	setAttr ".phl[197]" 0;
-	setAttr ".phl[198]" 0;
-	setAttr ".phl[199]" 0;
-	setAttr ".phl[200]" 0;
-	setAttr ".phl[201]" 0;
-	setAttr ".phl[202]" 0;
-	setAttr ".phl[203]" 0;
-	setAttr ".phl[204]" 0;
-	setAttr ".phl[205]" 0;
-	setAttr ".phl[206]" 0;
-	setAttr ".phl[207]" 0;
-	setAttr ".phl[208]" 0;
-	setAttr ".phl[209]" 0;
-	setAttr ".phl[210]" 0;
-	setAttr ".phl[211]" 0;
-	setAttr ".phl[212]" 0;
-	setAttr ".phl[213]" 0;
-	setAttr ".phl[214]" 0;
-	setAttr ".phl[215]" 0;
-	setAttr ".phl[216]" 0;
-	setAttr ".phl[217]" 0;
-	setAttr ".phl[218]" 0;
-	setAttr ".phl[219]" 0;
-	setAttr ".phl[220]" 0;
-	setAttr ".phl[221]" 0;
-	setAttr ".phl[222]" 0;
-	setAttr ".phl[223]" 0;
-	setAttr ".phl[224]" 0;
-	setAttr ".phl[225]" 0;
-	setAttr ".phl[226]" 0;
-	setAttr ".phl[227]" 0;
-	setAttr ".phl[228]" 0;
-	setAttr ".phl[229]" 0;
-	setAttr ".phl[230]" 0;
-	setAttr ".phl[231]" 0;
-	setAttr ".phl[232]" 0;
-	setAttr ".phl[233]" 0;
-	setAttr ".phl[234]" 0;
-	setAttr ".phl[235]" 0;
-	setAttr ".phl[236]" 0;
-	setAttr ".phl[237]" 0;
-	setAttr ".phl[238]" 0;
-	setAttr ".phl[239]" 0;
-	setAttr ".phl[240]" 0;
-	setAttr ".phl[241]" 0;
-	setAttr ".phl[242]" 0;
-	setAttr ".phl[243]" 0;
-	setAttr ".phl[244]" 0;
-	setAttr ".phl[245]" 0;
-	setAttr ".phl[246]" 0;
-	setAttr ".phl[247]" 0;
-	setAttr ".phl[248]" 0;
-	setAttr ".phl[249]" 0;
-	setAttr ".phl[250]" 0;
-	setAttr ".phl[251]" 0;
-	setAttr ".phl[252]" 0;
-	setAttr ".phl[253]" 0;
-	setAttr ".phl[254]" 0;
-	setAttr ".phl[255]" 0;
-	setAttr ".phl[256]" 0;
-	setAttr ".phl[257]" 0;
-	setAttr ".phl[258]" 0;
-	setAttr ".phl[259]" 0;
-	setAttr ".phl[260]" 0;
-	setAttr ".phl[261]" 0;
-	setAttr ".phl[262]" 0;
-	setAttr ".phl[263]" 0;
-	setAttr ".phl[264]" 0;
-	setAttr ".phl[265]" 0;
-	setAttr ".phl[266]" 0;
-	setAttr ".phl[267]" 0;
-	setAttr ".phl[268]" 0;
-	setAttr ".phl[269]" 0;
-	setAttr ".phl[270]" 0;
-	setAttr ".phl[271]" 0;
-	setAttr ".phl[272]" 0;
-	setAttr ".phl[273]" 0;
-	setAttr ".phl[274]" 0;
-	setAttr ".phl[275]" 0;
-	setAttr ".phl[276]" 0;
-	setAttr ".phl[277]" 0;
-	setAttr ".phl[278]" 0;
-	setAttr ".phl[279]" 0;
-	setAttr ".phl[280]" 0;
-	setAttr ".phl[281]" 0;
-	setAttr ".phl[282]" 0;
-	setAttr ".phl[283]" 0;
-	setAttr ".phl[284]" 0;
-	setAttr ".phl[285]" 0;
-	setAttr ".phl[286]" 0;
-	setAttr ".phl[287]" 0;
-	setAttr ".phl[288]" 0;
-	setAttr ".phl[289]" 0;
-	setAttr ".phl[290]" 0;
-	setAttr ".phl[291]" 0;
-	setAttr ".phl[292]" 0;
-	setAttr ".phl[293]" 0;
-	setAttr ".phl[294]" 0;
-	setAttr ".phl[295]" 0;
-	setAttr ".phl[296]" 0;
-	setAttr ".phl[297]" 0;
-	setAttr ".phl[298]" 0;
-	setAttr ".phl[299]" 0;
-	setAttr ".phl[300]" 0;
-	setAttr ".phl[301]" 0;
-	setAttr ".phl[302]" 0;
-	setAttr ".phl[303]" 0;
-	setAttr ".phl[304]" 0;
-	setAttr ".phl[305]" 0;
-	setAttr ".phl[306]" 0;
-	setAttr ".phl[307]" 0;
-	setAttr ".phl[308]" 0;
-	setAttr ".phl[309]" 0;
-	setAttr ".phl[310]" 0;
-	setAttr ".phl[311]" 0;
-	setAttr ".phl[312]" 0;
-	setAttr ".phl[313]" 0;
-	setAttr ".phl[314]" 0;
-	setAttr ".phl[315]" 0;
-	setAttr ".phl[316]" 0;
-	setAttr ".phl[317]" 0;
-	setAttr ".phl[318]" 0;
-	setAttr ".phl[319]" 0;
-	setAttr ".phl[320]" 0;
-	setAttr ".phl[321]" 0;
-	setAttr ".phl[322]" 0;
-	setAttr ".phl[323]" 0;
-	setAttr ".phl[324]" 0;
-	setAttr ".phl[325]" 0;
-	setAttr ".phl[326]" 0;
-	setAttr ".phl[327]" 0;
-	setAttr ".phl[328]" 0;
-	setAttr ".phl[329]" 0;
-	setAttr ".phl[330]" 0;
-	setAttr ".phl[331]" 0;
-	setAttr ".phl[332]" 0;
-	setAttr ".phl[333]" 0;
-	setAttr ".phl[334]" 0;
-	setAttr ".phl[335]" 0;
-	setAttr ".phl[336]" 0;
-	setAttr ".phl[337]" 0;
-	setAttr ".phl[338]" 0;
-	setAttr ".phl[339]" 0;
-	setAttr ".phl[340]" 0;
-	setAttr ".phl[341]" 0;
-	setAttr ".phl[342]" 0;
-	setAttr ".phl[343]" 0;
-	setAttr ".phl[344]" 0;
-	setAttr ".phl[345]" 0;
-	setAttr ".phl[346]" 0;
-	setAttr ".phl[347]" 0;
-	setAttr ".phl[348]" 0;
-	setAttr ".phl[349]" 0;
-	setAttr ".phl[350]" 0;
-	setAttr ".phl[351]" 0;
-	setAttr ".phl[352]" 0;
-	setAttr ".phl[353]" 0;
-	setAttr ".phl[354]" 0;
-	setAttr ".phl[355]" 0;
-	setAttr ".phl[356]" 0;
-	setAttr ".phl[357]" 0;
-	setAttr ".phl[358]" 0;
-	setAttr ".phl[359]" 0;
-	setAttr ".phl[360]" 0;
-	setAttr ".phl[361]" 0;
-	setAttr ".phl[362]" 0;
-	setAttr ".phl[363]" 0;
-	setAttr ".phl[364]" 0;
-	setAttr ".phl[365]" 0;
-	setAttr ".phl[366]" 0;
-	setAttr ".phl[367]" 0;
-	setAttr ".phl[368]" 0;
-	setAttr ".phl[369]" 0;
-	setAttr ".phl[370]" 0;
-	setAttr ".phl[371]" 0;
-	setAttr ".phl[372]" 0;
-	setAttr ".phl[373]" 0;
-	setAttr ".phl[374]" 0;
-	setAttr ".phl[375]" 0;
-	setAttr ".phl[376]" 0;
-	setAttr ".phl[377]" 0;
-	setAttr ".phl[378]" 0;
-	setAttr ".phl[379]" 0;
-	setAttr ".phl[380]" 0;
-	setAttr ".phl[381]" 0;
-	setAttr ".phl[382]" 0;
-	setAttr ".phl[383]" 0;
-	setAttr ".phl[384]" 0;
-	setAttr ".phl[385]" 0;
-	setAttr ".phl[386]" 0;
-	setAttr ".phl[387]" 0;
-	setAttr ".phl[388]" 0;
-	setAttr ".phl[389]" 0;
-	setAttr ".phl[390]" 0;
-	setAttr ".phl[391]" 0;
-	setAttr ".phl[392]" 0;
-	setAttr ".phl[393]" 0;
-	setAttr ".phl[394]" 0;
-	setAttr ".phl[395]" 0;
-	setAttr ".phl[396]" 0;
-	setAttr ".phl[397]" 0;
-	setAttr ".phl[398]" 0;
-	setAttr ".phl[399]" 0;
-	setAttr ".phl[400]" 0;
-	setAttr ".phl[401]" 0;
-	setAttr ".phl[402]" 0;
-	setAttr ".phl[403]" 0;
-	setAttr ".phl[404]" 0;
-	setAttr ".phl[405]" 0;
-	setAttr ".phl[406]" 0;
-	setAttr ".phl[407]" 0;
-	setAttr ".phl[408]" 0;
-	setAttr ".phl[409]" 0;
-	setAttr ".phl[410]" 0;
-	setAttr ".phl[411]" 0;
-	setAttr ".phl[412]" 0;
-	setAttr ".phl[413]" 0;
-	setAttr ".phl[414]" 0;
-	setAttr ".phl[415]" 0;
-	setAttr ".phl[416]" 0;
-	setAttr ".phl[417]" 0;
-	setAttr ".phl[418]" 0;
-	setAttr ".phl[419]" 0;
-	setAttr ".phl[420]" 0;
-	setAttr ".phl[421]" 0;
-	setAttr ".phl[422]" 0;
-	setAttr ".phl[423]" 0;
-	setAttr ".phl[424]" 0;
-	setAttr ".phl[425]" 0;
-	setAttr ".phl[426]" 0;
-	setAttr ".phl[427]" 0;
-	setAttr ".phl[428]" 0;
-	setAttr ".phl[429]" 0;
-	setAttr ".phl[430]" 0;
-	setAttr ".phl[431]" 0;
-	setAttr ".phl[432]" 0;
-	setAttr ".phl[433]" 0;
-	setAttr ".phl[434]" 0;
-	setAttr ".phl[435]" 0;
-	setAttr ".phl[436]" 0;
-	setAttr ".phl[437]" 0;
-	setAttr ".phl[438]" 0;
-	setAttr ".phl[439]" 0;
-	setAttr ".phl[440]" 0;
-	setAttr ".phl[441]" 0;
-	setAttr ".phl[442]" 0;
-	setAttr ".phl[443]" 0;
-	setAttr ".phl[444]" 0;
-	setAttr ".phl[445]" 0;
-	setAttr ".phl[446]" 0;
-	setAttr ".phl[447]" 0;
-	setAttr ".phl[448]" 0;
-	setAttr ".phl[449]" 0;
-	setAttr ".phl[450]" 0;
-	setAttr ".phl[451]" 0;
-	setAttr ".phl[452]" 0;
-	setAttr ".phl[453]" 0;
-	setAttr ".phl[454]" 0;
-	setAttr ".phl[455]" 0;
-	setAttr ".phl[456]" 0;
-	setAttr ".phl[457]" 0;
-	setAttr ".phl[458]" 0;
-	setAttr ".phl[459]" 0;
-	setAttr ".phl[460]" 0;
-	setAttr ".phl[461]" 0;
-	setAttr ".phl[462]" 0;
-	setAttr ".phl[463]" 0;
-	setAttr ".phl[464]" 0;
-	setAttr ".phl[465]" 0;
-	setAttr ".phl[466]" 0;
-	setAttr ".phl[467]" 0;
-	setAttr ".phl[468]" 0;
-	setAttr ".phl[469]" 0;
-	setAttr ".phl[470]" 0;
-	setAttr ".phl[471]" 0;
-	setAttr ".phl[472]" 0;
-	setAttr ".phl[473]" 0;
-	setAttr ".phl[474]" 0;
-	setAttr ".phl[475]" 0;
-	setAttr ".phl[476]" 0;
-	setAttr ".phl[477]" 0;
-	setAttr ".phl[478]" 0;
-	setAttr ".phl[479]" 0;
-	setAttr ".phl[480]" 0;
-	setAttr ".phl[481]" 0;
-	setAttr ".phl[482]" 0;
-	setAttr ".phl[483]" 0;
-	setAttr ".phl[484]" 0;
-	setAttr ".phl[485]" 0;
-	setAttr ".phl[486]" 0;
-	setAttr ".phl[487]" 0;
-	setAttr ".phl[488]" 0;
-	setAttr ".phl[489]" 0;
-	setAttr ".phl[490]" 0;
-	setAttr ".phl[491]" 0;
-	setAttr ".phl[492]" 0;
-	setAttr ".phl[493]" 0;
-	setAttr ".phl[494]" 0;
-	setAttr ".phl[495]" 0;
-	setAttr ".phl[496]" 0;
-	setAttr ".phl[497]" 0;
-	setAttr ".phl[498]" 0;
-	setAttr ".phl[499]" 0;
-	setAttr ".phl[500]" 0;
-	setAttr ".phl[501]" 0;
-	setAttr ".phl[502]" 0;
-	setAttr ".phl[503]" 0;
-	setAttr ".phl[504]" 0;
-	setAttr ".phl[505]" 0;
-	setAttr ".phl[506]" 0;
-	setAttr ".phl[507]" 0;
-	setAttr ".phl[508]" 0;
-	setAttr ".phl[509]" 0;
-	setAttr ".phl[510]" 0;
-	setAttr ".phl[511]" 0;
-	setAttr ".phl[512]" 0;
-	setAttr ".phl[513]" 0;
-	setAttr ".phl[514]" 0;
-	setAttr ".phl[515]" 0;
-	setAttr ".phl[516]" 0;
-	setAttr ".phl[517]" 0;
-	setAttr ".phl[518]" 0;
-	setAttr ".phl[519]" 0;
-	setAttr ".phl[520]" 0;
-	setAttr ".phl[521]" 0;
-	setAttr ".phl[522]" 0;
-	setAttr ".phl[523]" 0;
-	setAttr ".phl[524]" 0;
-	setAttr ".phl[525]" 0;
-	setAttr ".phl[526]" 0;
-	setAttr ".phl[527]" 0;
-	setAttr ".phl[528]" 0;
-	setAttr ".phl[529]" 0;
-	setAttr ".phl[530]" 0;
-	setAttr ".phl[531]" 0;
-	setAttr ".phl[532]" 0;
-	setAttr ".phl[533]" 0;
-	setAttr ".phl[534]" 0;
-	setAttr ".phl[535]" 0;
-	setAttr ".phl[536]" 0;
-	setAttr ".phl[537]" 0;
-	setAttr ".phl[538]" 0;
-	setAttr ".phl[539]" 0;
-	setAttr ".phl[540]" 0;
-	setAttr ".phl[541]" 0;
-	setAttr ".phl[542]" 0;
-	setAttr ".phl[543]" 0;
-	setAttr ".phl[544]" 0;
-	setAttr ".phl[545]" 0;
-	setAttr ".phl[546]" 0;
-	setAttr ".phl[547]" 0;
-	setAttr ".phl[548]" 0;
-	setAttr ".phl[549]" 0;
-	setAttr ".phl[550]" 0;
-	setAttr ".phl[551]" 0;
-	setAttr ".phl[552]" 0;
-	setAttr ".phl[553]" 0;
-	setAttr ".phl[554]" 0;
-	setAttr ".phl[555]" 0;
-	setAttr ".phl[556]" 0;
-	setAttr ".phl[557]" 0;
-	setAttr ".phl[558]" 0;
-	setAttr ".phl[559]" 0;
-	setAttr ".phl[560]" 0;
-	setAttr ".phl[561]" 0;
-	setAttr ".phl[562]" 0;
-	setAttr ".phl[563]" 0;
-	setAttr ".phl[564]" 0;
-	setAttr ".phl[565]" 0;
-	setAttr ".phl[566]" 0;
-	setAttr ".phl[567]" 0;
-	setAttr ".phl[568]" 0;
-	setAttr ".phl[569]" 0;
-	setAttr ".phl[570]" 0;
-	setAttr ".phl[571]" 0;
-	setAttr ".phl[572]" 0;
-	setAttr ".phl[573]" 0;
-	setAttr ".phl[574]" 0;
-	setAttr ".phl[575]" 0;
-	setAttr ".phl[576]" 0;
-	setAttr ".phl[577]" 0;
-	setAttr ".phl[578]" 0;
-	setAttr ".phl[579]" 0;
-	setAttr ".phl[580]" 0;
-	setAttr ".phl[581]" 0;
-	setAttr ".phl[582]" 0;
-	setAttr ".phl[583]" 0;
-	setAttr ".phl[584]" 0;
-	setAttr ".phl[585]" 0;
-	setAttr ".phl[586]" 0;
-	setAttr ".phl[587]" 0;
-	setAttr ".phl[588]" 0;
-	setAttr ".phl[589]" 0;
-	setAttr ".phl[590]" 0;
-	setAttr ".phl[591]" 0;
-	setAttr ".phl[592]" 0;
-	setAttr ".phl[593]" 0;
-	setAttr ".phl[594]" 0;
-	setAttr ".phl[595]" 0;
-	setAttr ".phl[596]" 0;
-	setAttr ".phl[597]" 0;
-	setAttr ".phl[598]" 0;
-	setAttr ".phl[599]" 0;
-	setAttr ".phl[600]" 0;
-	setAttr ".phl[601]" 0;
-	setAttr ".phl[602]" 0;
-	setAttr ".phl[603]" 0;
-	setAttr ".phl[604]" 0;
-	setAttr ".phl[605]" 0;
-	setAttr ".phl[606]" 0;
-	setAttr ".phl[607]" 0;
-	setAttr ".phl[608]" 0;
-	setAttr ".phl[609]" 0;
-	setAttr ".phl[610]" 0;
-	setAttr ".phl[611]" 0;
-	setAttr ".phl[612]" 0;
-	setAttr ".phl[613]" 0;
-	setAttr ".phl[614]" 0;
-	setAttr ".phl[615]" 0;
-	setAttr ".phl[616]" 0;
-	setAttr ".phl[617]" 0;
-	setAttr ".phl[618]" 0;
-	setAttr ".phl[619]" 0;
-	setAttr ".phl[620]" 0;
-	setAttr ".phl[621]" 0;
-	setAttr ".phl[622]" 0;
-	setAttr ".phl[623]" 0;
-	setAttr ".phl[624]" 0;
-	setAttr ".phl[625]" 0;
-	setAttr ".phl[626]" 0;
-	setAttr ".phl[627]" 0;
-	setAttr ".phl[628]" 0;
-	setAttr ".phl[629]" 0;
-	setAttr ".phl[630]" 0;
-	setAttr ".phl[631]" 0;
-	setAttr ".phl[632]" 0;
-	setAttr ".phl[633]" 0;
-	setAttr ".phl[634]" 0;
-	setAttr ".phl[635]" 0;
-	setAttr ".phl[636]" 0;
-	setAttr ".phl[637]" 0;
-	setAttr ".phl[638]" 0;
-	setAttr ".phl[639]" 0;
-	setAttr ".phl[640]" 0;
-	setAttr ".phl[641]" 0;
-	setAttr ".phl[642]" 0;
-	setAttr ".phl[643]" 0;
-	setAttr ".phl[644]" 0;
-	setAttr ".phl[645]" 0;
-	setAttr ".phl[646]" 0;
-	setAttr ".phl[647]" 0;
-	setAttr ".phl[648]" 0;
-	setAttr ".phl[649]" 0;
-	setAttr ".phl[650]" 0;
-	setAttr ".phl[651]" 0;
-	setAttr ".phl[652]" 0;
-	setAttr ".phl[653]" 0;
-	setAttr ".phl[654]" 0;
-	setAttr ".phl[655]" 0;
-	setAttr ".phl[656]" 0;
-	setAttr ".phl[657]" 0;
-	setAttr ".phl[658]" 0;
-	setAttr ".phl[659]" 0;
-	setAttr ".phl[660]" 0;
-	setAttr ".phl[661]" 0;
-	setAttr ".phl[662]" 0;
-	setAttr ".phl[663]" 0;
-	setAttr ".phl[664]" 0;
-	setAttr ".phl[665]" 0;
-	setAttr ".phl[666]" 0;
-	setAttr ".phl[667]" 0;
-	setAttr ".phl[668]" 0;
-	setAttr ".phl[669]" 0;
-	setAttr ".phl[670]" 0;
-	setAttr ".phl[671]" 0;
-	setAttr ".phl[672]" 0;
-	setAttr ".phl[673]" 0;
-	setAttr ".phl[674]" 0;
-	setAttr ".phl[675]" 0;
-	setAttr ".phl[676]" 0;
-	setAttr ".phl[677]" 0;
-	setAttr ".phl[678]" 0;
-	setAttr ".phl[679]" 0;
-	setAttr ".phl[680]" 0;
-	setAttr ".phl[681]" 0;
-	setAttr ".phl[682]" 0;
-	setAttr ".phl[683]" 0;
-	setAttr ".phl[684]" 0;
-	setAttr ".phl[685]" 0;
-	setAttr ".phl[686]" 0;
-	setAttr ".phl[687]" 0;
-	setAttr ".phl[688]" 0;
-	setAttr ".phl[689]" 0;
-	setAttr ".phl[690]" 0;
-	setAttr ".phl[691]" 0;
-	setAttr ".phl[692]" 0;
-	setAttr ".phl[693]" 0;
-	setAttr ".phl[694]" 0;
-	setAttr ".phl[695]" 0;
-	setAttr ".phl[696]" 0;
-	setAttr ".phl[697]" 0;
-	setAttr ".phl[698]" 0;
-	setAttr ".phl[699]" 0;
-	setAttr ".phl[700]" 0;
-	setAttr ".phl[701]" 0;
-	setAttr ".phl[702]" 0;
-	setAttr ".phl[703]" 0;
-	setAttr ".phl[704]" 0;
-	setAttr ".phl[705]" 0;
-	setAttr ".phl[706]" 0;
-	setAttr ".phl[707]" 0;
-	setAttr ".phl[708]" 0;
-	setAttr ".phl[709]" 0;
-	setAttr ".phl[710]" 0;
-	setAttr ".phl[711]" 0;
-	setAttr ".phl[712]" 0;
-	setAttr ".phl[713]" 0;
-	setAttr ".phl[714]" 0;
-	setAttr ".phl[715]" 0;
-	setAttr ".phl[716]" 0;
-	setAttr ".phl[717]" 0;
-	setAttr ".phl[718]" 0;
-	setAttr ".phl[719]" 0;
-	setAttr ".phl[720]" 0;
-	setAttr ".phl[721]" 0;
-	setAttr ".phl[722]" 0;
-	setAttr ".phl[723]" 0;
-	setAttr ".phl[724]" 0;
-	setAttr ".phl[725]" 0;
-	setAttr ".phl[726]" 0;
-	setAttr ".phl[727]" 0;
-	setAttr ".phl[728]" 0;
-	setAttr ".phl[729]" 0;
-	setAttr ".phl[730]" 0;
-	setAttr ".phl[731]" 0;
-	setAttr ".phl[732]" 0;
-	setAttr ".phl[733]" 0;
-	setAttr ".phl[734]" 0;
-	setAttr ".phl[735]" 0;
-	setAttr ".phl[736]" 0;
-	setAttr ".phl[737]" 0;
-	setAttr ".phl[738]" 0;
-	setAttr ".phl[739]" 0;
-	setAttr ".phl[740]" 0;
-	setAttr ".phl[741]" 0;
-	setAttr ".phl[742]" 0;
-	setAttr ".phl[743]" 0;
-	setAttr ".phl[744]" 0;
-	setAttr ".phl[745]" 0;
-	setAttr ".phl[746]" 0;
-	setAttr ".phl[747]" 0;
-	setAttr ".phl[748]" 0;
-	setAttr ".phl[749]" 0;
-	setAttr ".phl[750]" 0;
-	setAttr ".phl[751]" 0;
-	setAttr ".phl[752]" 0;
-	setAttr ".phl[753]" 0;
-	setAttr ".phl[754]" 0;
-	setAttr ".phl[755]" 0;
-	setAttr ".phl[756]" 0;
-	setAttr ".phl[757]" 0;
-	setAttr ".phl[758]" 0;
-	setAttr ".phl[759]" 0;
-	setAttr ".phl[760]" 0;
-	setAttr ".phl[761]" 0;
-	setAttr ".phl[762]" 0;
-	setAttr ".phl[763]" 0;
-	setAttr ".phl[764]" 0;
-	setAttr ".phl[765]" 0;
-	setAttr ".phl[766]" 0;
-	setAttr ".phl[767]" 0;
-	setAttr ".phl[768]" 0;
-	setAttr ".phl[769]" 0;
-	setAttr ".phl[770]" 0;
-	setAttr ".phl[771]" 0;
-	setAttr ".phl[772]" 0;
-	setAttr ".phl[773]" 0;
-	setAttr ".phl[774]" 0;
-	setAttr ".phl[775]" 0;
-	setAttr ".phl[776]" 0;
-	setAttr ".phl[777]" 0;
-	setAttr ".phl[778]" 0;
-	setAttr ".phl[779]" 0;
-	setAttr ".phl[780]" 0;
-	setAttr ".phl[781]" 0;
-	setAttr ".phl[782]" 0;
-	setAttr ".phl[783]" 0;
-	setAttr ".phl[784]" 0;
-	setAttr ".phl[785]" 0;
-	setAttr ".phl[786]" 0;
-	setAttr ".phl[787]" 0;
-	setAttr ".phl[788]" 0;
-	setAttr ".phl[789]" 0;
-	setAttr ".phl[790]" 0;
-	setAttr ".phl[791]" 0;
-	setAttr ".phl[792]" 0;
-	setAttr ".phl[793]" 0;
-	setAttr ".phl[794]" 0;
-	setAttr ".phl[795]" 0;
-	setAttr ".phl[796]" 0;
-	setAttr ".phl[797]" 0;
-	setAttr ".phl[798]" 0;
-	setAttr ".phl[799]" 0;
-	setAttr ".phl[800]" 0;
-	setAttr ".phl[801]" 0;
-	setAttr ".phl[802]" 0;
-	setAttr ".phl[803]" 0;
-	setAttr ".phl[804]" 0;
-	setAttr ".phl[805]" 0;
-	setAttr ".phl[806]" 0;
-	setAttr ".phl[807]" 0;
-	setAttr ".phl[808]" 0;
-	setAttr ".phl[809]" 0;
-	setAttr ".phl[810]" 0;
-	setAttr ".phl[811]" 0;
-	setAttr ".phl[812]" 0;
-	setAttr ".phl[813]" 0;
-	setAttr ".phl[814]" 0;
-	setAttr ".phl[815]" 0;
-	setAttr ".phl[816]" 0;
-	setAttr ".phl[817]" 0;
-	setAttr ".phl[818]" 0;
-	setAttr ".phl[819]" 0;
-	setAttr ".phl[820]" 0;
-	setAttr ".phl[821]" 0;
-	setAttr ".phl[822]" 0;
-	setAttr ".phl[823]" 0;
-	setAttr ".phl[824]" 0;
-	setAttr ".phl[825]" 0;
-	setAttr ".phl[826]" 0;
-	setAttr ".phl[827]" 0;
-	setAttr ".phl[828]" 0;
-	setAttr ".phl[829]" 0;
-	setAttr ".phl[830]" 0;
-	setAttr ".phl[831]" 0;
-	setAttr ".phl[832]" 0;
-	setAttr ".phl[833]" 0;
-	setAttr ".phl[834]" 0;
-	setAttr ".phl[835]" 0;
-	setAttr ".phl[836]" 0;
-	setAttr ".phl[837]" 0;
-	setAttr ".phl[838]" 0;
-	setAttr ".phl[839]" 0;
-	setAttr ".phl[840]" 0;
-	setAttr ".phl[841]" 0;
-	setAttr ".phl[842]" 0;
-	setAttr ".phl[843]" 0;
-	setAttr ".phl[844]" 0;
-	setAttr ".phl[845]" 0;
-	setAttr ".phl[846]" 0;
-	setAttr ".phl[847]" 0;
-	setAttr ".phl[848]" 0;
-	setAttr ".phl[849]" 0;
-	setAttr ".phl[850]" 0;
-	setAttr ".phl[851]" 0;
-	setAttr ".phl[852]" 0;
-	setAttr ".phl[853]" 0;
-	setAttr ".phl[854]" 0;
-	setAttr ".phl[855]" 0;
-	setAttr ".phl[856]" 0;
-	setAttr ".phl[857]" 0;
-	setAttr ".phl[858]" 0;
-	setAttr ".phl[859]" 0;
-	setAttr ".phl[860]" 0;
-	setAttr ".phl[861]" 0;
-	setAttr ".phl[862]" 0;
-	setAttr ".phl[863]" 0;
-	setAttr ".phl[864]" 0;
-	setAttr ".phl[865]" 0;
-	setAttr ".phl[866]" 0;
-	setAttr ".phl[867]" 0;
-	setAttr ".phl[868]" 0;
-	setAttr ".phl[869]" 0;
-	setAttr ".phl[870]" 0;
-	setAttr ".phl[871]" 0;
-	setAttr ".phl[872]" 0;
-	setAttr ".phl[873]" 0;
-	setAttr ".phl[874]" 0;
-	setAttr ".phl[875]" 0;
-	setAttr ".phl[876]" 0;
-	setAttr ".phl[877]" 0;
-	setAttr ".phl[878]" 0;
-	setAttr ".phl[879]" 0;
-	setAttr ".phl[880]" 0;
-	setAttr ".phl[881]" 0;
-	setAttr ".phl[882]" 0;
-	setAttr ".phl[883]" 0;
-	setAttr ".phl[884]" 0;
-	setAttr ".phl[885]" 0;
-	setAttr ".phl[886]" 0;
-	setAttr ".phl[887]" 0;
-	setAttr ".phl[888]" 0;
-	setAttr ".phl[889]" 0;
-	setAttr ".phl[890]" 0;
-	setAttr ".phl[891]" 0;
-	setAttr ".phl[892]" 0;
-	setAttr ".phl[893]" 0;
-	setAttr ".phl[894]" 0;
-	setAttr ".phl[895]" 0;
-	setAttr ".phl[896]" 0;
-	setAttr ".phl[897]" 0;
-	setAttr ".phl[898]" 0;
-	setAttr ".phl[899]" 0;
-	setAttr ".phl[900]" 0;
-	setAttr ".phl[901]" 0;
-	setAttr ".phl[902]" 0;
-	setAttr ".phl[903]" 0;
-	setAttr ".phl[904]" 0;
-	setAttr ".phl[905]" 0;
-	setAttr ".phl[906]" 0;
-	setAttr ".phl[907]" 0;
-	setAttr ".phl[908]" 0;
-	setAttr ".phl[909]" 0;
-	setAttr ".phl[910]" 0;
-	setAttr ".phl[911]" 0;
-	setAttr ".phl[912]" 0;
-	setAttr ".phl[913]" 0;
-	setAttr ".phl[914]" 0;
-	setAttr ".phl[915]" 0;
-	setAttr ".phl[916]" 0;
-	setAttr ".phl[917]" 0;
-	setAttr ".phl[918]" 0;
-	setAttr ".phl[919]" 0;
-	setAttr ".phl[920]" 0;
-	setAttr ".phl[921]" 0;
-	setAttr ".phl[922]" 0;
-	setAttr ".phl[923]" 0;
-	setAttr ".phl[924]" 0;
-	setAttr ".phl[925]" 0;
-	setAttr ".phl[926]" 0;
-	setAttr ".phl[927]" 0;
-	setAttr ".phl[928]" 0;
-	setAttr ".phl[929]" 0;
-	setAttr ".phl[930]" 0;
-	setAttr ".phl[931]" 0;
-	setAttr ".phl[932]" 0;
-	setAttr ".phl[933]" 0;
-	setAttr ".phl[934]" 0;
-	setAttr ".phl[935]" 0;
-	setAttr ".phl[936]" 0;
-	setAttr ".phl[937]" 0;
-	setAttr ".phl[938]" 0;
-	setAttr ".phl[939]" 0;
-	setAttr ".phl[940]" 0;
-	setAttr ".phl[941]" 0;
-	setAttr ".phl[942]" 0;
-	setAttr ".phl[943]" 0;
-	setAttr ".phl[944]" 0;
-	setAttr ".phl[945]" 0;
-	setAttr ".phl[946]" 0;
-	setAttr ".phl[947]" 0;
-	setAttr ".phl[948]" 0;
-	setAttr ".phl[949]" 0;
-	setAttr ".phl[950]" 0;
-	setAttr ".phl[951]" 0;
-	setAttr ".phl[952]" 0;
-	setAttr ".phl[953]" 0;
-	setAttr ".phl[954]" 0;
-	setAttr ".phl[955]" 0;
-	setAttr ".phl[956]" 0;
-	setAttr ".phl[957]" 0;
-	setAttr ".phl[958]" 0;
-	setAttr ".phl[959]" 0;
-	setAttr ".phl[960]" 0;
-	setAttr ".phl[961]" 0;
-	setAttr ".phl[962]" 0;
-	setAttr ".phl[963]" 0;
-	setAttr ".phl[964]" 0;
-	setAttr ".phl[965]" 0;
-	setAttr ".phl[966]" 0;
-	setAttr ".phl[967]" 0;
-	setAttr ".phl[968]" 0;
-	setAttr ".phl[969]" 0;
+	setAttr -s 977 ".phl";
 	setAttr ".phl[970]" 0;
 	setAttr ".phl[971]" 0;
+	setAttr ".phl[972]" 0;
+	setAttr ".phl[973]" 0;
+	setAttr ".phl[974]" 0;
+	setAttr ".phl[975]" 0;
+	setAttr ".phl[976]" 0;
+	setAttr ".phl[977]" 0;
+	setAttr ".phl[978]" 0;
+	setAttr ".phl[979]" 0;
+	setAttr ".phl[980]" 0;
+	setAttr ".phl[981]" 0;
+	setAttr ".phl[982]" 0;
+	setAttr ".phl[983]" 0;
+	setAttr ".phl[984]" 0;
+	setAttr ".phl[985]" 0;
+	setAttr ".phl[986]" 0;
+	setAttr ".phl[987]" 0;
+	setAttr ".phl[988]" 0;
+	setAttr ".phl[989]" 0;
+	setAttr ".phl[990]" 0;
+	setAttr ".phl[991]" 0;
+	setAttr ".phl[992]" 0;
+	setAttr ".phl[993]" 0;
+	setAttr ".phl[994]" 0;
+	setAttr ".phl[995]" 0;
+	setAttr ".phl[996]" 0;
+	setAttr ".phl[997]" 0;
+	setAttr ".phl[998]" 0;
+	setAttr ".phl[999]" 0;
+	setAttr ".phl[1000]" 0;
+	setAttr ".phl[1001]" 0;
+	setAttr ".phl[1002]" 0;
+	setAttr ".phl[1003]" 0;
+	setAttr ".phl[1004]" 0;
+	setAttr ".phl[1005]" 0;
+	setAttr ".phl[1006]" 0;
+	setAttr ".phl[1007]" 0;
+	setAttr ".phl[1008]" 0;
+	setAttr ".phl[1009]" 0;
+	setAttr ".phl[1010]" 0;
+	setAttr ".phl[1011]" 0;
+	setAttr ".phl[1012]" 0;
+	setAttr ".phl[1013]" 0;
+	setAttr ".phl[1014]" 0;
+	setAttr ".phl[1015]" 0;
+	setAttr ".phl[1016]" 0;
+	setAttr ".phl[1017]" 0;
+	setAttr ".phl[1018]" 0;
+	setAttr ".phl[1019]" 0;
+	setAttr ".phl[1020]" 0;
+	setAttr ".phl[1021]" 0;
+	setAttr ".phl[1022]" 0;
+	setAttr ".phl[1023]" 0;
+	setAttr ".phl[1024]" 0;
+	setAttr ".phl[1025]" 0;
+	setAttr ".phl[1026]" 0;
+	setAttr ".phl[1027]" 0;
+	setAttr ".phl[1028]" 0;
+	setAttr ".phl[1029]" 0;
+	setAttr ".phl[1030]" 0;
+	setAttr ".phl[1031]" 0;
+	setAttr ".phl[1032]" 0;
+	setAttr ".phl[1033]" 0;
+	setAttr ".phl[1034]" 0;
+	setAttr ".phl[1035]" 0;
+	setAttr ".phl[1036]" 0;
+	setAttr ".phl[1037]" 0;
+	setAttr ".phl[1038]" 0;
+	setAttr ".phl[1039]" 0;
+	setAttr ".phl[1040]" 0;
+	setAttr ".phl[1041]" 0;
+	setAttr ".phl[1042]" 0;
+	setAttr ".phl[1043]" 0;
+	setAttr ".phl[1044]" 0;
+	setAttr ".phl[1045]" 0;
+	setAttr ".phl[1046]" 0;
+	setAttr ".phl[1047]" 0;
+	setAttr ".phl[1048]" 0;
+	setAttr ".phl[1049]" 0;
+	setAttr ".phl[1050]" 0;
+	setAttr ".phl[1051]" 0;
+	setAttr ".phl[1052]" 0;
+	setAttr ".phl[1053]" 0;
+	setAttr ".phl[1054]" 0;
+	setAttr ".phl[1055]" 0;
+	setAttr ".phl[1056]" 0;
+	setAttr ".phl[1057]" 0;
+	setAttr ".phl[1058]" 0;
+	setAttr ".phl[1059]" 0;
+	setAttr ".phl[1060]" 0;
+	setAttr ".phl[1061]" 0;
+	setAttr ".phl[1062]" 0;
+	setAttr ".phl[1063]" 0;
+	setAttr ".phl[1064]" 0;
+	setAttr ".phl[1065]" 0;
+	setAttr ".phl[1066]" 0;
+	setAttr ".phl[1067]" 0;
+	setAttr ".phl[1068]" 0;
+	setAttr ".phl[1069]" 0;
+	setAttr ".phl[1070]" 0;
+	setAttr ".phl[1071]" 0;
+	setAttr ".phl[1072]" 0;
+	setAttr ".phl[1073]" 0;
+	setAttr ".phl[1074]" 0;
+	setAttr ".phl[1075]" 0;
+	setAttr ".phl[1076]" 0;
+	setAttr ".phl[1077]" 0;
+	setAttr ".phl[1078]" 0;
+	setAttr ".phl[1079]" 0;
+	setAttr ".phl[1080]" 0;
+	setAttr ".phl[1081]" 0;
+	setAttr ".phl[1082]" 0;
+	setAttr ".phl[1083]" 0;
+	setAttr ".phl[1084]" 0;
+	setAttr ".phl[1085]" 0;
+	setAttr ".phl[1086]" 0;
+	setAttr ".phl[1087]" 0;
+	setAttr ".phl[1088]" 0;
+	setAttr ".phl[1089]" 0;
+	setAttr ".phl[1090]" 0;
+	setAttr ".phl[1091]" 0;
+	setAttr ".phl[1092]" 0;
+	setAttr ".phl[1093]" 0;
+	setAttr ".phl[1094]" 0;
+	setAttr ".phl[1095]" 0;
+	setAttr ".phl[1096]" 0;
+	setAttr ".phl[1097]" 0;
+	setAttr ".phl[1098]" 0;
+	setAttr ".phl[1099]" 0;
+	setAttr ".phl[1100]" 0;
+	setAttr ".phl[1101]" 0;
+	setAttr ".phl[1102]" 0;
+	setAttr ".phl[1103]" 0;
+	setAttr ".phl[1104]" 0;
+	setAttr ".phl[1105]" 0;
+	setAttr ".phl[1106]" 0;
+	setAttr ".phl[1107]" 0;
+	setAttr ".phl[1108]" 0;
+	setAttr ".phl[1109]" 0;
+	setAttr ".phl[1110]" 0;
+	setAttr ".phl[1111]" 0;
+	setAttr ".phl[1112]" 0;
+	setAttr ".phl[1113]" 0;
+	setAttr ".phl[1114]" 0;
+	setAttr ".phl[1115]" 0;
+	setAttr ".phl[1116]" 0;
+	setAttr ".phl[1117]" 0;
+	setAttr ".phl[1118]" 0;
+	setAttr ".phl[1119]" 0;
+	setAttr ".phl[1120]" 0;
+	setAttr ".phl[1121]" 0;
+	setAttr ".phl[1122]" 0;
+	setAttr ".phl[1123]" 0;
+	setAttr ".phl[1124]" 0;
+	setAttr ".phl[1125]" 0;
+	setAttr ".phl[1126]" 0;
+	setAttr ".phl[1127]" 0;
+	setAttr ".phl[1128]" 0;
+	setAttr ".phl[1129]" 0;
+	setAttr ".phl[1130]" 0;
+	setAttr ".phl[1131]" 0;
+	setAttr ".phl[1132]" 0;
+	setAttr ".phl[1133]" 0;
+	setAttr ".phl[1134]" 0;
+	setAttr ".phl[1135]" 0;
+	setAttr ".phl[1136]" 0;
+	setAttr ".phl[1137]" 0;
+	setAttr ".phl[1138]" 0;
+	setAttr ".phl[1139]" 0;
+	setAttr ".phl[1140]" 0;
+	setAttr ".phl[1141]" 0;
+	setAttr ".phl[1142]" 0;
+	setAttr ".phl[1143]" 0;
+	setAttr ".phl[1144]" 0;
+	setAttr ".phl[1145]" 0;
+	setAttr ".phl[1146]" 0;
+	setAttr ".phl[1147]" 0;
+	setAttr ".phl[1148]" 0;
+	setAttr ".phl[1149]" 0;
+	setAttr ".phl[1150]" 0;
+	setAttr ".phl[1151]" 0;
+	setAttr ".phl[1152]" 0;
+	setAttr ".phl[1153]" 0;
+	setAttr ".phl[1154]" 0;
+	setAttr ".phl[1155]" 0;
+	setAttr ".phl[1156]" 0;
+	setAttr ".phl[1157]" 0;
+	setAttr ".phl[1158]" 0;
+	setAttr ".phl[1159]" 0;
+	setAttr ".phl[1160]" 0;
+	setAttr ".phl[1161]" 0;
+	setAttr ".phl[1162]" 0;
+	setAttr ".phl[1163]" 0;
+	setAttr ".phl[1164]" 0;
+	setAttr ".phl[1165]" 0;
+	setAttr ".phl[1166]" 0;
+	setAttr ".phl[1167]" 0;
+	setAttr ".phl[1168]" 0;
+	setAttr ".phl[1169]" 0;
+	setAttr ".phl[1170]" 0;
+	setAttr ".phl[1171]" 0;
+	setAttr ".phl[1172]" 0;
+	setAttr ".phl[1173]" 0;
+	setAttr ".phl[1174]" 0;
+	setAttr ".phl[1175]" 0;
+	setAttr ".phl[1176]" 0;
+	setAttr ".phl[1177]" 0;
+	setAttr ".phl[1178]" 0;
+	setAttr ".phl[1179]" 0;
+	setAttr ".phl[1180]" 0;
+	setAttr ".phl[1181]" 0;
+	setAttr ".phl[1182]" 0;
+	setAttr ".phl[1183]" 0;
+	setAttr ".phl[1184]" 0;
+	setAttr ".phl[1185]" 0;
+	setAttr ".phl[1186]" 0;
+	setAttr ".phl[1187]" 0;
+	setAttr ".phl[1188]" 0;
+	setAttr ".phl[1189]" 0;
+	setAttr ".phl[1190]" 0;
+	setAttr ".phl[1191]" 0;
+	setAttr ".phl[1192]" 0;
+	setAttr ".phl[1193]" 0;
+	setAttr ".phl[1194]" 0;
+	setAttr ".phl[1195]" 0;
+	setAttr ".phl[1196]" 0;
+	setAttr ".phl[1197]" 0;
+	setAttr ".phl[1198]" 0;
+	setAttr ".phl[1199]" 0;
+	setAttr ".phl[1200]" 0;
+	setAttr ".phl[1201]" 0;
+	setAttr ".phl[1202]" 0;
+	setAttr ".phl[1203]" 0;
+	setAttr ".phl[1204]" 0;
+	setAttr ".phl[1205]" 0;
+	setAttr ".phl[1206]" 0;
+	setAttr ".phl[1207]" 0;
+	setAttr ".phl[1208]" 0;
+	setAttr ".phl[1209]" 0;
+	setAttr ".phl[1210]" 0;
+	setAttr ".phl[1211]" 0;
+	setAttr ".phl[1212]" 0;
+	setAttr ".phl[1213]" 0;
+	setAttr ".phl[1214]" 0;
+	setAttr ".phl[1215]" 0;
+	setAttr ".phl[1216]" 0;
+	setAttr ".phl[1217]" 0;
+	setAttr ".phl[1218]" 0;
+	setAttr ".phl[1219]" 0;
+	setAttr ".phl[1220]" 0;
+	setAttr ".phl[1221]" 0;
+	setAttr ".phl[1222]" 0;
+	setAttr ".phl[1223]" 0;
+	setAttr ".phl[1224]" 0;
+	setAttr ".phl[1225]" 0;
+	setAttr ".phl[1226]" 0;
+	setAttr ".phl[1227]" 0;
+	setAttr ".phl[1228]" 0;
+	setAttr ".phl[1229]" 0;
+	setAttr ".phl[1230]" 0;
+	setAttr ".phl[1231]" 0;
+	setAttr ".phl[1232]" 0;
+	setAttr ".phl[1233]" 0;
+	setAttr ".phl[1234]" 0;
+	setAttr ".phl[1235]" 0;
+	setAttr ".phl[1236]" 0;
+	setAttr ".phl[1237]" 0;
+	setAttr ".phl[1238]" 0;
+	setAttr ".phl[1239]" 0;
+	setAttr ".phl[1240]" 0;
+	setAttr ".phl[1241]" 0;
+	setAttr ".phl[1242]" 0;
+	setAttr ".phl[1243]" 0;
+	setAttr ".phl[1244]" 0;
+	setAttr ".phl[1245]" 0;
+	setAttr ".phl[1246]" 0;
+	setAttr ".phl[1247]" 0;
+	setAttr ".phl[1248]" 0;
+	setAttr ".phl[1249]" 0;
+	setAttr ".phl[1250]" 0;
+	setAttr ".phl[1251]" 0;
+	setAttr ".phl[1252]" 0;
+	setAttr ".phl[1253]" 0;
+	setAttr ".phl[1254]" 0;
+	setAttr ".phl[1255]" 0;
+	setAttr ".phl[1256]" 0;
+	setAttr ".phl[1257]" 0;
+	setAttr ".phl[1258]" 0;
+	setAttr ".phl[1259]" 0;
+	setAttr ".phl[1260]" 0;
+	setAttr ".phl[1261]" 0;
+	setAttr ".phl[1262]" 0;
+	setAttr ".phl[1263]" 0;
+	setAttr ".phl[1264]" 0;
+	setAttr ".phl[1265]" 0;
+	setAttr ".phl[1266]" 0;
+	setAttr ".phl[1267]" 0;
+	setAttr ".phl[1268]" 0;
+	setAttr ".phl[1269]" 0;
+	setAttr ".phl[1270]" 0;
+	setAttr ".phl[1271]" 0;
+	setAttr ".phl[1272]" 0;
+	setAttr ".phl[1273]" 0;
+	setAttr ".phl[1274]" 0;
+	setAttr ".phl[1275]" 0;
+	setAttr ".phl[1276]" 0;
+	setAttr ".phl[1277]" 0;
+	setAttr ".phl[1278]" 0;
+	setAttr ".phl[1279]" 0;
+	setAttr ".phl[1280]" 0;
+	setAttr ".phl[1281]" 0;
+	setAttr ".phl[1282]" 0;
+	setAttr ".phl[1283]" 0;
+	setAttr ".phl[1284]" 0;
+	setAttr ".phl[1285]" 0;
+	setAttr ".phl[1286]" 0;
+	setAttr ".phl[1287]" 0;
+	setAttr ".phl[1288]" 0;
+	setAttr ".phl[1289]" 0;
+	setAttr ".phl[1290]" 0;
+	setAttr ".phl[1291]" 0;
+	setAttr ".phl[1292]" 0;
+	setAttr ".phl[1293]" 0;
+	setAttr ".phl[1294]" 0;
+	setAttr ".phl[1295]" 0;
+	setAttr ".phl[1296]" 0;
+	setAttr ".phl[1297]" 0;
+	setAttr ".phl[1298]" 0;
+	setAttr ".phl[1299]" 0;
+	setAttr ".phl[1300]" 0;
+	setAttr ".phl[1301]" 0;
+	setAttr ".phl[1302]" 0;
+	setAttr ".phl[1303]" 0;
+	setAttr ".phl[1304]" 0;
+	setAttr ".phl[1305]" 0;
+	setAttr ".phl[1306]" 0;
+	setAttr ".phl[1307]" 0;
+	setAttr ".phl[1308]" 0;
+	setAttr ".phl[1309]" 0;
+	setAttr ".phl[1310]" 0;
+	setAttr ".phl[1311]" 0;
+	setAttr ".phl[1312]" 0;
+	setAttr ".phl[1313]" 0;
+	setAttr ".phl[1314]" 0;
+	setAttr ".phl[1315]" 0;
+	setAttr ".phl[1316]" 0;
+	setAttr ".phl[1317]" 0;
+	setAttr ".phl[1318]" 0;
+	setAttr ".phl[1319]" 0;
+	setAttr ".phl[1320]" 0;
+	setAttr ".phl[1321]" 0;
+	setAttr ".phl[1322]" 0;
+	setAttr ".phl[1323]" 0;
+	setAttr ".phl[1324]" 0;
+	setAttr ".phl[1325]" 0;
+	setAttr ".phl[1326]" 0;
+	setAttr ".phl[1327]" 0;
+	setAttr ".phl[1328]" 0;
+	setAttr ".phl[1329]" 0;
+	setAttr ".phl[1330]" 0;
+	setAttr ".phl[1331]" 0;
+	setAttr ".phl[1332]" 0;
+	setAttr ".phl[1333]" 0;
+	setAttr ".phl[1334]" 0;
+	setAttr ".phl[1335]" 0;
+	setAttr ".phl[1336]" 0;
+	setAttr ".phl[1337]" 0;
+	setAttr ".phl[1338]" 0;
+	setAttr ".phl[1339]" 0;
+	setAttr ".phl[1340]" 0;
+	setAttr ".phl[1341]" 0;
+	setAttr ".phl[1342]" 0;
+	setAttr ".phl[1343]" 0;
+	setAttr ".phl[1344]" 0;
+	setAttr ".phl[1345]" 0;
+	setAttr ".phl[1346]" 0;
+	setAttr ".phl[1347]" 0;
+	setAttr ".phl[1348]" 0;
+	setAttr ".phl[1349]" 0;
+	setAttr ".phl[1350]" 0;
+	setAttr ".phl[1351]" 0;
+	setAttr ".phl[1352]" 0;
+	setAttr ".phl[1353]" 0;
+	setAttr ".phl[1354]" 0;
+	setAttr ".phl[1355]" 0;
+	setAttr ".phl[1356]" 0;
+	setAttr ".phl[1357]" 0;
+	setAttr ".phl[1358]" 0;
+	setAttr ".phl[1359]" 0;
+	setAttr ".phl[1360]" 0;
+	setAttr ".phl[1361]" 0;
+	setAttr ".phl[1362]" 0;
+	setAttr ".phl[1363]" 0;
+	setAttr ".phl[1364]" 0;
+	setAttr ".phl[1365]" 0;
+	setAttr ".phl[1366]" 0;
+	setAttr ".phl[1367]" 0;
+	setAttr ".phl[1368]" 0;
+	setAttr ".phl[1369]" 0;
+	setAttr ".phl[1370]" 0;
+	setAttr ".phl[1371]" 0;
+	setAttr ".phl[1372]" 0;
+	setAttr ".phl[1373]" 0;
+	setAttr ".phl[1374]" 0;
+	setAttr ".phl[1375]" 0;
+	setAttr ".phl[1376]" 0;
+	setAttr ".phl[1377]" 0;
+	setAttr ".phl[1378]" 0;
+	setAttr ".phl[1379]" 0;
+	setAttr ".phl[1380]" 0;
+	setAttr ".phl[1381]" 0;
+	setAttr ".phl[1382]" 0;
+	setAttr ".phl[1383]" 0;
+	setAttr ".phl[1384]" 0;
+	setAttr ".phl[1385]" 0;
+	setAttr ".phl[1386]" 0;
+	setAttr ".phl[1387]" 0;
+	setAttr ".phl[1388]" 0;
+	setAttr ".phl[1389]" 0;
+	setAttr ".phl[1390]" 0;
+	setAttr ".phl[1391]" 0;
+	setAttr ".phl[1392]" 0;
+	setAttr ".phl[1393]" 0;
+	setAttr ".phl[1394]" 0;
+	setAttr ".phl[1395]" 0;
+	setAttr ".phl[1396]" 0;
+	setAttr ".phl[1397]" 0;
+	setAttr ".phl[1398]" 0;
+	setAttr ".phl[1399]" 0;
+	setAttr ".phl[1400]" 0;
+	setAttr ".phl[1401]" 0;
+	setAttr ".phl[1402]" 0;
+	setAttr ".phl[1403]" 0;
+	setAttr ".phl[1404]" 0;
+	setAttr ".phl[1405]" 0;
+	setAttr ".phl[1406]" 0;
+	setAttr ".phl[1407]" 0;
+	setAttr ".phl[1408]" 0;
+	setAttr ".phl[1409]" 0;
+	setAttr ".phl[1410]" 0;
+	setAttr ".phl[1411]" 0;
+	setAttr ".phl[1412]" 0;
+	setAttr ".phl[1413]" 0;
+	setAttr ".phl[1414]" 0;
+	setAttr ".phl[1415]" 0;
+	setAttr ".phl[1416]" 0;
+	setAttr ".phl[1417]" 0;
+	setAttr ".phl[1418]" 0;
+	setAttr ".phl[1419]" 0;
+	setAttr ".phl[1420]" 0;
+	setAttr ".phl[1421]" 0;
+	setAttr ".phl[1422]" 0;
+	setAttr ".phl[1423]" 0;
+	setAttr ".phl[1424]" 0;
+	setAttr ".phl[1425]" 0;
+	setAttr ".phl[1426]" 0;
+	setAttr ".phl[1427]" 0;
+	setAttr ".phl[1428]" 0;
+	setAttr ".phl[1429]" 0;
+	setAttr ".phl[1430]" 0;
+	setAttr ".phl[1431]" 0;
+	setAttr ".phl[1432]" 0;
+	setAttr ".phl[1433]" 0;
+	setAttr ".phl[1434]" 0;
+	setAttr ".phl[1435]" 0;
+	setAttr ".phl[1436]" 0;
+	setAttr ".phl[1437]" 0;
+	setAttr ".phl[1438]" 0;
+	setAttr ".phl[1439]" 0;
+	setAttr ".phl[1440]" 0;
+	setAttr ".phl[1441]" 0;
+	setAttr ".phl[1442]" 0;
+	setAttr ".phl[1443]" 0;
+	setAttr ".phl[1444]" 0;
+	setAttr ".phl[1445]" 0;
+	setAttr ".phl[1446]" 0;
+	setAttr ".phl[1447]" 0;
+	setAttr ".phl[1448]" 0;
+	setAttr ".phl[1449]" 0;
+	setAttr ".phl[1450]" 0;
+	setAttr ".phl[1451]" 0;
+	setAttr ".phl[1452]" 0;
+	setAttr ".phl[1453]" 0;
+	setAttr ".phl[1454]" 0;
+	setAttr ".phl[1455]" 0;
+	setAttr ".phl[1456]" 0;
+	setAttr ".phl[1457]" 0;
+	setAttr ".phl[1458]" 0;
+	setAttr ".phl[1459]" 0;
+	setAttr ".phl[1460]" 0;
+	setAttr ".phl[1461]" 0;
+	setAttr ".phl[1462]" 0;
+	setAttr ".phl[1463]" 0;
+	setAttr ".phl[1464]" 0;
+	setAttr ".phl[1465]" 0;
+	setAttr ".phl[1466]" 0;
+	setAttr ".phl[1467]" 0;
+	setAttr ".phl[1468]" 0;
+	setAttr ".phl[1469]" 0;
+	setAttr ".phl[1470]" 0;
+	setAttr ".phl[1471]" 0;
+	setAttr ".phl[1472]" 0;
+	setAttr ".phl[1473]" 0;
+	setAttr ".phl[1474]" 0;
+	setAttr ".phl[1475]" 0;
+	setAttr ".phl[1476]" 0;
+	setAttr ".phl[1477]" 0;
+	setAttr ".phl[1478]" 0;
+	setAttr ".phl[1479]" 0;
+	setAttr ".phl[1480]" 0;
+	setAttr ".phl[1481]" 0;
+	setAttr ".phl[1482]" 0;
+	setAttr ".phl[1483]" 0;
+	setAttr ".phl[1484]" 0;
+	setAttr ".phl[1485]" 0;
+	setAttr ".phl[1486]" 0;
+	setAttr ".phl[1487]" 0;
+	setAttr ".phl[1488]" 0;
+	setAttr ".phl[1489]" 0;
+	setAttr ".phl[1490]" 0;
+	setAttr ".phl[1491]" 0;
+	setAttr ".phl[1492]" 0;
+	setAttr ".phl[1493]" 0;
+	setAttr ".phl[1494]" 0;
+	setAttr ".phl[1495]" 0;
+	setAttr ".phl[1496]" 0;
+	setAttr ".phl[1497]" 0;
+	setAttr ".phl[1498]" 0;
+	setAttr ".phl[1499]" 0;
+	setAttr ".phl[1500]" 0;
+	setAttr ".phl[1501]" 0;
+	setAttr ".phl[1502]" 0;
+	setAttr ".phl[1503]" 0;
+	setAttr ".phl[1504]" 0;
+	setAttr ".phl[1505]" 0;
+	setAttr ".phl[1506]" 0;
+	setAttr ".phl[1507]" 0;
+	setAttr ".phl[1508]" 0;
+	setAttr ".phl[1509]" 0;
+	setAttr ".phl[1510]" 0;
+	setAttr ".phl[1511]" 0;
+	setAttr ".phl[1512]" 0;
+	setAttr ".phl[1513]" 0;
+	setAttr ".phl[1514]" 0;
+	setAttr ".phl[1515]" 0;
+	setAttr ".phl[1516]" 0;
+	setAttr ".phl[1517]" 0;
+	setAttr ".phl[1518]" 0;
+	setAttr ".phl[1519]" 0;
+	setAttr ".phl[1520]" 0;
+	setAttr ".phl[1521]" 0;
+	setAttr ".phl[1522]" 0;
+	setAttr ".phl[1523]" 0;
+	setAttr ".phl[1524]" 0;
+	setAttr ".phl[1525]" 0;
+	setAttr ".phl[1526]" 0;
+	setAttr ".phl[1527]" 0;
+	setAttr ".phl[1528]" 0;
+	setAttr ".phl[1529]" 0;
+	setAttr ".phl[1530]" 0;
+	setAttr ".phl[1531]" 0;
+	setAttr ".phl[1532]" 0;
+	setAttr ".phl[1533]" 0;
+	setAttr ".phl[1534]" 0;
+	setAttr ".phl[1535]" 0;
+	setAttr ".phl[1536]" 0;
+	setAttr ".phl[1537]" 0;
+	setAttr ".phl[1538]" 0;
+	setAttr ".phl[1539]" 0;
+	setAttr ".phl[1540]" 0;
+	setAttr ".phl[1541]" 0;
+	setAttr ".phl[1542]" 0;
+	setAttr ".phl[1543]" 0;
+	setAttr ".phl[1544]" 0;
+	setAttr ".phl[1545]" 0;
+	setAttr ".phl[1546]" 0;
+	setAttr ".phl[1547]" 0;
+	setAttr ".phl[1548]" 0;
+	setAttr ".phl[1549]" 0;
+	setAttr ".phl[1550]" 0;
+	setAttr ".phl[1551]" 0;
+	setAttr ".phl[1552]" 0;
+	setAttr ".phl[1553]" 0;
+	setAttr ".phl[1554]" 0;
+	setAttr ".phl[1555]" 0;
+	setAttr ".phl[1556]" 0;
+	setAttr ".phl[1557]" 0;
+	setAttr ".phl[1558]" 0;
+	setAttr ".phl[1559]" 0;
+	setAttr ".phl[1560]" 0;
+	setAttr ".phl[1561]" 0;
+	setAttr ".phl[1562]" 0;
+	setAttr ".phl[1563]" 0;
+	setAttr ".phl[1564]" 0;
+	setAttr ".phl[1565]" 0;
+	setAttr ".phl[1566]" 0;
+	setAttr ".phl[1567]" 0;
+	setAttr ".phl[1568]" 0;
+	setAttr ".phl[1569]" 0;
+	setAttr ".phl[1570]" 0;
+	setAttr ".phl[1571]" 0;
+	setAttr ".phl[1572]" 0;
+	setAttr ".phl[1573]" 0;
+	setAttr ".phl[1574]" 0;
+	setAttr ".phl[1575]" 0;
+	setAttr ".phl[1576]" 0;
+	setAttr ".phl[1577]" 0;
+	setAttr ".phl[1578]" 0;
+	setAttr ".phl[1579]" 0;
+	setAttr ".phl[1580]" 0;
+	setAttr ".phl[1581]" 0;
+	setAttr ".phl[1582]" 0;
+	setAttr ".phl[1583]" 0;
+	setAttr ".phl[1584]" 0;
+	setAttr ".phl[1585]" 0;
+	setAttr ".phl[1586]" 0;
+	setAttr ".phl[1587]" 0;
+	setAttr ".phl[1588]" 0;
+	setAttr ".phl[1589]" 0;
+	setAttr ".phl[1590]" 0;
+	setAttr ".phl[1591]" 0;
+	setAttr ".phl[1592]" 0;
+	setAttr ".phl[1593]" 0;
+	setAttr ".phl[1594]" 0;
+	setAttr ".phl[1595]" 0;
+	setAttr ".phl[1596]" 0;
+	setAttr ".phl[1597]" 0;
+	setAttr ".phl[1598]" 0;
+	setAttr ".phl[1599]" 0;
+	setAttr ".phl[1600]" 0;
+	setAttr ".phl[1601]" 0;
+	setAttr ".phl[1602]" 0;
+	setAttr ".phl[1603]" 0;
+	setAttr ".phl[1604]" 0;
+	setAttr ".phl[1605]" 0;
+	setAttr ".phl[1606]" 0;
+	setAttr ".phl[1607]" 0;
+	setAttr ".phl[1608]" 0;
+	setAttr ".phl[1609]" 0;
+	setAttr ".phl[1610]" 0;
+	setAttr ".phl[1611]" 0;
+	setAttr ".phl[1612]" 0;
+	setAttr ".phl[1613]" 0;
+	setAttr ".phl[1614]" 0;
+	setAttr ".phl[1615]" 0;
+	setAttr ".phl[1616]" 0;
+	setAttr ".phl[1617]" 0;
+	setAttr ".phl[1618]" 0;
+	setAttr ".phl[1619]" 0;
+	setAttr ".phl[1620]" 0;
+	setAttr ".phl[1621]" 0;
+	setAttr ".phl[1622]" 0;
+	setAttr ".phl[1623]" 0;
+	setAttr ".phl[1624]" 0;
+	setAttr ".phl[1625]" 0;
+	setAttr ".phl[1626]" 0;
+	setAttr ".phl[1627]" 0;
+	setAttr ".phl[1628]" 0;
+	setAttr ".phl[1629]" 0;
+	setAttr ".phl[1630]" 0;
+	setAttr ".phl[1631]" 0;
+	setAttr ".phl[1632]" 0;
+	setAttr ".phl[1633]" 0;
+	setAttr ".phl[1634]" 0;
+	setAttr ".phl[1635]" 0;
+	setAttr ".phl[1636]" 0;
+	setAttr ".phl[1637]" 0;
+	setAttr ".phl[1638]" 0;
+	setAttr ".phl[1639]" 0;
+	setAttr ".phl[1640]" 0;
+	setAttr ".phl[1641]" 0;
+	setAttr ".phl[1642]" 0;
+	setAttr ".phl[1643]" 0;
+	setAttr ".phl[1644]" 0;
+	setAttr ".phl[1645]" 0;
+	setAttr ".phl[1646]" 0;
+	setAttr ".phl[1647]" 0;
+	setAttr ".phl[1648]" 0;
+	setAttr ".phl[1649]" 0;
+	setAttr ".phl[1650]" 0;
+	setAttr ".phl[1651]" 0;
+	setAttr ".phl[1652]" 0;
+	setAttr ".phl[1653]" 0;
+	setAttr ".phl[1654]" 0;
+	setAttr ".phl[1655]" 0;
+	setAttr ".phl[1656]" 0;
+	setAttr ".phl[1657]" 0;
+	setAttr ".phl[1658]" 0;
+	setAttr ".phl[1659]" 0;
+	setAttr ".phl[1660]" 0;
+	setAttr ".phl[1661]" 0;
+	setAttr ".phl[1662]" 0;
+	setAttr ".phl[1663]" 0;
+	setAttr ".phl[1664]" 0;
+	setAttr ".phl[1665]" 0;
+	setAttr ".phl[1666]" 0;
+	setAttr ".phl[1667]" 0;
+	setAttr ".phl[1668]" 0;
+	setAttr ".phl[1669]" 0;
+	setAttr ".phl[1670]" 0;
+	setAttr ".phl[1671]" 0;
+	setAttr ".phl[1672]" 0;
+	setAttr ".phl[1673]" 0;
+	setAttr ".phl[1674]" 0;
+	setAttr ".phl[1675]" 0;
+	setAttr ".phl[1676]" 0;
+	setAttr ".phl[1677]" 0;
+	setAttr ".phl[1678]" 0;
+	setAttr ".phl[1679]" 0;
+	setAttr ".phl[1680]" 0;
+	setAttr ".phl[1681]" 0;
+	setAttr ".phl[1682]" 0;
+	setAttr ".phl[1683]" 0;
+	setAttr ".phl[1684]" 0;
+	setAttr ".phl[1685]" 0;
+	setAttr ".phl[1686]" 0;
+	setAttr ".phl[1687]" 0;
+	setAttr ".phl[1688]" 0;
+	setAttr ".phl[1689]" 0;
+	setAttr ".phl[1690]" 0;
+	setAttr ".phl[1691]" 0;
+	setAttr ".phl[1692]" 0;
+	setAttr ".phl[1693]" 0;
+	setAttr ".phl[1694]" 0;
+	setAttr ".phl[1695]" 0;
+	setAttr ".phl[1696]" 0;
+	setAttr ".phl[1697]" 0;
+	setAttr ".phl[1698]" 0;
+	setAttr ".phl[1699]" 0;
+	setAttr ".phl[1700]" 0;
+	setAttr ".phl[1701]" 0;
+	setAttr ".phl[1702]" 0;
+	setAttr ".phl[1703]" 0;
+	setAttr ".phl[1704]" 0;
+	setAttr ".phl[1705]" 0;
+	setAttr ".phl[1706]" 0;
+	setAttr ".phl[1707]" 0;
+	setAttr ".phl[1708]" 0;
+	setAttr ".phl[1709]" 0;
+	setAttr ".phl[1710]" 0;
+	setAttr ".phl[1711]" 0;
+	setAttr ".phl[1712]" 0;
+	setAttr ".phl[1713]" 0;
+	setAttr ".phl[1714]" 0;
+	setAttr ".phl[1715]" 0;
+	setAttr ".phl[1716]" 0;
+	setAttr ".phl[1717]" 0;
+	setAttr ".phl[1718]" 0;
+	setAttr ".phl[1719]" 0;
+	setAttr ".phl[1720]" 0;
+	setAttr ".phl[1721]" 0;
+	setAttr ".phl[1722]" 0;
+	setAttr ".phl[1723]" 0;
+	setAttr ".phl[1724]" 0;
+	setAttr ".phl[1725]" 0;
+	setAttr ".phl[1726]" 0;
+	setAttr ".phl[1727]" 0;
+	setAttr ".phl[1728]" 0;
+	setAttr ".phl[1729]" 0;
+	setAttr ".phl[1730]" 0;
+	setAttr ".phl[1731]" 0;
+	setAttr ".phl[1732]" 0;
+	setAttr ".phl[1733]" 0;
+	setAttr ".phl[1734]" 0;
+	setAttr ".phl[1735]" 0;
+	setAttr ".phl[1736]" 0;
+	setAttr ".phl[1737]" 0;
+	setAttr ".phl[1738]" 0;
+	setAttr ".phl[1739]" 0;
+	setAttr ".phl[1740]" 0;
+	setAttr ".phl[1741]" 0;
+	setAttr ".phl[1742]" 0;
+	setAttr ".phl[1743]" 0;
+	setAttr ".phl[1744]" 0;
+	setAttr ".phl[1745]" 0;
+	setAttr ".phl[1746]" 0;
+	setAttr ".phl[1747]" 0;
+	setAttr ".phl[1748]" 0;
+	setAttr ".phl[1749]" 0;
+	setAttr ".phl[1750]" 0;
+	setAttr ".phl[1751]" 0;
+	setAttr ".phl[1752]" 0;
+	setAttr ".phl[1753]" 0;
+	setAttr ".phl[1754]" 0;
+	setAttr ".phl[1755]" 0;
+	setAttr ".phl[1756]" 0;
+	setAttr ".phl[1757]" 0;
+	setAttr ".phl[1758]" 0;
+	setAttr ".phl[1759]" 0;
+	setAttr ".phl[1760]" 0;
+	setAttr ".phl[1761]" 0;
+	setAttr ".phl[1762]" 0;
+	setAttr ".phl[1763]" 0;
+	setAttr ".phl[1764]" 0;
+	setAttr ".phl[1765]" 0;
+	setAttr ".phl[1766]" 0;
+	setAttr ".phl[1767]" 0;
+	setAttr ".phl[1768]" 0;
+	setAttr ".phl[1769]" 0;
+	setAttr ".phl[1770]" 0;
+	setAttr ".phl[1771]" 0;
+	setAttr ".phl[1772]" 0;
+	setAttr ".phl[1773]" 0;
+	setAttr ".phl[1774]" 0;
+	setAttr ".phl[1775]" 0;
+	setAttr ".phl[1776]" 0;
+	setAttr ".phl[1777]" 0;
+	setAttr ".phl[1778]" 0;
+	setAttr ".phl[1779]" 0;
+	setAttr ".phl[1780]" 0;
+	setAttr ".phl[1781]" 0;
+	setAttr ".phl[1782]" 0;
+	setAttr ".phl[1783]" 0;
+	setAttr ".phl[1784]" 0;
+	setAttr ".phl[1785]" 0;
+	setAttr ".phl[1786]" 0;
+	setAttr ".phl[1787]" 0;
+	setAttr ".phl[1788]" 0;
+	setAttr ".phl[1789]" 0;
+	setAttr ".phl[1790]" 0;
+	setAttr ".phl[1791]" 0;
+	setAttr ".phl[1792]" 0;
+	setAttr ".phl[1793]" 0;
+	setAttr ".phl[1794]" 0;
+	setAttr ".phl[1795]" 0;
+	setAttr ".phl[1796]" 0;
+	setAttr ".phl[1797]" 0;
+	setAttr ".phl[1798]" 0;
+	setAttr ".phl[1799]" 0;
+	setAttr ".phl[1800]" 0;
+	setAttr ".phl[1801]" 0;
+	setAttr ".phl[1802]" 0;
+	setAttr ".phl[1803]" 0;
+	setAttr ".phl[1804]" 0;
+	setAttr ".phl[1805]" 0;
+	setAttr ".phl[1806]" 0;
+	setAttr ".phl[1807]" 0;
+	setAttr ".phl[1808]" 0;
+	setAttr ".phl[1809]" 0;
+	setAttr ".phl[1810]" 0;
+	setAttr ".phl[1811]" 0;
+	setAttr ".phl[1812]" 0;
+	setAttr ".phl[1813]" 0;
+	setAttr ".phl[1814]" 0;
+	setAttr ".phl[1815]" 0;
+	setAttr ".phl[1816]" 0;
+	setAttr ".phl[1817]" 0;
+	setAttr ".phl[1818]" 0;
+	setAttr ".phl[1819]" 0;
+	setAttr ".phl[1820]" 0;
+	setAttr ".phl[1821]" 0;
+	setAttr ".phl[1822]" 0;
+	setAttr ".phl[1823]" 0;
+	setAttr ".phl[1824]" 0;
+	setAttr ".phl[1825]" 0;
+	setAttr ".phl[1826]" 0;
+	setAttr ".phl[1827]" 0;
+	setAttr ".phl[1828]" 0;
+	setAttr ".phl[1829]" 0;
+	setAttr ".phl[1830]" 0;
+	setAttr ".phl[1831]" 0;
+	setAttr ".phl[1832]" 0;
+	setAttr ".phl[1833]" 0;
+	setAttr ".phl[1834]" 0;
+	setAttr ".phl[1835]" 0;
+	setAttr ".phl[1836]" 0;
+	setAttr ".phl[1837]" 0;
+	setAttr ".phl[1838]" 0;
+	setAttr ".phl[1839]" 0;
+	setAttr ".phl[1840]" 0;
+	setAttr ".phl[1841]" 0;
+	setAttr ".phl[1842]" 0;
+	setAttr ".phl[1843]" 0;
+	setAttr ".phl[1844]" 0;
+	setAttr ".phl[1845]" 0;
+	setAttr ".phl[1846]" 0;
+	setAttr ".phl[1847]" 0;
+	setAttr ".phl[1848]" 0;
+	setAttr ".phl[1849]" 0;
+	setAttr ".phl[1850]" 0;
+	setAttr ".phl[1851]" 0;
+	setAttr ".phl[1852]" 0;
+	setAttr ".phl[1853]" 0;
+	setAttr ".phl[1854]" 0;
+	setAttr ".phl[1855]" 0;
+	setAttr ".phl[1856]" 0;
+	setAttr ".phl[1857]" 0;
+	setAttr ".phl[1858]" 0;
+	setAttr ".phl[1859]" 0;
+	setAttr ".phl[1860]" 0;
+	setAttr ".phl[1861]" 0;
+	setAttr ".phl[1862]" 0;
+	setAttr ".phl[1863]" 0;
+	setAttr ".phl[1864]" 0;
+	setAttr ".phl[1865]" 0;
+	setAttr ".phl[1866]" 0;
+	setAttr ".phl[1867]" 0;
+	setAttr ".phl[1868]" 0;
+	setAttr ".phl[1869]" 0;
+	setAttr ".phl[1870]" 0;
+	setAttr ".phl[1871]" 0;
+	setAttr ".phl[1872]" 0;
+	setAttr ".phl[1873]" 0;
+	setAttr ".phl[1874]" 0;
+	setAttr ".phl[1875]" 0;
+	setAttr ".phl[1876]" 0;
+	setAttr ".phl[1877]" 0;
+	setAttr ".phl[1878]" 0;
+	setAttr ".phl[1879]" 0;
+	setAttr ".phl[1880]" 0;
+	setAttr ".phl[1881]" 0;
+	setAttr ".phl[1882]" 0;
+	setAttr ".phl[1883]" 0;
+	setAttr ".phl[1884]" 0;
+	setAttr ".phl[1885]" 0;
+	setAttr ".phl[1886]" 0;
+	setAttr ".phl[1887]" 0;
+	setAttr ".phl[1888]" 0;
+	setAttr ".phl[1889]" 0;
+	setAttr ".phl[1890]" 0;
+	setAttr ".phl[1891]" 0;
+	setAttr ".phl[1892]" 0;
+	setAttr ".phl[1893]" 0;
+	setAttr ".phl[1894]" 0;
+	setAttr ".phl[1895]" 0;
+	setAttr ".phl[1896]" 0;
+	setAttr ".phl[1897]" 0;
+	setAttr ".phl[1898]" 0;
+	setAttr ".phl[1899]" 0;
+	setAttr ".phl[1900]" 0;
+	setAttr ".phl[1901]" 0;
+	setAttr ".phl[1902]" 0;
+	setAttr ".phl[1903]" 0;
+	setAttr ".phl[1904]" 0;
+	setAttr ".phl[1905]" 0;
+	setAttr ".phl[1906]" 0;
+	setAttr ".phl[1907]" 0;
+	setAttr ".phl[1908]" 0;
+	setAttr ".phl[1909]" 0;
+	setAttr ".phl[1910]" 0;
+	setAttr ".phl[1911]" 0;
+	setAttr ".phl[1912]" 0;
+	setAttr ".phl[1913]" 0;
+	setAttr ".phl[1914]" 0;
+	setAttr ".phl[1915]" 0;
+	setAttr ".phl[1916]" 0;
+	setAttr ".phl[1917]" 0;
+	setAttr ".phl[1918]" 0;
+	setAttr ".phl[1919]" 0;
+	setAttr ".phl[1920]" 0;
+	setAttr ".phl[1921]" 0;
+	setAttr ".phl[1922]" 0;
+	setAttr ".phl[1923]" 0;
+	setAttr ".phl[1924]" 0;
+	setAttr ".phl[1925]" 0;
+	setAttr ".phl[1926]" 0;
+	setAttr ".phl[1927]" 0;
+	setAttr ".phl[1928]" 0;
+	setAttr ".phl[1929]" 0;
+	setAttr ".phl[1930]" 0;
+	setAttr ".phl[1931]" 0;
+	setAttr ".phl[1932]" 0;
+	setAttr ".phl[1933]" 0;
+	setAttr ".phl[1934]" 0;
+	setAttr ".phl[1935]" 0;
+	setAttr ".phl[1936]" 0;
+	setAttr ".phl[1937]" 0;
+	setAttr ".phl[1938]" 0;
+	setAttr ".phl[1939]" 0;
+	setAttr ".phl[1940]" 0;
+	setAttr ".phl[1941]" 0;
+	setAttr ".phl[1942]" 0;
+	setAttr ".phl[1943]" 0;
+	setAttr ".phl[1944]" 0;
+	setAttr ".phl[1945]" 0;
+	setAttr ".phl[1946]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"cartoonCharacterRN"
-		"cartoonCharacterRN" 23
+		"cartoonCharacterRN" 25
+		3 "cartoonCharacter:groupId108.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:L_Hip_J.message" 
 		"cartoonCharacterRN.placeHolderList[17]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:L_Hip_J|cartoonCharacter:L_Knee_J.message" 
@@ -14487,23 +14644,37 @@ createNode reference -n "cartoonCharacterRN";
 		"cartoonCharacterRN.placeHolderList[45]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Pinky_J_0|cartoonCharacter:L_Pinky_J_1|cartoonCharacter:L_Pinky_J_2.message" 
 		"cartoonCharacterRN.placeHolderList[46]" ""
-		"cartoonCharacterRN" 1232
+		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId108.message" "cartoonCharacterRN.placeHolderList[970]" 
+		":initialShadingGroup.gn"
+		"cartoonCharacterRN" 1302
 		0 "|cartoonCharacter:Pelvis_J" "|Root_Joint" "-s -r "
 		0 "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_Hip_J" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J" 
 		"-s -r "
 		0 "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2" 
 		"-s -r "
+		0 "|cartoonCharacterRNfosterParent1|LeftEye_parentConstraint1" "|cartoonCharacter:LeftEye" 
+		"-s -r "
 		0 "|cartoonCharacterRNfosterParent1|LeftEye_aimConstraint1" "|cartoonCharacter:LeftEye" 
+		"-s -r "
+		0 "|cartoonCharacterRNfosterParent1|RightEye_parentConstraint1" "|cartoonCharacter:RightEye" 
 		"-s -r "
 		0 "|cartoonCharacterRNfosterParent1|RightEye_aimConstraint1" "|cartoonCharacter:RightEye" 
 		"-s -r "
+		0 "|cartoonCharacterRNfosterParent1|GenericMesh5ShapeDeformed" "|cartoonCharacter:GenericMesh5" 
+		"-s -r "
 		0 "|cartoonCharacterRNfosterParent1|GenericMesh5ShapeDeformedOrig" "|cartoonCharacter:GenericMesh5" 
 		"-s -r "
-		0 "|cartoonCharacterRNfosterParent1|GenericMesh5ShapeDeformed" "|cartoonCharacter:GenericMesh5" 
+		0 "|cartoonCharacterRNfosterParent1|glasses_parentConstraint1" "|cartoonCharacter:glasses" 
+		"-s -r "
+		0 "|cartoonCharacterRNfosterParent1|glasses_scaleConstraint1" "|cartoonCharacter:glasses" 
 		"-s -r "
 		1 |cartoonCharacter:LeftEye "blendAim1" "blendAim1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		
+		1 |cartoonCharacter:LeftEye "blendParent1" "blendParent1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
+		
 		1 |cartoonCharacter:RightEye "blendAim1" "blendAim1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
+		
+		1 |cartoonCharacter:RightEye "blendParent1" "blendParent1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		
 		1 |Root_Joint|cartoonCharacter:Pelvis_J "lockInfluenceWeights" "liw" " -ci 1 -min 0 -max 1 -at \"bool\""
 		
@@ -14568,11 +14739,10 @@ createNode reference -n "cartoonCharacterRN";
 		1 |Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2 
 		"lockInfluenceWeights" "liw" " -ci 1 -min 0 -max 1 -at \"bool\""
 		2 "|cartoonCharacter:LeftEye" "blendAim1" " -k 1 1"
+		2 "|cartoonCharacter:LeftEye" "blendParent1" " -k 1 1"
 		2 "|cartoonCharacter:RightEye" "visibility" " -av 1"
-		2 "|cartoonCharacter:RightEye" "rotate" " -type \"double3\" 0.076862369099833391 1.54618233194640631 0"
-		
-		2 "|cartoonCharacter:RightEye" "rotateZ" " -av"
 		2 "|cartoonCharacter:RightEye" "blendAim1" " -k 1 1"
+		2 "|cartoonCharacter:RightEye" "blendParent1" " -k 1 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J" "useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J" "objectColor" " 0"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J" "segmentScaleCompensate" " 1"
@@ -14630,7 +14800,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 1.9951635384079396e-08 0.39520818300708899 -0.91859158067349755 0 2.1073424305817135e-08 -0.91859158067349778 -0.39520818300708871 0 -0.99999999999999967 -1.1472820491065915e-08 -2.6655794049673927e-08 0 -1.93217812511007536 1.9915290771049392 -0.60301927573539782 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J" 
@@ -14644,7 +14814,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 1.9951635384079396e-08 0.39520818300708899 -0.91859158067349755 0 2.1073424305817135e-08 -0.91859158067349778 -0.39520818300708871 0 -0.99999999999999967 -1.1472820491065915e-08 -2.6655794049673927e-08 0 -1.93217812511007625 0.43995187844103634 2.08437739702251346 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0" "useObjectColor" 
 		" 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0" "objectColor" 
@@ -14668,7 +14838,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0 1 0 0 0 0 -1 0 -1 0 0 0 0 21.00000000000000355 -1.00000000000000089 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2" 
@@ -14681,7 +14851,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0 0 1.00000000000000022 0 0 1.00000000000000022 0 0 -1 0 0 0 0 23.00000000000000355 -1.00000000000000089 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0" 
@@ -14689,10 +14859,12 @@ createNode reference -n "cartoonCharacterRN";
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0" 
 		"translate" " -type \"double3\" 0.030241907484341857 6.17722090943621893 0"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0" 
 		"bindPose" " -type \"matrix\" 0 0.9816271834476642 0.19080899537654467 0 0 0.19080899537654467 -0.9816271834476642 0 -1 0 0 0 0 29.17722090943622248 -0.96975809251566036 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1" 
@@ -14700,10 +14872,12 @@ createNode reference -n "cartoonCharacterRN";
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1" 
 		"translate" " -type \"double3\" 1.34841857820292077 0 0"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1" 
 		"bindPose" " -type \"matrix\" 0 0.9205048534524406 0.39073112848927372 0 0 0.39073112848927372 -0.9205048534524406 0 -1 0 0 0 0 30.50086524046605874 -0.71246769826169143 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J" 
@@ -14711,10 +14885,12 @@ createNode reference -n "cartoonCharacterRN";
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J" 
 		"translate" " -type \"double3\" 1.9483257003572092 0 0"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J" 
 		"bindPose" " -type \"matrix\" 0 0 1.00000000000000022 0 0 1.00000000000000022 0 0 -1 0 0 0 0 32.29430850375099737 0.048803801303535455 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J" 
@@ -14730,7 +14906,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 1 0 0 0 0 -1.00000000000000022 0 0 0 0 -1.00000000000000022 0 -0.643471 27.6821 0 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J" 
@@ -14749,7 +14925,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0.84623976565966852 0.53101617509891641 0.043589916260372202 0 0.53146144808506468 -0.84708096368929553 0.0016031701534608943 0 0.037775497555895196 0.021809693682666789 -0.99904822158185802 0 -2.55283283206134337 28.77781341524233127 -1.46129999999999982 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J" 
@@ -14768,7 +14944,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0.86462227488973986 0.49482383573743971 -0.087049947447303586 0 0.49709025028743165 -0.86768380691461888 0.0051082567803146421 0 -0.073004142578826869 -0.04768839276220449 -0.99619085137441843 0 -6.76520086884600147 25.94883179724948974 -1.49367295959130919 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J" 
@@ -14785,7 +14961,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0.85010598167638018 0.52661163578974812 -7.0490308853907169e-05 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.0026304567884238572 -0.0043801850972831902 -0.99998694725261206 0 -11.38647066039383127 23.25521575390624207 -1.25917220380812811 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0" 
@@ -14804,7 +14980,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0.56823446175996539 0.42024639619276688 -0.70746205760828929 0 0.51125863229629342 -0.85397670672181947 -0.096635372814925791 0 -0.64476678525718578 -0.30678453491587238 -0.70011359204458112 0 -11.823553349298912 22.85332355757588374 -0.61869604185555638 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1" 
@@ -14822,7 +14998,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0.56823446175996539 0.42024639619276688 -0.70746205760828929 0 0.52944707414803183 -0.844875806628262 -0.076620278323253369 0 -0.62991697242132716 -0.33102543385854227 -0.70258577411894207 0 -12.23953612380466183 22.55904249815348805 -0.081322375091605337 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2" 
@@ -14840,7 +15016,7 @@ createNode reference -n "cartoonCharacterRN";
 		"bindPose" " -type \"matrix\" 0.56823446175996539 0.42024639619276688 -0.70746205760828929 0 0.52789898131912572 -0.84568595468417473 -0.07834495243566128 0 -0.63121490951227688 -0.32895019765446026 -0.70239554773111978 0 -12.57192481411426321 22.32514944139906632 0.35891631657163603 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0" 
@@ -14849,10 +15025,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -2.05141765699718004 0.026154040083348207 -0.52295471264357063"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0" 
 		"bindPose" " -type \"matrix\" 0.84710033117724925 0.52422596124164256 -0.087224827197711644 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 -0.071471171141044593 -0.050260745427388662 -0.99617555137877745 0 -13.11799584116722528 22.15497257344647508 -0.73594609500998742 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1" 
@@ -14861,10 +15039,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.68573699721237835 0.031863072338431664 -0.018313811483359643"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1" 
 		"bindPose" " -type \"matrix\" 0.84710033117724925 0.52422596124164256 -0.087224827197711644 0 0.52660506869168788 -0.85009470153392352 0.0051088210159314241 0 -0.071471186835098663 -0.050260720092592331 -0.99617555153103265 0 -13.68079571358617486 21.76932527381886473 -0.65772624899322063 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2" 
@@ -14873,10 +15053,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.56984536134121777 0.028367341203967555 0.008293854903174136"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2" 
 		"bindPose" " -type \"matrix\" 0.84710033117724925 0.52422596124164256 -0.087224827197711644 0 0.52660506485176173 -0.85009470423427502 0.0051087674945064316 0 -0.07147121512795683 -0.050260674419638607 -0.99617555180551232 0 -14.14916629388819125 21.44606575993680053 -0.61613879763439428 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0" 
@@ -14885,10 +15067,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -2.07766088426484652 -0.014159428105525507 -0.11373982816157868"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0" 
 		"bindPose" " -type \"matrix\" 0.85010598167638018 0.52661163578974812 -7.0490308853907169e-05 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.0026304567884238572 -0.0043801850972831902 -0.99998694725261206 0 -13.1604582203458218 22.17363041331548601 -1.14535974371061799 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1" 
@@ -14897,10 +15081,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.8823547443891846 0.03889633815755289 0.03587940665223921"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1" 
 		"bindPose" " -type \"matrix\" 0.85010598167638018 0.52661163578974812 -7.0490308853907169e-05 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.0026304567884238572 -0.0043801850972831902 -0.99998694725261206 0 -13.88997587837264547 21.67574940866499134 -1.18097776899498497 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2" 
@@ -14909,10 +15095,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.71206696849281315 0.031669594743554796 0.004168605212440113"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2" 
 		"bindPose" " -type \"matrix\" 0.85010598167638018 0.52661163578974812 -7.0490308853907169e-05 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.0026304567884238572 -0.0043801850972831902 -0.99998694725261206 0 -14.47861993312384854 21.27382624368893005 -1.18493433074373078 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2" 
@@ -14921,10 +15109,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -2.00740745411433386 0.061717207892765913 0.32670440711235127"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2" 
 		"bindPose" " -type \"matrix\" 0.84664181234692781 0.52498947781269434 0.087084383053817382 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.076712065353419137 0.041533711086240661 -0.99618783864922678 0 -13.05961976833939531 22.14419513369264791 -1.5854155397579377 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1" 
@@ -14933,10 +15123,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.73824212795445399 0.033337280675187486 0.025998897405514754"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1" 
 		"bindPose" " -type \"matrix\" 0.84664181234692781 0.52498947781269434 0.087084383053817382 0 0.5266050724382807 -0.85009469916077918 0.0051088297111874011 0 0.076712054256047046 0.041533729000646925 -0.99618783875688754 0 -13.6650964113337583 21.72936576951631693 -1.67543437023899533 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2" 
@@ -14945,10 +15137,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.51167547951162828 0.041443364581645881 0.011611926879952383"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2" 
 		"bindPose" " -type \"matrix\" 0.84664181234692781 0.52498947781269434 0.087084383053817382 0 0.52660507567145154 -0.85009469741026267 0.0051087877250094683 0 0.076712032061302768 0.041533764829459398 -0.99618783897220775 0 -14.07558720586852985 21.4259930287959115 -1.73134924694606807 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0" 
@@ -14957,10 +15151,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -1.87029313743996473 0.20063893345367134 0.70341543787884597"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0" 
 		"bindPose" " -type \"matrix\" 0.82045851046987373 0.5098014547579014 0.25874757839308099 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.22256444456029792 0.13206618680558682 -0.96593146253768869 0 -12.86891026034521879 22.09665444162459735 -1.96142158828556923 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1" 
@@ -14969,10 +15165,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.57186778345576661 0.04918853291420433 0.00096225169286201506"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1" 
 		"bindPose" " -type \"matrix\" 0.82045851046987373 0.5098014547579014 0.25874757839308099 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.22256444456029792 0.13206618680558682 -0.96593146253768869 0 -13.31198695627259632 21.7634275834685802 -2.11006916472976203 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2" 
 		"useObjectColor" " 1"
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2" 
@@ -14981,10 +15179,12 @@ createNode reference -n "cartoonCharacterRN";
 		"translate" " -type \"double3\" -0.41237670514455677 0.010165665920677469 -0.016985824396715588"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2" 
 		"bindPose" " -type \"matrix\" 0.82045851046987373 0.5098014547579014 0.25874757839308099 0 0.52660507082169494 -0.85009470003603693 0.0051088507042763636 0 0.22256444456029792 0.13206618680558682 -0.96593146253768869 0 -13.64875208287811859 21.54231230749828541 -2.20031156150020735 1"
 		
 		2 "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2" 
-		"lockInfluenceWeights" " 0"
+		"lockInfluenceWeights" " 1"
 		2 "|cartoonCharacter:GenericMesh5" "translateX" " 0"
 		2 "|cartoonCharacter:GenericMesh5" "translateY" " 0"
 		2 "|cartoonCharacter:GenericMesh5" "translateZ" " 0"
@@ -15119,1867 +15319,1983 @@ createNode reference -n "cartoonCharacterRN";
 		""
 		3 "cartoonCharacter:pSphere2_rotateY.output" "|cartoonCharacter:LeftEye.rotateY" 
 		""
+		3 "cartoonCharacter:pSphere2_translateX.output" "|cartoonCharacter:LeftEye.translateX" 
+		""
+		3 "cartoonCharacter:pSphere2_translateY.output" "|cartoonCharacter:LeftEye.translateY" 
+		""
+		3 "cartoonCharacter:pSphere2_translateZ.output" "|cartoonCharacter:LeftEye.translateZ" 
+		""
+		3 "cartoonCharacter:pSphere2_rotateZ.output" "|cartoonCharacter:LeftEye.rotateZ" 
+		""
 		3 "cartoonCharacter:pSphere3_rotateX.output" "|cartoonCharacter:RightEye.rotateX" 
 		""
 		3 "cartoonCharacter:pSphere3_rotateY.output" "|cartoonCharacter:RightEye.rotateY" 
 		""
+		3 "cartoonCharacter:pSphere3_translateX.output" "|cartoonCharacter:RightEye.translateX" 
+		""
+		3 "cartoonCharacter:pSphere3_translateY.output" "|cartoonCharacter:RightEye.translateY" 
+		""
+		3 "cartoonCharacter:pSphere3_translateZ.output" "|cartoonCharacter:RightEye.translateZ" 
+		""
+		3 "cartoonCharacter:pSphere3_rotateZ.output" "|cartoonCharacter:RightEye.rotateZ" 
+		""
 		3 "|cartoonCharacter:GenericMesh5|cartoonCharacter:GenericMesh5Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "cartoonCharacter:groupId108.groupId" "|cartoonCharacter:GenericMesh5|cartoonCharacter:GenericMesh5Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "cartoonCharacter:groupId110.groupId" "|cartoonCharacter:GenericMesh5|cartoonCharacter:GenericMesh5Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|cartoonCharacter:GenericMesh5|cartoonCharacter:GenericMesh5Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "cartoonCharacter:groupId108.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.message" 
-		"cartoonCharacterRN.placeHolderList[47]" ""
+		"cartoonCharacterRN.placeHolderList[971]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.message" 
-		"cartoonCharacterRN.placeHolderList[48]" ""
+		"cartoonCharacterRN.placeHolderList[972]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[49]" ""
+		"cartoonCharacterRN.placeHolderList[973]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[50]" ""
+		"cartoonCharacterRN.placeHolderList[974]" ""
 		5 4 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.inverseScale" 
-		"cartoonCharacterRN.placeHolderList[51]" ""
+		"cartoonCharacterRN.placeHolderList[975]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[52]" ""
+		"cartoonCharacterRN.placeHolderList[976]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[53]" ""
+		"cartoonCharacterRN.placeHolderList[977]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.scale" 
-		"cartoonCharacterRN.placeHolderList[54]" ""
+		"cartoonCharacterRN.placeHolderList[978]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.message" 
-		"cartoonCharacterRN.placeHolderList[55]" ""
+		"cartoonCharacterRN.placeHolderList[979]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.message" 
-		"cartoonCharacterRN.placeHolderList[56]" ""
+		"cartoonCharacterRN.placeHolderList[980]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[57]" ""
+		"cartoonCharacterRN.placeHolderList[981]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[58]" ""
+		"cartoonCharacterRN.placeHolderList[982]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[59]" ""
+		"cartoonCharacterRN.placeHolderList[983]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[60]" ""
+		"cartoonCharacterRN.placeHolderList[984]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J.message" 
-		"cartoonCharacterRN.placeHolderList[61]" ""
+		"cartoonCharacterRN.placeHolderList[985]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J.message" 
-		"cartoonCharacterRN.placeHolderList[62]" ""
+		"cartoonCharacterRN.placeHolderList[986]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[63]" ""
+		"cartoonCharacterRN.placeHolderList[987]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[64]" ""
+		"cartoonCharacterRN.placeHolderList[988]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[65]" ""
+		"cartoonCharacterRN.placeHolderList[989]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[66]" ""
+		"cartoonCharacterRN.placeHolderList[990]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J.message" 
-		"cartoonCharacterRN.placeHolderList[67]" ""
+		"cartoonCharacterRN.placeHolderList[991]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J.message" 
-		"cartoonCharacterRN.placeHolderList[68]" ""
+		"cartoonCharacterRN.placeHolderList[992]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[69]" ""
+		"cartoonCharacterRN.placeHolderList[993]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[70]" ""
+		"cartoonCharacterRN.placeHolderList[994]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[71]" ""
+		"cartoonCharacterRN.placeHolderList[995]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[72]" ""
+		"cartoonCharacterRN.placeHolderList[996]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J.message" 
-		"cartoonCharacterRN.placeHolderList[73]" ""
+		"cartoonCharacterRN.placeHolderList[997]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J.message" 
-		"cartoonCharacterRN.placeHolderList[74]" ""
+		"cartoonCharacterRN.placeHolderList[998]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[75]" ""
+		"cartoonCharacterRN.placeHolderList[999]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[76]" ""
+		"cartoonCharacterRN.placeHolderList[1000]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[77]" ""
+		"cartoonCharacterRN.placeHolderList[1001]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[78]" ""
+		"cartoonCharacterRN.placeHolderList[1002]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.message" 
-		"cartoonCharacterRN.placeHolderList[79]" ""
+		"cartoonCharacterRN.placeHolderList[1003]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.message" 
-		"cartoonCharacterRN.placeHolderList[80]" ""
-		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.message" 
-		"cartoonCharacterRN.placeHolderList[81]" ""
+		"cartoonCharacterRN.placeHolderList[1004]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[82]" ""
+		"cartoonCharacterRN.placeHolderList[1005]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[83]" ""
+		"cartoonCharacterRN.placeHolderList[1006]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[84]" ""
+		"cartoonCharacterRN.placeHolderList[1007]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Hips_J|cartoonCharacter:R_Hip_J|cartoonCharacter:R_Knee_J|cartoonCharacter:R_Ankle_J|cartoonCharacter:R_Ball_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[85]" ""
+		"cartoonCharacterRN.placeHolderList[1008]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[86]" ""
+		"cartoonCharacterRN.placeHolderList[1009]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[87]" ""
+		"cartoonCharacterRN.placeHolderList[1010]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[88]" ""
+		"cartoonCharacterRN.placeHolderList[1011]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0.bindPose" 
-		"cartoonCharacterRN.placeHolderList[89]" ""
+		"cartoonCharacterRN.placeHolderList[1012]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[90]" ""
+		"cartoonCharacterRN.placeHolderList[1013]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[91]" ""
+		"cartoonCharacterRN.placeHolderList[1014]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[92]" ""
+		"cartoonCharacterRN.placeHolderList[1015]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_.bindPose" 
-		"cartoonCharacterRN.placeHolderList[93]" ""
+		"cartoonCharacterRN.placeHolderList[1016]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_.message" 
-		"cartoonCharacterRN.placeHolderList[94]" ""
+		"cartoonCharacterRN.placeHolderList[1017]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_.message" 
-		"cartoonCharacterRN.placeHolderList[95]" ""
+		"cartoonCharacterRN.placeHolderList[1018]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[96]" ""
+		"cartoonCharacterRN.placeHolderList[1019]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[97]" ""
+		"cartoonCharacterRN.placeHolderList[1020]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.scale" 
-		"cartoonCharacterRN.placeHolderList[98]" ""
+		"cartoonCharacterRN.placeHolderList[1021]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[99]" ""
+		"cartoonCharacterRN.placeHolderList[1022]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[100]" ""
+		"cartoonCharacterRN.placeHolderList[1023]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[101]" ""
+		"cartoonCharacterRN.placeHolderList[1024]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[102]" ""
+		"cartoonCharacterRN.placeHolderList[1025]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[103]" ""
+		"cartoonCharacterRN.placeHolderList[1026]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[104]" ""
+		"cartoonCharacterRN.placeHolderList[1027]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[105]" ""
+		"cartoonCharacterRN.placeHolderList[1028]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[106]" ""
+		"cartoonCharacterRN.placeHolderList[1029]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[107]" ""
+		"cartoonCharacterRN.placeHolderList[1030]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0.bindPose" 
-		"cartoonCharacterRN.placeHolderList[108]" ""
+		"cartoonCharacterRN.placeHolderList[1031]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[109]" ""
+		"cartoonCharacterRN.placeHolderList[1032]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[110]" ""
+		"cartoonCharacterRN.placeHolderList[1033]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[111]" ""
+		"cartoonCharacterRN.placeHolderList[1034]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[112]" ""
+		"cartoonCharacterRN.placeHolderList[1035]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[113]" ""
+		"cartoonCharacterRN.placeHolderList[1036]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1.bindPose" 
-		"cartoonCharacterRN.placeHolderList[114]" ""
+		"cartoonCharacterRN.placeHolderList[1037]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[115]" ""
+		"cartoonCharacterRN.placeHolderList[1038]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[116]" ""
+		"cartoonCharacterRN.placeHolderList[1039]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.inverseScale" 
+		"cartoonCharacterRN.placeHolderList[1040]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.inverseScale" 
+		"cartoonCharacterRN.placeHolderList[1041]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.inverseScale" 
+		"cartoonCharacterRN.placeHolderList[1042]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.message" 
-		"cartoonCharacterRN.placeHolderList[117]" ""
+		"cartoonCharacterRN.placeHolderList[1043]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.message" 
-		"cartoonCharacterRN.placeHolderList[118]" ""
+		"cartoonCharacterRN.placeHolderList[1044]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[119]" ""
+		"cartoonCharacterRN.placeHolderList[1045]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.translate" 
+		"cartoonCharacterRN.placeHolderList[1046]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.translate" 
+		"cartoonCharacterRN.placeHolderList[1047]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.translate" 
+		"cartoonCharacterRN.placeHolderList[1048]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotate" 
+		"cartoonCharacterRN.placeHolderList[1049]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotate" 
+		"cartoonCharacterRN.placeHolderList[1050]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotate" 
+		"cartoonCharacterRN.placeHolderList[1051]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[120]" ""
+		"cartoonCharacterRN.placeHolderList[1052]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[121]" ""
+		"cartoonCharacterRN.placeHolderList[1053]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[122]" ""
+		"cartoonCharacterRN.placeHolderList[1054]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotatePivot" 
+		"cartoonCharacterRN.placeHolderList[1055]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotatePivot" 
+		"cartoonCharacterRN.placeHolderList[1056]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotatePivot" 
+		"cartoonCharacterRN.placeHolderList[1057]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotatePivotTranslate" 
+		"cartoonCharacterRN.placeHolderList[1058]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotatePivotTranslate" 
+		"cartoonCharacterRN.placeHolderList[1059]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotatePivotTranslate" 
+		"cartoonCharacterRN.placeHolderList[1060]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotateOrder" 
+		"cartoonCharacterRN.placeHolderList[1061]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotateOrder" 
+		"cartoonCharacterRN.placeHolderList[1062]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.rotateOrder" 
+		"cartoonCharacterRN.placeHolderList[1063]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.scale" 
+		"cartoonCharacterRN.placeHolderList[1064]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.scale" 
+		"cartoonCharacterRN.placeHolderList[1065]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.scale" 
+		"cartoonCharacterRN.placeHolderList[1066]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.scale" 
+		"cartoonCharacterRN.placeHolderList[1067]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.parentMatrix" 
+		"cartoonCharacterRN.placeHolderList[1068]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.parentMatrix" 
+		"cartoonCharacterRN.placeHolderList[1069]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.parentMatrix" 
+		"cartoonCharacterRN.placeHolderList[1070]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.parentMatrix" 
+		"cartoonCharacterRN.placeHolderList[1071]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.jointOrient" 
+		"cartoonCharacterRN.placeHolderList[1072]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.jointOrient" 
+		"cartoonCharacterRN.placeHolderList[1073]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.jointOrient" 
+		"cartoonCharacterRN.placeHolderList[1074]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.segmentScaleCompensate" 
+		"cartoonCharacterRN.placeHolderList[1075]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.segmentScaleCompensate" 
+		"cartoonCharacterRN.placeHolderList[1076]" ""
+		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:Neck_J_0|cartoonCharacter:Neck_J_1|cartoonCharacter:Head_J.segmentScaleCompensate" 
+		"cartoonCharacterRN.placeHolderList[1077]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J.message" 
-		"cartoonCharacterRN.placeHolderList[123]" ""
+		"cartoonCharacterRN.placeHolderList[1078]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J.message" 
-		"cartoonCharacterRN.placeHolderList[124]" ""
+		"cartoonCharacterRN.placeHolderList[1079]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[125]" ""
+		"cartoonCharacterRN.placeHolderList[1080]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[126]" ""
+		"cartoonCharacterRN.placeHolderList[1081]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[127]" ""
+		"cartoonCharacterRN.placeHolderList[1082]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[128]" ""
+		"cartoonCharacterRN.placeHolderList[1083]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J.message" 
-		"cartoonCharacterRN.placeHolderList[129]" ""
+		"cartoonCharacterRN.placeHolderList[1084]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J.message" 
-		"cartoonCharacterRN.placeHolderList[130]" ""
+		"cartoonCharacterRN.placeHolderList[1085]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[131]" ""
+		"cartoonCharacterRN.placeHolderList[1086]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[132]" ""
+		"cartoonCharacterRN.placeHolderList[1087]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[133]" ""
+		"cartoonCharacterRN.placeHolderList[1088]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[134]" ""
+		"cartoonCharacterRN.placeHolderList[1089]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J.message" 
-		"cartoonCharacterRN.placeHolderList[135]" ""
+		"cartoonCharacterRN.placeHolderList[1090]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J.message" 
-		"cartoonCharacterRN.placeHolderList[136]" ""
+		"cartoonCharacterRN.placeHolderList[1091]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[137]" ""
+		"cartoonCharacterRN.placeHolderList[1092]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[138]" ""
+		"cartoonCharacterRN.placeHolderList[1093]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[139]" ""
+		"cartoonCharacterRN.placeHolderList[1094]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[140]" ""
+		"cartoonCharacterRN.placeHolderList[1095]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J.message" 
-		"cartoonCharacterRN.placeHolderList[141]" ""
+		"cartoonCharacterRN.placeHolderList[1096]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J.message" 
-		"cartoonCharacterRN.placeHolderList[142]" ""
+		"cartoonCharacterRN.placeHolderList[1097]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[143]" ""
+		"cartoonCharacterRN.placeHolderList[1098]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J.bindPose" 
-		"cartoonCharacterRN.placeHolderList[144]" ""
+		"cartoonCharacterRN.placeHolderList[1099]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[145]" ""
+		"cartoonCharacterRN.placeHolderList[1100]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[146]" ""
+		"cartoonCharacterRN.placeHolderList[1101]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[147]" ""
+		"cartoonCharacterRN.placeHolderList[1102]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[148]" ""
+		"cartoonCharacterRN.placeHolderList[1103]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[149]" ""
+		"cartoonCharacterRN.placeHolderList[1104]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0.bindPose" 
-		"cartoonCharacterRN.placeHolderList[150]" ""
+		"cartoonCharacterRN.placeHolderList[1105]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[151]" ""
+		"cartoonCharacterRN.placeHolderList[1106]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[152]" ""
+		"cartoonCharacterRN.placeHolderList[1107]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[153]" ""
+		"cartoonCharacterRN.placeHolderList[1108]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[154]" ""
+		"cartoonCharacterRN.placeHolderList[1109]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[155]" ""
+		"cartoonCharacterRN.placeHolderList[1110]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1.bindPose" 
-		"cartoonCharacterRN.placeHolderList[156]" ""
+		"cartoonCharacterRN.placeHolderList[1111]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[157]" ""
+		"cartoonCharacterRN.placeHolderList[1112]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[158]" ""
+		"cartoonCharacterRN.placeHolderList[1113]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[159]" ""
+		"cartoonCharacterRN.placeHolderList[1114]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[160]" ""
+		"cartoonCharacterRN.placeHolderList[1115]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[161]" ""
+		"cartoonCharacterRN.placeHolderList[1116]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[162]" ""
+		"cartoonCharacterRN.placeHolderList[1117]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[163]" ""
+		"cartoonCharacterRN.placeHolderList[1118]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Thumb_J_0|cartoonCharacter:R_Thumb_J_1|cartoonCharacter:R_Middle_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[164]" ""
+		"cartoonCharacterRN.placeHolderList[1119]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[165]" ""
+		"cartoonCharacterRN.placeHolderList[1120]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[166]" ""
+		"cartoonCharacterRN.placeHolderList[1121]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[167]" ""
+		"cartoonCharacterRN.placeHolderList[1122]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0.bindPose" 
-		"cartoonCharacterRN.placeHolderList[168]" ""
+		"cartoonCharacterRN.placeHolderList[1123]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[169]" ""
+		"cartoonCharacterRN.placeHolderList[1124]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[170]" ""
+		"cartoonCharacterRN.placeHolderList[1125]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[171]" ""
+		"cartoonCharacterRN.placeHolderList[1126]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[172]" ""
+		"cartoonCharacterRN.placeHolderList[1127]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[173]" ""
+		"cartoonCharacterRN.placeHolderList[1128]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1.bindPose" 
-		"cartoonCharacterRN.placeHolderList[174]" ""
+		"cartoonCharacterRN.placeHolderList[1129]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[175]" ""
+		"cartoonCharacterRN.placeHolderList[1130]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[176]" ""
+		"cartoonCharacterRN.placeHolderList[1131]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[177]" ""
+		"cartoonCharacterRN.placeHolderList[1132]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[178]" ""
+		"cartoonCharacterRN.placeHolderList[1133]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[179]" ""
+		"cartoonCharacterRN.placeHolderList[1134]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[180]" ""
+		"cartoonCharacterRN.placeHolderList[1135]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[181]" ""
+		"cartoonCharacterRN.placeHolderList[1136]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Index_J_0|cartoonCharacter:R_Index_J_1|cartoonCharacter:R_Middle_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[182]" ""
+		"cartoonCharacterRN.placeHolderList[1137]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[183]" ""
+		"cartoonCharacterRN.placeHolderList[1138]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[184]" ""
+		"cartoonCharacterRN.placeHolderList[1139]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[185]" ""
+		"cartoonCharacterRN.placeHolderList[1140]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0.bindPose" 
-		"cartoonCharacterRN.placeHolderList[186]" ""
+		"cartoonCharacterRN.placeHolderList[1141]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[187]" ""
+		"cartoonCharacterRN.placeHolderList[1142]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[188]" ""
+		"cartoonCharacterRN.placeHolderList[1143]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[189]" ""
+		"cartoonCharacterRN.placeHolderList[1144]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[190]" ""
+		"cartoonCharacterRN.placeHolderList[1145]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[191]" ""
+		"cartoonCharacterRN.placeHolderList[1146]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1.bindPose" 
-		"cartoonCharacterRN.placeHolderList[192]" ""
+		"cartoonCharacterRN.placeHolderList[1147]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[193]" ""
+		"cartoonCharacterRN.placeHolderList[1148]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[194]" ""
+		"cartoonCharacterRN.placeHolderList[1149]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[195]" ""
+		"cartoonCharacterRN.placeHolderList[1150]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[196]" ""
+		"cartoonCharacterRN.placeHolderList[1151]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[197]" ""
+		"cartoonCharacterRN.placeHolderList[1152]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[198]" ""
+		"cartoonCharacterRN.placeHolderList[1153]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[199]" ""
+		"cartoonCharacterRN.placeHolderList[1154]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Middle_J_0|cartoonCharacter:R_Middle_J_1|cartoonCharacter:R_Middle_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[200]" ""
+		"cartoonCharacterRN.placeHolderList[1155]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[201]" ""
+		"cartoonCharacterRN.placeHolderList[1156]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[202]" ""
+		"cartoonCharacterRN.placeHolderList[1157]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[203]" ""
+		"cartoonCharacterRN.placeHolderList[1158]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[204]" ""
+		"cartoonCharacterRN.placeHolderList[1159]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[205]" ""
+		"cartoonCharacterRN.placeHolderList[1160]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[206]" ""
+		"cartoonCharacterRN.placeHolderList[1161]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[207]" ""
+		"cartoonCharacterRN.placeHolderList[1162]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[208]" ""
+		"cartoonCharacterRN.placeHolderList[1163]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[209]" ""
+		"cartoonCharacterRN.placeHolderList[1164]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1.bindPose" 
-		"cartoonCharacterRN.placeHolderList[210]" ""
+		"cartoonCharacterRN.placeHolderList[1165]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[211]" ""
+		"cartoonCharacterRN.placeHolderList[1166]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[212]" ""
+		"cartoonCharacterRN.placeHolderList[1167]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[213]" ""
+		"cartoonCharacterRN.placeHolderList[1168]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[214]" ""
+		"cartoonCharacterRN.placeHolderList[1169]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[215]" ""
+		"cartoonCharacterRN.placeHolderList[1170]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[216]" ""
+		"cartoonCharacterRN.placeHolderList[1171]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[217]" ""
+		"cartoonCharacterRN.placeHolderList[1172]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Ring_J_2|cartoonCharacter:R_Ring_J_1|cartoonCharacter:R_Ring_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[218]" ""
+		"cartoonCharacterRN.placeHolderList[1173]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[219]" ""
+		"cartoonCharacterRN.placeHolderList[1174]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0.message" 
-		"cartoonCharacterRN.placeHolderList[220]" ""
+		"cartoonCharacterRN.placeHolderList[1175]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[221]" ""
+		"cartoonCharacterRN.placeHolderList[1176]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0.bindPose" 
-		"cartoonCharacterRN.placeHolderList[222]" ""
+		"cartoonCharacterRN.placeHolderList[1177]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[223]" ""
+		"cartoonCharacterRN.placeHolderList[1178]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[224]" ""
+		"cartoonCharacterRN.placeHolderList[1179]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[225]" ""
+		"cartoonCharacterRN.placeHolderList[1180]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1.message" 
-		"cartoonCharacterRN.placeHolderList[226]" ""
+		"cartoonCharacterRN.placeHolderList[1181]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[227]" ""
+		"cartoonCharacterRN.placeHolderList[1182]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1.bindPose" 
-		"cartoonCharacterRN.placeHolderList[228]" ""
+		"cartoonCharacterRN.placeHolderList[1183]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[229]" ""
+		"cartoonCharacterRN.placeHolderList[1184]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[230]" ""
+		"cartoonCharacterRN.placeHolderList[1185]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[231]" ""
+		"cartoonCharacterRN.placeHolderList[1186]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2.message" 
-		"cartoonCharacterRN.placeHolderList[232]" ""
+		"cartoonCharacterRN.placeHolderList[1187]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2.lockInfluenceWeights" 
-		"cartoonCharacterRN.placeHolderList[233]" ""
+		"cartoonCharacterRN.placeHolderList[1188]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2.bindPose" 
-		"cartoonCharacterRN.placeHolderList[234]" ""
+		"cartoonCharacterRN.placeHolderList[1189]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2.worldMatrix" 
-		"cartoonCharacterRN.placeHolderList[235]" ""
+		"cartoonCharacterRN.placeHolderList[1190]" ""
 		5 3 "cartoonCharacterRN" "|Root_Joint|cartoonCharacter:Pelvis_J|cartoonCharacter:Spine_J_0|cartoonCharacter:Spine_J_|cartoonCharacter:Spine_J_2|cartoonCharacter:R_clav_J|cartoonCharacter:R_shold_J|cartoonCharacter:R_Elbow_J|cartoonCharacter:R_Wrist_J|cartoonCharacter:R_Pinky_J_0|cartoonCharacter:R_Pinky_J_1|cartoonCharacter:R_Pinky_J_2.objectColorRGB" 
-		"cartoonCharacterRN.placeHolderList[236]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:group1.message" "cartoonCharacterRN.placeHolderList[237]" 
+		"cartoonCharacterRN.placeHolderList[1191]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:group1.message" "cartoonCharacterRN.placeHolderList[1192]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:group2.message" "cartoonCharacterRN.placeHolderList[238]" 
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:group2.message" "cartoonCharacterRN.placeHolderList[1193]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:group3.message" "cartoonCharacterRN.placeHolderList[239]" 
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:group3.message" "cartoonCharacterRN.placeHolderList[1194]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.translate" "cartoonCharacterRN.placeHolderList[240]" 
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.translate" "cartoonCharacterRN.placeHolderList[1195]" 
 		""
-		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateX" "cartoonCharacterRN.placeHolderList[241]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.translateX" "cartoonCharacterRN.placeHolderList[1196]" 
 		""
-		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateY" "cartoonCharacterRN.placeHolderList[242]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.translateZ" "cartoonCharacterRN.placeHolderList[1197]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.blendAim1" "cartoonCharacterRN.placeHolderList[243]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.translateY" "cartoonCharacterRN.placeHolderList[1198]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.message" "cartoonCharacterRN.placeHolderList[244]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateX" "cartoonCharacterRN.placeHolderList[1199]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateOrder" "cartoonCharacterRN.placeHolderList[245]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateY" "cartoonCharacterRN.placeHolderList[1200]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateOrder" "cartoonCharacterRN.placeHolderList[246]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateZ" "cartoonCharacterRN.placeHolderList[1201]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.blendAim1" "cartoonCharacterRN.placeHolderList[1202]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.blendParent1" "cartoonCharacterRN.placeHolderList[1203]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.message" "cartoonCharacterRN.placeHolderList[1204]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1205]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1206]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1207]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1208]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.parentInverseMatrix" 
-		"cartoonCharacterRN.placeHolderList[247]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotatePivot" "cartoonCharacterRN.placeHolderList[248]" 
+		"cartoonCharacterRN.placeHolderList[1209]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.parentInverseMatrix" 
+		"cartoonCharacterRN.placeHolderList[1210]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotatePivot" "cartoonCharacterRN.placeHolderList[1211]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotatePivot" "cartoonCharacterRN.placeHolderList[1212]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotatePivotTranslate" 
-		"cartoonCharacterRN.placeHolderList[249]" ""
+		"cartoonCharacterRN.placeHolderList[1213]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye.rotatePivotTranslate" 
+		"cartoonCharacterRN.placeHolderList[1214]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:LeftEye|cartoonCharacter:LeftEyeShape.message" 
-		"cartoonCharacterRN.placeHolderList[250]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface2.message" "cartoonCharacterRN.placeHolderList[251]" 
+		"cartoonCharacterRN.placeHolderList[1215]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface2.message" "cartoonCharacterRN.placeHolderList[1216]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface2|cartoonCharacter:polySurfaceShape2.message" 
-		"cartoonCharacterRN.placeHolderList[252]" ""
+		"cartoonCharacterRN.placeHolderList[1217]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface2|cartoonCharacter:transform2.message" 
-		"cartoonCharacterRN.placeHolderList[253]" ""
+		"cartoonCharacterRN.placeHolderList[1218]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface2|cartoonCharacter:transform2|cartoonCharacter:polySurface2Shape.message" 
-		"cartoonCharacterRN.placeHolderList[254]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface3.message" "cartoonCharacterRN.placeHolderList[255]" 
+		"cartoonCharacterRN.placeHolderList[1219]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface3.message" "cartoonCharacterRN.placeHolderList[1220]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface3|cartoonCharacter:transform1.message" 
-		"cartoonCharacterRN.placeHolderList[256]" ""
+		"cartoonCharacterRN.placeHolderList[1221]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:polySurface3|cartoonCharacter:transform1|cartoonCharacter:polySurfaceShape3.message" 
-		"cartoonCharacterRN.placeHolderList[257]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.translate" "cartoonCharacterRN.placeHolderList[258]" 
+		"cartoonCharacterRN.placeHolderList[1222]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.translate" "cartoonCharacterRN.placeHolderList[1223]" 
 		""
-		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateX" "cartoonCharacterRN.placeHolderList[259]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.translateX" "cartoonCharacterRN.placeHolderList[1224]" 
 		""
-		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateY" "cartoonCharacterRN.placeHolderList[260]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.translateZ" "cartoonCharacterRN.placeHolderList[1225]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.blendAim1" "cartoonCharacterRN.placeHolderList[261]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.translateY" "cartoonCharacterRN.placeHolderList[1226]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.message" "cartoonCharacterRN.placeHolderList[262]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateX" "cartoonCharacterRN.placeHolderList[1227]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateOrder" "cartoonCharacterRN.placeHolderList[263]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateY" "cartoonCharacterRN.placeHolderList[1228]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateOrder" "cartoonCharacterRN.placeHolderList[264]" 
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateZ" "cartoonCharacterRN.placeHolderList[1229]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.blendAim1" "cartoonCharacterRN.placeHolderList[1230]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.blendParent1" "cartoonCharacterRN.placeHolderList[1231]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.message" "cartoonCharacterRN.placeHolderList[1232]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1233]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1234]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1235]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotateOrder" "cartoonCharacterRN.placeHolderList[1236]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.parentInverseMatrix" 
-		"cartoonCharacterRN.placeHolderList[265]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotatePivot" "cartoonCharacterRN.placeHolderList[266]" 
+		"cartoonCharacterRN.placeHolderList[1237]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.parentInverseMatrix" 
+		"cartoonCharacterRN.placeHolderList[1238]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotatePivot" "cartoonCharacterRN.placeHolderList[1239]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotatePivot" "cartoonCharacterRN.placeHolderList[1240]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotatePivotTranslate" 
-		"cartoonCharacterRN.placeHolderList[267]" ""
+		"cartoonCharacterRN.placeHolderList[1241]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye.rotatePivotTranslate" 
+		"cartoonCharacterRN.placeHolderList[1242]" ""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:RightEye|cartoonCharacter:RightEyeShape.message" 
-		"cartoonCharacterRN.placeHolderList[268]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:GenericMesh5.message" "cartoonCharacterRN.placeHolderList[269]" 
+		"cartoonCharacterRN.placeHolderList[1243]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:GenericMesh5.message" "cartoonCharacterRN.placeHolderList[1244]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:GenericMesh5|cartoonCharacter:GenericMesh5Shape.message" 
-		"cartoonCharacterRN.placeHolderList[270]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:mug1.message" "cartoonCharacterRN.placeHolderList[271]" 
+		"cartoonCharacterRN.placeHolderList[1245]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:mug1.message" "cartoonCharacterRN.placeHolderList[1246]" 
 		""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:mug1|cartoonCharacter:mug1Shape.message" 
-		"cartoonCharacterRN.placeHolderList[272]" ""
-		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.message" "cartoonCharacterRN.placeHolderList[273]" 
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.message" "cartoonCharacterRN.placeHolderList[1247]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.translateZ" "cartoonCharacterRN.placeHolderList[1248]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.translateX" "cartoonCharacterRN.placeHolderList[1249]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.translateY" "cartoonCharacterRN.placeHolderList[1250]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.rotateZ" "cartoonCharacterRN.placeHolderList[1251]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.rotateX" "cartoonCharacterRN.placeHolderList[1252]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.rotateY" "cartoonCharacterRN.placeHolderList[1253]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.rotateOrder" "cartoonCharacterRN.placeHolderList[1254]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.parentInverseMatrix" 
+		"cartoonCharacterRN.placeHolderList[1255]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.parentInverseMatrix" 
+		"cartoonCharacterRN.placeHolderList[1256]" ""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.rotatePivot" "cartoonCharacterRN.placeHolderList[1257]" 
+		""
+		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses.rotatePivotTranslate" 
+		"cartoonCharacterRN.placeHolderList[1258]" ""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.scaleX" "cartoonCharacterRN.placeHolderList[1259]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.scaleY" "cartoonCharacterRN.placeHolderList[1260]" 
+		""
+		5 4 "cartoonCharacterRN" "|cartoonCharacter:glasses.scaleZ" "cartoonCharacterRN.placeHolderList[1261]" 
 		""
 		5 3 "cartoonCharacterRN" "|cartoonCharacter:glasses|cartoonCharacter:glassesShape.message" 
-		"cartoonCharacterRN.placeHolderList[274]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:layerManager.message" "cartoonCharacterRN.placeHolderList[275]" 
+		"cartoonCharacterRN.placeHolderList[1262]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:layerManager.message" "cartoonCharacterRN.placeHolderList[1263]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:defaultLayer.message" "cartoonCharacterRN.placeHolderList[276]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:defaultLayer.message" "cartoonCharacterRN.placeHolderList[1264]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:renderLayerManager.message" 
-		"cartoonCharacterRN.placeHolderList[277]" ""
+		"cartoonCharacterRN.placeHolderList[1265]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.message" 
-		"cartoonCharacterRN.placeHolderList[278]" ""
+		"cartoonCharacterRN.placeHolderList[1266]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__materialInfo11.message" 
-		"cartoonCharacterRN.placeHolderList[279]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_003.message" "cartoonCharacterRN.placeHolderList[280]" 
+		"cartoonCharacterRN.placeHolderList[1267]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_003.message" "cartoonCharacterRN.placeHolderList[1268]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__GenericMeshv3a_lambert8SG.message" 
-		"cartoonCharacterRN.placeHolderList[281]" ""
+		"cartoonCharacterRN.placeHolderList[1269]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__materialInfo5.message" 
-		"cartoonCharacterRN.placeHolderList[282]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_001.message" "cartoonCharacterRN.placeHolderList[283]" 
+		"cartoonCharacterRN.placeHolderList[1270]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_001.message" "cartoonCharacterRN.placeHolderList[1271]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:Green.message" "cartoonCharacterRN.placeHolderList[284]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:Green.message" "cartoonCharacterRN.placeHolderList[1272]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.message" 
-		"cartoonCharacterRN.placeHolderList[285]" ""
+		"cartoonCharacterRN.placeHolderList[1273]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__materialInfo9.message" 
-		"cartoonCharacterRN.placeHolderList[286]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_002.message" "cartoonCharacterRN.placeHolderList[287]" 
+		"cartoonCharacterRN.placeHolderList[1274]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_002.message" "cartoonCharacterRN.placeHolderList[1275]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__GenericMeshv3a_lambert6SG.message" 
-		"cartoonCharacterRN.placeHolderList[288]" ""
+		"cartoonCharacterRN.placeHolderList[1276]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__materialInfo7.message" 
-		"cartoonCharacterRN.placeHolderList[289]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:CYLINDER_001.message" "cartoonCharacterRN.placeHolderList[290]" 
+		"cartoonCharacterRN.placeHolderList[1277]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:CYLINDER_001.message" "cartoonCharacterRN.placeHolderList[1278]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh2_lambert5SG.message" 
-		"cartoonCharacterRN.placeHolderList[291]" ""
+		"cartoonCharacterRN.placeHolderList[1279]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:AR__materialInfo2.message" 
-		"cartoonCharacterRN.placeHolderList[292]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_005.message" "cartoonCharacterRN.placeHolderList[293]" 
+		"cartoonCharacterRN.placeHolderList[1280]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_005.message" "cartoonCharacterRN.placeHolderList[1281]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:PS_1:Quadra_defaultMat.message" 
-		"cartoonCharacterRN.placeHolderList[294]" ""
+		"cartoonCharacterRN.placeHolderList[1282]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:PS_1:Quadra_materialInfo1.message" 
-		"cartoonCharacterRN.placeHolderList[295]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_004.message" "cartoonCharacterRN.placeHolderList[296]" 
+		"cartoonCharacterRN.placeHolderList[1283]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:PATCH_004.message" "cartoonCharacterRN.placeHolderList[1284]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:uiConfigurationScriptNode.message" 
-		"cartoonCharacterRN.placeHolderList[297]" ""
+		"cartoonCharacterRN.placeHolderList[1285]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:sceneConfigurationScriptNode.message" 
-		"cartoonCharacterRN.placeHolderList[298]" ""
+		"cartoonCharacterRN.placeHolderList[1286]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh_V10_1:cameraView1.message" 
-		"cartoonCharacterRN.placeHolderList[299]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh.message" "cartoonCharacterRN.placeHolderList[300]" 
+		"cartoonCharacterRN.placeHolderList[1287]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:GenericMesh.message" "cartoonCharacterRN.placeHolderList[1288]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:CYLINDER_002.message" "cartoonCharacterRN.placeHolderList[301]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:CYLINDER_002.message" "cartoonCharacterRN.placeHolderList[1289]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert2SG.message" "cartoonCharacterRN.placeHolderList[302]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert2SG.message" "cartoonCharacterRN.placeHolderList[1290]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo1.message" "cartoonCharacterRN.placeHolderList[303]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo1.message" "cartoonCharacterRN.placeHolderList[1291]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_001.message" "cartoonCharacterRN.placeHolderList[304]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_001.message" "cartoonCharacterRN.placeHolderList[1292]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert3SG.message" "cartoonCharacterRN.placeHolderList[305]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert3SG.message" "cartoonCharacterRN.placeHolderList[1293]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo2.message" "cartoonCharacterRN.placeHolderList[306]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo2.message" "cartoonCharacterRN.placeHolderList[1294]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_002.message" "cartoonCharacterRN.placeHolderList[307]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_002.message" "cartoonCharacterRN.placeHolderList[1295]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert4SG.message" "cartoonCharacterRN.placeHolderList[308]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert4SG.message" "cartoonCharacterRN.placeHolderList[1296]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo3.message" "cartoonCharacterRN.placeHolderList[309]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo3.message" "cartoonCharacterRN.placeHolderList[1297]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_003.message" "cartoonCharacterRN.placeHolderList[310]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_003.message" "cartoonCharacterRN.placeHolderList[1298]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert5SG.message" "cartoonCharacterRN.placeHolderList[311]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert5SG.message" "cartoonCharacterRN.placeHolderList[1299]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo4.message" "cartoonCharacterRN.placeHolderList[312]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_004.message" "cartoonCharacterRN.placeHolderList[1300]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:EX_004.message" "cartoonCharacterRN.placeHolderList[313]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert6SG.message" "cartoonCharacterRN.placeHolderList[1301]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert6SG.message" "cartoonCharacterRN.placeHolderList[314]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo5.message" "cartoonCharacterRN.placeHolderList[1302]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo5.message" "cartoonCharacterRN.placeHolderList[315]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:CUBE_001.message" "cartoonCharacterRN.placeHolderList[1303]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:CUBE_001.message" "cartoonCharacterRN.placeHolderList[316]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert7SG.message" "cartoonCharacterRN.placeHolderList[1304]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert7SG.message" "cartoonCharacterRN.placeHolderList[317]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo6.message" "cartoonCharacterRN.placeHolderList[1305]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo6.message" "cartoonCharacterRN.placeHolderList[318]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:CUBE_002.message" "cartoonCharacterRN.placeHolderList[1306]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:CUBE_002.message" "cartoonCharacterRN.placeHolderList[319]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert8SG.message" "cartoonCharacterRN.placeHolderList[1307]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert8SG.message" "cartoonCharacterRN.placeHolderList[320]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo7.message" "cartoonCharacterRN.placeHolderList[1308]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo7.message" "cartoonCharacterRN.placeHolderList[321]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:CUBE_003.message" "cartoonCharacterRN.placeHolderList[1309]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:CUBE_003.message" "cartoonCharacterRN.placeHolderList[322]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert9SG.message" "cartoonCharacterRN.placeHolderList[1310]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert9SG.message" "cartoonCharacterRN.placeHolderList[323]" 
-		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo8.message" "cartoonCharacterRN.placeHolderList[324]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo8.message" "cartoonCharacterRN.placeHolderList[1311]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:shapeEditorManager.message" 
-		"cartoonCharacterRN.placeHolderList[325]" ""
+		"cartoonCharacterRN.placeHolderList[1312]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:poseInterpolatorManager.message" 
-		"cartoonCharacterRN.placeHolderList[326]" ""
+		"cartoonCharacterRN.placeHolderList[1313]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge1.message" 
-		"cartoonCharacterRN.placeHolderList[327]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert1.message" "cartoonCharacterRN.placeHolderList[328]" 
+		"cartoonCharacterRN.placeHolderList[1314]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert1.message" "cartoonCharacterRN.placeHolderList[1315]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak1.message" "cartoonCharacterRN.placeHolderList[329]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak1.message" "cartoonCharacterRN.placeHolderList[1316]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge2.message" 
-		"cartoonCharacterRN.placeHolderList[330]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert2.message" "cartoonCharacterRN.placeHolderList[331]" 
+		"cartoonCharacterRN.placeHolderList[1317]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert2.message" "cartoonCharacterRN.placeHolderList[1318]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak2.message" "cartoonCharacterRN.placeHolderList[332]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak2.message" "cartoonCharacterRN.placeHolderList[1319]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge3.message" 
-		"cartoonCharacterRN.placeHolderList[333]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert3.message" "cartoonCharacterRN.placeHolderList[334]" 
+		"cartoonCharacterRN.placeHolderList[1320]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert3.message" "cartoonCharacterRN.placeHolderList[1321]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak3.message" "cartoonCharacterRN.placeHolderList[335]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak3.message" "cartoonCharacterRN.placeHolderList[1322]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge4.message" 
-		"cartoonCharacterRN.placeHolderList[336]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak4.message" "cartoonCharacterRN.placeHolderList[337]" 
+		"cartoonCharacterRN.placeHolderList[1323]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak4.message" "cartoonCharacterRN.placeHolderList[1324]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert4.message" "cartoonCharacterRN.placeHolderList[338]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert4.message" "cartoonCharacterRN.placeHolderList[1325]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak5.message" "cartoonCharacterRN.placeHolderList[339]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak5.message" "cartoonCharacterRN.placeHolderList[1326]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge5.message" 
-		"cartoonCharacterRN.placeHolderList[340]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert5.message" "cartoonCharacterRN.placeHolderList[341]" 
+		"cartoonCharacterRN.placeHolderList[1327]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert5.message" "cartoonCharacterRN.placeHolderList[1328]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak6.message" "cartoonCharacterRN.placeHolderList[342]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak6.message" "cartoonCharacterRN.placeHolderList[1329]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge6.message" 
-		"cartoonCharacterRN.placeHolderList[343]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert6.message" "cartoonCharacterRN.placeHolderList[344]" 
+		"cartoonCharacterRN.placeHolderList[1330]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert6.message" "cartoonCharacterRN.placeHolderList[1331]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak7.message" "cartoonCharacterRN.placeHolderList[345]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak7.message" "cartoonCharacterRN.placeHolderList[1332]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert7.message" "cartoonCharacterRN.placeHolderList[346]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert7.message" "cartoonCharacterRN.placeHolderList[1333]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak8.message" "cartoonCharacterRN.placeHolderList[347]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak8.message" "cartoonCharacterRN.placeHolderList[1334]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert8.message" "cartoonCharacterRN.placeHolderList[348]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert8.message" "cartoonCharacterRN.placeHolderList[1335]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak9.message" "cartoonCharacterRN.placeHolderList[349]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak9.message" "cartoonCharacterRN.placeHolderList[1336]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge7.message" 
-		"cartoonCharacterRN.placeHolderList[350]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak10.message" "cartoonCharacterRN.placeHolderList[351]" 
+		"cartoonCharacterRN.placeHolderList[1337]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak10.message" "cartoonCharacterRN.placeHolderList[1338]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert9.message" "cartoonCharacterRN.placeHolderList[352]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert9.message" "cartoonCharacterRN.placeHolderList[1339]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak11.message" "cartoonCharacterRN.placeHolderList[353]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak11.message" "cartoonCharacterRN.placeHolderList[1340]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge8.message" 
-		"cartoonCharacterRN.placeHolderList[354]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak12.message" "cartoonCharacterRN.placeHolderList[355]" 
+		"cartoonCharacterRN.placeHolderList[1341]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak12.message" "cartoonCharacterRN.placeHolderList[1342]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert10.message" 
-		"cartoonCharacterRN.placeHolderList[356]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak13.message" "cartoonCharacterRN.placeHolderList[357]" 
+		"cartoonCharacterRN.placeHolderList[1343]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak13.message" "cartoonCharacterRN.placeHolderList[1344]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge9.message" 
-		"cartoonCharacterRN.placeHolderList[358]" ""
+		"cartoonCharacterRN.placeHolderList[1345]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert11.message" 
-		"cartoonCharacterRN.placeHolderList[359]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak14.message" "cartoonCharacterRN.placeHolderList[360]" 
+		"cartoonCharacterRN.placeHolderList[1346]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak14.message" "cartoonCharacterRN.placeHolderList[1347]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert12.message" 
-		"cartoonCharacterRN.placeHolderList[361]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak15.message" "cartoonCharacterRN.placeHolderList[362]" 
+		"cartoonCharacterRN.placeHolderList[1348]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak15.message" "cartoonCharacterRN.placeHolderList[1349]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge10.message" 
-		"cartoonCharacterRN.placeHolderList[363]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak16.message" "cartoonCharacterRN.placeHolderList[364]" 
+		"cartoonCharacterRN.placeHolderList[1350]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak16.message" "cartoonCharacterRN.placeHolderList[1351]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert13.message" 
-		"cartoonCharacterRN.placeHolderList[365]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak17.message" "cartoonCharacterRN.placeHolderList[366]" 
+		"cartoonCharacterRN.placeHolderList[1352]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak17.message" "cartoonCharacterRN.placeHolderList[1353]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent1.message" 
-		"cartoonCharacterRN.placeHolderList[367]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak18.message" "cartoonCharacterRN.placeHolderList[368]" 
+		"cartoonCharacterRN.placeHolderList[1354]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak18.message" "cartoonCharacterRN.placeHolderList[1355]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent2.message" 
-		"cartoonCharacterRN.placeHolderList[369]" ""
+		"cartoonCharacterRN.placeHolderList[1356]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge11.message" 
-		"cartoonCharacterRN.placeHolderList[370]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert14.message" 
-		"cartoonCharacterRN.placeHolderList[371]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak19.message" "cartoonCharacterRN.placeHolderList[372]" 
+		"cartoonCharacterRN.placeHolderList[1357]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak19.message" "cartoonCharacterRN.placeHolderList[1358]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge12.message" 
-		"cartoonCharacterRN.placeHolderList[373]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak20.message" "cartoonCharacterRN.placeHolderList[374]" 
+		"cartoonCharacterRN.placeHolderList[1359]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak20.message" "cartoonCharacterRN.placeHolderList[1360]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert15.message" 
-		"cartoonCharacterRN.placeHolderList[375]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak21.message" "cartoonCharacterRN.placeHolderList[376]" 
+		"cartoonCharacterRN.placeHolderList[1361]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak21.message" "cartoonCharacterRN.placeHolderList[1362]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge13.message" 
-		"cartoonCharacterRN.placeHolderList[377]" ""
+		"cartoonCharacterRN.placeHolderList[1363]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert16.message" 
-		"cartoonCharacterRN.placeHolderList[378]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak22.message" "cartoonCharacterRN.placeHolderList[379]" 
+		"cartoonCharacterRN.placeHolderList[1364]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak22.message" "cartoonCharacterRN.placeHolderList[1365]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge14.message" 
-		"cartoonCharacterRN.placeHolderList[380]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak23.message" "cartoonCharacterRN.placeHolderList[381]" 
+		"cartoonCharacterRN.placeHolderList[1366]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak23.message" "cartoonCharacterRN.placeHolderList[1367]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert17.message" 
-		"cartoonCharacterRN.placeHolderList[382]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak24.message" "cartoonCharacterRN.placeHolderList[383]" 
+		"cartoonCharacterRN.placeHolderList[1368]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak24.message" "cartoonCharacterRN.placeHolderList[1369]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge15.message" 
-		"cartoonCharacterRN.placeHolderList[384]" ""
+		"cartoonCharacterRN.placeHolderList[1370]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert18.message" 
-		"cartoonCharacterRN.placeHolderList[385]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak25.message" "cartoonCharacterRN.placeHolderList[386]" 
+		"cartoonCharacterRN.placeHolderList[1371]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak25.message" "cartoonCharacterRN.placeHolderList[1372]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge16.message" 
-		"cartoonCharacterRN.placeHolderList[387]" ""
+		"cartoonCharacterRN.placeHolderList[1373]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert19.message" 
-		"cartoonCharacterRN.placeHolderList[388]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak26.message" "cartoonCharacterRN.placeHolderList[389]" 
+		"cartoonCharacterRN.placeHolderList[1374]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak26.message" "cartoonCharacterRN.placeHolderList[1375]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert20.message" 
-		"cartoonCharacterRN.placeHolderList[390]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak27.message" "cartoonCharacterRN.placeHolderList[391]" 
+		"cartoonCharacterRN.placeHolderList[1376]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak27.message" "cartoonCharacterRN.placeHolderList[1377]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge17.message" 
-		"cartoonCharacterRN.placeHolderList[392]" ""
+		"cartoonCharacterRN.placeHolderList[1378]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert21.message" 
-		"cartoonCharacterRN.placeHolderList[393]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak28.message" "cartoonCharacterRN.placeHolderList[394]" 
+		"cartoonCharacterRN.placeHolderList[1379]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak28.message" "cartoonCharacterRN.placeHolderList[1380]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyCreateFace1.message" 
-		"cartoonCharacterRN.placeHolderList[395]" ""
+		"cartoonCharacterRN.placeHolderList[1381]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex1.message" 
-		"cartoonCharacterRN.placeHolderList[396]" ""
+		"cartoonCharacterRN.placeHolderList[1382]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex2.message" 
-		"cartoonCharacterRN.placeHolderList[397]" ""
+		"cartoonCharacterRN.placeHolderList[1383]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex3.message" 
-		"cartoonCharacterRN.placeHolderList[398]" ""
+		"cartoonCharacterRN.placeHolderList[1384]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex4.message" 
-		"cartoonCharacterRN.placeHolderList[399]" ""
+		"cartoonCharacterRN.placeHolderList[1385]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex5.message" 
-		"cartoonCharacterRN.placeHolderList[400]" ""
+		"cartoonCharacterRN.placeHolderList[1386]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex6.message" 
-		"cartoonCharacterRN.placeHolderList[401]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak29.message" "cartoonCharacterRN.placeHolderList[402]" 
+		"cartoonCharacterRN.placeHolderList[1387]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak29.message" "cartoonCharacterRN.placeHolderList[1388]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex7.message" 
-		"cartoonCharacterRN.placeHolderList[403]" ""
+		"cartoonCharacterRN.placeHolderList[1389]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex8.message" 
-		"cartoonCharacterRN.placeHolderList[404]" ""
+		"cartoonCharacterRN.placeHolderList[1390]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex9.message" 
-		"cartoonCharacterRN.placeHolderList[405]" ""
+		"cartoonCharacterRN.placeHolderList[1391]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex10.message" 
-		"cartoonCharacterRN.placeHolderList[406]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak30.message" "cartoonCharacterRN.placeHolderList[407]" 
+		"cartoonCharacterRN.placeHolderList[1392]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak30.message" "cartoonCharacterRN.placeHolderList[1393]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex11.message" 
-		"cartoonCharacterRN.placeHolderList[408]" ""
+		"cartoonCharacterRN.placeHolderList[1394]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex12.message" 
-		"cartoonCharacterRN.placeHolderList[409]" ""
+		"cartoonCharacterRN.placeHolderList[1395]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex13.message" 
-		"cartoonCharacterRN.placeHolderList[410]" ""
+		"cartoonCharacterRN.placeHolderList[1396]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex14.message" 
-		"cartoonCharacterRN.placeHolderList[411]" ""
+		"cartoonCharacterRN.placeHolderList[1397]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex15.message" 
-		"cartoonCharacterRN.placeHolderList[412]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak31.message" "cartoonCharacterRN.placeHolderList[413]" 
+		"cartoonCharacterRN.placeHolderList[1398]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak31.message" "cartoonCharacterRN.placeHolderList[1399]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent3.message" 
-		"cartoonCharacterRN.placeHolderList[414]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak32.message" "cartoonCharacterRN.placeHolderList[415]" 
+		"cartoonCharacterRN.placeHolderList[1400]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak32.message" "cartoonCharacterRN.placeHolderList[1401]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent4.message" 
-		"cartoonCharacterRN.placeHolderList[416]" ""
+		"cartoonCharacterRN.placeHolderList[1402]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex16.message" 
-		"cartoonCharacterRN.placeHolderList[417]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak33.message" "cartoonCharacterRN.placeHolderList[418]" 
+		"cartoonCharacterRN.placeHolderList[1403]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak33.message" "cartoonCharacterRN.placeHolderList[1404]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex17.message" 
-		"cartoonCharacterRN.placeHolderList[419]" ""
+		"cartoonCharacterRN.placeHolderList[1405]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert22.message" 
-		"cartoonCharacterRN.placeHolderList[420]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak34.message" "cartoonCharacterRN.placeHolderList[421]" 
+		"cartoonCharacterRN.placeHolderList[1406]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak34.message" "cartoonCharacterRN.placeHolderList[1407]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge18.message" 
-		"cartoonCharacterRN.placeHolderList[422]" ""
+		"cartoonCharacterRN.placeHolderList[1408]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge19.message" 
-		"cartoonCharacterRN.placeHolderList[423]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak35.message" "cartoonCharacterRN.placeHolderList[424]" 
+		"cartoonCharacterRN.placeHolderList[1409]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak35.message" "cartoonCharacterRN.placeHolderList[1410]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert23.message" 
-		"cartoonCharacterRN.placeHolderList[425]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak36.message" "cartoonCharacterRN.placeHolderList[426]" 
+		"cartoonCharacterRN.placeHolderList[1411]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak36.message" "cartoonCharacterRN.placeHolderList[1412]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak37.message" "cartoonCharacterRN.placeHolderList[427]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak37.message" "cartoonCharacterRN.placeHolderList[1413]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit1.message" "cartoonCharacterRN.placeHolderList[428]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit1.message" "cartoonCharacterRN.placeHolderList[1414]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak38.message" "cartoonCharacterRN.placeHolderList[429]" 
-		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit2.message" "cartoonCharacterRN.placeHolderList[430]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit2.message" "cartoonCharacterRN.placeHolderList[1415]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge20.message" 
-		"cartoonCharacterRN.placeHolderList[431]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak39.message" "cartoonCharacterRN.placeHolderList[432]" 
+		"cartoonCharacterRN.placeHolderList[1416]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak39.message" "cartoonCharacterRN.placeHolderList[1417]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge21.message" 
-		"cartoonCharacterRN.placeHolderList[433]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak40.message" "cartoonCharacterRN.placeHolderList[434]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1418]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert24.message" 
-		"cartoonCharacterRN.placeHolderList[435]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak41.message" "cartoonCharacterRN.placeHolderList[436]" 
+		"cartoonCharacterRN.placeHolderList[1419]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak41.message" "cartoonCharacterRN.placeHolderList[1420]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge22.message" 
-		"cartoonCharacterRN.placeHolderList[437]" ""
+		"cartoonCharacterRN.placeHolderList[1421]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert25.message" 
-		"cartoonCharacterRN.placeHolderList[438]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak42.message" "cartoonCharacterRN.placeHolderList[439]" 
+		"cartoonCharacterRN.placeHolderList[1422]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak42.message" "cartoonCharacterRN.placeHolderList[1423]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak43.message" "cartoonCharacterRN.placeHolderList[440]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak43.message" "cartoonCharacterRN.placeHolderList[1424]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent5.message" 
-		"cartoonCharacterRN.placeHolderList[441]" ""
+		"cartoonCharacterRN.placeHolderList[1425]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent6.message" 
-		"cartoonCharacterRN.placeHolderList[442]" ""
+		"cartoonCharacterRN.placeHolderList[1426]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent7.message" 
-		"cartoonCharacterRN.placeHolderList[443]" ""
+		"cartoonCharacterRN.placeHolderList[1427]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent8.message" 
-		"cartoonCharacterRN.placeHolderList[444]" ""
+		"cartoonCharacterRN.placeHolderList[1428]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert26.message" 
-		"cartoonCharacterRN.placeHolderList[445]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak44.message" "cartoonCharacterRN.placeHolderList[446]" 
+		"cartoonCharacterRN.placeHolderList[1429]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak44.message" "cartoonCharacterRN.placeHolderList[1430]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert27.message" 
-		"cartoonCharacterRN.placeHolderList[447]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak45.message" "cartoonCharacterRN.placeHolderList[448]" 
+		"cartoonCharacterRN.placeHolderList[1431]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak45.message" "cartoonCharacterRN.placeHolderList[1432]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert28.message" 
-		"cartoonCharacterRN.placeHolderList[449]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak46.message" "cartoonCharacterRN.placeHolderList[450]" 
+		"cartoonCharacterRN.placeHolderList[1433]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak46.message" "cartoonCharacterRN.placeHolderList[1434]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent9.message" 
-		"cartoonCharacterRN.placeHolderList[451]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak47.message" "cartoonCharacterRN.placeHolderList[452]" 
+		"cartoonCharacterRN.placeHolderList[1435]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak47.message" "cartoonCharacterRN.placeHolderList[1436]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent10.message" 
-		"cartoonCharacterRN.placeHolderList[453]" ""
+		"cartoonCharacterRN.placeHolderList[1437]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge23.message" 
-		"cartoonCharacterRN.placeHolderList[454]" ""
+		"cartoonCharacterRN.placeHolderList[1438]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge24.message" 
-		"cartoonCharacterRN.placeHolderList[455]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak48.message" "cartoonCharacterRN.placeHolderList[456]" 
+		"cartoonCharacterRN.placeHolderList[1439]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak48.message" "cartoonCharacterRN.placeHolderList[1440]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak49.message" "cartoonCharacterRN.placeHolderList[457]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak49.message" "cartoonCharacterRN.placeHolderList[1441]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent11.message" 
-		"cartoonCharacterRN.placeHolderList[458]" ""
+		"cartoonCharacterRN.placeHolderList[1442]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge25.message" 
-		"cartoonCharacterRN.placeHolderList[459]" ""
+		"cartoonCharacterRN.placeHolderList[1443]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert29.message" 
-		"cartoonCharacterRN.placeHolderList[460]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak50.message" "cartoonCharacterRN.placeHolderList[461]" 
+		"cartoonCharacterRN.placeHolderList[1444]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak50.message" "cartoonCharacterRN.placeHolderList[1445]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge26.message" 
-		"cartoonCharacterRN.placeHolderList[462]" ""
+		"cartoonCharacterRN.placeHolderList[1446]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert30.message" 
-		"cartoonCharacterRN.placeHolderList[463]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak51.message" "cartoonCharacterRN.placeHolderList[464]" 
+		"cartoonCharacterRN.placeHolderList[1447]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak51.message" "cartoonCharacterRN.placeHolderList[1448]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert31.message" 
-		"cartoonCharacterRN.placeHolderList[465]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak52.message" "cartoonCharacterRN.placeHolderList[466]" 
+		"cartoonCharacterRN.placeHolderList[1449]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak52.message" "cartoonCharacterRN.placeHolderList[1450]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert32.message" 
-		"cartoonCharacterRN.placeHolderList[467]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak53.message" "cartoonCharacterRN.placeHolderList[468]" 
+		"cartoonCharacterRN.placeHolderList[1451]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak53.message" "cartoonCharacterRN.placeHolderList[1452]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge27.message" 
-		"cartoonCharacterRN.placeHolderList[469]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak54.message" "cartoonCharacterRN.placeHolderList[470]" 
+		"cartoonCharacterRN.placeHolderList[1453]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak54.message" "cartoonCharacterRN.placeHolderList[1454]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert33.message" 
-		"cartoonCharacterRN.placeHolderList[471]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak55.message" "cartoonCharacterRN.placeHolderList[472]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1455]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge28.message" 
-		"cartoonCharacterRN.placeHolderList[473]" ""
+		"cartoonCharacterRN.placeHolderList[1456]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert34.message" 
-		"cartoonCharacterRN.placeHolderList[474]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak56.message" "cartoonCharacterRN.placeHolderList[475]" 
+		"cartoonCharacterRN.placeHolderList[1457]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak56.message" "cartoonCharacterRN.placeHolderList[1458]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert35.message" 
-		"cartoonCharacterRN.placeHolderList[476]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak57.message" "cartoonCharacterRN.placeHolderList[477]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak57.message" "cartoonCharacterRN.placeHolderList[1459]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge29.message" 
-		"cartoonCharacterRN.placeHolderList[478]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak58.message" "cartoonCharacterRN.placeHolderList[479]" 
+		"cartoonCharacterRN.placeHolderList[1460]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak58.message" "cartoonCharacterRN.placeHolderList[1461]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert36.message" 
-		"cartoonCharacterRN.placeHolderList[480]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak59.message" "cartoonCharacterRN.placeHolderList[481]" 
+		"cartoonCharacterRN.placeHolderList[1462]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak59.message" "cartoonCharacterRN.placeHolderList[1463]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge30.message" 
-		"cartoonCharacterRN.placeHolderList[482]" ""
+		"cartoonCharacterRN.placeHolderList[1464]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert37.message" 
-		"cartoonCharacterRN.placeHolderList[483]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak60.message" "cartoonCharacterRN.placeHolderList[484]" 
+		"cartoonCharacterRN.placeHolderList[1465]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak60.message" "cartoonCharacterRN.placeHolderList[1466]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge31.message" 
-		"cartoonCharacterRN.placeHolderList[485]" ""
+		"cartoonCharacterRN.placeHolderList[1467]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert38.message" 
-		"cartoonCharacterRN.placeHolderList[486]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak61.message" "cartoonCharacterRN.placeHolderList[487]" 
+		"cartoonCharacterRN.placeHolderList[1468]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak61.message" "cartoonCharacterRN.placeHolderList[1469]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge32.message" 
-		"cartoonCharacterRN.placeHolderList[488]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak62.message" "cartoonCharacterRN.placeHolderList[489]" 
+		"cartoonCharacterRN.placeHolderList[1470]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak62.message" "cartoonCharacterRN.placeHolderList[1471]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert39.message" 
-		"cartoonCharacterRN.placeHolderList[490]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak63.message" "cartoonCharacterRN.placeHolderList[491]" 
+		"cartoonCharacterRN.placeHolderList[1472]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak63.message" "cartoonCharacterRN.placeHolderList[1473]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge33.message" 
-		"cartoonCharacterRN.placeHolderList[492]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak64.message" "cartoonCharacterRN.placeHolderList[493]" 
+		"cartoonCharacterRN.placeHolderList[1474]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak64.message" "cartoonCharacterRN.placeHolderList[1475]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak65.message" "cartoonCharacterRN.placeHolderList[494]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak65.message" "cartoonCharacterRN.placeHolderList[1476]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit3.message" "cartoonCharacterRN.placeHolderList[495]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit3.message" "cartoonCharacterRN.placeHolderList[1477]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge34.message" 
-		"cartoonCharacterRN.placeHolderList[496]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak66.message" "cartoonCharacterRN.placeHolderList[497]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1478]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge35.message" 
-		"cartoonCharacterRN.placeHolderList[498]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak67.message" "cartoonCharacterRN.placeHolderList[499]" 
+		"cartoonCharacterRN.placeHolderList[1479]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak67.message" "cartoonCharacterRN.placeHolderList[1480]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert40.message" 
-		"cartoonCharacterRN.placeHolderList[500]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak68.message" "cartoonCharacterRN.placeHolderList[501]" 
+		"cartoonCharacterRN.placeHolderList[1481]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak68.message" "cartoonCharacterRN.placeHolderList[1482]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert41.message" 
-		"cartoonCharacterRN.placeHolderList[502]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak69.message" "cartoonCharacterRN.placeHolderList[503]" 
+		"cartoonCharacterRN.placeHolderList[1483]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak69.message" "cartoonCharacterRN.placeHolderList[1484]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge36.message" 
-		"cartoonCharacterRN.placeHolderList[504]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak70.message" "cartoonCharacterRN.placeHolderList[505]" 
+		"cartoonCharacterRN.placeHolderList[1485]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak70.message" "cartoonCharacterRN.placeHolderList[1486]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert42.message" 
-		"cartoonCharacterRN.placeHolderList[506]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak71.message" "cartoonCharacterRN.placeHolderList[507]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1487]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert43.message" 
-		"cartoonCharacterRN.placeHolderList[508]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak72.message" "cartoonCharacterRN.placeHolderList[509]" 
+		"cartoonCharacterRN.placeHolderList[1488]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak72.message" "cartoonCharacterRN.placeHolderList[1489]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge37.message" 
-		"cartoonCharacterRN.placeHolderList[510]" ""
+		"cartoonCharacterRN.placeHolderList[1490]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert44.message" 
-		"cartoonCharacterRN.placeHolderList[511]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak73.message" "cartoonCharacterRN.placeHolderList[512]" 
+		"cartoonCharacterRN.placeHolderList[1491]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak73.message" "cartoonCharacterRN.placeHolderList[1492]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge38.message" 
-		"cartoonCharacterRN.placeHolderList[513]" ""
+		"cartoonCharacterRN.placeHolderList[1493]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert45.message" 
-		"cartoonCharacterRN.placeHolderList[514]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak74.message" "cartoonCharacterRN.placeHolderList[515]" 
+		"cartoonCharacterRN.placeHolderList[1494]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak74.message" "cartoonCharacterRN.placeHolderList[1495]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge39.message" 
-		"cartoonCharacterRN.placeHolderList[516]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak75.message" "cartoonCharacterRN.placeHolderList[517]" 
+		"cartoonCharacterRN.placeHolderList[1496]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak75.message" "cartoonCharacterRN.placeHolderList[1497]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert46.message" 
-		"cartoonCharacterRN.placeHolderList[518]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak76.message" "cartoonCharacterRN.placeHolderList[519]" 
+		"cartoonCharacterRN.placeHolderList[1498]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak76.message" "cartoonCharacterRN.placeHolderList[1499]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge40.message" 
-		"cartoonCharacterRN.placeHolderList[520]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak77.message" "cartoonCharacterRN.placeHolderList[521]" 
+		"cartoonCharacterRN.placeHolderList[1500]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak77.message" "cartoonCharacterRN.placeHolderList[1501]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge41.message" 
-		"cartoonCharacterRN.placeHolderList[522]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak78.message" "cartoonCharacterRN.placeHolderList[523]" 
+		"cartoonCharacterRN.placeHolderList[1502]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak78.message" "cartoonCharacterRN.placeHolderList[1503]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert47.message" 
-		"cartoonCharacterRN.placeHolderList[524]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak79.message" "cartoonCharacterRN.placeHolderList[525]" 
+		"cartoonCharacterRN.placeHolderList[1504]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak79.message" "cartoonCharacterRN.placeHolderList[1505]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge42.message" 
-		"cartoonCharacterRN.placeHolderList[526]" ""
+		"cartoonCharacterRN.placeHolderList[1506]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert48.message" 
-		"cartoonCharacterRN.placeHolderList[527]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak80.message" "cartoonCharacterRN.placeHolderList[528]" 
+		"cartoonCharacterRN.placeHolderList[1507]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak80.message" "cartoonCharacterRN.placeHolderList[1508]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge43.message" 
-		"cartoonCharacterRN.placeHolderList[529]" ""
+		"cartoonCharacterRN.placeHolderList[1509]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert49.message" 
-		"cartoonCharacterRN.placeHolderList[530]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak81.message" "cartoonCharacterRN.placeHolderList[531]" 
+		"cartoonCharacterRN.placeHolderList[1510]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak81.message" "cartoonCharacterRN.placeHolderList[1511]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge44.message" 
-		"cartoonCharacterRN.placeHolderList[532]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak82.message" "cartoonCharacterRN.placeHolderList[533]" 
+		"cartoonCharacterRN.placeHolderList[1512]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak82.message" "cartoonCharacterRN.placeHolderList[1513]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert50.message" 
-		"cartoonCharacterRN.placeHolderList[534]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak83.message" "cartoonCharacterRN.placeHolderList[535]" 
+		"cartoonCharacterRN.placeHolderList[1514]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak83.message" "cartoonCharacterRN.placeHolderList[1515]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge45.message" 
-		"cartoonCharacterRN.placeHolderList[536]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak84.message" "cartoonCharacterRN.placeHolderList[537]" 
+		"cartoonCharacterRN.placeHolderList[1516]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak84.message" "cartoonCharacterRN.placeHolderList[1517]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge46.message" 
-		"cartoonCharacterRN.placeHolderList[538]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak85.message" "cartoonCharacterRN.placeHolderList[539]" 
+		"cartoonCharacterRN.placeHolderList[1518]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak85.message" "cartoonCharacterRN.placeHolderList[1519]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert51.message" 
-		"cartoonCharacterRN.placeHolderList[540]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak86.message" "cartoonCharacterRN.placeHolderList[541]" 
+		"cartoonCharacterRN.placeHolderList[1520]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak86.message" "cartoonCharacterRN.placeHolderList[1521]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge47.message" 
-		"cartoonCharacterRN.placeHolderList[542]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak87.message" "cartoonCharacterRN.placeHolderList[543]" 
+		"cartoonCharacterRN.placeHolderList[1522]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak87.message" "cartoonCharacterRN.placeHolderList[1523]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge48.message" 
-		"cartoonCharacterRN.placeHolderList[544]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak88.message" "cartoonCharacterRN.placeHolderList[545]" 
+		"cartoonCharacterRN.placeHolderList[1524]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak88.message" "cartoonCharacterRN.placeHolderList[1525]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert52.message" 
-		"cartoonCharacterRN.placeHolderList[546]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak89.message" "cartoonCharacterRN.placeHolderList[547]" 
+		"cartoonCharacterRN.placeHolderList[1526]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak89.message" "cartoonCharacterRN.placeHolderList[1527]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge49.message" 
-		"cartoonCharacterRN.placeHolderList[548]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak90.message" "cartoonCharacterRN.placeHolderList[549]" 
+		"cartoonCharacterRN.placeHolderList[1528]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak90.message" "cartoonCharacterRN.placeHolderList[1529]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert53.message" 
-		"cartoonCharacterRN.placeHolderList[550]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak91.message" "cartoonCharacterRN.placeHolderList[551]" 
+		"cartoonCharacterRN.placeHolderList[1530]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak91.message" "cartoonCharacterRN.placeHolderList[1531]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge50.message" 
-		"cartoonCharacterRN.placeHolderList[552]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak92.message" "cartoonCharacterRN.placeHolderList[553]" 
+		"cartoonCharacterRN.placeHolderList[1532]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak92.message" "cartoonCharacterRN.placeHolderList[1533]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge51.message" 
-		"cartoonCharacterRN.placeHolderList[554]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak93.message" "cartoonCharacterRN.placeHolderList[555]" 
+		"cartoonCharacterRN.placeHolderList[1534]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak93.message" "cartoonCharacterRN.placeHolderList[1535]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge52.message" 
-		"cartoonCharacterRN.placeHolderList[556]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak94.message" "cartoonCharacterRN.placeHolderList[557]" 
+		"cartoonCharacterRN.placeHolderList[1536]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak94.message" "cartoonCharacterRN.placeHolderList[1537]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert54.message" 
-		"cartoonCharacterRN.placeHolderList[558]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak95.message" "cartoonCharacterRN.placeHolderList[559]" 
+		"cartoonCharacterRN.placeHolderList[1538]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak95.message" "cartoonCharacterRN.placeHolderList[1539]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge53.message" 
-		"cartoonCharacterRN.placeHolderList[560]" ""
+		"cartoonCharacterRN.placeHolderList[1540]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge54.message" 
-		"cartoonCharacterRN.placeHolderList[561]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak96.message" "cartoonCharacterRN.placeHolderList[562]" 
+		"cartoonCharacterRN.placeHolderList[1541]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak96.message" "cartoonCharacterRN.placeHolderList[1542]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert55.message" 
-		"cartoonCharacterRN.placeHolderList[563]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak97.message" "cartoonCharacterRN.placeHolderList[564]" 
+		"cartoonCharacterRN.placeHolderList[1543]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak97.message" "cartoonCharacterRN.placeHolderList[1544]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge55.message" 
-		"cartoonCharacterRN.placeHolderList[565]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak98.message" "cartoonCharacterRN.placeHolderList[566]" 
+		"cartoonCharacterRN.placeHolderList[1545]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak98.message" "cartoonCharacterRN.placeHolderList[1546]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert56.message" 
-		"cartoonCharacterRN.placeHolderList[567]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak99.message" "cartoonCharacterRN.placeHolderList[568]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1547]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge56.message" 
-		"cartoonCharacterRN.placeHolderList[569]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak100.message" "cartoonCharacterRN.placeHolderList[570]" 
+		"cartoonCharacterRN.placeHolderList[1548]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak100.message" "cartoonCharacterRN.placeHolderList[1549]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert57.message" 
-		"cartoonCharacterRN.placeHolderList[571]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak101.message" "cartoonCharacterRN.placeHolderList[572]" 
+		"cartoonCharacterRN.placeHolderList[1550]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak101.message" "cartoonCharacterRN.placeHolderList[1551]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge57.message" 
-		"cartoonCharacterRN.placeHolderList[573]" ""
+		"cartoonCharacterRN.placeHolderList[1552]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert58.message" 
-		"cartoonCharacterRN.placeHolderList[574]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak102.message" "cartoonCharacterRN.placeHolderList[575]" 
+		"cartoonCharacterRN.placeHolderList[1553]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak102.message" "cartoonCharacterRN.placeHolderList[1554]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge58.message" 
-		"cartoonCharacterRN.placeHolderList[576]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak103.message" "cartoonCharacterRN.placeHolderList[577]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1555]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge59.message" 
-		"cartoonCharacterRN.placeHolderList[578]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak104.message" "cartoonCharacterRN.placeHolderList[579]" 
+		"cartoonCharacterRN.placeHolderList[1556]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak104.message" "cartoonCharacterRN.placeHolderList[1557]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge60.message" 
-		"cartoonCharacterRN.placeHolderList[580]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak105.message" "cartoonCharacterRN.placeHolderList[581]" 
+		"cartoonCharacterRN.placeHolderList[1558]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak105.message" "cartoonCharacterRN.placeHolderList[1559]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert59.message" 
-		"cartoonCharacterRN.placeHolderList[582]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak106.message" "cartoonCharacterRN.placeHolderList[583]" 
+		"cartoonCharacterRN.placeHolderList[1560]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak106.message" "cartoonCharacterRN.placeHolderList[1561]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert60.message" 
-		"cartoonCharacterRN.placeHolderList[584]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak107.message" "cartoonCharacterRN.placeHolderList[585]" 
-		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak108.message" "cartoonCharacterRN.placeHolderList[586]" 
+		"cartoonCharacterRN.placeHolderList[1562]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak107.message" "cartoonCharacterRN.placeHolderList[1563]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent12.message" 
-		"cartoonCharacterRN.placeHolderList[587]" ""
+		"cartoonCharacterRN.placeHolderList[1564]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge61.message" 
-		"cartoonCharacterRN.placeHolderList[588]" ""
+		"cartoonCharacterRN.placeHolderList[1565]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert61.message" 
-		"cartoonCharacterRN.placeHolderList[589]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak109.message" "cartoonCharacterRN.placeHolderList[590]" 
+		"cartoonCharacterRN.placeHolderList[1566]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak109.message" "cartoonCharacterRN.placeHolderList[1567]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge62.message" 
-		"cartoonCharacterRN.placeHolderList[591]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak110.message" "cartoonCharacterRN.placeHolderList[592]" 
+		"cartoonCharacterRN.placeHolderList[1568]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak110.message" "cartoonCharacterRN.placeHolderList[1569]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert62.message" 
-		"cartoonCharacterRN.placeHolderList[593]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak111.message" "cartoonCharacterRN.placeHolderList[594]" 
+		"cartoonCharacterRN.placeHolderList[1570]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak111.message" "cartoonCharacterRN.placeHolderList[1571]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak112.message" "cartoonCharacterRN.placeHolderList[595]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak112.message" "cartoonCharacterRN.placeHolderList[1572]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit4.message" "cartoonCharacterRN.placeHolderList[596]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit4.message" "cartoonCharacterRN.placeHolderList[1573]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak113.message" "cartoonCharacterRN.placeHolderList[597]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit5.message" "cartoonCharacterRN.placeHolderList[1574]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit5.message" "cartoonCharacterRN.placeHolderList[598]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak114.message" "cartoonCharacterRN.placeHolderList[1575]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak114.message" "cartoonCharacterRN.placeHolderList[599]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit6.message" "cartoonCharacterRN.placeHolderList[1576]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit6.message" "cartoonCharacterRN.placeHolderList[600]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak115.message" "cartoonCharacterRN.placeHolderList[1577]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak115.message" "cartoonCharacterRN.placeHolderList[601]" 
-		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit7.message" "cartoonCharacterRN.placeHolderList[602]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit7.message" "cartoonCharacterRN.placeHolderList[1578]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert63.message" 
-		"cartoonCharacterRN.placeHolderList[603]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak116.message" "cartoonCharacterRN.placeHolderList[604]" 
+		"cartoonCharacterRN.placeHolderList[1579]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak116.message" "cartoonCharacterRN.placeHolderList[1580]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex18.message" 
-		"cartoonCharacterRN.placeHolderList[605]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak117.message" "cartoonCharacterRN.placeHolderList[606]" 
+		"cartoonCharacterRN.placeHolderList[1581]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak117.message" "cartoonCharacterRN.placeHolderList[1582]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex19.message" 
-		"cartoonCharacterRN.placeHolderList[607]" ""
+		"cartoonCharacterRN.placeHolderList[1583]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge63.message" 
-		"cartoonCharacterRN.placeHolderList[608]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak118.message" "cartoonCharacterRN.placeHolderList[609]" 
+		"cartoonCharacterRN.placeHolderList[1584]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak118.message" "cartoonCharacterRN.placeHolderList[1585]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge64.message" 
-		"cartoonCharacterRN.placeHolderList[610]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak119.message" "cartoonCharacterRN.placeHolderList[611]" 
+		"cartoonCharacterRN.placeHolderList[1586]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak119.message" "cartoonCharacterRN.placeHolderList[1587]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge65.message" 
-		"cartoonCharacterRN.placeHolderList[612]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak120.message" "cartoonCharacterRN.placeHolderList[613]" 
+		"cartoonCharacterRN.placeHolderList[1588]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak120.message" "cartoonCharacterRN.placeHolderList[1589]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge66.message" 
-		"cartoonCharacterRN.placeHolderList[614]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak121.message" "cartoonCharacterRN.placeHolderList[615]" 
+		"cartoonCharacterRN.placeHolderList[1590]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak121.message" "cartoonCharacterRN.placeHolderList[1591]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge67.message" 
-		"cartoonCharacterRN.placeHolderList[616]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak122.message" "cartoonCharacterRN.placeHolderList[617]" 
+		"cartoonCharacterRN.placeHolderList[1592]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak122.message" "cartoonCharacterRN.placeHolderList[1593]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge68.message" 
-		"cartoonCharacterRN.placeHolderList[618]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak123.message" "cartoonCharacterRN.placeHolderList[619]" 
+		"cartoonCharacterRN.placeHolderList[1594]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak123.message" "cartoonCharacterRN.placeHolderList[1595]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak124.message" "cartoonCharacterRN.placeHolderList[620]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak124.message" "cartoonCharacterRN.placeHolderList[1596]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit8.message" "cartoonCharacterRN.placeHolderList[621]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit8.message" "cartoonCharacterRN.placeHolderList[1597]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit9.message" "cartoonCharacterRN.placeHolderList[622]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit9.message" "cartoonCharacterRN.placeHolderList[1598]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge69.message" 
-		"cartoonCharacterRN.placeHolderList[623]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak125.message" "cartoonCharacterRN.placeHolderList[624]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak125.message" "cartoonCharacterRN.placeHolderList[1599]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge70.message" 
-		"cartoonCharacterRN.placeHolderList[625]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak126.message" "cartoonCharacterRN.placeHolderList[626]" 
+		"cartoonCharacterRN.placeHolderList[1600]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak126.message" "cartoonCharacterRN.placeHolderList[1601]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak127.message" "cartoonCharacterRN.placeHolderList[627]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak127.message" "cartoonCharacterRN.placeHolderList[1602]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit10.message" "cartoonCharacterRN.placeHolderList[628]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit10.message" "cartoonCharacterRN.placeHolderList[1603]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit11.message" "cartoonCharacterRN.placeHolderList[629]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit11.message" "cartoonCharacterRN.placeHolderList[1604]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge71.message" 
-		"cartoonCharacterRN.placeHolderList[630]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak128.message" "cartoonCharacterRN.placeHolderList[631]" 
+		"cartoonCharacterRN.placeHolderList[1605]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak128.message" "cartoonCharacterRN.placeHolderList[1606]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert64.message" 
-		"cartoonCharacterRN.placeHolderList[632]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak129.message" "cartoonCharacterRN.placeHolderList[633]" 
+		"cartoonCharacterRN.placeHolderList[1607]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak129.message" "cartoonCharacterRN.placeHolderList[1608]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex20.message" 
-		"cartoonCharacterRN.placeHolderList[634]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak130.message" "cartoonCharacterRN.placeHolderList[635]" 
+		"cartoonCharacterRN.placeHolderList[1609]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak130.message" "cartoonCharacterRN.placeHolderList[1610]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex21.message" 
-		"cartoonCharacterRN.placeHolderList[636]" ""
+		"cartoonCharacterRN.placeHolderList[1611]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge72.message" 
-		"cartoonCharacterRN.placeHolderList[637]" ""
+		"cartoonCharacterRN.placeHolderList[1612]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert65.message" 
-		"cartoonCharacterRN.placeHolderList[638]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak131.message" "cartoonCharacterRN.placeHolderList[639]" 
+		"cartoonCharacterRN.placeHolderList[1613]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak131.message" "cartoonCharacterRN.placeHolderList[1614]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert66.message" 
-		"cartoonCharacterRN.placeHolderList[640]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak132.message" "cartoonCharacterRN.placeHolderList[641]" 
+		"cartoonCharacterRN.placeHolderList[1615]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak132.message" "cartoonCharacterRN.placeHolderList[1616]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge73.message" 
-		"cartoonCharacterRN.placeHolderList[642]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak133.message" "cartoonCharacterRN.placeHolderList[643]" 
+		"cartoonCharacterRN.placeHolderList[1617]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak133.message" "cartoonCharacterRN.placeHolderList[1618]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert67.message" 
-		"cartoonCharacterRN.placeHolderList[644]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak134.message" "cartoonCharacterRN.placeHolderList[645]" 
+		"cartoonCharacterRN.placeHolderList[1619]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak134.message" "cartoonCharacterRN.placeHolderList[1620]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge74.message" 
-		"cartoonCharacterRN.placeHolderList[646]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak135.message" "cartoonCharacterRN.placeHolderList[647]" 
+		"cartoonCharacterRN.placeHolderList[1621]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak135.message" "cartoonCharacterRN.placeHolderList[1622]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit12.message" "cartoonCharacterRN.placeHolderList[648]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit13.message" "cartoonCharacterRN.placeHolderList[1623]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit13.message" "cartoonCharacterRN.placeHolderList[649]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak136.message" "cartoonCharacterRN.placeHolderList[1624]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak136.message" "cartoonCharacterRN.placeHolderList[650]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit14.message" "cartoonCharacterRN.placeHolderList[1625]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit14.message" "cartoonCharacterRN.placeHolderList[651]" 
-		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit15.message" "cartoonCharacterRN.placeHolderList[652]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit15.message" "cartoonCharacterRN.placeHolderList[1626]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert68.message" 
-		"cartoonCharacterRN.placeHolderList[653]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak137.message" "cartoonCharacterRN.placeHolderList[654]" 
+		"cartoonCharacterRN.placeHolderList[1627]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak137.message" "cartoonCharacterRN.placeHolderList[1628]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge75.message" 
-		"cartoonCharacterRN.placeHolderList[655]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak138.message" "cartoonCharacterRN.placeHolderList[656]" 
+		"cartoonCharacterRN.placeHolderList[1629]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak138.message" "cartoonCharacterRN.placeHolderList[1630]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert69.message" 
-		"cartoonCharacterRN.placeHolderList[657]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak139.message" "cartoonCharacterRN.placeHolderList[658]" 
+		"cartoonCharacterRN.placeHolderList[1631]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak139.message" "cartoonCharacterRN.placeHolderList[1632]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge76.message" 
-		"cartoonCharacterRN.placeHolderList[659]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak140.message" "cartoonCharacterRN.placeHolderList[660]" 
+		"cartoonCharacterRN.placeHolderList[1633]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak140.message" "cartoonCharacterRN.placeHolderList[1634]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge77.message" 
-		"cartoonCharacterRN.placeHolderList[661]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak141.message" "cartoonCharacterRN.placeHolderList[662]" 
+		"cartoonCharacterRN.placeHolderList[1635]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak141.message" "cartoonCharacterRN.placeHolderList[1636]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert70.message" 
-		"cartoonCharacterRN.placeHolderList[663]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak142.message" "cartoonCharacterRN.placeHolderList[664]" 
+		"cartoonCharacterRN.placeHolderList[1637]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak142.message" "cartoonCharacterRN.placeHolderList[1638]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge78.message" 
-		"cartoonCharacterRN.placeHolderList[665]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak143.message" "cartoonCharacterRN.placeHolderList[666]" 
+		"cartoonCharacterRN.placeHolderList[1639]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak143.message" "cartoonCharacterRN.placeHolderList[1640]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert71.message" 
-		"cartoonCharacterRN.placeHolderList[667]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak144.message" "cartoonCharacterRN.placeHolderList[668]" 
+		"cartoonCharacterRN.placeHolderList[1641]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak144.message" "cartoonCharacterRN.placeHolderList[1642]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge79.message" 
-		"cartoonCharacterRN.placeHolderList[669]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak145.message" "cartoonCharacterRN.placeHolderList[670]" 
+		"cartoonCharacterRN.placeHolderList[1643]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak145.message" "cartoonCharacterRN.placeHolderList[1644]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge80.message" 
-		"cartoonCharacterRN.placeHolderList[671]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak146.message" "cartoonCharacterRN.placeHolderList[672]" 
+		"cartoonCharacterRN.placeHolderList[1645]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak146.message" "cartoonCharacterRN.placeHolderList[1646]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert72.message" 
-		"cartoonCharacterRN.placeHolderList[673]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak147.message" "cartoonCharacterRN.placeHolderList[674]" 
+		"cartoonCharacterRN.placeHolderList[1647]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak147.message" "cartoonCharacterRN.placeHolderList[1648]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge81.message" 
-		"cartoonCharacterRN.placeHolderList[675]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak148.message" "cartoonCharacterRN.placeHolderList[676]" 
+		"cartoonCharacterRN.placeHolderList[1649]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak148.message" "cartoonCharacterRN.placeHolderList[1650]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert73.message" 
-		"cartoonCharacterRN.placeHolderList[677]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak149.message" "cartoonCharacterRN.placeHolderList[678]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1651]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge82.message" 
-		"cartoonCharacterRN.placeHolderList[679]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak150.message" "cartoonCharacterRN.placeHolderList[680]" 
+		"cartoonCharacterRN.placeHolderList[1652]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak150.message" "cartoonCharacterRN.placeHolderList[1653]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert74.message" 
-		"cartoonCharacterRN.placeHolderList[681]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak151.message" "cartoonCharacterRN.placeHolderList[682]" 
+		"cartoonCharacterRN.placeHolderList[1654]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak151.message" "cartoonCharacterRN.placeHolderList[1655]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge83.message" 
-		"cartoonCharacterRN.placeHolderList[683]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak152.message" "cartoonCharacterRN.placeHolderList[684]" 
+		"cartoonCharacterRN.placeHolderList[1656]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak152.message" "cartoonCharacterRN.placeHolderList[1657]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert75.message" 
-		"cartoonCharacterRN.placeHolderList[685]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak153.message" "cartoonCharacterRN.placeHolderList[686]" 
+		"cartoonCharacterRN.placeHolderList[1658]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak153.message" "cartoonCharacterRN.placeHolderList[1659]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge84.message" 
-		"cartoonCharacterRN.placeHolderList[687]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak154.message" "cartoonCharacterRN.placeHolderList[688]" 
+		"cartoonCharacterRN.placeHolderList[1660]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak154.message" "cartoonCharacterRN.placeHolderList[1661]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert76.message" 
-		"cartoonCharacterRN.placeHolderList[689]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak155.message" "cartoonCharacterRN.placeHolderList[690]" 
+		"cartoonCharacterRN.placeHolderList[1662]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak155.message" "cartoonCharacterRN.placeHolderList[1663]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge85.message" 
-		"cartoonCharacterRN.placeHolderList[691]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak156.message" "cartoonCharacterRN.placeHolderList[692]" 
+		"cartoonCharacterRN.placeHolderList[1664]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak156.message" "cartoonCharacterRN.placeHolderList[1665]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert77.message" 
-		"cartoonCharacterRN.placeHolderList[693]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak157.message" "cartoonCharacterRN.placeHolderList[694]" 
+		"cartoonCharacterRN.placeHolderList[1666]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak157.message" "cartoonCharacterRN.placeHolderList[1667]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge86.message" 
-		"cartoonCharacterRN.placeHolderList[695]" ""
+		"cartoonCharacterRN.placeHolderList[1668]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert78.message" 
-		"cartoonCharacterRN.placeHolderList[696]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak158.message" "cartoonCharacterRN.placeHolderList[697]" 
+		"cartoonCharacterRN.placeHolderList[1669]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak158.message" "cartoonCharacterRN.placeHolderList[1670]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge87.message" 
-		"cartoonCharacterRN.placeHolderList[698]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak159.message" "cartoonCharacterRN.placeHolderList[699]" 
+		"cartoonCharacterRN.placeHolderList[1671]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak159.message" "cartoonCharacterRN.placeHolderList[1672]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert79.message" 
-		"cartoonCharacterRN.placeHolderList[700]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak160.message" "cartoonCharacterRN.placeHolderList[701]" 
+		"cartoonCharacterRN.placeHolderList[1673]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak160.message" "cartoonCharacterRN.placeHolderList[1674]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge88.message" 
-		"cartoonCharacterRN.placeHolderList[702]" ""
+		"cartoonCharacterRN.placeHolderList[1675]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert80.message" 
-		"cartoonCharacterRN.placeHolderList[703]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak161.message" "cartoonCharacterRN.placeHolderList[704]" 
+		"cartoonCharacterRN.placeHolderList[1676]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak161.message" "cartoonCharacterRN.placeHolderList[1677]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert81.message" 
-		"cartoonCharacterRN.placeHolderList[705]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak162.message" "cartoonCharacterRN.placeHolderList[706]" 
+		"cartoonCharacterRN.placeHolderList[1678]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak162.message" "cartoonCharacterRN.placeHolderList[1679]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert82.message" 
-		"cartoonCharacterRN.placeHolderList[707]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak163.message" "cartoonCharacterRN.placeHolderList[708]" 
+		"cartoonCharacterRN.placeHolderList[1680]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak163.message" "cartoonCharacterRN.placeHolderList[1681]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert83.message" 
-		"cartoonCharacterRN.placeHolderList[709]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak164.message" "cartoonCharacterRN.placeHolderList[710]" 
+		"cartoonCharacterRN.placeHolderList[1682]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak164.message" "cartoonCharacterRN.placeHolderList[1683]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak165.message" "cartoonCharacterRN.placeHolderList[711]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak165.message" "cartoonCharacterRN.placeHolderList[1684]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit16.message" "cartoonCharacterRN.placeHolderList[712]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit16.message" "cartoonCharacterRN.placeHolderList[1685]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit17.message" "cartoonCharacterRN.placeHolderList[713]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit17.message" "cartoonCharacterRN.placeHolderList[1686]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge89.message" 
-		"cartoonCharacterRN.placeHolderList[714]" ""
+		"cartoonCharacterRN.placeHolderList[1687]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert84.message" 
-		"cartoonCharacterRN.placeHolderList[715]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak166.message" "cartoonCharacterRN.placeHolderList[716]" 
+		"cartoonCharacterRN.placeHolderList[1688]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak166.message" "cartoonCharacterRN.placeHolderList[1689]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge90.message" 
-		"cartoonCharacterRN.placeHolderList[717]" ""
+		"cartoonCharacterRN.placeHolderList[1690]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert85.message" 
-		"cartoonCharacterRN.placeHolderList[718]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak167.message" "cartoonCharacterRN.placeHolderList[719]" 
+		"cartoonCharacterRN.placeHolderList[1691]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak167.message" "cartoonCharacterRN.placeHolderList[1692]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert86.message" 
-		"cartoonCharacterRN.placeHolderList[720]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak168.message" "cartoonCharacterRN.placeHolderList[721]" 
+		"cartoonCharacterRN.placeHolderList[1693]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak168.message" "cartoonCharacterRN.placeHolderList[1694]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak169.message" "cartoonCharacterRN.placeHolderList[722]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak169.message" "cartoonCharacterRN.placeHolderList[1695]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent13.message" 
-		"cartoonCharacterRN.placeHolderList[723]" ""
+		"cartoonCharacterRN.placeHolderList[1696]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent14.message" 
-		"cartoonCharacterRN.placeHolderList[724]" ""
+		"cartoonCharacterRN.placeHolderList[1697]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex22.message" 
-		"cartoonCharacterRN.placeHolderList[725]" ""
+		"cartoonCharacterRN.placeHolderList[1698]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex23.message" 
-		"cartoonCharacterRN.placeHolderList[726]" ""
+		"cartoonCharacterRN.placeHolderList[1699]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent15.message" 
-		"cartoonCharacterRN.placeHolderList[727]" ""
+		"cartoonCharacterRN.placeHolderList[1700]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex24.message" 
-		"cartoonCharacterRN.placeHolderList[728]" ""
+		"cartoonCharacterRN.placeHolderList[1701]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex25.message" 
-		"cartoonCharacterRN.placeHolderList[729]" ""
+		"cartoonCharacterRN.placeHolderList[1702]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent16.message" 
-		"cartoonCharacterRN.placeHolderList[730]" ""
+		"cartoonCharacterRN.placeHolderList[1703]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent17.message" 
-		"cartoonCharacterRN.placeHolderList[731]" ""
+		"cartoonCharacterRN.placeHolderList[1704]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent18.message" 
-		"cartoonCharacterRN.placeHolderList[732]" ""
+		"cartoonCharacterRN.placeHolderList[1705]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex26.message" 
-		"cartoonCharacterRN.placeHolderList[733]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak170.message" "cartoonCharacterRN.placeHolderList[734]" 
+		"cartoonCharacterRN.placeHolderList[1706]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak170.message" "cartoonCharacterRN.placeHolderList[1707]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex27.message" 
-		"cartoonCharacterRN.placeHolderList[735]" ""
+		"cartoonCharacterRN.placeHolderList[1708]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent19.message" 
-		"cartoonCharacterRN.placeHolderList[736]" ""
+		"cartoonCharacterRN.placeHolderList[1709]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent20.message" 
-		"cartoonCharacterRN.placeHolderList[737]" ""
+		"cartoonCharacterRN.placeHolderList[1710]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert87.message" 
-		"cartoonCharacterRN.placeHolderList[738]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak171.message" "cartoonCharacterRN.placeHolderList[739]" 
+		"cartoonCharacterRN.placeHolderList[1711]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak171.message" "cartoonCharacterRN.placeHolderList[1712]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert88.message" 
-		"cartoonCharacterRN.placeHolderList[740]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak172.message" "cartoonCharacterRN.placeHolderList[741]" 
+		"cartoonCharacterRN.placeHolderList[1713]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak172.message" "cartoonCharacterRN.placeHolderList[1714]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert89.message" 
-		"cartoonCharacterRN.placeHolderList[742]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak173.message" "cartoonCharacterRN.placeHolderList[743]" 
+		"cartoonCharacterRN.placeHolderList[1715]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak173.message" "cartoonCharacterRN.placeHolderList[1716]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex28.message" 
-		"cartoonCharacterRN.placeHolderList[744]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak174.message" "cartoonCharacterRN.placeHolderList[745]" 
+		"cartoonCharacterRN.placeHolderList[1717]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak174.message" "cartoonCharacterRN.placeHolderList[1718]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex29.message" 
-		"cartoonCharacterRN.placeHolderList[746]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak175.message" "cartoonCharacterRN.placeHolderList[747]" 
+		"cartoonCharacterRN.placeHolderList[1719]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak175.message" "cartoonCharacterRN.placeHolderList[1720]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent21.message" 
-		"cartoonCharacterRN.placeHolderList[748]" ""
+		"cartoonCharacterRN.placeHolderList[1721]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert90.message" 
-		"cartoonCharacterRN.placeHolderList[749]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak176.message" "cartoonCharacterRN.placeHolderList[750]" 
+		"cartoonCharacterRN.placeHolderList[1722]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak176.message" "cartoonCharacterRN.placeHolderList[1723]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak177.message" "cartoonCharacterRN.placeHolderList[751]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak177.message" "cartoonCharacterRN.placeHolderList[1724]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent22.message" 
-		"cartoonCharacterRN.placeHolderList[752]" ""
+		"cartoonCharacterRN.placeHolderList[1725]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent23.message" 
-		"cartoonCharacterRN.placeHolderList[753]" ""
+		"cartoonCharacterRN.placeHolderList[1726]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent24.message" 
-		"cartoonCharacterRN.placeHolderList[754]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak178.message" "cartoonCharacterRN.placeHolderList[755]" 
+		"cartoonCharacterRN.placeHolderList[1727]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak178.message" "cartoonCharacterRN.placeHolderList[1728]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent25.message" 
-		"cartoonCharacterRN.placeHolderList[756]" ""
+		"cartoonCharacterRN.placeHolderList[1729]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent26.message" 
-		"cartoonCharacterRN.placeHolderList[757]" ""
+		"cartoonCharacterRN.placeHolderList[1730]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent27.message" 
-		"cartoonCharacterRN.placeHolderList[758]" ""
+		"cartoonCharacterRN.placeHolderList[1731]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent28.message" 
-		"cartoonCharacterRN.placeHolderList[759]" ""
+		"cartoonCharacterRN.placeHolderList[1732]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert91.message" 
-		"cartoonCharacterRN.placeHolderList[760]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak179.message" "cartoonCharacterRN.placeHolderList[761]" 
+		"cartoonCharacterRN.placeHolderList[1733]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak179.message" "cartoonCharacterRN.placeHolderList[1734]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert92.message" 
-		"cartoonCharacterRN.placeHolderList[762]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak180.message" "cartoonCharacterRN.placeHolderList[763]" 
+		"cartoonCharacterRN.placeHolderList[1735]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak180.message" "cartoonCharacterRN.placeHolderList[1736]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert93.message" 
-		"cartoonCharacterRN.placeHolderList[764]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak181.message" "cartoonCharacterRN.placeHolderList[765]" 
+		"cartoonCharacterRN.placeHolderList[1737]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak181.message" "cartoonCharacterRN.placeHolderList[1738]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert94.message" 
-		"cartoonCharacterRN.placeHolderList[766]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak182.message" "cartoonCharacterRN.placeHolderList[767]" 
+		"cartoonCharacterRN.placeHolderList[1739]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak182.message" "cartoonCharacterRN.placeHolderList[1740]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert95.message" 
-		"cartoonCharacterRN.placeHolderList[768]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak183.message" "cartoonCharacterRN.placeHolderList[769]" 
+		"cartoonCharacterRN.placeHolderList[1741]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak183.message" "cartoonCharacterRN.placeHolderList[1742]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak184.message" "cartoonCharacterRN.placeHolderList[770]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak184.message" "cartoonCharacterRN.placeHolderList[1743]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit18.message" "cartoonCharacterRN.placeHolderList[771]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit18.message" "cartoonCharacterRN.placeHolderList[1744]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit19.message" "cartoonCharacterRN.placeHolderList[772]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit19.message" "cartoonCharacterRN.placeHolderList[1745]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex30.message" 
-		"cartoonCharacterRN.placeHolderList[773]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak185.message" "cartoonCharacterRN.placeHolderList[774]" 
+		"cartoonCharacterRN.placeHolderList[1746]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak185.message" "cartoonCharacterRN.placeHolderList[1747]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex31.message" 
-		"cartoonCharacterRN.placeHolderList[775]" ""
+		"cartoonCharacterRN.placeHolderList[1748]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert96.message" 
-		"cartoonCharacterRN.placeHolderList[776]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak186.message" "cartoonCharacterRN.placeHolderList[777]" 
+		"cartoonCharacterRN.placeHolderList[1749]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak186.message" "cartoonCharacterRN.placeHolderList[1750]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex32.message" 
-		"cartoonCharacterRN.placeHolderList[778]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak187.message" "cartoonCharacterRN.placeHolderList[779]" 
+		"cartoonCharacterRN.placeHolderList[1751]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak187.message" "cartoonCharacterRN.placeHolderList[1752]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyAppendVertex33.message" 
-		"cartoonCharacterRN.placeHolderList[780]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak188.message" "cartoonCharacterRN.placeHolderList[781]" 
+		"cartoonCharacterRN.placeHolderList[1753]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak188.message" "cartoonCharacterRN.placeHolderList[1754]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent29.message" 
-		"cartoonCharacterRN.placeHolderList[782]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak189.message" "cartoonCharacterRN.placeHolderList[783]" 
+		"cartoonCharacterRN.placeHolderList[1755]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak189.message" "cartoonCharacterRN.placeHolderList[1756]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent30.message" 
-		"cartoonCharacterRN.placeHolderList[784]" ""
+		"cartoonCharacterRN.placeHolderList[1757]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent31.message" 
-		"cartoonCharacterRN.placeHolderList[785]" ""
+		"cartoonCharacterRN.placeHolderList[1758]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent32.message" 
-		"cartoonCharacterRN.placeHolderList[786]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyDelEdge1.message" "cartoonCharacterRN.placeHolderList[787]" 
+		"cartoonCharacterRN.placeHolderList[1759]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyDelEdge1.message" "cartoonCharacterRN.placeHolderList[1760]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent33.message" 
-		"cartoonCharacterRN.placeHolderList[788]" ""
+		"cartoonCharacterRN.placeHolderList[1761]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent34.message" 
-		"cartoonCharacterRN.placeHolderList[789]" ""
+		"cartoonCharacterRN.placeHolderList[1762]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent35.message" 
-		"cartoonCharacterRN.placeHolderList[790]" ""
+		"cartoonCharacterRN.placeHolderList[1763]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent36.message" 
-		"cartoonCharacterRN.placeHolderList[791]" ""
+		"cartoonCharacterRN.placeHolderList[1764]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent37.message" 
-		"cartoonCharacterRN.placeHolderList[792]" ""
+		"cartoonCharacterRN.placeHolderList[1765]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent38.message" 
-		"cartoonCharacterRN.placeHolderList[793]" ""
+		"cartoonCharacterRN.placeHolderList[1766]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent39.message" 
-		"cartoonCharacterRN.placeHolderList[794]" ""
+		"cartoonCharacterRN.placeHolderList[1767]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent40.message" 
-		"cartoonCharacterRN.placeHolderList[795]" ""
+		"cartoonCharacterRN.placeHolderList[1768]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent41.message" 
-		"cartoonCharacterRN.placeHolderList[796]" ""
+		"cartoonCharacterRN.placeHolderList[1769]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent42.message" 
-		"cartoonCharacterRN.placeHolderList[797]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak190.message" "cartoonCharacterRN.placeHolderList[798]" 
+		"cartoonCharacterRN.placeHolderList[1770]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak190.message" "cartoonCharacterRN.placeHolderList[1771]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent43.message" 
-		"cartoonCharacterRN.placeHolderList[799]" ""
+		"cartoonCharacterRN.placeHolderList[1772]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent44.message" 
-		"cartoonCharacterRN.placeHolderList[800]" ""
+		"cartoonCharacterRN.placeHolderList[1773]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent45.message" 
-		"cartoonCharacterRN.placeHolderList[801]" ""
+		"cartoonCharacterRN.placeHolderList[1774]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent46.message" 
-		"cartoonCharacterRN.placeHolderList[802]" ""
+		"cartoonCharacterRN.placeHolderList[1775]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge91.message" 
-		"cartoonCharacterRN.placeHolderList[803]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak191.message" "cartoonCharacterRN.placeHolderList[804]" 
+		"cartoonCharacterRN.placeHolderList[1776]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak191.message" "cartoonCharacterRN.placeHolderList[1777]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert97.message" 
-		"cartoonCharacterRN.placeHolderList[805]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak192.message" "cartoonCharacterRN.placeHolderList[806]" 
+		"cartoonCharacterRN.placeHolderList[1778]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak192.message" "cartoonCharacterRN.placeHolderList[1779]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert98.message" 
-		"cartoonCharacterRN.placeHolderList[807]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak193.message" "cartoonCharacterRN.placeHolderList[808]" 
+		"cartoonCharacterRN.placeHolderList[1780]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak193.message" "cartoonCharacterRN.placeHolderList[1781]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge92.message" 
-		"cartoonCharacterRN.placeHolderList[809]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak194.message" "cartoonCharacterRN.placeHolderList[810]" 
+		"cartoonCharacterRN.placeHolderList[1782]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak194.message" "cartoonCharacterRN.placeHolderList[1783]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge93.message" 
-		"cartoonCharacterRN.placeHolderList[811]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak195.message" "cartoonCharacterRN.placeHolderList[812]" 
+		"cartoonCharacterRN.placeHolderList[1784]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak195.message" "cartoonCharacterRN.placeHolderList[1785]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert99.message" 
-		"cartoonCharacterRN.placeHolderList[813]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak196.message" "cartoonCharacterRN.placeHolderList[814]" 
+		"cartoonCharacterRN.placeHolderList[1786]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak196.message" "cartoonCharacterRN.placeHolderList[1787]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak197.message" "cartoonCharacterRN.placeHolderList[815]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak197.message" "cartoonCharacterRN.placeHolderList[1788]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent47.message" 
-		"cartoonCharacterRN.placeHolderList[816]" ""
+		"cartoonCharacterRN.placeHolderList[1789]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent48.message" 
-		"cartoonCharacterRN.placeHolderList[817]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit20.message" "cartoonCharacterRN.placeHolderList[818]" 
+		"cartoonCharacterRN.placeHolderList[1790]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit20.message" "cartoonCharacterRN.placeHolderList[1791]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit21.message" "cartoonCharacterRN.placeHolderList[819]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polySplit21.message" "cartoonCharacterRN.placeHolderList[1792]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge94.message" 
-		"cartoonCharacterRN.placeHolderList[820]" ""
+		"cartoonCharacterRN.placeHolderList[1793]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert100.message" 
-		"cartoonCharacterRN.placeHolderList[821]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak198.message" "cartoonCharacterRN.placeHolderList[822]" 
+		"cartoonCharacterRN.placeHolderList[1794]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak198.message" "cartoonCharacterRN.placeHolderList[1795]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge95.message" 
-		"cartoonCharacterRN.placeHolderList[823]" ""
+		"cartoonCharacterRN.placeHolderList[1796]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert101.message" 
-		"cartoonCharacterRN.placeHolderList[824]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak199.message" "cartoonCharacterRN.placeHolderList[825]" 
+		"cartoonCharacterRN.placeHolderList[1797]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak199.message" "cartoonCharacterRN.placeHolderList[1798]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge96.message" 
-		"cartoonCharacterRN.placeHolderList[826]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak200.message" "cartoonCharacterRN.placeHolderList[827]" 
+		"cartoonCharacterRN.placeHolderList[1799]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak200.message" "cartoonCharacterRN.placeHolderList[1800]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge97.message" 
-		"cartoonCharacterRN.placeHolderList[828]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak201.message" "cartoonCharacterRN.placeHolderList[829]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak201.message" "cartoonCharacterRN.placeHolderList[1801]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert102.message" 
-		"cartoonCharacterRN.placeHolderList[830]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak202.message" "cartoonCharacterRN.placeHolderList[831]" 
+		"cartoonCharacterRN.placeHolderList[1802]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak202.message" "cartoonCharacterRN.placeHolderList[1803]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge98.message" 
-		"cartoonCharacterRN.placeHolderList[832]" ""
+		"cartoonCharacterRN.placeHolderList[1804]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert103.message" 
-		"cartoonCharacterRN.placeHolderList[833]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak203.message" "cartoonCharacterRN.placeHolderList[834]" 
+		"cartoonCharacterRN.placeHolderList[1805]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak203.message" "cartoonCharacterRN.placeHolderList[1806]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge99.message" 
-		"cartoonCharacterRN.placeHolderList[835]" ""
+		"cartoonCharacterRN.placeHolderList[1807]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert104.message" 
-		"cartoonCharacterRN.placeHolderList[836]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak204.message" "cartoonCharacterRN.placeHolderList[837]" 
+		"cartoonCharacterRN.placeHolderList[1808]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak204.message" "cartoonCharacterRN.placeHolderList[1809]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge100.message" 
-		"cartoonCharacterRN.placeHolderList[838]" ""
+		"cartoonCharacterRN.placeHolderList[1810]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert105.message" 
-		"cartoonCharacterRN.placeHolderList[839]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak205.message" "cartoonCharacterRN.placeHolderList[840]" 
+		"cartoonCharacterRN.placeHolderList[1811]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak205.message" "cartoonCharacterRN.placeHolderList[1812]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge101.message" 
-		"cartoonCharacterRN.placeHolderList[841]" ""
+		"cartoonCharacterRN.placeHolderList[1813]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert106.message" 
-		"cartoonCharacterRN.placeHolderList[842]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak206.message" "cartoonCharacterRN.placeHolderList[843]" 
+		"cartoonCharacterRN.placeHolderList[1814]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak206.message" "cartoonCharacterRN.placeHolderList[1815]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert107.message" 
-		"cartoonCharacterRN.placeHolderList[844]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak207.message" "cartoonCharacterRN.placeHolderList[845]" 
+		"cartoonCharacterRN.placeHolderList[1816]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak207.message" "cartoonCharacterRN.placeHolderList[1817]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge102.message" 
-		"cartoonCharacterRN.placeHolderList[846]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak208.message" "cartoonCharacterRN.placeHolderList[847]" 
+		"cartoonCharacterRN.placeHolderList[1818]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak208.message" "cartoonCharacterRN.placeHolderList[1819]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent49.message" 
-		"cartoonCharacterRN.placeHolderList[848]" ""
+		"cartoonCharacterRN.placeHolderList[1820]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge103.message" 
-		"cartoonCharacterRN.placeHolderList[849]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak209.message" "cartoonCharacterRN.placeHolderList[850]" 
+		"cartoonCharacterRN.placeHolderList[1821]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak209.message" "cartoonCharacterRN.placeHolderList[1822]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert108.message" 
-		"cartoonCharacterRN.placeHolderList[851]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak210.message" "cartoonCharacterRN.placeHolderList[852]" 
+		"cartoonCharacterRN.placeHolderList[1823]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak210.message" "cartoonCharacterRN.placeHolderList[1824]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge104.message" 
-		"cartoonCharacterRN.placeHolderList[853]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak211.message" "cartoonCharacterRN.placeHolderList[854]" 
+		"cartoonCharacterRN.placeHolderList[1825]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak211.message" "cartoonCharacterRN.placeHolderList[1826]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert109.message" 
-		"cartoonCharacterRN.placeHolderList[855]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak212.message" "cartoonCharacterRN.placeHolderList[856]" 
+		"cartoonCharacterRN.placeHolderList[1827]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak212.message" "cartoonCharacterRN.placeHolderList[1828]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge105.message" 
-		"cartoonCharacterRN.placeHolderList[857]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak213.message" "cartoonCharacterRN.placeHolderList[858]" 
+		"cartoonCharacterRN.placeHolderList[1829]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak213.message" "cartoonCharacterRN.placeHolderList[1830]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert110.message" 
-		"cartoonCharacterRN.placeHolderList[859]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak214.message" "cartoonCharacterRN.placeHolderList[860]" 
+		"cartoonCharacterRN.placeHolderList[1831]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak214.message" "cartoonCharacterRN.placeHolderList[1832]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert111.message" 
-		"cartoonCharacterRN.placeHolderList[861]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak215.message" "cartoonCharacterRN.placeHolderList[862]" 
+		"cartoonCharacterRN.placeHolderList[1833]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak215.message" "cartoonCharacterRN.placeHolderList[1834]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge106.message" 
-		"cartoonCharacterRN.placeHolderList[863]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak216.message" "cartoonCharacterRN.placeHolderList[864]" 
+		"cartoonCharacterRN.placeHolderList[1835]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak216.message" "cartoonCharacterRN.placeHolderList[1836]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak217.message" "cartoonCharacterRN.placeHolderList[865]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak217.message" "cartoonCharacterRN.placeHolderList[1837]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent50.message" 
-		"cartoonCharacterRN.placeHolderList[866]" ""
+		"cartoonCharacterRN.placeHolderList[1838]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge107.message" 
-		"cartoonCharacterRN.placeHolderList[867]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak218.message" "cartoonCharacterRN.placeHolderList[868]" 
+		"cartoonCharacterRN.placeHolderList[1839]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak218.message" "cartoonCharacterRN.placeHolderList[1840]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge108.message" 
-		"cartoonCharacterRN.placeHolderList[869]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak219.message" "cartoonCharacterRN.placeHolderList[870]" 
+		"cartoonCharacterRN.placeHolderList[1841]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak219.message" "cartoonCharacterRN.placeHolderList[1842]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak220.message" "cartoonCharacterRN.placeHolderList[871]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak220.message" "cartoonCharacterRN.placeHolderList[1843]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent51.message" 
-		"cartoonCharacterRN.placeHolderList[872]" ""
+		"cartoonCharacterRN.placeHolderList[1844]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge109.message" 
-		"cartoonCharacterRN.placeHolderList[873]" ""
+		"cartoonCharacterRN.placeHolderList[1845]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge110.message" 
-		"cartoonCharacterRN.placeHolderList[874]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak221.message" "cartoonCharacterRN.placeHolderList[875]" 
+		"cartoonCharacterRN.placeHolderList[1846]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak221.message" "cartoonCharacterRN.placeHolderList[1847]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge111.message" 
-		"cartoonCharacterRN.placeHolderList[876]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak222.message" "cartoonCharacterRN.placeHolderList[877]" 
+		"cartoonCharacterRN.placeHolderList[1848]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak222.message" "cartoonCharacterRN.placeHolderList[1849]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert112.message" 
-		"cartoonCharacterRN.placeHolderList[878]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak223.message" "cartoonCharacterRN.placeHolderList[879]" 
+		"cartoonCharacterRN.placeHolderList[1850]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak223.message" "cartoonCharacterRN.placeHolderList[1851]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert113.message" 
-		"cartoonCharacterRN.placeHolderList[880]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak224.message" "cartoonCharacterRN.placeHolderList[881]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak224.message" "cartoonCharacterRN.placeHolderList[1852]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge112.message" 
-		"cartoonCharacterRN.placeHolderList[882]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak225.message" "cartoonCharacterRN.placeHolderList[883]" 
+		"cartoonCharacterRN.placeHolderList[1853]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak225.message" "cartoonCharacterRN.placeHolderList[1854]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert114.message" 
-		"cartoonCharacterRN.placeHolderList[884]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak226.message" "cartoonCharacterRN.placeHolderList[885]" 
+		"cartoonCharacterRN.placeHolderList[1855]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak226.message" "cartoonCharacterRN.placeHolderList[1856]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyExtrudeEdge113.message" 
-		"cartoonCharacterRN.placeHolderList[886]" ""
+		"cartoonCharacterRN.placeHolderList[1857]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polyMergeVert115.message" 
-		"cartoonCharacterRN.placeHolderList[887]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak227.message" "cartoonCharacterRN.placeHolderList[888]" 
+		"cartoonCharacterRN.placeHolderList[1858]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak227.message" "cartoonCharacterRN.placeHolderList[1859]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak228.message" "cartoonCharacterRN.placeHolderList[889]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak228.message" "cartoonCharacterRN.placeHolderList[1860]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent52.message" 
-		"cartoonCharacterRN.placeHolderList[890]" ""
+		"cartoonCharacterRN.placeHolderList[1861]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent53.message" 
-		"cartoonCharacterRN.placeHolderList[891]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak229.message" "cartoonCharacterRN.placeHolderList[892]" 
+		"cartoonCharacterRN.placeHolderList[1862]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak229.message" "cartoonCharacterRN.placeHolderList[1863]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent54.message" 
-		"cartoonCharacterRN.placeHolderList[893]" ""
+		"cartoonCharacterRN.placeHolderList[1864]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent55.message" 
-		"cartoonCharacterRN.placeHolderList[894]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak230.message" "cartoonCharacterRN.placeHolderList[895]" 
+		"cartoonCharacterRN.placeHolderList[1865]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak230.message" "cartoonCharacterRN.placeHolderList[1866]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent56.message" 
-		"cartoonCharacterRN.placeHolderList[896]" ""
+		"cartoonCharacterRN.placeHolderList[1867]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent57.message" 
-		"cartoonCharacterRN.placeHolderList[897]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak231.message" "cartoonCharacterRN.placeHolderList[898]" 
+		"cartoonCharacterRN.placeHolderList[1868]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:polyTweak231.message" "cartoonCharacterRN.placeHolderList[1869]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent58.message" 
-		"cartoonCharacterRN.placeHolderList[899]" ""
+		"cartoonCharacterRN.placeHolderList[1870]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent59.message" 
-		"cartoonCharacterRN.placeHolderList[900]" ""
+		"cartoonCharacterRN.placeHolderList[1871]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent60.message" 
-		"cartoonCharacterRN.placeHolderList[901]" ""
+		"cartoonCharacterRN.placeHolderList[1872]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent61.message" 
-		"cartoonCharacterRN.placeHolderList[902]" ""
+		"cartoonCharacterRN.placeHolderList[1873]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent62.message" 
-		"cartoonCharacterRN.placeHolderList[903]" ""
+		"cartoonCharacterRN.placeHolderList[1874]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent63.message" 
-		"cartoonCharacterRN.placeHolderList[904]" ""
+		"cartoonCharacterRN.placeHolderList[1875]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent64.message" 
-		"cartoonCharacterRN.placeHolderList[905]" ""
+		"cartoonCharacterRN.placeHolderList[1876]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent65.message" 
-		"cartoonCharacterRN.placeHolderList[906]" ""
+		"cartoonCharacterRN.placeHolderList[1877]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent66.message" 
-		"cartoonCharacterRN.placeHolderList[907]" ""
+		"cartoonCharacterRN.placeHolderList[1878]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:deleteComponent67.message" 
-		"cartoonCharacterRN.placeHolderList[908]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId94.message" "cartoonCharacterRN.placeHolderList[909]" 
+		"cartoonCharacterRN.placeHolderList[1879]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:groupParts2.message" "cartoonCharacterRN.placeHolderList[1880]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupParts2.message" "cartoonCharacterRN.placeHolderList[910]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId95.message" "cartoonCharacterRN.placeHolderList[1881]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId95.message" "cartoonCharacterRN.placeHolderList[911]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId97.message" "cartoonCharacterRN.placeHolderList[1882]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId97.message" "cartoonCharacterRN.placeHolderList[912]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:BustForZBrush.message" "cartoonCharacterRN.placeHolderList[1883]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:BustForZBrush.message" "cartoonCharacterRN.placeHolderList[913]" 
-		""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_translateX.output" 
+		"cartoonCharacterRN.placeHolderList[1884]" "cartoonCharacter:LeftEye.tx"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_translateX.message" 
-		"cartoonCharacterRN.placeHolderList[914]" ""
+		"cartoonCharacterRN.placeHolderList[1885]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_translateY.output" 
+		"cartoonCharacterRN.placeHolderList[1886]" "cartoonCharacter:LeftEye.ty"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_translateY.message" 
-		"cartoonCharacterRN.placeHolderList[915]" ""
+		"cartoonCharacterRN.placeHolderList[1887]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_translateZ.output" 
+		"cartoonCharacterRN.placeHolderList[1888]" "cartoonCharacter:LeftEye.tz"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_translateZ.message" 
-		"cartoonCharacterRN.placeHolderList[916]" ""
+		"cartoonCharacterRN.placeHolderList[1889]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_translateX.output" 
+		"cartoonCharacterRN.placeHolderList[1890]" "cartoonCharacter:RightEye.tx"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_translateX.message" 
-		"cartoonCharacterRN.placeHolderList[917]" ""
+		"cartoonCharacterRN.placeHolderList[1891]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_translateY.output" 
+		"cartoonCharacterRN.placeHolderList[1892]" "cartoonCharacter:RightEye.ty"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_translateY.message" 
-		"cartoonCharacterRN.placeHolderList[918]" ""
+		"cartoonCharacterRN.placeHolderList[1893]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_translateZ.output" 
+		"cartoonCharacterRN.placeHolderList[1894]" "cartoonCharacter:RightEye.tz"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_translateZ.message" 
-		"cartoonCharacterRN.placeHolderList[919]" ""
+		"cartoonCharacterRN.placeHolderList[1895]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_visibility.message" 
-		"cartoonCharacterRN.placeHolderList[920]" ""
+		"cartoonCharacterRN.placeHolderList[1896]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_rotateX.output" 
-		"cartoonCharacterRN.placeHolderList[921]" "cartoonCharacter:LeftEye.rx"
+		"cartoonCharacterRN.placeHolderList[1897]" "cartoonCharacter:LeftEye.rx"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_rotateX.message" 
-		"cartoonCharacterRN.placeHolderList[922]" ""
+		"cartoonCharacterRN.placeHolderList[1898]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_rotateY.output" 
-		"cartoonCharacterRN.placeHolderList[923]" "cartoonCharacter:LeftEye.ry"
+		"cartoonCharacterRN.placeHolderList[1899]" "cartoonCharacter:LeftEye.ry"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_rotateY.message" 
-		"cartoonCharacterRN.placeHolderList[924]" ""
+		"cartoonCharacterRN.placeHolderList[1900]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_rotateZ.output" 
+		"cartoonCharacterRN.placeHolderList[1901]" "cartoonCharacter:LeftEye.rz"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_rotateZ.message" 
-		"cartoonCharacterRN.placeHolderList[925]" ""
+		"cartoonCharacterRN.placeHolderList[1902]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_scaleX.message" 
-		"cartoonCharacterRN.placeHolderList[926]" ""
+		"cartoonCharacterRN.placeHolderList[1903]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_scaleY.message" 
-		"cartoonCharacterRN.placeHolderList[927]" ""
+		"cartoonCharacterRN.placeHolderList[1904]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere2_scaleZ.message" 
-		"cartoonCharacterRN.placeHolderList[928]" ""
+		"cartoonCharacterRN.placeHolderList[1905]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_visibility.message" 
-		"cartoonCharacterRN.placeHolderList[929]" ""
+		"cartoonCharacterRN.placeHolderList[1906]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_rotateX.output" 
-		"cartoonCharacterRN.placeHolderList[930]" "cartoonCharacter:RightEye.rx"
+		"cartoonCharacterRN.placeHolderList[1907]" "cartoonCharacter:RightEye.rx"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_rotateX.message" 
-		"cartoonCharacterRN.placeHolderList[931]" ""
+		"cartoonCharacterRN.placeHolderList[1908]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_rotateY.output" 
-		"cartoonCharacterRN.placeHolderList[932]" "cartoonCharacter:RightEye.ry"
+		"cartoonCharacterRN.placeHolderList[1909]" "cartoonCharacter:RightEye.ry"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_rotateY.message" 
-		"cartoonCharacterRN.placeHolderList[933]" ""
+		"cartoonCharacterRN.placeHolderList[1910]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_rotateZ.output" 
+		"cartoonCharacterRN.placeHolderList[1911]" "cartoonCharacter:RightEye.rz"
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_rotateZ.message" 
-		"cartoonCharacterRN.placeHolderList[934]" ""
+		"cartoonCharacterRN.placeHolderList[1912]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_scaleX.message" 
-		"cartoonCharacterRN.placeHolderList[935]" ""
+		"cartoonCharacterRN.placeHolderList[1913]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_scaleY.message" 
-		"cartoonCharacterRN.placeHolderList[936]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:pSphere3_scaleZ.message" 
-		"cartoonCharacterRN.placeHolderList[937]" ""
+		"cartoonCharacterRN.placeHolderList[1914]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polySurface5_materialInfo.message" 
-		"cartoonCharacterRN.placeHolderList[938]" ""
+		"cartoonCharacterRN.placeHolderList[1915]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polySurface5_blinnSG.message" 
-		"cartoonCharacterRN.placeHolderList[939]" ""
+		"cartoonCharacterRN.placeHolderList[1916]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:polySurface5_blinn.message" 
-		"cartoonCharacterRN.placeHolderList[940]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert10.message" "cartoonCharacterRN.placeHolderList[941]" 
+		"cartoonCharacterRN.placeHolderList[1917]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert10.message" "cartoonCharacterRN.placeHolderList[1918]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert10SG.message" "cartoonCharacterRN.placeHolderList[942]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:lambert10SG.message" "cartoonCharacterRN.placeHolderList[1919]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo9.message" "cartoonCharacterRN.placeHolderList[943]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:materialInfo9.message" "cartoonCharacterRN.placeHolderList[1920]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh.message" 
-		"cartoonCharacterRN.placeHolderList[944]" ""
+		"cartoonCharacterRN.placeHolderList[1921]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_lambert3SG.message" 
-		"cartoonCharacterRN.placeHolderList[945]" ""
+		"cartoonCharacterRN.placeHolderList[1922]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo10.message" 
-		"cartoonCharacterRN.placeHolderList[946]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Green.message" "cartoonCharacterRN.placeHolderList[947]" 
+		"cartoonCharacterRN.placeHolderList[1923]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Green.message" "cartoonCharacterRN.placeHolderList[1924]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh2_lambert5SG.message" 
-		"cartoonCharacterRN.placeHolderList[948]" ""
+		"cartoonCharacterRN.placeHolderList[1925]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo2.message" 
-		"cartoonCharacterRN.placeHolderList[949]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Orange.message" "cartoonCharacterRN.placeHolderList[950]" 
+		"cartoonCharacterRN.placeHolderList[1926]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Orange.message" "cartoonCharacterRN.placeHolderList[1927]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_yellowDKSG.message" 
-		"cartoonCharacterRN.placeHolderList[951]" ""
+		"cartoonCharacterRN.placeHolderList[1928]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo11.message" 
-		"cartoonCharacterRN.placeHolderList[952]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Yellow.message" "cartoonCharacterRN.placeHolderList[953]" 
+		"cartoonCharacterRN.placeHolderList[1929]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Yellow.message" "cartoonCharacterRN.placeHolderList[1930]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_lambert6SG.message" 
-		"cartoonCharacterRN.placeHolderList[954]" ""
+		"cartoonCharacterRN.placeHolderList[1931]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo7.message" 
-		"cartoonCharacterRN.placeHolderList[955]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Purple.message" "cartoonCharacterRN.placeHolderList[956]" 
+		"cartoonCharacterRN.placeHolderList[1932]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Purple.message" "cartoonCharacterRN.placeHolderList[1933]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:PS_1:Quadra_defaultMat.message" 
-		"cartoonCharacterRN.placeHolderList[957]" ""
+		"cartoonCharacterRN.placeHolderList[1934]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:PS_1:Quadra_materialInfo1.message" 
-		"cartoonCharacterRN.placeHolderList[958]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:White.message" "cartoonCharacterRN.placeHolderList[959]" 
-		""
+		"cartoonCharacterRN.placeHolderList[1935]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_GenaricMesh_lambert2SG.message" 
-		"cartoonCharacterRN.placeHolderList[960]" ""
+		"cartoonCharacterRN.placeHolderList[1936]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo9.message" 
-		"cartoonCharacterRN.placeHolderList[961]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Red.message" "cartoonCharacterRN.placeHolderList[962]" 
+		"cartoonCharacterRN.placeHolderList[1937]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Red.message" "cartoonCharacterRN.placeHolderList[1938]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_lambert8SG.message" 
-		"cartoonCharacterRN.placeHolderList[963]" ""
+		"cartoonCharacterRN.placeHolderList[1939]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo5.message" 
-		"cartoonCharacterRN.placeHolderList[964]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Blue.message" "cartoonCharacterRN.placeHolderList[965]" 
+		"cartoonCharacterRN.placeHolderList[1940]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:Blue.message" "cartoonCharacterRN.placeHolderList[1941]" 
 		""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__GenericMeshv3a_lambert4SG.message" 
-		"cartoonCharacterRN.placeHolderList[966]" ""
+		"cartoonCharacterRN.placeHolderList[1942]" ""
 		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:GenericMesh_V10_1:AR__materialInfo1.message" 
-		"cartoonCharacterRN.placeHolderList[967]" ""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:LtBlue.message" "cartoonCharacterRN.placeHolderList[968]" 
+		"cartoonCharacterRN.placeHolderList[1943]" ""
+		5 3 "cartoonCharacterRN" "cartoonCharacter:NewHead:LtBlue.message" "cartoonCharacterRN.placeHolderList[1944]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId105.message" "cartoonCharacterRN.placeHolderList[969]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId105.message" "cartoonCharacterRN.placeHolderList[1945]" 
 		""
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId108.message" "cartoonCharacterRN.placeHolderList[970]" 
-		":initialShadingGroup.gn"
-		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId109.message" "cartoonCharacterRN.placeHolderList[971]" 
+		5 3 "cartoonCharacterRN" "cartoonCharacter:groupId109.message" "cartoonCharacterRN.placeHolderList[1946]" 
 		""
 		8 "|cartoonCharacter:GenericMesh5" "translateX"
 		8 "|cartoonCharacter:GenericMesh5" "translateY"
@@ -16989,16 +17305,7 @@ createNode reference -n "cartoonCharacterRN";
 		8 "|cartoonCharacter:GenericMesh5" "rotateZ"
 		8 "|cartoonCharacter:GenericMesh5" "scaleX"
 		8 "|cartoonCharacter:GenericMesh5" "scaleY"
-		8 "|cartoonCharacter:GenericMesh5" "scaleZ"
-		9 "|cartoonCharacter:GenericMesh5" "translateX"
-		9 "|cartoonCharacter:GenericMesh5" "translateY"
-		9 "|cartoonCharacter:GenericMesh5" "translateZ"
-		9 "|cartoonCharacter:GenericMesh5" "rotateX"
-		9 "|cartoonCharacter:GenericMesh5" "rotateY"
-		9 "|cartoonCharacter:GenericMesh5" "rotateZ"
-		9 "|cartoonCharacter:GenericMesh5" "scaleX"
-		9 "|cartoonCharacter:GenericMesh5" "scaleY"
-		9 "|cartoonCharacter:GenericMesh5" "scaleZ";
+		8 "|cartoonCharacter:GenericMesh5" "scaleZ";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode objectSet -s -n "lightEditorRoot";
@@ -17028,631 +17335,643 @@ createNode pairBlend -n "pairBlend2";
 createNode skinCluster -n "skinCluster1";
 	rename -uid "266F5365-4AFA-2769-8123-F183E3C19F72";
 	setAttr -s 4340 ".wl";
-	setAttr ".wl[0:495].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		2 1 0.9764705877751112 10 0.023529412224888802
-		2 1 0.99978996784193441 2 0.00021003215806558728
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		2 1 0.96249999850988388 2 0.037500001490116119
-		1 1 1
-		1 1 1
-		1 1 1
-		2 1 0.99998560741369147 2 1.4392586308531463e-05
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[496:862].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		2 1 0.99997823883495585 2 2.1761165044154041e-05
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
+	setAttr ".wl[0:329].w"
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 11 0.0078431367874145508 15 0.99215686321258545
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 7 0.5625 8 0.4375
+		2 7 0.27899998426437378 8 0.72100001573562622
+		2 7 0.27899998426437378 8 0.72100001573562622
+		1 8 1
+		1 8 1
+		1 8 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 6 1
+		1 6 1
+		6 0 5.8531565263467062e-05 1 6.7274673680103774e-05 3 5.8869137657610288e-05 
+		6 0.99966669082641602 7 9.010223171933625e-05 10 5.8531565263467021e-05
+		1 6 1
+		1 6 1
+		1 6 1
+		2 6 0.0036434531211853027 7 0.9963565468788147
+		2 6 0.028416037559509277 7 0.97158396244049072
+		2 6 0.0053971409797668457 7 0.99460285902023315
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 6 1
+		1 6 1
+		1 7 1
+		1 7 1
+		6 0 0.0021638980476299365 1 0.0023610762554545869 3 0.0023594986502294356 
+		6 0.98772269487380981 7 0.0032289341252462922 10 0.0021638980476299348
+		2 6 0.40439367294311523 7 0.59560632705688477
+		2 6 0.39948636293411255 7 0.60051363706588745
+		2 6 0.36853986978530884 7 0.63146013021469116
+		2 6 0.35058325529098511 7 0.64941674470901489
+		2 6 0.3434416651725769 7 0.6565583348274231
+		2 6 0.38200277090072632 7 0.61799722909927368
+		2 6 0.51708924770355225 7 0.48291075229644775
+		2 6 0.43580567836761475 7 0.56419432163238525
+		2 6 0.46961915493011475 7 0.53038084506988525
+		2 6 0.5212809145450592 7 0.4787190854549408
+		2 6 0.80733136832714081 7 0.19266863167285919
+		2 6 0.80057395994663239 7 0.19942604005336761
+		2 6 0.97466330416500568 7 0.025336695834994316
+		2 6 0.99980231269728392 7 0.00019768730271607637
+		2 6 0.99930411414243281 7 0.00069588585756719112
+		2 6 0.74248495697975159 7 0.25751504302024841
+		2 6 0.76733881235122681 7 0.23266118764877319
+		2 6 0.97222472727298737 7 0.027775272727012634
+		2 6 0.73260432481765747 7 0.26739567518234253
+		2 6 0.97892941348254681 7 0.021070586517453194
+		2 6 0.97987560927867889 7 0.020124390721321106
+		2 6 0.76086309552192688 7 0.23913690447807312
+		2 6 0.98717402759939432 7 0.012825972400605679
+		2 6 0.83871087431907654 7 0.16128912568092346
+		2 6 0.80434529483318329 7 0.19565470516681671
+		2 6 0.99616998876444995 7 0.003830011235550046
+		2 6 0.98839286342263222 7 0.011607136577367783
+		2 6 0.75426018238067627 7 0.24573981761932373
+		2 6 0.97218468599021435 7 0.027815314009785652
+		2 6 0.77159315347671509 7 0.22840684652328491
+		1 6 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 6 1
+		1 6 1
+		1 6 1
+		1 6 1
+		1 6 1
+		1 6 1
+		1 6 1
+		2 1 0.011764705181121826 6 0.98823529481887817
+		6 0 0.030850451443338603 1 0.034473999845358316 3 0.022281816947381121 
+		6 0.85445332527160645 7 0.027089955048976926 10 0.030850451443338579
+		6 0 0.0080443253088254823 1 0.008625463809684604 3 0.0061725029378198086 
+		6 0.96207147836685181 7 0.0070419042679928266 10 0.0080443253088254736
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		5 0 0.085220262398468444 1 0.10749875388466514 6 0.66618883609771729 
+		10 0.08522026239846836 11 0.055871885220680741
+		2 1 0.52173337340354919 6 0.47826662659645081
+		6 0 0.010705842409561394 1 0.016244365736964399 6 0.94794684648513794 
+		7 0.0069246523862030425 10 0.010705842409561388 11 0.007472450572571827
+		6 0 0.0092803954307863982 1 0.015188644282178046 6 0.95345801115036011 
+		7 0.0061580765027189309 10 0.009280395430786393 11 0.0066344772031701211
+		5 0 0.047747185324222306 1 0.069598079544781435 6 0.80165022611618042 
+		10 0.047747185324222279 11 0.033257323690593567
+		6 0 0.014385786310322762 1 0.02424665019386181 6 0.92730605602264404 
+		7 0.0094452681651270472 10 0.014385786310322755 11 0.01023045299772159
+		6 0 0.015609634946289077 1 0.02701586321860475 6 0.92009973526000977 
+		7 0.010427701532774055 10 0.015609634946289069 11 0.01123743009603328
+		2 1 0.56563502550125122 6 0.43436497449874878
+		1 1 1
+		1 1 1
+		2 1 0.9874151274561882 6 0.012584872543811798
+		1 1 1
+		2 1 0.98229563236236572 6 0.017704367637634277
+		2 1 0.97219177708029747 6 0.02780822291970253
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		3 1 0.97397905328592793 6 0.0025515714660286903 10 0.023469375248043343
+		3 1 0.98273339652223513 2 0.00021003215806558728 6 0.017056571319699287
+		6 0 0.0039356951405103953 1 0.74398655508957323 6 0.24363654851913452 
+		10 0.0039356951405103953 11 0.0026599384444587855 12 0.0018455676658126528
+		2 1 0.65156561136245728 6 0.34843438863754272
+		2 1 0.66133895516395569 6 0.33866104483604431
+		2 1 0.67762473225593567 6 0.32237526774406433
+		2 1 0.69797524809837341 6 0.30202475190162659
+		2 1 0.69499379396438599 6 0.30500620603561401
+		2 1 0.67521241307258606 6 0.32478758692741394
+		2 1 0.65782886743545532 6 0.34217113256454468
+		2 1 0.73428305983543396 6 0.26571694016456604
+		2 1 0.88275950402021408 6 0.11724049597978592
+		3 1 0.93105382990583341 2 0.037471576067362622 6 0.03147459402680397
+		6 0 0.050950356114281753 1 0.066777302889928974 6 0.76710087060928345 
+		7 0.030622607277804793 10 0.050950356114281718 11 0.033598506994419311
+		2 1 0.52533945441246033 6 0.47466054558753967
+		2 1 0.97487156465649605 6 0.025128435343503952
+		3 1 0.97388557910744566 2 1.4392586308531463e-05 6 0.026100028306245804
+		2 1 0.83762501180171967 6 0.16237498819828033
+		2 1 0.84724485874176025 6 0.15275514125823975
+		2 1 0.88776653259992599 6 0.11223346740007401
+		2 1 0.9988478624727577 6 0.0011521375272423029
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.67905637621879578 42 0.32094362378120422
+		1 38 1
+		2 38 0.58304068446159363 42 0.41695931553840637
+		2 38 0.98400000110268593 39 0.015999998897314072
+		2 38 0.94219926372170448 39 0.057800736278295517
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.68899339437484741 39 0.31100660562515259
+		1 38 1
+		1 38 1
+		2 38 0.56677863001823425 45 0.43322136998176575
+		1 38 1
+		2 38 0.79636912047863007 48 0.20363087952136993
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.73071864247322083 51 0.26928135752677917
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.26249998807907104 39 0.73750001192092896
+		1 39 1
+		2 38 0.81999999284744263 39 0.18000000715255737
+		2 38 0.76381489634513855 39 0.23618510365486145
+		1 39 1
+		2 38 0.23083329200744629 39 0.76916670799255371
+		1 39 1
+		1 39 1
+		1 39 1
+		1 38 1
+		1 38 1
+		2 38 0.72285154461860657 51 0.27714845538139343
+		2 39 0.55897921323776245 40 0.44102078676223755
+		2 39 0.54347693920135498 40 0.45652306079864502
+		2 39 0.64574086666107178 40 0.35425913333892822
+		2 39 0.56582742929458618 40 0.43417257070541382
+		1 38 1
+		2 38 0.54292064905166626 42 0.45707935094833374
+		1 38 1
+		2 39 0.65107759833335876 40 0.34892240166664124
+		2 38 0.64724886417388916 42 0.35275113582611084
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.56388872861862183 42 0.43611127138137817
+		2 38 0.96399999782443047 39 0.036000002175569534
+		1 38 1
+		2 38 0.6666666567325592 39 0.3333333432674408
+		1 38 1
+		2 38 0.96799999848008156 39 0.032000001519918442
+		2 38 0.89396914839744568 39 0.10603085160255432
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.66250002384185791 45 0.33749997615814209
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		2 38 0.75018791854381561 48 0.24981208145618439
+		1 38 1
+		1 38 1
+		2 38 0.72172147035598755 51 0.27827852964401245
+		1 38 1
+		1 38 1
+		2 38 0.7552739679813385 51 0.2447260320186615
+		2 38 0.73244693875312805 51 0.26755306124687195
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 39 1
+		2 38 0.70184710621833801 39 0.29815289378166199
+		1 39 1
+		1 39 1
+		1 38 1
+		1 38 1
+		1 38 1
+		2 39 0.62279155850410461 40 0.37720844149589539
+		2 39 0.67742440104484558 40 0.32257559895515442
+		2 39 0.66362714767456055 40 0.33637285232543945
+		1 40 1
+		1 40 1
+		2 40 0.92489638179540634 41 0.075103618204593658
+		2 40 0.90861891210079193 41 0.091381087899208069
+		2 40 0.19228845834732056 41 0.80771154165267944
+		2 40 0.12250053882598877 41 0.87749946117401123
+		1 41 1
+		1 41 1
+		1 40 1
+		1 40 1
+		2 40 0.93737003207206726 41 0.062629967927932739
+		2 40 0.94952089712023735 41 0.05047910287976265
+		2 40 0.17496973276138306 41 0.82503026723861694
+		2 40 0.12576478719711304 41 0.87423521280288696
+		1 41 1
+		1 41 1
+		1 40 1
+		2 40 0.98747400660067797 41 0.012525993399322033
+		2 40 0.20934551954269409 41 0.79065448045730591
+		1 41 1
+		1 40 1
+		3 38 0.027450978755950928 40 0.92262902110815048 41 0.04992000013589859;
+	setAttr ".wl[330:701].w"
+		1 41 1
+		1 41 1
+		1 40 1
+		2 40 0.91605760157108307 41 0.083942398428916931
+		2 40 0.10232603549957275 41 0.89767396450042725
+		1 41 1
+		1 40 1
+		1 40 1
+		1 41 1
+		1 41 1
+		1 41 1
+		1 45 1
+		1 45 1
+		1 45 1
+		1 45 1
+		2 45 0.58079200983047485 46 0.41920799016952515
+		2 45 0.53625902533531189 46 0.46374097466468811
+		2 38 0.0078431367874145508 46 0.99215686321258545
+		1 46 1
+		1 46 1
+		1 46 1
+		2 46 0.62964749336242676 47 0.37035250663757324
+		2 46 0.53622359037399292 47 0.46377640962600708
+		1 47 1
+		1 47 1
+		1 47 1
+		1 47 1
+		1 45 1
+		1 45 1
+		2 45 0.59098109602928162 46 0.40901890397071838
+		1 46 1
+		1 46 1
+		2 46 0.60849007964134216 47 0.39150992035865784
+		1 47 1
+		1 47 1
+		1 45 1
+		1 45 1
+		2 45 0.61508834362030029 46 0.38491165637969971
+		1 46 1
+		1 46 1
+		2 46 0.63065615296363831 47 0.36934384703636169
+		1 47 1
+		1 47 1
+		1 45 1
+		1 45 1
+		2 45 0.62960615754127502 46 0.37039384245872498
+		1 46 1
+		1 46 1
+		2 46 0.59554356336593628 47 0.40445643663406372
+		1 47 1
+		1 47 1
+		1 45 1
+		1 45 1
+		2 45 0.69606003165245056 46 0.30393996834754944
+		1 46 1
+		1 46 1
+		2 46 0.57445302605628967 47 0.42554697394371033
+		1 47 1
+		1 47 1
+		1 45 1
+		1 45 1
+		2 45 0.56497880816459656 46 0.43502119183540344
+		1 46 1
+		1 46 1
+		2 46 0.52243068814277649 47 0.47756931185722351
+		1 47 1
+		1 47 1
+		2 38 0.15000063180923462 45 0.84999936819076538
+		1 45 1
+		2 45 0.54773768782615662 46 0.45226231217384338
+		2 45 0.076611757278442383 46 0.92338824272155762
+		1 46 1
+		2 46 0.51481890678405762 47 0.48518109321594238
+		1 47 1
+		1 47 1
+		1 47 1
+		1 51 1
+		1 51 1
+		1 51 1
+		1 51 1
+		2 51 0.56062385439872742 52 0.43937614560127258
+		2 51 0.54024180769920349 52 0.45975819230079651
+		1 52 1
+		1 52 1
+		1 52 1
+		2 52 0.85089677572250366 53 0.14910322427749634
+		2 52 0.4578285813331604 53 0.5421714186668396
+		2 52 0.28707623481750488 53 0.71292376518249512
+		1 53 1
+		1 53 1
+		1 53 1
+		1 53 1
+		1 51 1
+		1 51 1
+		2 51 0.65181854367256165 52 0.34818145632743835
+		1 52 1
+		1 52 1
+		2 52 0.44775789976119995 53 0.55224210023880005
+		1 53 1
+		1 53 1
+		1 51 1
+		1 51 1
+		2 51 0.60782009363174438 52 0.39217990636825562
+		1 52 1
+		1 52 1
+		2 52 0.44247496128082275 53 0.55752503871917725
+		1 53 1
+		1 53 1
+		1 51 1
+		1 51 1
+		2 51 0.55045607686042786 52 0.44954392313957214
+		1 52 1
+		1 52 1
+		3 51 0.0078431367874145508 52 0.41290324926376343 53 0.57925361394882202
+		1 53 1
+		1 53 1
+		1 51 1
+		1 51 1
+		2 51 0.55998966097831726 52 0.44001033902168274
+		1 52 1
+		1 52 1
+		2 52 0.33275127410888672 53 0.66724872589111328
+		1 53 1
+		1 53 1
+		1 51 1
+		1 51 1
+		2 51 0.52796283364295959 52 0.47203716635704041
+		1 52 1
+		2 52 0.83931545913219452 53 0.16068454086780548
+		2 52 0.32381987571716309 53 0.67618012428283691
+		1 53 1
+		1 53 1
+		2 38 0.11398249864578247 51 0.88601750135421753
+		1 51 1
+		2 51 0.5464634895324707 52 0.4535365104675293
+		2 51 0.10902571678161621 52 0.89097428321838379
+		2 52 0.80694599449634552 53 0.19305400550365448
+		2 52 0.25444269180297852 53 0.74555730819702148
+		1 53 1
+		1 53 1
+		1 53 1
+		1 48 1
+		2 38 0.14278090000152588 48 0.85721909999847412
+		1 48 1
+		1 48 1
+		2 48 0.50530326366424561 49 0.49469673633575439
+		2 48 0.50541335344314575 49 0.49458664655685425
+		1 49 1
+		1 49 1
+		2 49 0.85689614713191986 50 0.14310385286808014
+		2 49 0.86449356377124786 50 0.13550643622875214
+		2 49 0.15976685285568237 50 0.84023314714431763
+		2 49 0.1458473801612854 50 0.8541526198387146
+		1 50 1
+		1 50 1
+		1 50 1
+		1 50 1
+		1 48 1
+		1 48 1
+		2 48 0.50591105222702026 49 0.49408894777297974
+		1 49 1
+		2 49 0.82515640556812286 50 0.17484359443187714
+		2 49 0.18233442306518555 50 0.81766557693481445
+		1 50 1
+		1 50 1
+		1 48 1
+		1 48 1
+		2 48 0.51181799173355103 49 0.48818200826644897
+		1 49 1
+		2 49 0.83354586362838745 50 0.16645413637161255
+		2 49 0.25567907094955444 50 0.74432092905044556
+		1 50 1
+		1 50 1
+		1 48 1
+		1 48 1
+		2 48 0.5059954822063446 49 0.4940045177936554
+		1 49 1
+		2 49 0.83398520946502686 50 0.16601479053497314
+		2 49 0.28012293577194214 50 0.71987706422805786
+		1 50 1
+		1 50 1
+		1 48 1
+		1 48 1
+		2 48 0.50706321001052856 49 0.49293678998947144
+		1 49 1
+		2 49 0.81391854584217072 50 0.18608145415782928
+		2 49 0.26931244134902954 50 0.73068755865097046
+		1 50 1
+		1 50 1
+		2 38 0.14278090000152588 48 0.85721909999847412
+		1 48 1
+		2 48 0.50850594043731689 49 0.49149405956268311
+		1 49 1
+		2 49 0.78493241965770721 50 0.21506758034229279
+		2 49 0.20265376567840576 50 0.79734623432159424
+		1 50 1
+		1 50 1
+		2 38 0.21129435300827026 48 0.78870564699172974
+		1 48 1
+		2 48 0.50861042737960815 49 0.49138957262039185
+		1 49 1
+		2 49 0.77417279779911041 50 0.22582720220088959
+		2 49 0.10632991790771484 50 0.89367008209228516
+		1 50 1
+		1 50 1
+		1 50 1
+		2 38 0.10858410596847534 42 0.89141589403152466
+		2 38 0.14348375797271729 42 0.85651624202728271
+		1 42 1
+		1 42 1
+		2 42 0.58444905281066895 43 0.41555094718933105
+		2 42 0.58836391568183899 43 0.41163608431816101
+		1 43 1
+		1 43 1
+		2 43 0.96267831325531006 44 0.037321686744689941
+		2 43 0.94374999776482582 44 0.056250002235174179
+		2 43 0.48399436473846436 44 0.51600563526153564
+		2 43 0.43116766214370728 44 0.56883233785629272
+		1 44 1
+		1 44 1
+		1 44 1
+		1 44 1
+		1 42 1
+		1 42 1
+		1 42 1
+		1 42 1
+		2 42 0.64872580766677856 43 0.35127419233322144
+		2 42 0.60634523630142212 43 0.39365476369857788
+		1 43 1
+		1 43 1
+		2 43 0.83124996721744537 44 0.16875003278255463
+		1 43 1
+		2 43 0.35727798938751221 44 0.64272201061248779
+		2 43 0.58138749003410339 44 0.41861250996589661
+		1 44 1
+		1 44 1
+		1 44 1
+		1 44 1
+		2 38 0.16648274660110474 42 0.83351725339889526
+		1 42 1
+		2 42 0.65619251132011414 43 0.34380748867988586
+		1 43 1
+		2 43 0.84999997913837433 44 0.15000002086162567
+		3 42 0.0078431367874145508 43 0.36538565158843994 44 0.62677121162414551
+		1 44 1
+		1 44 1
+		1 42 1
+		1 42 1
+		2 42 0.56478428840637207 43 0.43521571159362793
+		1 43 1
+		2 43 0.94374999776482582 44 0.056250002235174179
+		2 43 0.43779212236404419 44 0.56220787763595581
+		1 44 1
+		2 43 0.0078431367874145508 44 0.99215686321258545
+		1 42 0.99999999999999989
+		1 42 1
+		2 42 0.57411003112792969 43 0.42588996887207031
+		1 43 1
+		2 43 0.94374999776482582 44 0.056250002235174179
+		2 43 0.46585643291473389 44 0.53414356708526611
+		1 44 1
+		1 44 1
+		1 42 1
+		1 42 1
+		2 42 0.57935640215873718 43 0.42064359784126282
+		1 43 1
+		2 43 0.92704503983259201 44 0.07295496016740799
+		2 43 0.49439650774002075 44 0.50560349225997925
+		1 44 1
+		1 44 1
+		1 44 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		1 38 1
+		3 1 0.98626600124589459 2 2.1761165044154041e-05 6 0.01371223758906126
+		2 1 0.89216124266386032 6 0.10783875733613968
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
 		2 3 0.5625 4 0.4375
 		2 3 0.50429999828338623 4 0.49570000171661377
 		2 3 0.27899998426437378 4 0.72100001573562622
@@ -17733,7 +18052,8 @@ createNode skinCluster -n "skinCluster1";
 		2 2 0.99999271382921506 3 7.286170784936985e-06
 		1 3 1
 		1 3 1
-		2 1 0.0078431367874145508 2 0.99215686321258545
+		2 1 0.0078431367874145508 2 0.99215686321258545;
+	setAttr ".wl[702:998].w"
 		2 2 0.18861842155456543 3 0.81138157844543457
 		2 2 0.24870896339416504 3 0.75129103660583496
 		2 2 0.274330735206604 3 0.725669264793396
@@ -17833,2389 +18153,2409 @@ createNode skinCluster -n "skinCluster1";
 		2 1 0.39643216133117676 2 0.60356783866882324
 		2 1 0.43144083023071289 2 0.56855916976928711
 		2 1 0.52942049503326416 2 0.47057950496673584
-		2 1 0.77500000596046448 2 0.22499999403953552
+		3 1 0.77318423427641392 2 0.22499999403953552 6 0.00181577168405056
 		6 1 0.040596569938690492 2 0.88032549619674683 3 0.018616654580489955 
 		6 0.024717075798177526 7 0.015318335660434569 11 0.020425867825460624
 		2 1 0.41405183076858521 2 0.58594816923141479
 		2 1 0.83431729674339294 2 0.16568270325660706
-		2 1 0.84431186318397522 2 0.15568813681602478
-		2 1 0.8640536367893219 2 0.1359463632106781
+		3 1 0.84353807690786198 2 0.15568813681602478 6 0.00077378627611324191
+		3 1 0.86370946984970942 2 0.1359463632106781 6 0.00034416693961247802
 		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[863:1361].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
+		2 19 0.9824419766664505 26 0.0175580233335495
+		1 19 1
+		1 19 1
+		2 19 0.60757908225059509 23 0.39242091774940491
+		1 19 1
+		2 19 0.71611174941062927 23 0.28388825058937073
+		2 19 0.88236325979232788 20 0.11763674020767212
+		2 19 0.70350101590156555 20 0.29649898409843445
+		1 19 1
+		1 19 1
+		1 19 1
+		1 19 1
+		2 19 0.69288986921310425 20 0.30711013078689575
+		1 19 1
+		2 19 0.96552281081676483 20 0.034477189183235168
+		2 19 0.76535333693027496 26 0.23464666306972504
+		1 19 1
+		2 19 0.53246951103210449 29 0.46753048896789551
+		1 19 1
+		1 19 1
+		2 19 0.95190966501832008 26 0.048090334981679916
+		2 19 0.57637697458267212 32 0.42362302541732788
+		1 19 1
+		1 19 1
+		2 19 0.91562500596046448 32 0.084374994039535522
+		1 19 1
+		1 19 1
+		2 19 0.25090104341506958 20 0.74909895658493042
+		2 19 0.034369468688964844 20 0.96563053131103516
+		2 19 0.83960406482219696 20 0.16039593517780304
+		2 19 0.88829535990953445 20 0.11170464009046555
+		1 20 1
+		2 19 0.48618930578231812 20 0.51381069421768188
+		2 19 0.007784724235534668 20 0.99221527576446533
+		1 20 1
+		1 20 1
+		1 19 1
+		1 19 1
+		2 19 0.58588027954101562 32 0.41411972045898438
+		2 20 0.65874996781349182 21 0.34125003218650818
+		3 19 0.087391078472137451 20 0.67659753561019897 21 0.23601138591766357
+		2 20 0.6849999725818634 21 0.3150000274181366
+		2 20 0.6849999725818634 21 0.3150000274181366
+		2 19 0.99145148787647486 20 0.0085485121235251427
+		2 19 0.68520793318748474 23 0.31479206681251526
+		2 19 0.63714075088500977 20 0.36285924911499023
+		2 20 0.55448785424232483 21 0.44551214575767517
+		2 19 0.60532265901565552 23 0.39467734098434448
+		1 19 1
+		1 19 1
+		1 19 1
+		2 19 0.98454021476209164 20 0.015459785237908363
+		2 19 0.63330185413360596 23 0.36669814586639404
+		2 19 0.98107692785561085 20 0.018923072144389153
+		2 19 0.99752876511774957 20 0.0024712348822504282
+		2 19 0.59852781891822815 20 0.40147218108177185
+		1 19 1
+		2 19 0.93821913003921509 20 0.061780869960784912
+		2 19 0.90185507386922836 20 0.098144926130771637
+		1 19 1
+		1 19 1
+		1 19 1
+		2 19 0.7719399482011795 26 0.2280600517988205
+		1 19 1
+		2 19 0.98542857076972723 26 0.01457142923027277
+		1 19 1
+		1 19 1
+		2 19 0.7522270530462265 29 0.2477729469537735
+		1 19 1
+		1 19 1
+		2 19 0.72650083899497986 32 0.27349916100502014
+		1 19 1
+		1 19 1
+		2 19 0.68476709723472595 32 0.31523290276527405
+		2 19 0.69132331013679504 32 0.30867668986320496
+		1 19 1
+		1 19 1
+		1 19 1
+		1 19 1
+		1 20 1
+		3 18 0.0078431367874145508 19 0.50413531064987183 20 0.48802155256271362
+		2 19 0.075713217258453369 20 0.92428678274154663
+		2 19 0.26600474119186401 20 0.73399525880813599
+		1 19 1
+		1 19 1
+		1 19 1
+		2 20 0.42249995470046997 21 0.57750004529953003
+		2 20 0.63249996304512024 21 0.36750003695487976
+		2 20 0.77290524542331696 21 0.22709475457668304
+		1 21 1
+		1 21 1
+		2 21 0.50124993920326233 22 0.49875006079673767
+		2 21 0.81625013053417206 22 0.18374986946582794
+		1 22 1
+		1 22 1
+		1 22 1
+		1 22 1
+		1 21 1
+		2 18 0.027450978755950928 21 0.97254902124404907
+		1 21 1
+		2 18 0.023529410362243652 21 0.97647058963775635
+		1 22 1
+		1 22 1
+		1 22 1
+		1 22 1
+		1 21 1
+		1 21 1
+		1 22 1
+		1 22 1
+		1 21 1
+		2 21 0.57624572515487671 22 0.42375427484512329
+		2 21 0.035294115543365479 22 0.96470588445663452
+		1 22 1
+		1 21 1
+		2 21 0.64049926400184631 22 0.35950073599815369
+		1 22 1
+		1 22 1
+		1 21 1
+		2 21 0.8978520855307579 22 0.1021479144692421
+		1 22 1
+		1 22 1
+		2 20 0.0039215683937072754 22 0.99607843160629272
+		1 26 1
+		2 19 0.020667612552642822 26 0.97933238744735718
+		1 26 1
+		1 26 1
+		2 26 0.5119805634021759 27 0.4880194365978241
+		2 26 0.50368785858154297 27 0.49631214141845703
+		1 27 1
+		1 27 1
+		1 27 1
+		1 27 1
+		2 27 0.52885636687278748 28 0.47114363312721252
+		2 27 0.56441599130630493 28 0.43558400869369507
+		1 28 1
+		1 28 1
+		1 28 1
+		1 28 1
+		1 26 1
+		1 26 1
+		2 26 0.512115478515625 27 0.487884521484375
+		1 27 1
+		1 27 1
+		2 27 0.52268293499946594 28 0.47731706500053406
+		1 28 1
+		1 28 1
+		2 19 0.030945181846618652 26 0.96905481815338135
+		1 26 1
+		2 26 0.51249575614929199 27 0.48750424385070801
+		1 27 1
+		1 27 1
+		2 27 0.51917740702629089 28 0.48082259297370911
+		1 28 1
+		1 28 1
+		1 26 1
+		1 26 1
+		2 26 0.51533746719360352 27 0.48466253280639648
+		1 27 1
+		1 27 1
+		2 27 0.51805406808853149 28 0.48194593191146851
+		1 28 1
+		1 28 1
+		1 26 1
+		1 26 1
+		2 26 0.51778188347816467 27 0.48221811652183533
+		1 27 1
+		1 27 1
+		2 27 0.53255322575569153 28 0.46744677424430847
+		1 28 1
+		1 28 1
+		1 26 1
+		1 26 1
+		2 26 0.50510761141777039 27 0.49489238858222961
+		1 27 1
+		1 27 1
+		2 27 0.53341439366340637 28 0.46658560633659363
+		1 28 1
+		1 28 1
+		2 19 0.033379077911376953 26 0.96662092208862305
+		1 26 1
+		2 26 0.50228878855705261 27 0.49771121144294739
+		1 27 1
+		1 27 1
+		2 27 0.54120960831642151 28 0.45879039168357849
+		1 28 1
+		1 28 1
+		1 28 1
+		1 32 1
+		2 19 0.076210260391235352 32 0.92378973960876465
+		2 19 0.0049499273300170898 32 0.99505007266998291
+		1 32 1
+		2 32 0.73813372850418091 33 0.26186627149581909
+		2 32 0.58728852868080139 33 0.41271147131919861
+		2 32 0.035975396633148193 33 0.96402460336685181
+		2 32 0.056044161319732666 33 0.94395583868026733
+		2 33 0.58739200234413147 34 0.41260799765586853
+		2 33 0.63272958993911743 34 0.36727041006088257
+		1 34 1
+		1 34 1
+		1 34 1
+		1 34 1
+		1 34 1
+		1 34 1
+		1 32 1;
+	setAttr ".wl[999:1412].w"
+		1 32 1
+		2 32 0.67158874869346619 33 0.32841125130653381
+		1 33 1
+		2 33 0.63872000575065613 34 0.36127999424934387
+		2 33 0.002738654613494873 34 0.99726134538650513
+		1 34 1
+		1 34 1
+		1 32 1
+		1 32 1
+		2 32 0.55054327845573425 33 0.44945672154426575
+		1 33 1
+		2 33 0.63839998841285706 34 0.36160001158714294
+		1 34 1
+		1 34 1
+		1 34 1
+		2 19 0.031577885150909424 32 0.96842211484909058
+		1 32 1
+		2 32 0.56902202963829041 33 0.43097797036170959
+		1 33 1
+		2 33 0.61087998747825623 34 0.38912001252174377
+		1 34 1
+		1 34 1
+		1 34 1
+		1 32 1
+		1 32 1
+		2 32 0.73546034097671509 33 0.26453965902328491
+		1 33 1
+		2 33 0.64319998025894165 34 0.35680001974105835
+		1 34 1
+		1 34 1
+		1 34 1
+		2 19 0.069055736064910889 32 0.93094426393508911
+		1 32 1
+		2 32 0.67557165026664734 33 0.32442834973335266
+		2 32 0.1441044807434082 33 0.8558955192565918
+		2 33 0.67263999581336975 34 0.32736000418663025
+		1 34 1
+		1 34 1
+		1 34 1
+		2 19 0.092579901218414307 32 0.90742009878158569
+		2 19 0.0024321079254150391 32 0.99756789207458496
+		2 32 0.52137306332588196 33 0.47862693667411804
+		2 32 0.08722221851348877 33 0.91277778148651123
+		2 33 0.6407756507396698 34 0.3592243492603302
+		1 34 1
+		1 34 1
+		1 34 1
+		1 34 1
+		1 29 1
+		2 19 0.054999947547912605 29 0.9450000524520874
+		1 29 1
+		1 29 1
+		2 29 0.71508714556694031 30 0.28491285443305969
+		2 29 0.70255324244499207 30 0.29744675755500793
+		1 30 1
+		1 30 1
+		2 30 0.63865572214126587 31 0.36134427785873413
+		1 30 1
+		1 31 1
+		1 31 1
+		1 31 1
+		1 31 1
+		1 31 1
+		1 31 1
+		1 29 1
+		1 29 1
+		2 29 0.752179354429245 30 0.247820645570755
+		1 30 1
+		2 30 0.4753495454788208 31 0.5246504545211792
+		1 31 1
+		1 31 1
+		1 31 1
+		1 29 1
+		1 29 1
+		2 29 0.65637698769569397 30 0.34362301230430603
+		2 29 0.039382636547088623 30 0.96061736345291138
+		2 30 0.45165258646011353 31 0.54834741353988647
+		1 31 1
+		1 31 1
+		1 31 1
+		1 29 1
+		1 29 1
+		2 29 0.61321640014648438 30 0.38678359985351562
+		2 29 0.036792993545532227 30 0.96320700645446777
+		2 30 0.40739691257476807 31 0.59260308742523193
+		1 31 1
+		1 31 1
+		1 31 1
+		1 29 1
+		1 29 1
+		2 29 0.71539303660392761 30 0.28460696339607239
+		1 30 1
+		2 30 0.64365464448928833 31 0.35634535551071167
+		1 31 1
+		1 31 1
+		1 31 1
+		2 19 0.057754635810852051 29 0.94224536418914795
+		1 29 1
+		2 29 0.73788461089134216 30 0.26211538910865784
+		1 30 1
+		1 30 1
+		1 31 1
+		1 31 1
+		1 31 1
+		2 19 0.098551928997039795 29 0.90144807100296021
+		1 29 1
+		2 29 0.71616882085800171 30 0.28383117914199829
+		2 29 0.060000002384185798 30 0.93999999761581421
+		1 30 1
+		1 31 1
+		1 31 1
+		1 31 1
+		1 31 1
+		2 19 0.10815274715423584 23 0.89184725284576416
+		2 19 0.18230640888214111 23 0.81769359111785889
+		2 23 0.886164590716362 24 0.113835409283638
+		1 23 1
+		2 23 0.58476883172988892 24 0.41523116827011108
+		2 23 0.33168858289718628 24 0.66831141710281372
+		1 24 1
+		1 24 1
+		2 24 0.75471238791942596 25 0.24528761208057404
+		2 24 0.79116113483905792 25 0.20883886516094208
+		1 25 1
+		2 24 0.10392165184020996 25 0.89607834815979004
+		1 25 1
+		1 25 1
+		1 25 1
+		1 25 1
+		2 19 0.019430994987487793 23 0.98056900501251221
+		1 23 1
+		1 23 1
+		2 23 0.9387134350836277 24 0.061286564916372299
+		2 23 0.33715826272964478 24 0.66284173727035522
+		2 23 0.58074000477790833 24 0.41925999522209167
+		1 24 1
+		1 24 1
+		2 24 0.79943700134754181 25 0.20056299865245819
+		3 23 0.019607841968536377 24 0.80640041828155518 25 0.17399173974990845
+		2 24 0.082721114158630371 25 0.91727888584136963
+		1 25 1
+		1 25 1
+		1 25 1
+		1 25 1
+		1 25 1
+		2 19 0.22135365009307861 23 0.77864634990692139
+		2 23 0.86459356546401978 24 0.13540643453598022
+		2 23 0.36559474468231201 24 0.63440525531768799
+		1 24 1
+		2 24 0.80626535415649414 25 0.19373464584350586
+		2 24 0.10860621929168701 25 0.89139378070831299
+		1 25 1
+		1 25 1
+		2 19 0.041698157787322998 23 0.958301842212677
+		1 23 1
+		2 23 0.57962697744369507 24 0.42037302255630493
+		1 24 1
+		2 24 0.68976765871047974 25 0.31023234128952026
+		1 25 1
+		1 25 1
+		1 25 1
+		1 23 1
+		1 23 1
+		2 23 0.58226886391639709 24 0.41773113608360291
+		2 23 0.056008040904998779 24 0.94399195909500122
+		2 24 0.71550989151000977 25 0.28449010848999023
+		1 25 1
+		1 25 1
+		1 25 1
+		1 23 1
+		1 23 1
+		2 23 0.64473003149032593 24 0.35526996850967407
+		1 24 1
+		2 24 0.78521779179573059 25 0.21478220820426941
+		1 25 1
+		2 24 0.023529410362243652 25 0.97647058963775635
+		1 25 1
+		1 25 1
+		1 19 1
+		1 19 1
+		1 19 1
+		1 19 1
+		1 19 1
+		2 19 0.99635063274763525 20 0.0036493672523647547
+		1 19 1
+		1 19 1
+		1 19 1
+		1 19 1
 		2 1 0.84492185711860657 2 0.15507814288139343
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[1362:1861].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[1862:2361].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[2362:2860].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		2 1 0.0078431367874145508 10 0.99215686321258545
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[2861:3318].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
+		2 18 0.88749999552965164 19 0.11250000447034836
+		2 18 0.84999999403953552 19 0.15000000596046448
+		2 18 0.85035662353038788 19 0.14964337646961212
+		2 18 0.73785659670829773 19 0.26214340329170227
+		2 18 0.88785658031702042 19 0.11214341968297958
+		2 18 0.92499999701976776 19 0.075000002980232239
+		2 18 0.88749999552965164 19 0.11250000447034836
+		2 18 0.81249998509883881 19 0.18750001490116119
+		2 18 0.775713250041008 19 0.224286749958992
+		2 18 0.88749999552965164 19 0.11250000447034836
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.00090461969375610352 15 0.9990953803062439
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		2 14 0.017465531826019287 15 0.98253446817398071
+		2 14 0.00067657232284545898 15 0.99932342767715454
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.0010273456573486328 15 0.99897265434265137
+		2 14 2.3663043975830082e-05 15 0.99997633695602417
+		2 14 1.8894672393798828e-05 15 0.9999811053276062
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1;
+	setAttr ".wl[1413:1806].w"
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.00089216232299804688 15 0.99910783767700195
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.0095627307891845703 15 0.99043726921081543
+		2 14 0.11922687292098999 15 0.88077312707901001
+		1 15 1
+		2 14 0.12489151954650879 15 0.87510848045349121
+		2 14 0.12860888242721558 15 0.87139111757278442
+		2 14 0.16035747528076172 15 0.83964252471923828
+		2 14 0.14212441444396973 15 0.85787558555603027
+		2 14 0.34679073095321655 15 0.65320926904678345
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		2 14 0.0061125755310058594 15 0.99388742446899414
+		2 14 0.1731298565864563 15 0.8268701434135437
+		2 14 0.12627172470092773 15 0.87372827529907227
+		2 14 0.015213549137115479 15 0.98478645086288452
+		3 13 0.16229748725891113 14 0.47739803791046143 15 0.36030447483062744
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		3 13 0.12088686227798462 14 0.51714208722114563 15 0.36197105050086975
+		2 14 0.3261297345161438 15 0.6738702654838562
+		2 14 0.10507380962371826 15 0.89492619037628174
+		2 14 0.0002625584602355957 15 0.9997374415397644
+		2 14 0.0092568397521972656 15 0.99074316024780273
+		2 14 0.018379449844360352 15 0.98162055015563965
+		2 14 0.016076803207397461 15 0.98392319679260254
+		3 13 0.42355579137802124 14 0.54921315424144268 15 0.027231054380536079
+		2 12 2.0146369934082031e-05 13 0.99997985363006592
+		1 13 1
+		2 12 4.1723251342773438e-07 13 0.99999958276748657
+		1 13 1
+		3 13 0.65106311440467834 14 0.32452825084328651 15 0.024408634752035141
+		3 13 0.40977382659912109 14 0.54787342995405197 15 0.042352743446826935
+		3 13 0.43616807460784912 14 0.51906321570277214 15 0.044768709689378738
+		3 13 0.51674476265907288 14 0.43895895406603813 15 0.044296283274888992
+		3 13 0.6376073956489563 14 0.33250920847058296 15 0.029883395880460739
+		3 13 0.64372208714485168 14 0.33932505920529366 15 0.01695285364985466
+		3 13 0.46982103586196899 14 0.50129515118896961 15 0.028883812949061394
+		3 13 0.59904894232749939 14 0.36354444175958633 15 0.037406615912914276
+		3 13 0.49337571859359741 14 0.47769627720117569 15 0.028928004205226898
+		3 13 0.53769510984420776 14 0.40784741565585136 15 0.054457474499940872
+		3 13 0.49591237306594849 14 0.46821672469377518 15 0.035870902240276337
+		1 15 1
+		1 15 0.99999999999999989
+		2 14 0.23848485946655273 15 0.76151514053344727
+		2 14 0.0077654123306274414 15 0.99223458766937256
+		2 14 0.0016668438911437988 15 0.9983331561088562
+		2 14 0.0037459135055541992 15 0.9962540864944458
+		2 14 0.0040284395217895508 15 0.99597156047821045
+		2 14 0.0082148313522338867 15 0.99178516864776611
+		3 13 0.069823980331420898 14 0.51598694920539856 15 0.41418907046318054
+		2 14 0.52662304043769836 15 0.47337695956230164
+		1 15 0.99999999999999989
+		2 14 0.20380431413650513 15 0.79619568586349487
+		2 14 0.21618944406509399 15 0.78381055593490601
+		2 14 0.00011211633682250978 15 0.99988788366317749
+		2 14 0.0084301233291625977 15 0.9915698766708374
+		1 15 1
+		2 14 0.18962055444717407 15 0.81037944555282593
+		2 14 0.0072850584983825684 15 0.99271494150161743
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		3 13 0.011200010776519775 14 0.34013360738754272 15 0.6486663818359375
+		2 14 0.13063806295394897 15 0.86936193704605103
+		3 13 0.15462028980255127 14 0.48924246430397034 15 0.35613724589347839
+		3 13 0.64421546459197998 14 0.33891038037836552 15 0.016874155029654503
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		2 14 0.034750878810882568 15 0.96524912118911743
+		2 14 0.002821803092956543 15 0.99717819690704346
+		2 14 0.039153337478637695 15 0.9608466625213623
+		3 13 0.012388815172016621 14 0.19645274709910154 15 0.79115843772888184
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.0015932917594909668 15 0.99840670824050903
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.1306302547454834 15 0.8693697452545166
+		2 14 0.015985727310180664 15 0.98401427268981934
+		2 14 0.00059396028518676758 15 0.99940603971481323
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.015051543712615967 15 0.98494845628738403
+		2 14 0.00095123052597045888 15 0.99904876947402954
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.013008534908294678 15 0.98699146509170532
+		2 14 0.016603052616119385 15 0.98339694738388062
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		2 14 0.00033408403396606445 15 0.99966591596603394
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		2 14 0.002164006233215332 15 0.99783599376678467
+		2 14 0.0045557618141174316 15 0.99544423818588257
+		2 14 0.11141598224639893 15 0.88858401775360107
+		3 13 0.030809510499238968 14 0.31816966459155083 15 0.65102082490921021
+		3 13 0.024536335840821266 14 0.30631211958825588 15 0.66915154457092285
+		2 14 0.010525286197662354 15 0.98947471380233765
+		2 14 0.00011682510375976562 15 0.99988317489624023
+		1 15 1
+		2 14 0.17161136865615845 15 0.82838863134384155
+		2 14 0.029477059841156006 15 0.97052294015884399
+		3 13 0.14284753799438477 14 0.50142192840576172 15 0.35573053359985352
+		3 13 0.12268167734146118 14 0.51514634490013123 15 0.36217197775840759
+		3 13 0.10132114589214325 14 0.4968736320734024 15 0.40180522203445435
+		3 13 0.069571897387504578 14 0.45056940615177155 15 0.47985869646072388
+		2 14 0.24341034889221191 15 0.75658965110778809
+		1 15 1
+		2 12 8.4042549133300781e-06 13 0.99999159574508667
+		1 13 1
+		2 12 4.1723251342773438e-07 13 0.99999958276748657;
+	setAttr ".wl[1807:2191].w"
+		1 13 1
+		3 13 0.64870843291282654 14 0.32359252870082855 15 0.02769903838634491
+		3 13 0.64401859045028687 14 0.33494621887803078 15 0.021035190671682358
+		3 13 0.57608255743980408 14 0.40166383236646652 15 0.022253610193729401
+		3 13 0.51912239193916321 14 0.45362298563122749 15 0.027254622429609299
+		2 14 0.18504464626312256 15 0.81495535373687744
+		3 13 0.42732185125350952 14 0.55286892503499985 15 0.019809223711490631
+		3 13 0.62306484580039978 14 0.35197212547063828 15 0.024963028728961945
+		3 13 0.41855514049530029 14 0.56904451921582222 15 0.012400340288877487
+		2 14 0.19775885343551636 15 0.80224114656448364
+		2 14 0.20252525806427002 15 0.79747474193572998
+		2 14 0.17250210046768188 15 0.82749789953231812
+		3 13 0.46059662103652954 14 0.51488370075821877 15 0.024519678205251694
+		3 13 0.44305658340454102 14 0.53109412454068661 15 0.025849292054772377
+		2 14 0.14837384223937988 15 0.85162615776062012
+		2 14 0.17139488458633423 15 0.82860511541366577
+		3 13 0.46617209911346436 14 0.51130859740078449 15 0.022519303485751152
+		3 13 0.45636731386184692 14 0.52143172547221184 15 0.022200960665941238
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		3 13 0.10605943202972412 14 0.55062127113342285 15 0.34331929683685303
+		3 13 0.085464373230934143 14 0.58094553649425507 15 0.33359009027481079
+		3 13 0.13405525684356689 14 0.59955084323883057 15 0.26639389991760254
+		3 13 0.14149965345859528 14 0.60471756756305695 15 0.25378277897834778
+		3 13 0.12826545536518097 14 0.6182454377412796 15 0.25348910689353943
+		3 13 0.10969732701778412 14 0.63014344871044159 15 0.26015922427177429
+		3 13 0.12604488432407379 14 0.61468453705310822 15 0.25927057862281799
+		3 13 0.19134026765823364 14 0.56060995161533356 15 0.2480497807264328
+		3 13 0.26848816871643066 14 0.57674697041511536 15 0.15476486086845398
+		3 13 0.32877933979034424 14 0.53590312600135803 15 0.13531753420829773
+		3 13 0.36417895555496216 14 0.50247706472873688 15 0.13334397971630096
+		3 13 0.37561821937561035 14 0.48946478962898254 15 0.1349169909954071
+		3 13 0.39285749197006226 14 0.47938856482505798 15 0.12775394320487976
+		3 13 0.39833015203475952 14 0.46384552121162415 15 0.13782432675361633
+		3 13 0.38882875442504883 14 0.47953492403030396 15 0.13163632154464722
+		3 13 0.34141594171524048 14 0.5119892954826355 15 0.14659476280212402
+		3 13 0.27933669090270996 14 0.54276229441165924 15 0.1779010146856308
+		3 13 0.18339860439300537 14 0.53751084208488464 15 0.27909055352210999
+		3 13 0.19818407297134399 14 0.49780237674713135 15 0.30401355028152466
+		3 13 0.15674096345901489 14 0.5467228889465332 15 0.2965361475944519
+		3 13 0.19324100017547607 14 0.49826636910438538 15 0.30849263072013855
+		3 13 0.18113428354263306 14 0.48476588726043701 15 0.33409982919692993
+		3 13 0.14104211330413818 14 0.4983387291431427 15 0.36061915755271912
+		3 13 0.10674136877059937 14 0.53003469109535217 15 0.36322394013404846
+		2 13 0.73226889967918396 14 0.26773110032081604
+		2 13 0.73647576570510864 14 0.26352423429489136
+		2 13 0.75422397255897522 14 0.24577602744102478
+		2 13 0.77110967040061951 14 0.22889032959938049
+		2 13 0.83229774236679077 14 0.16770225763320923
+		2 13 0.83102196455001831 14 0.16897803544998169
+		2 13 0.81400962173938751 14 0.18599037826061249
+		2 13 0.82192568480968475 14 0.17807431519031525
+		2 13 0.86282548308372498 14 0.13717451691627502
+		3 13 0.88037203997373581 14 0.11959691221272806 15 3.1047813536133617e-05
+		2 13 0.89551836252212524 14 0.10448163747787476
+		2 13 0.8863421306014061 14 0.1136578693985939
+		2 13 0.88214951753616333 14 0.11785048246383667
+		2 13 0.87177236378192902 14 0.12822763621807098
+		2 13 0.86067891120910645 14 0.13932108879089355
+		2 13 0.87339825928211212 14 0.12660174071788788
+		3 13 0.86081628501415253 14 0.13706362107768655 15 0.0021200939081609249
+		3 13 0.809489905834198 14 0.18727361760102212 15 0.0032364765647798777
+		3 13 0.79173918068408966 14 0.20696477068122476 15 0.001296048634685576
+		3 13 0.78220948576927185 14 0.21608822955749929 15 0.0017022846732288599
+		3 13 0.77415700256824493 14 0.2248205435462296 15 0.001022453885525465
+		3 13 0.76023076474666595 14 0.23897461523301899 15 0.00079462002031505108
+		2 13 0.7347182035446167 14 0.2652817964553833
+		2 13 0.72758042812347412 14 0.27241957187652588
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		2 14 0.00045300438068807125 15 0.99954699561931193
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		2 14 0.00045300438068807125 15 0.99954699561931193
+		1 15 0.99999999999999989
+		2 14 0.038505375385284424 15 0.96149462461471558
+		1 15 1
+		2 14 0.038505375385284424 15 0.96149462461471558
+		1 15 1
+		2 14 0.038505375385284424 15 0.96149462461471558
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.038505375385284424 15 0.96149462461471558
+		1 15 1
+		2 14 0.038505375385284424 15 0.96149462461471558
+		1 15 1
+		2 14 0.038505375385284424 15 0.96149462461471558
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1;
+	setAttr ".wl[2192:2617].w"
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		2 14 5.9604644775390618e-08 15 0.99999994039535522
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 14 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		2 14 0.011764705181121826 15 0.98823529481887817
+		1 15 1
+		1 15 1
+		1 15 1
+		1 14 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		2 1 0.0078431367874145508 14 0.99215686321258545
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 1
+		1 15 0.99999999999999989
+		1 15 1
+		1 15 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 10 1
+		1 10 1
+		2 10 0.48225921392440796 11 0.51774078607559204
+		2 10 0.48491090536117554 11 0.51508909463882446
+		3 10 0.2684706449508667 11 0.66795976459980011 12 0.063569590449333191
+		3 10 0.25938999652862549 11 0.66381995379924774 12 0.07679004967212677
+		3 10 0.22443324327468872 11 0.6975102573633194 12 0.078056499361991882
+		2 10 0.45374315977096558 11 0.54625684022903442
+		2 10 0.46471667289733887 11 0.53528332710266113
+		3 10 0.23738372325897217 11 0.67877980321645737 12 0.083836473524570465
+		3 10 0.24646329879760742 11 0.67583745718002319 12 0.077699244022369385
+		3 10 0.096048653125762939 11 0.57635137438774109 12 0.32759997248649597
+		3 10 0.23474651575088501 11 0.68872581422328949 12 0.0765276700258255
+		3 10 0.08913886547088623 11 0.58247870206832886 12 0.32838243246078491
+		3 10 0.10978055000305176 11 0.56711164116859436 12 0.32310780882835388
+		3 10 0.094655752182006836 11 0.57403838634490967 12 0.3313058614730835
+		3 10 0.088715314865112305 11 0.57391899824142456 12 0.33736568689346313
+		3 10 0.087158143520355225 11 0.5810110867023468 12 0.33183076977729797
+		2 10 0.493755042552948 11 0.506244957447052
+		2 10 0.49271857738494873 11 0.50728142261505127
+		3 10 0.28800457715988159 11 0.59273837506771088 12 0.11925704777240753
+		3 10 0.28737169504165649 11 0.57817640900611877 12 0.13445189595222473
+		3 10 0.14120030403137207 11 0.49503913521766663 12 0.3637605607509613
+		3 10 0.13955456018447876 11 0.49176082015037537 12 0.36868461966514587
+		3 10 0.11039561033248901 11 0.55127182602882385 12 0.33833256363868713
+		3 10 0.24940508604049683 11 0.69030658900737762 12 0.060288324952125549
+		3 10 0.28368836641311646 11 0.64042487740516663 12 0.075886756181716919
+		2 10 0.47762548923492432 11 0.52237451076507568
+		2 10 0.47769427299499512 11 0.52230572700500488
+		3 10 0.26864135265350342 11 0.65377064049243927 12 0.077588006854057312
+		3 10 0.25934696197509766 11 0.6686064749956131 12 0.072046563029289246
+		3 10 0.10289835929870605 11 0.57188442349433899 12 0.32521721720695496
+		2 10 0.48506778478622437 11 0.51493221521377563
+		1 10 1
+		1 10 1
+		2 10 0.74419975280761719 11 0.25580024719238281
+		2 10 0.72373759746551514 11 0.27626240253448486
+		1 10 1
+		2 10 0.74517253041267395 11 0.25482746958732605
+		1 10 1
+		1 10 1
+		2 10 0.74037307500839233 11 0.25962692499160767
+		1 10 1
+		1 10 1
+		2 10 0.73570156097412109 11 0.26429843902587891
+		2 10 0.73692411184310913 11 0.26307588815689087
+		1 10 1
+		2 10 0.74123260378837585 11 0.25876739621162415
+		2 10 0.7545546293258667 11 0.2454453706741333
+		2 10 0.7633674293756485 11 0.2366325706243515
+		2 10 0.75984467566013336 11 0.24015532433986664
+		2 10 0.45660769939422607 11 0.54339230060577393
+		2 10 0.44064325094223022 11 0.55935674905776978
+		2 10 0.73959037661552429 11 0.26040962338447571
+		2 10 0.46711796522140503 11 0.53288203477859497
+		2 10 0.73789805173873901 11 0.26210194826126099
+		3 10 0.12785327434539795 11 0.52326405048370361 12 0.34888267517089844
+		2 10 0.11616593599319458 11 0.5380951464176178;
+	setAttr ".wl[2617:2860].w"
+		1 12 0.34573891758918762
+		1 10 1
+		1 10 1
+		1 10 1
+		2 10 0.71482214331626892 11 0.28517785668373108
+		2 10 0.41776490211486816 11 0.58223509788513184
+		3 10 0.22326505184173584 11 0.70837409794330597 12 0.068360850214958191
+		3 10 0.084250211715698242 11 0.58678597211837769 12 0.32896381616592407
+		3 10 0.029002964496612549 11 0.36079484224319458 12 0.61020219326019287
+		3 10 0.035003423690795898 11 0.34999918937683105 12 0.61499738693237305
+		2 11 0.1838107705116272 12 0.8161892294883728
+		2 11 0.19602179527282715 12 0.80397820472717285
+		2 12 0.86309854686260223 35 0.13690145313739777
+		2 12 0.67549952864646912 35 0.32450047135353088
+		2 12 0.76577432453632355 35 0.23422567546367645
+		2 12 0.87853768467903137 35 0.12146231532096863
+		3 11 0.0043417215347290039 12 0.98114029783755541 35 0.014517980627715588
+		3 11 0.005896449089050293 12 0.96166046336293221 35 0.032443087548017502
+		3 11 0.0030045509338378906 12 0.95356011018157005 35 0.043435338884592056
+		2 12 0.8436054140329361 35 0.1563945859670639
+		2 12 0.56935387849807739 35 0.43064612150192261
+		2 12 0.84701469540596008 35 0.15298530459403992
+		3 11 0.03342735767364502 12 0.96009251056239009 35 0.0064801317639648914
+		2 11 0.048095166683197021 12 0.95190483331680298
+		2 11 0.051646769046783447 12 0.94835323095321655
+		2 12 0.98561052698642015 35 0.014389473013579845
+		3 12 0.90000581764616072 16 0.0030307022389024496 35 0.096963480114936829
+		2 12 0.45987379550933838 35 0.54012620449066162
+		3 12 0.83720269467448816 16 0.00027931068325415254 35 0.16251799464225769
+		4 12 0.72510148491346627 16 2.8357844712445512e-05 35 0.27365979400929064 
+		36 0.0012103632325306535
+		3 12 0.43338578939437866 35 0.54222708940505981 36 0.024387121200561523
+		3 12 0.62779861688613892 35 0.37190654416917823 36 0.00029483894468285143
+		2 12 0.84761287271976471 35 0.15238712728023529
+		2 12 0.96610482782125473 35 0.03389517217874527
+		3 12 0.97684184927493334 16 0.012770980596542358 35 0.010387170128524303
+		3 12 0.88668513298034668 16 0.027754027396440506 35 0.085560839623212814
+		3 12 0.99045363860204816 16 0.0045290710404515266 35 0.0050172903575003147
+		3 10 0.019997477531433105 11 0.33735603094100952 12 0.64264649152755737
+		3 10 0.021217763423919678 11 0.33857285976409912 12 0.6402093768119812
+		2 35 0.022909224033355713 36 0.97709077596664429
+		1 36 1
+		2 35 0.55664098262786865 36 0.44335901737213135
+		2 35 0.50554221868515015 36 0.49445778131484985
+		3 12 0.14206314086914062 35 0.70952567458152771 36 0.14841118454933167
+		3 12 0.0020437836647033691 35 0.56630760431289673 36 0.4316486120223999
+		2 35 0.72451144456863403 36 0.27548855543136597
+		2 35 0.16873431205749512 36 0.83126568794250488
+		3 12 0.14903557300567627 35 0.60925795137882233 36 0.2417064756155014
+		3 12 0.029537796974182129 35 0.48866593837738037 36 0.4817962646484375
+		2 35 0.2811998724937439 36 0.7188001275062561
+		2 35 0.57070612907409668 36 0.42929387092590332
+		2 35 0.14032495021820068 36 0.85967504978179932
+		2 35 0.49968677759170532 36 0.50031322240829468
+		2 12 0.44894099235534668 35 0.55105900764465332
+		3 12 0.42317304015159607 35 0.48341860622167587 36 0.093408353626728058
+		3 12 0.39421907067298889 13 0.35862043499946594 35 0.24716049432754517
+		3 12 0.38069164752960205 13 0.35279232263565063 35 0.26651602983474731
+		3 12 0.41150447726249695 35 0.47758077085018158 36 0.11091475188732147
+		3 12 0.38661187887191772 13 0.36957606673240662 35 0.24381205439567566
+		3 12 0.44237208366394043 35 0.37694813311100006 36 0.18067978322505951
+		3 12 0.41912710666656494 13 0.31623315811157227 35 0.26463973522186279
+		4 12 0.43628257513046265 13 0.012268001213669777 35 0.41236751340329647 
+		36 0.13908191025257111
+		3 12 0.43922561407089233 13 0.31055557727813721 35 0.25021880865097046
+		3 12 0.44574630260467529 35 0.47648037970066071 36 0.077773317694664001
+		4 12 0.42730474472045898 13 0.29215452075004578 35 0.27818415989167988 
+		36 0.0023565746378153563
+		3 12 0.26110941171646118 35 0.71617525443434715 36 0.022715333849191666
+		3 12 0.11148679256439209 35 0.82582113891839981 36 0.062692068517208099
+		3 12 0.48999292682856321 13 0.011961300857365131 35 0.49804577231407166
+		4 12 0.4344249963760376 13 0.31131434440612793 35 0.25407076744886581 
+		36 0.00018989176896866411
+		3 12 0.037797749042510986 35 0.92165464535355568 36 0.040547605603933334
+		2 35 0.713990718126297 36 0.286009281873703
+		3 10 0.035983741283416748 11 0.34324908256530762 12 0.62076717615127563
+		3 10 0.023235082626342773 11 0.33366727828979492 12 0.6430976390838623
+		3 10 0.03361058235168457 11 0.33202409744262695 12 0.63436532020568848
+		2 12 0.78979498147964478 35 0.21020501852035522
+		2 12 0.71153432130813599 35 0.28846567869186401
+		2 12 0.47464752197265625 35 0.52535247802734375
+		2 12 0.22286731004714966 35 0.77713268995285034
+		3 12 0.68352454900741577 35 0.31637257011607289 36 0.00010288087651133537
+		3 12 0.55224406719207764 13 0.36996763944625854 35 0.077788293361663818
+		3 12 0.74377343058586121 35 0.25622111998427499 36 5.4494298638019245e-06
+		2 12 0.81669503450393677 35 0.18330496549606323
+		3 11 0.029104292392730713 12 0.9550950899720192 35 0.015800617635250092
+		3 11 0.025598645210266113 12 0.93045360967516899 35 0.043947745114564896
+		3 10 0.0088665485382080078 11 0.34270590543746948 12 0.64842754602432251
+		2 12 0.97358198650181293 35 0.026418013498187065
+		2 12 0.92360695451498032 35 0.076393045485019684
+		2 12 0.59798276424407959 35 0.40201723575592041
+		3 11 0.012155234813690186 12 0.97885817755013704 35 0.0089865876361727715
+		3 11 0.0070447325706481925 12 0.99239702092017978 35 0.00055824650917202234
+		2 12 0.95834814012050629 16 0.041651859879493713
+		4 11 0.0049570202827453613 12 0.97786472080042586 16 0.016691042110323906 
+		35 0.00048721680650487542
+		3 12 0.2564626932144165 35 0.74071452836506069 36 0.002822778420522809
+		3 12 0.33022826910018921 35 0.66968585830909433 36 8.5872590716462582e-05
+		3 10 0.010798037052154541 11 0.32274520397186279 12 0.66645675897598267
+		3 10 0.010396778583526611 11 0.32091331481933594 12 0.66868990659713745
+		2 12 0.85161048173904419 35 0.14838951826095581
+		2 12 0.61587774753570557 35 0.38412225246429443
+		3 12 0.57321973890066147 13 0.057396478950977325 35 0.36938378214836121
+		3 12 0.43698230385780334 13 0.34930077195167542 35 0.21371692419052124
+		4 12 0.81601027958095074 13 0.16143155097961426 16 0.010776414535939693 
+		35 0.011781754903495312
+		4 12 0.59473046769198845 13 0.40080288052558899 16 3.3038511901395395e-05 
+		35 0.0044336132705211639
+		4 12 0.76730901254632045 13 0.14188200235366821 16 6.7343280534259975e-05 
+		35 0.090741641819477081
+		3 12 0.54480493068695068 13 0.40046423673629761 35 0.054730832576751709
+		3 12 0.67414691299200058 13 0.10056909173727036 35 0.22528399527072906
+		3 12 0.46628814935684204 13 0.39793732762336731 35 0.13577452301979065
+		2 11 0.086619138717651367 12 0.91338086128234863
+		2 11 0.078793585300445557 12 0.92120641469955444
+		2 11 0.12184834480285645 12 0.87815165519714355
+		2 11 0.12407904863357544 12 0.87592095136642456
+		2 11 0.14778733253479004 12 0.85221266746520996
+		2 11 0.17008215188980103 12 0.82991784811019897
+		4 12 0.81490176916122437 13 0.013477461412549019 16 0.0091110812500119209 
+		35 0.16250968817621469
+		3 12 0.58474999666213989 13 0.36708030104637146 35 0.048169702291488647
+		2 11 0.0057893991470336914 12 0.99421060085296631
+		2 12 0.99943123274715617 35 0.00056876725284382701
+		2 12 0.99638451472856104 35 0.0036154852714389563
+		2 11 0.0068408846855163574 12 0.99315911531448364
+		3 10 0.021377384662628174 11 0.33660626411437988 12 0.64201635122299194
+		3 11 0.069186687469482422 12 0.92897426115814596 16 0.001839051372371614
+		2 12 0.97960452735424042 35 0.020395472645759583
+		3 11 0.0061848163604736328 12 0.94949067756533623 35 0.04432450607419014
+		3 10 0.006417393684387207 11 0.34319901466369629 12 0.6503835916519165
+		3 11 0.0034331679344177246 12 0.99380161985754967 35 0.002765212208032608
+		3 12 0.35862183570861816 35 0.63790947082452476 36 0.0034686934668570757
+		3 12 0.21693432331085205 35 0.73250090703368187 36 0.05056476965546608
+		3 12 0.12686288356781006 35 0.86260779853910208 36 0.010529317893087864
+		3 12 0.038982033729553223 35 0.93473617918789387 36 0.02628178708255291
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		2 36 0.036698222160339355 37 0.96330177783966064
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		2 36 0.0011072754859924316 37 0.99889272451400757
+		1 37 1
+		1 37 1
+		1 37 1
+		2 36 0.043483972549438477 37 0.95651602745056152
+		2 36 0.0059538483619689941 37 0.99404615163803101
+		2 36 0.00053238868713378906 37 0.99946761131286621
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		2 36 0.0050377845764160156 37 0.99496221542358398
+		1 36 1
+		1 36 1
+		1 36 1
+		1 36 1
+		1 36 1
+		1 36 1
+		1 36 1
+		2 35 0.010138809680938721 36 0.98986119031906128
+		1 36 1
+		1 36 1
+		1 36 1
+		2 35 0.0084532499313354492 36 0.99154675006866455
+		1 36 1
+		2 36 0.9989321967586875 37 0.0010678032413125038
+		1 36 1
+		1 36 1
+		1 36 1
+		2 36 0.9450618140399456 37 0.054938185960054398
+		1 36 1
+		2 36 0.99106597620993853 37 0.0089340237900614738
+		2 36 0.9239770844578743 37 0.076022915542125702
+		2 36 0.61547383666038513 37 0.38452616333961487
+		2 36 0.63563922047615051 37 0.36436077952384949
+		2 36 0.5442250669002533 37 0.4557749330997467
+		2 36 0.49540704488754272 37 0.50459295511245728
+		2 36 0.52571749687194824 37 0.47428250312805176
+		2 36 0.43143606185913086 37 0.56856393814086914
+		2 36 0.34980970621109009 37 0.65019029378890991
+		1 36 1
+		1 36 1
+		2 36 0.90990423411130905 37 0.090095765888690948
+		2 36 0.39940828084945679 37 0.60059171915054321
+		1 36 1
+		2 36 0.59532126784324646 37 0.40467873215675354
+		2 35 0.00061410665512084961 36 0.99938589334487915
+		2 35 0.016606509685516357 36 0.98339349031448364
+		2 35 0.011764705181121826 36 0.98823529481887817
+		1 36 1
+		1 36 1
+		2 36 0.52227747440338135 37 0.47772252559661865
+		2 35 0.17813074588775635 36 0.82186925411224365
+		2 35 0.18652713298797607 36 0.81347286701202393
+		2 35 0.1957237720489502 36 0.8042762279510498
+		2 35 0.026228129863739014 36 0.97377187013626099
+		1 36 1
+		1 36 1
+		1 36 1
+		1 36 1
+		2 35 0.093327462673187256 36 0.90667253732681274
+		3 12 0.0021218061447143555 35 0.075324475765228271 36 0.92255371809005737
+		3 12 0.010274946689605713 35 0.75343012809753418 36 0.23629492521286011
+		2 35 0.75478453934192657 36 0.24521546065807343
+		1 37 1
+		1 37 1
+		3 10 0.015343427658081055 11 0.32418268918991089 12 0.66047388315200806
+		2 11 0.097012579441070557 12 0.90298742055892944
+		2 11 0.11618387699127197 12 0.88381612300872803
+		2 11 0.11079603433609009 12 0.88920396566390991
+		2 11 0.11516046524047852 12 0.88483953475952148
+		2 11 0.12630057334899902 12 0.87369942665100098
+		1 10 1
+		1 10 1
+		2 10 0.43903452157974243 11 0.56096547842025757
+		3 10 0.21919268369674683 11 0.69272918999195099 12 0.088078126311302185
+		3 10 0.22839236259460449 11 0.69909925758838654 12 0.072508379817008972
+		2 10 0.45176714658737183 11 0.54823285341262817
+		3 10 0.20838385820388794 11 0.69013968110084534 12 0.10147646069526672
+		1 10 0.20671325922012329;
+	setAttr ".wl[2860:3098].w"
+		2 11 0.69091451913118362 12 0.10237222164869308
+		2 10 0.41029924154281616 11 0.58970075845718384
+		2 10 0.38796341419219971 11 0.61203658580780029
+		3 10 0.078057646751403809 11 0.59675025939941406 12 0.32519209384918213
+		3 10 0.081247687339782715 11 0.59419041872024536 12 0.32456189393997192
+		3 10 0.21640413999557495 11 0.73834346607327461 12 0.045252393931150436
+		3 10 0.21149402856826782 11 0.73315250873565674 12 0.055353462696075439
+		3 10 0.079320311546325684 11 0.58054620027542114 12 0.34013348817825317
+		3 10 0.085465013980865479 11 0.57951721549034119 12 0.33501777052879333
+		3 10 0.08116912841796875 11 0.57440933585166931 12 0.34442153573036194
+		3 10 0.071427702903747559 11 0.58418703079223633 12 0.34438526630401611
+		3 10 0.28228652477264404 11 0.59234406054019928 12 0.12536941468715668
+		3 10 0.49210619926452637 11 0.50122844148427248 12 0.0066653592512011528
+		3 10 0.1373145580291748 11 0.49360102415084839 12 0.36908441781997681
+		3 10 0.23392599821090698 11 0.66781259328126907 12 0.098261408507823944
+		3 10 0.099101424217224121 11 0.56490805745124817 12 0.33599051833152771
+		3 10 0.25195914506912231 11 0.6403433084487915 12 0.10769754648208618
+		3 10 0.26916801929473877 11 0.60869497805833817 12 0.12213700264692307
+		2 10 0.45427882671356201 11 0.54572117328643799
+		3 10 0.47276431322097778 11 0.52035789098590612 12 0.0068777957931160927
+		3 10 0.079721391201019287 11 0.59787672758102417 12 0.32240188121795654
+		3 10 0.21375507116317749 11 0.72532672807574272 12 0.060918200761079788
+		2 10 0.40489494800567627 11 0.59510505199432373
+		2 10 0.95199999958276749 11 0.048000000417232513
+		1 10 1
+		1 10 1
+		2 10 0.70933398604393005 11 0.29066601395606995
+		2 10 0.70776107907295227 11 0.29223892092704773
+		2 10 0.74080589413642883 11 0.25919410586357117
+		1 10 1
+		1 10 1
+		2 10 0.95199999958276749 11 0.048000000417232513
+		2 10 0.71098718047142029 11 0.28901281952857971
+		2 10 0.72893562912940979 11 0.27106437087059021
+		1 10 1
+		2 10 0.70559999346733093 11 0.29440000653266907
+		2 10 0.74239999055862427 11 0.25760000944137573
+		2 10 0.84000000357627869 11 0.15999999642372131
+		2 10 0.73600000143051147 11 0.26399999856948853
+		2 10 0.41307026147842407 11 0.58692973852157593
+		2 10 0.40254390239715576 11 0.59745609760284424
+		2 10 0.68081408739089966 11 0.31918591260910034
+		2 10 0.43331599235534668 11 0.56668400764465332
+		2 10 0.69132962822914124 11 0.30867037177085876
+		3 10 0.1279219388961792 11 0.51800030469894409 12 0.35407775640487671
+		3 10 0.11420005559921265 11 0.53895843029022217 12 0.34684151411056519
+		1 10 1
+		1 10 1
+		3 11 0.19578659534454346 12 0.80309449799824506 16 0.0011189066572114825
+		3 10 0.039172708988189697 11 0.34946990013122559 12 0.61135739088058472
+		3 11 0.00051057338714599609 12 0.75164197385311127 16 0.24784745275974274
+		2 12 0.86681759357452393 16 0.13318240642547607
+		2 12 0.81395873427391052 16 0.18604126572608948
+		2 12 0.61036062240600586 16 0.38963937759399414
+		3 11 0.012024343013763428 12 0.85807773470878601 16 0.12989792227745056
+		3 11 0.014970183372497559 12 0.90027444809675217 16 0.084755368530750275
+		3 11 3.6835670471191406e-05 12 0.63379830121994019 16 0.36616486310958862
+		3 11 0.0061134696006774902 12 0.80681005120277405 16 0.18707647919654846
+		2 12 0.3308754563331604 16 0.6691245436668396
+		3 11 0.032274067401885986 12 0.84752123057842255 16 0.12020470201969147
+		3 11 0.0036978721618652344 12 0.62733158469200134 16 0.36897054314613342
+		3 11 0.05937957763671875 12 0.88565359264612198 16 0.054966829717159271
+		3 11 0.058980643749237061 12 0.9126899391412735 16 0.028329417109489441
+		3 11 0.0043374300003051758 12 0.93655098229646683 16 0.059111587703227997
+		2 12 0.91739268600940704 16 0.082607313990592957
+		2 12 0.21668416261672974 16 0.78331583738327026
+		3 12 0.85137168249002571 16 0.14861547946929932 35 1.2838040674978402e-05
+		2 12 0.60843813419342041 16 0.39156186580657959
+		2 12 0.46036607027053833 16 0.53963392972946167
+		3 12 0.77597028017044067 16 0.22006665170192719 35 0.0039630681276321411
+		2 12 0.82463820278644562 16 0.17536179721355438
+		3 12 0.94104384109959938 16 0.05854523554444313 35 0.00041092335595749319
+		3 10 0.019212245941162109 11 0.3383517861366272 12 0.64243596792221069
+		2 12 0.19242173433303833 17 0.80757826566696167
+		2 12 0.030621528625488281 17 0.96937847137451172
+		3 12 0.18670892715454102 16 0.010656237602233887 17 0.8026348352432251
+		2 12 0.022515654563903809 17 0.97748434543609619
+		2 12 0.0031685829162597656 17 0.99683141708374023
+		1 16 1
+		3 12 0.17389297485351562 16 0.60549533367156982 17 0.22061169147491455
+		2 12 0.11308127641677856 16 0.88691872358322144
+		2 16 0.67201000452041626 17 0.32798999547958374
+		2 16 0.3771856427192688 17 0.6228143572807312
+		2 16 0.047064840793609619 17 0.95293515920639038
+		2 16 0.46938496828079224 17 0.53061503171920776
+		1 17 1
+		3 12 0.14194375276565552 16 0.031798124313354492 17 0.82625812292098999
+		4 12 0.44951936695724726 13 0.010434596799314022 16 0.20664858818054199 
+		17 0.33339744806289673
+		3 12 0.41869688034057617 13 0.28675195574760437 16 0.29455116391181946
+		3 12 0.46922625601291656 13 0.30950695276260376 16 0.22126679122447968
+		2 12 0.51849061250686646 16 0.48150938749313354
+		4 12 0.44087773468345404 13 0.011505425907671452 16 0.10679608583450317 
+		17 0.44082075357437134
+		4 12 0.41675716638565063 13 0.28509521484375 16 0.28015409968793392 
+		17 0.017993519082665443
+		3 12 0.4105944037437439 16 0.18821665644645691 17 0.40118893980979919
+		4 12 0.46745960414409637 13 0.24100150167942047 16 0.2753564827144146 
+		17 0.016182411462068558
+		3 12 0.36350405216217041 13 0.27178031206130981 16 0.36471563577651978
+		4 12 0.26337404921650887 13 0.01910589262843132 16 0.42888331413269043 
+		17 0.28863674402236938
+		3 12 0.34602326154708862 13 0.28641313314437866 16 0.36756360530853271
+		4 12 0.13074490055441856 13 0.0048128701746463776 16 0.74265670776367188 
+		17 0.12178552150726318
+		1 16 1
+		1 16 1
+		3 12 0.42215618491172791 13 0.30646917223930359 16 0.27137464284896851
+		2 12 0.075863122940063477 16 0.92413687705993652
+		1 16 1
+		2 12 0.0030205845832824707 16 0.99697941541671753
+		3 10 0.032940268516540527 11 0.34409642219543457 12 0.6229633092880249
+		3 10 0.02300947904586792 11 0.32668685913085938 12 0.65030366182327271
+		3 10 0.012470781803131104 11 0.31585830450057983 12 0.67167091369628906
+		2 12 0.70058175921440125 16 0.29941824078559875
+		3 11 0.00023984909057617188 12 0.93988093733787537 16 0.059879213571548462
+		2 12 0.77541519701480865 16 0.22458480298519135
+		2 12 0.9538511261343956 16 0.046148873865604401
+		4 12 0.76242542266845703 13 0.012325065210461617 16 0.16562080383300781 
+		35 0.05962870828807354
+		3 12 0.59988344088196754 13 0.36574196815490723 16 0.034374590963125229
+		3 11 0.0020809173583984375 12 0.87690715491771698 16 0.12101192772388458
+		3 11 0.023459196090698242 12 0.95043723657727242 16 0.026103567332029343
+		3 11 0.027806341648101807 12 0.90525825321674347 16 0.066935405135154724
+		3 11 0.0029977560043334961 12 0.71501675248146057 16 0.28198549151420593
+		3 10 0.0021266341209411621 11 0.33454930782318115 12 0.66332405805587769
+		2 12 0.7558445930480957 16 0.2441554069519043
+		2 12 0.93203995376825333 16 0.067960046231746674
+		2 12 0.94632376357913017 16 0.053676236420869827
+		2 12 0.99275260092690587 16 0.0072473990730941296
+		2 12 0.98807018902152777 16 0.011929810978472233
+		2 12 0.21062189340591431 16 0.78937810659408569
+		2 12 0.54271262884140015 16 0.45728737115859985
+		2 11 0.33159983158111572 12 0.66840016841888428
+		3 10 0.017022013664245605 11 0.31431972980499268 12 0.66865825653076172
+		2 12 0.75779546797275543 16 0.24220453202724457
+		2 12 0.9383770115673542 16 0.061622988432645798
+		3 12 0.50992390513420105 13 0.35008504986763 16 0.13999104499816895
+		3 12 0.47064252197742462 13 0.089904114603996277 16 0.4394533634185791
+		3 12 0.59113058354705572 13 0.39713773131370544 16 0.011731685139238834
+		3 12 0.77382445335388184 13 0.16180489957332611 16 0.064370647072792053
+		3 12 0.55297653377056122 13 0.38089883327484131 16 0.066124632954597473
+		3 12 0.6852107048034668 13 0.13596211373806 16 0.17882718145847321
+		3 11 0.079006314277648926 12 0.90736990794539452 16 0.013623777776956558
+		3 11 0.072951078414916992 12 0.91369582898914814 16 0.013353092595934868
+		3 11 0.12871867418289185 12 0.86223304271697998 16 0.0090482831001281738
+		3 11 0.11058098077774048 12 0.88464839989319444 16 0.0047706193290650845
+		3 11 0.14402168989181519 12 0.84306909795850515 16 0.012909212149679661
+		3 11 0.17833471298217773 12 0.81880311015993357 16 0.0028621768578886986
+		2 11 0.0052201747894287109 12 0.99477982521057129
+		2 12 0.99204642698168755 16 0.0079535730183124542
+		3 10 0.018559634685516357 11 0.33267253637313843 12 0.64876782894134521
+		3 11 0.0075349807739257812 12 0.98060314729809761 16 0.011861871927976608
+		3 11 0.010065078735351562 12 0.97627925779670477 16 0.013655663467943668
+		3 10 0.018350064754486084 11 0.33935457468032837 12 0.64229536056518555
+		2 12 0.98250374384224415 16 0.017496256157755852
+		2 12 0.35414737462997437 16 0.64585262537002563
+		2 12 0.30293512344360352 16 0.69706487655639648
+		2 12 0.31062930822372437 16 0.68937069177627563
+		2 12 0.067171692848205566 16 0.93282830715179443
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 0.99999999999999989
+		1 18 1
+		1 18 1
+		2 17 0.15279364585876465 18 0.84720635414123535
+		1 18 0.99999999999999989
+		1 18 1
+		2 17 0.16636413335800171 18 0.83363586664199829
+		2 17 0.28343731164932251 18 0.71656268835067749
+		1 18 1
+		2 17 0.055415213108062744 18 0.94458478689193726
+		2 17 0.28892415761947632 18 0.71107584238052368
+		1 18 1
+		1 18 1
+		1 18 0.99999999999999989
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 0.99999999999999989
+		1 18 1
+		1 18 1
+		2 17 0.27040350437164307 18 0.72959649562835693
+		2 17 0.27450966835021973 18 0.72549033164978027
+		1 18 1
+		1 18 1
+		1 18 1
+		2 17 0.23861265182495117 18 0.76138734817504883
+		1 18 1
+		2 17 0.27712774276733398 18 0.72287225723266602
+		1 18 1
+		1 18 1
+		1 17 1
+		2 17 0.92678631842136383 18 0.073213681578636169
+		2 17 0.90251538157463074 18 0.097484618425369263
+		1 17 1
+		2 17 0.8956451490521431 18 0.1043548509478569
+		2 17 0.98995869141072035 18 0.010041308589279652
+		1 17 1
+		2 17 0.95550967007875443 18 0.044490329921245575
+		1 17 1
+		1 17 1
+		1 17 1
+		1 17 1
+		2 17 0.9914367999881506 18 0.0085632000118494034
+		1 17 1
+		2 17 0.78387978672981262 18 0.21612021327018738
+		2 17 0.75006784498691559 18 0.24993215501308441
+		2 17 0.74748221039772034 18 0.25251778960227966
+		2 17 0.85758852958679199 18 0.14241147041320801
+		1 17 1
+		2 17 0.98763875756412745 18 0.012361242435872555
+		2 17 0.91939926892518997 18 0.080600731074810028
+		2 17 0.56591367721557617 18 0.43408632278442383
+		2 17 0.54112353920936584 18 0.45887646079063416
+		2 17 0.5360986590385437 18 0.4639013409614563
+		2 17 0.65074658393859863 18 0.34925341606140137
+		2 17 0.86044889688491821 18 0.13955110311508179
+		2 17 0.8256676197052002 18 0.1743323802947998
+		2 17 0.72548899054527283 18 0.27451100945472717
+		1 17 1
+		1 17 1
+		1 17 1
+		2 17 0.84579205513000488 18 0.15420794486999512
+		2 17 0.85348226130008698 18 0.14651773869991302
+		2 17 0.63100096583366394 18 0.36899903416633606
+		2 17 0.96538202464580536 18 0.034617975354194641
+		1 17 1
+		2 17 0.91418732702732086 18 0.085812672972679138
+		2 17 0.99647999997250736 18 0.0035200000274926424;
+	setAttr ".wl[3099:3504].w"
+		2 17 0.77926592528820038 18 0.22073407471179962
+		2 17 0.56566768884658813 18 0.43433231115341187
+		1 17 1
+		1 17 1
+		1 17 1
+		1 17 1
+		1 17 1
+		1 17 1
+		2 12 0.0020134449005126953 17 0.9979865550994873
+		1 17 1
+		1 17 1
+		1 17 1
+		1 16 1
+		1 16 1
+		2 17 0.22099208831787109 18 0.77900791168212891
+		2 17 0.12908709049224854 18 0.87091290950775146
+		3 11 0.078365027904510498 12 0.90444890037178993 16 0.01718607172369957
+		3 10 0.018599212169647217 11 0.32468938827514648 12 0.6567113995552063
+		3 11 0.1084439754486084 12 0.88970390951726586 16 0.0018521150341257453
+		2 11 0.10911214351654053 12 0.89088785648345947
+		2 11 0.11355996131896973 12 0.88644003868103027
+		2 12 0.056505382061004639 13 0.94349461793899536
+		2 12 0.010538160800933838 13 0.98946183919906616
+		2 12 0.10993951559066772 13 0.89006048440933228
+		1 13 1
+		1 13 0.99999999999999989
+		1 13 1
+		2 12 0.0053523778915405273 13 0.99464762210845947
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		2 12 0.10599583387374878 13 0.89400416612625122
+		2 12 0.051745235919952393 13 0.94825476408004761
+		1 13 1
+		1 13 1
+		3 12 0.075731538468971848 13 0.92159658670425415 16 0.0026718748267740011
+		2 13 0.99014044925570488 16 0.0098595507442951202
+		3 12 0.043939908966422081 13 0.9398842453956604 16 0.016175845637917519
+		3 12 0.0058715790510177612 13 0.93635106086730957 16 0.057777360081672668
+		3 12 0.060934513341635466 13 0.93597173690795898 16 0.00309374975040555
+		3 12 0.041172677651047707 13 0.94771295785903931 16 0.011114364489912987
+		2 13 0.94232819974422455 16 0.057671800255775452
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		2 1 0.99993492375506321 6 6.5076244936790317e-05
 		1 1 1
 		1 1 1
 		1 1 1
@@ -20228,11 +20568,11 @@ createNode skinCluster -n "skinCluster1";
 		1 1 1
 		2 1 0.99215686228126287 10 0.0078431377187371254
 		1 1 1
+		2 1 0.99839147331658751 6 0.0016085266834124923
+		2 1 0.99917019443819299 6 0.0008298055618070066
 		1 1 1
 		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		2 1 0.99992161631234922 6 7.838368765078485e-05
 		1 1 1
 		1 1 1
 		1 1 1
@@ -20265,8 +20605,8 @@ createNode skinCluster -n "skinCluster1";
 		1 10 1
 		2 3 0.53125 4 0.46875
 		2 3 0.5 4 0.5
-		1 1 1
-		1 1 1
+		2 7 0.40649998188018799 8 0.59350001811981201
+		2 7 0.27899998426437378 8 0.72100001573562622
 		2 3 0.27899998426437378 4 0.72100001573562622
 		2 3 0.28303271532058716 4 0.71696728467941284
 		2 3 0.12811124324798584 4 0.87188875675201416
@@ -20310,14 +20650,11 @@ createNode skinCluster -n "skinCluster1";
 		2 4 0.68000942468643188 5 0.31999057531356812
 		2 4 0.67657676339149475 5 0.32342323660850525
 		2 4 0.67413103580474854 5 0.32586896419525146
-		6 4 0.11457647985453664 5 0.80529356002807617 7 0.019956987283622333 
-		8 0.027722530679678982 9 0.027722530679678982 11 0.0047279114744068935
-		6 4 0.12588865673105037 5 0.80625194311141968 7 0.017481195547547689 
-		8 0.023011319612813233 9 0.023011319612813233 11 0.0043555653843558029
 		1 5 1
 		1 5 1
-		6 4 0.14751075218577991 5 0.77901512384414673 7 0.019408180525382738 
-		8 0.024505317587919427 9 0.024505317587919427 11 0.0050553082688517522
+		1 5 1
+		1 5 1
+		1 5 1
 		1 5 1
 		1 5 1
 		1 5 1
@@ -20326,8 +20663,7 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		2 4 0.98957104329019785 5 0.010428956709802151
 		2 4 0.67583411931991577 5 0.32416588068008423
-		6 4 0.14219588148503917 5 0.78039473295211792 7 0.020788340165288292 
-		8 0.025502012810743904 9 0.025502012810743904 11 0.0056170197760667846
+		1 5 1
 		1 5 1
 		1 5 1
 		2 3 0.375 4 0.625
@@ -20336,10 +20672,9 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		2 4 0.65670397877693176 5 0.34329602122306824
-		6 4 0.087183362977856213 5 0.83067160844802856 7 0.019535480331082718 
-		8 0.029108125679620338 9 0.029108125679620338 11 0.0043932968837918146
 		1 5 1
 		1 5 1
+		1 5 1
 		1 4 1
 		1 4 1
 		1 4 1
@@ -20374,8 +20709,7 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		1 4 1
-		1 4 1;
-	setAttr ".wl[3319:3773].w"
+		1 4 1
 		1 4 1
 		2 4 0.63723105192184448 5 0.36276894807815552
 		1 4 1
@@ -20391,11 +20725,9 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		2 4 0.66999945044517517 5 0.33000054955482483
-		6 4 0.084201989956867229 5 0.85999172925949097 7 0.015145951159408349 
-		8 0.018203081472794404 9 0.018203081472794404 11 0.004254166678644652
 		1 5 1
-		6 4 0.085139632101309079 5 0.80526584386825562 7 0.02488382422319977 
-		8 0.03971699491951651 9 0.03971699491951651 11 0.0052767099682025148
+		1 5 1
+		1 5 1
 		1 5 1
 		1 5 1
 		1 5 1
@@ -20434,165 +20766,166 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		2 7 0.5625 8 0.4375
+		2 7 0.27899998426437378 8 0.72100001573562622
+		2 7 0.12809997797012329 8 0.87190002202987671
+		2 7 0.28299999237060547 8 0.71700000762939453
+		2 7 0.27899998426437378 8 0.72100001573562622
+		2 7 0.28619998693466187 8 0.71380001306533813
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.98677500057965517 9 0.01322499942034483
+		1 8 1
+		1 8 1
+		2 8 0.73058465123176575 9 0.26941534876823425
+		2 8 0.70716336369514465 9 0.29283663630485535
+		2 8 0.75567546486854553 9 0.24432453513145447
+		2 8 0.28570854663848877 9 0.71429145336151123
+		2 8 0.032086610794067383 9 0.96791338920593262
+		2 8 0.034527301788330078 9 0.96547269821166992
+		2 8 0.2923431396484375 9 0.7076568603515625
+		2 8 0.055472791194915771 9 0.94452720880508423
+		2 8 0.30002373456954956 9 0.69997626543045044
+		1 9 1
+		1 9 1
+		1 9 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.71531608700752258 9 0.28468391299247742
+		2 8 0.064129829406738281 9 0.93587017059326172
+		2 8 0.29836571216583252 9 0.70163428783416748
+		1 9 1
+		2 7 0.40649998188018799 8 0.59350001811981201
+		2 7 0.27899998426437378 8 0.72100001573562622
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.73386958241462708 9 0.26613041758537292
+		2 8 0.27750074863433838 9 0.72249925136566162
+		2 8 0.030549764633178711 9 0.96945023536682129
+		1 9 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.74477896094322205 9 0.25522103905677795
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.72919189929962158 9 0.27080810070037842
+		2 8 0.058679401874542236 9 0.94132059812545776
+		2 8 0.29213845729827881 9 0.70786154270172119
+		2 8 0.27681368589401245 9 0.72318631410598755
+		2 8 0.051964759826660156 9 0.94803524017333984
+		1 9 1
+		2 8 0.0069704055786132812 9 0.99302959442138672
+		2 8 0.019389152526855469 9 0.98061084747314453
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		2 8 0.27650290727615356 9 0.72349709272384644;
+	setAttr ".wl[3505:3927].w"
+		2 8 0.27394813299179077 9 0.72605186700820923
+		2 8 0.27289718389511108 9 0.72710281610488892
+		2 8 0.24368143081665039 9 0.75631856918334961
+		2 8 0.26106899976730347 9 0.73893100023269653
+		2 8 0.74511614441871643 9 0.25488385558128357
+		2 8 0.72349706292152405 9 0.27650293707847595
+		2 8 0.72605213522911072 9 0.27394786477088928
+		2 8 0.72711428999900818 9 0.27288571000099182
+		2 8 0.7564045637845993 9 0.2435954362154007
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
 		1 4 1
 		1 4 1
 		1 4 1
@@ -20612,8 +20945,7 @@ createNode skinCluster -n "skinCluster1";
 		1 5 1
 		1 5 1
 		1 5 1
-		6 4 0.024203957950323013 5 0.93903237581253052 7 0.0078927170795564244 
-		8 0.013601083164112706 9 0.013601083164112706 11 0.0016687828293646323
+		1 5 1
 		2 4 0.695872962474823 5 0.304127037525177
 		1 4 1
 		1 4 1
@@ -20622,90 +20954,90 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.76033712923526764 9 0.23966287076473236
+		2 8 0.24118375778198242 9 0.75881624221801758
+		2 8 0.032070636749267578 9 0.96792936325073242
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		2 8 0.013225018978118896 9 0.9867749810218811
+		2 8 0.25349956750869751 9 0.74650043249130249
+		2 8 0.75940720736980438 9 0.24059279263019562
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.74404126405715942 9 0.25595873594284058
+		2 8 0.71655857563018799 9 0.28344142436981201
+		2 8 0.27756989002227783 9 0.72243010997772217
+		2 8 0.052796900272369385 9 0.94720309972763062
+		2 8 0.018014848232269287 9 0.98198515176773071
+		2 8 0.26001220941543579 9 0.73998779058456421
+		1 9 1
+		1 9 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.7618580162525177 9 0.2381419837474823
+		2 8 0.73776191473007202 9 0.26223808526992798
+		2 8 0.23966288566589355 9 0.76033711433410645
+		2 8 0.032070636749267578 9 0.96792936325073242
+		2 8 0.061272263526916504 9 0.9387277364730835
+		2 8 0.2879830002784729 9 0.7120169997215271
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
 		1 4 1
 		1 4 1
 		1 4 1
@@ -20746,8 +21078,7 @@ createNode skinCluster -n "skinCluster1";
 		1 5 1
 		6 4 0.00080476523286611163 5 0.99789649248123169 7 0.00027548638398770033 
 		8 0.00048254484686367457 9 0.00048254484686367457 11 5.8166208187149403e-05
-		6 4 0.023257391624286482 5 0.93977439403533936 7 0.0078670074592034431 
-		8 0.01372445087876124 9 0.01372445087876124 11 0.001652305123648242
+		1 5 1
 		2 4 0.67812240123748779 5 0.32187759876251221
 		2 4 0.61162114143371582 5 0.38837885856628418
 		1 4 1
@@ -20778,40 +21109,40 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
 		1 4 1
 		1 4 1
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
 		1 4 1
-		1 1 1
+		1 8 1
 		1 4 1
-		1 1 1
+		1 8 1
 		1 4 1
-		1 1 1
+		1 8 1
 		1 4 1
-		1 1 1
+		1 8 1
 		1 4 1
-		1 1 1
+		1 8 1
 		1 4 1
 		1 4 1
 		1 4 1
@@ -20821,8 +21152,7 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		2 4 0.69344890117645264 5 0.30655109882354736
-		6 4 0.044321283209884779 5 0.8900265097618103 7 0.014209121829389101 
-		8 0.024229470620074505 9 0.024229470620074505 11 0.0029841439587667985
+		1 5 1
 		1 5 1
 		1 5 1
 		1 5 1
@@ -20836,40 +21166,39 @@ createNode skinCluster -n "skinCluster1";
 		2 4 0.67178535461425781 5 0.32821464538574219
 		1 4 1
 		1 4 1
-		1 4 1;
-	setAttr ".wl[3774:4256].w"
 		1 4 1
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 4 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.76133330166339874 9 0.23866669833660126
+		2 8 0.27581751346588135 9 0.72418248653411865
+		2 8 0.023300886154174805 9 0.9766991138458252
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		2 8 0.0015089511871337893 9 0.99849104881286621
+		2 8 0.052693784236907959 9 0.94730621576309204
+		2 8 0.27720087766647339 9 0.72279912233352661
+		2 8 0.76014211773872375 9 0.23985788226127625
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
 		1 4 1
 		1 4 1
 		1 4 1
@@ -20879,8 +21208,6 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		2 4 0.68398365378379822 5 0.31601634621620178
-		6 4 0.060438615318169374 5 0.85623258352279663 7 0.018444663396467546 
-		8 0.030505432838839233 9 0.030505432838839233 11 0.0038732720848879843
 		1 5 1
 		1 5 1
 		1 5 1
@@ -20890,8 +21217,8 @@ createNode skinCluster -n "skinCluster1";
 		1 5 1
 		1 5 1
 		1 5 1
-		6 4 0.06668187379740162 5 0.88811355829238892 7 0.012224405308161582 
-		8 0.01476216568076372 9 0.01476216568076372 11 0.0034558312405204455
+		1 5 1
+		1 5 1
 		2 4 0.63329741358757019 5 0.36670258641242981
 		1 4 1
 		1 4 1
@@ -20900,34 +21227,34 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 8 0.73853492736816406 9 0.26146507263183594
+		2 8 0.27736884355545044 9 0.72263115644454956
+		2 8 0.049191653728485107 9 0.95080834627151489
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		1 9 1
+		2 8 0.0015208721160888672 9 0.99847912788391113
+		2 8 0.053827464580535889 9 0.94617253541946411
+		2 8 0.27939164638519287 9 0.72060835361480713
+		2 8 0.73110303282737732 9 0.26889696717262268
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
 		1 4 1
 		1 4 1
 		1 4 1
@@ -20938,16 +21265,16 @@ createNode skinCluster -n "skinCluster1";
 		1 4 1
 		1 4 1
 		1 4 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
 		2 3 0.27897369861602783 4 0.72102630138397217
 		2 3 0.4065471887588501 4 0.5934528112411499
 		1 4 1
@@ -20964,110 +21291,107 @@ createNode skinCluster -n "skinCluster1";
 		2 3 0.5 4 0.5
 		2 3 0.50426623225212097 4 0.49573376774787903
 		2 3 0.5625 4 0.4375
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		2 7 0.27899998426437378 8 0.72100001573562622
+		2 7 0.40649998188018799 8 0.59350001811981201
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		1 8 1
+		2 7 0.27899998426437378 8 0.72100001573562622
+		2 7 0.27899998426437378 8 0.72100001573562622
+		2 7 0.5625 8 0.4375
 		1 3 1
 		1 3 1
-		1 1 1
-		1 1 1
+		1 7 1
+		1 7 1
 		1 3 1
 		1 3 1
-		1 1 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 3 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 7 1
+		1 7 1
+		3 12 0.28009814023971558 13 0.71943837404251099 35 0.0004634857177734375
+		2 12 0.13494634628295898 13 0.86505365371704102
+		3 12 0.21215361356735229 13 0.74207693338394165 35 0.045769453048706055
+		3 12 0.23105877637863159 13 0.71973967552185059 35 0.049201548099517822
+		4 12 0.23942668735980988 13 0.72257250547409058 35 0.037810915397130884 
+		36 0.00018989176896866411
+		2 12 0.23562817275524139 13 0.72228479385375977;
+	setAttr ".wl[3927:4311].w"
+		1 35 0.04208703339099884
+		3 12 0.21056649088859558 13 0.7483222484588623 35 0.041111260652542114
+		2 12 0.11618059873580933 13 0.88381940126419067
+		1 13 1
+		1 13 1
+		2 12 0.019607841968536377 13 0.98039215803146362
+		1 13 1
+		2 13 0.9999607762110827 16 3.9223788917297497e-05
+		3 12 0.0073736011981964111 13 0.91006821393966675 16 0.082558184862136841
+		3 12 0.030668258666992188 13 0.83606576919555664 16 0.13326597213745117
+		3 12 0.077735960483551025 13 0.77910703420639038 16 0.14315700531005859
+		3 12 0.18592628836631775 13 0.67318582534790039 16 0.14088788628578186
+		3 12 0.21536418795585632 13 0.64535748958587646 16 0.13927832245826721
+		3 12 0.22733833640813828 13 0.6502230167388916 16 0.12243864685297012
+		3 12 0.27160408347845078 13 0.65245217084884644 16 0.075943745672702789
+		3 12 0.28916389495134354 13 0.65836989879608154 16 0.052466206252574921
+		3 12 0.32115348055958748 13 0.6683499813079834 16 0.010496538132429123
+		3 12 0.3394455898949218 13 0.66055291891098022 16 1.491194097980042e-06
+		2 12 0.32955849170684814 13 0.67044150829315186
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
 		1 3 1
 		1 3 1
 		1 3 1
 		1 3 1
 		1 3 1
 		1 3 1
+		1 3 1
+		1 3 1
+		1 3 1
+		1 3 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
 		1 3 1
 		1 3 1
 		1 3 1
@@ -21092,16 +21416,22 @@ createNode skinCluster -n "skinCluster1";
 		1 3 1
 		1 3 1
 		1 3 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
-		1 1 1
+		1 3 1
+		1 3 1
+		1 3 1
+		1 3 1
+		1 3 1
+		1 3 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
+		1 7 1
 		1 3 1
 		1 3 1
 		1 3 1
@@ -21112,459 +21442,459 @@ createNode skinCluster -n "skinCluster1";
 		1 3 1
 		1 3 1
 		1 3 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
-	setAttr ".wl[4257:4339].w"
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 1 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1
-		1 10 1;
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.52352941036224365 38 0.47647058963775635
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 18 0.5 19 0.5
+		1 18 1
+		1 18 1
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		1 18 1
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		3 36 0.0039215683937072754 37 0.49607843160629272 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		1 37 1
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 37 0.5 38 0.5
+		2 18 0.46249997615814209 19 0.53750002384185791
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.42535662651062012 19 0.57464337348937988
+		2 18 0.38594478368759155 19 0.61405521631240845
+		2 18 0.50475504994392395 19 0.49524495005607605
+		2 18 0.5 19 0.5
+		2 18 0.35511165857315063 19 0.64488834142684937
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.5 19 0.5
+		2 18 0.27499985694885254 19 0.72500014305114746
+		2 18 0.5 19 0.5
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 37 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 18 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		2 12 0.0067137479782104492 13 0.99328625202178955
+		2 12 0.010136783123016357 13 0.98986321687698364
+		2 12 0.0048706531524658203 13 0.99512934684753418
+		2 12 0.0065720677375793457 13 0.99342793226242065
+		2 12 0.0094994306564331055 13 0.99050056934356689
+		2 12 0.0088569521903991699 13 0.99114304780960083
+		3 12 0.005229180387686938 13 0.99434250593185425 16 0.00042831368045881391
+		3 12 0.0074841058813035488 13 0.98704594373703003 16 0.0054699503816664219
+		2 13 0.94941139966249466 16 0.050588600337505341
+		2 13 0.94938603043556213 16 0.050613969564437866
+		2 13 0.99718750012107193 16 0.0028124998789280653
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		2 12 1.3709068298339844e-06 13 0.99999862909317017
+		2 12 0.00051009654998779297 13 0.99948990345001221
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 0.99999999999999989
+		1 13 1
+		1 13 0.99999999999999989
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		2 13 0.99719852954149246 16 0.0028014704585075378
+		2 13 0.99985992647998501 16 0.00014007352001499385
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 0.99999999999999989
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 0.99999999999999989
+		2 13 0.87328484654426575 14 0.12671515345573425
+		3 13 0.64708375930786133 14 0.32515642605721951 15 0.027759814634919167
+		3 13 0.37367182970046997 14 0.4911058247089386 15 0.13522234559059143
+		3 13 0.091593027114868164 14 0.52676895260810852 15 0.38163802027702332
+		2 14 0.27849370241165161 15 0.72150629758834839
+		2 14 0.06563490629196167 15 0.93436509370803833
+		2 14 0.0046430230140686035 15 0.9953569769859314
+		2 14 6.0260295867919922e-05 15 0.99993973970413208
+		2 14 2.5928020477294922e-05 15 0.99997407197952271
+		2 14 1.9133090972900391e-05 15 0.9999808669090271
+		1 15 1
+		1 15 1
+		2 14 0.0067779421806335449 15 0.99322205781936646
+		2 14 0.086952686309814453 15 0.91304731369018555;
+	setAttr ".wl[4312:4339].w"
+		3 13 0.020698701962828636 14 0.27492334879934788 15 0.70437794923782349
+		3 13 0.13107897341251373 14 0.49453826248645782 15 0.37438276410102844
+		3 13 0.35488677024841309 14 0.51341910660266876 15 0.13169412314891815
+		3 13 0.64456874132156372 14 0.32817175984382629 15 0.027259498834609985
+		3 13 0.89553438872098923 14 0.10442873449574108 15 3.687678326969035e-05
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		1 13 1
+		2 12 0.00038915872573852539 13 0.99961084127426147
+		1 13 1
+		1 13 1
+		1 13 1
+		2 12 0.00032484531402587891 13 0.99967515468597412
+		2 12 5.1021575927734375e-05 13 0.99994897842407227
+		1 13 0.99999999999999989
+		1 13 1
+		2 12 2.0802021026611328e-05 13 0.99997919797897339
+		1 15 1
+		1 15 1;
 	setAttr -s 54 ".pm";
-	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -19 1 1;
-	setAttr ".pm[1]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -19 1 1;
-	setAttr ".pm[2]" -type "matrix" 3.100219208308751e-16 1.0789879351555983e-15 -1 -0
+	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -19 1 1;
+	setAttr ".pm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -19 1 1;
+	setAttr ".pm[2]" -type "matrix" 3.100219208308751e-16 1.0789879351555983e-15 -1 0
 		 0.99144486137381027 -0.1305261922200513 8.2477457825317696e-17 0 -0.13052619222005132 -0.99144486137381027 -1.0746713038901959e-15 0
 		 -18.656054665246366 1.6559728546363552 -1.6669155146425703 1;
-	setAttr ".pm[3]" -type "matrix" 7.8912991973660356e-17 -2.1073425581211254e-08 0.99999999999999978 -0
-		 0.99691733373312796 -0.078459095727844971 -1.6534019096036044e-09 0 0.078459095727844957 0.99691733373312774 2.1008463201301447e-08 -0
+	setAttr ".pm[3]" -type "matrix" 7.8912991973660356e-17 -2.1073425581211254e-08 0.99999999999999978 0
+		 0.99691733373312796 -0.078459095727844971 -1.6534019096036044e-09 0 0.078459095727844957 0.99691733373312774 2.1008463201301447e-08 0
 		 -12.07858974750706 0.93817746713288719 1.7255763732398435 1;
-	setAttr ".pm[4]" -type "matrix" 1.9951635449956533e-08 2.1073424242654338e-08 -0.99999999999999956 -0
-		 0.39520818300708915 -0.91859158067349778 -1.1472820575121908e-08 0 -0.91859158067349767 -0.39520818300708865 -2.6655794014122194e-08 -0
+	setAttr ".pm[4]" -type "matrix" 1.9951635449956533e-08 2.1073424242654338e-08 -0.99999999999999956 0
+		 0.39520818300708915 -0.91859158067349778 -1.1472820575121908e-08 0 -0.91859158067349767 -0.39520818300708865 -2.6655794014122194e-08 0
 		 -1.3409969790926812 1.5910837313310306 -1.9321781183355764 1;
-	setAttr ".pm[5]" -type "matrix" 1.9951635449956533e-08 2.1073424242654338e-08 -0.99999999999999956 -0
-		 0.39520818300708915 -0.91859158067349778 -1.1472820575121908e-08 0 -0.91859158067349767 -0.39520818300708865 -2.6655794014122194e-08 -0
+	setAttr ".pm[5]" -type "matrix" 1.9951635449956533e-08 2.1073424242654338e-08 -0.99999999999999956 0
+		 0.39520818300708915 -0.91859158067349778 -1.1472820575121908e-08 0 -0.91859158067349767 -0.39520818300708865 -2.6655794014122194e-08 0
 		 1.740818983911897 1.227899135933348 -1.9321780645018518 1;
-	setAttr ".pm[6]" -type "matrix" 3.9111177532135515e-16 8.443516342149634e-16 -1 -0
-		 -0.9914448613738106 0.13052619222005102 -3.3885073635385575e-16 0 0.13052619222005113 0.99144486137381049 8.2847271248819069e-16 -0
+	setAttr ".pm[6]" -type "matrix" 3.9111177532135515e-16 8.443516342149634e-16 -1 0
+		 -0.9914448613738106 0.13052619222005102 -3.3885073635385575e-16 0 0.13052619222005113 0.99144486137381049 8.2847271248819069e-16 0
 		 18.656054665246369 -1.6559728546363497 1.6669200000000075 1;
-	setAttr ".pm[7]" -type "matrix" 2.0701446891073704e-16 -1.4901162223529567e-08 1 -0
-		 -0.99691733373312807 0.078459095727845041 1.1691319810233471e-09 0 -0.078459095727844888 -0.99691733373312752 -1.4855226837458026e-08 -0
+	setAttr ".pm[7]" -type "matrix" 2.0701446891073704e-16 -1.4901162223529567e-08 1 0
+		 -0.99691733373312807 0.078459095727845041 1.1691319810233471e-09 0 -0.078459095727844888 -0.99691733373312752 -1.4855226837458026e-08 0
 		 12.078603700284393 -0.93817858983662461 -1.725580013979954 1;
-	setAttr ".pm[8]" -type "matrix" 1.4107936858420533e-08 1.5512813257765018e-08 -0.99999999999999967 -0
-		 -0.3952081830070891 0.91859158067349778 8.6743674980530651e-09 0 0.91859158067349744 0.39520818300708865 1.9090222700042299e-08 -0
+	setAttr ".pm[8]" -type "matrix" 1.4107936858420533e-08 1.5512813257765018e-08 -0.99999999999999967 0
+		 -0.3952081830070891 0.91859158067349778 8.6743674980530651e-09 0 0.91859158067349744 0.39520818300708865 1.9090222700042299e-08 0
 		 1.3409963279795123 -1.5910828786420266 1.932179994236521 1;
-	setAttr ".pm[9]" -type "matrix" 1.4107936858420533e-08 1.5512813257765018e-08 -0.99999999999999967 -0
-		 -0.3952081830070891 0.91859158067349778 8.6743674980530651e-09 0 0.91859158067349744 0.39520818300708865 1.9090222700042299e-08 -0
+	setAttr ".pm[9]" -type "matrix" 1.4107936858420533e-08 1.5512813257765018e-08 -0.99999999999999967 0
+		 -0.3952081830070891 0.91859158067349778 8.6743674980530651e-09 0 0.91859158067349744 0.39520818300708865 1.9090222700042299e-08 0
 		 -1.7408212990882708 -1.2279003040720304 1.9321799563924151 1;
-	setAttr ".pm[10]" -type "matrix" 4.4408920985006262e-16 -4.4408920985006262e-16 -1 -0
-		 1 1.9721522630525295e-31 4.4408920985006262e-16 -0 -1.9721522630525295e-31 -1 4.4408920985006262e-16 -0
+	setAttr ".pm[10]" -type "matrix" 4.4408920985006262e-16 -4.4408920985006262e-16 -1 0
+		 1 1.9721522630525295e-31 4.4408920985006262e-16 0 -1.9721522630525295e-31 -1 4.4408920985006262e-16 0
 		 -19.000000000000004 -1.0000000000000009 -7.9936057773011287e-15 1;
-	setAttr ".pm[11]" -type "matrix" 4.4408920985006262e-16 -4.4408920985006262e-16 -1 -0
-		 1 1.9721522630525295e-31 4.4408920985006262e-16 -0 -1.9721522630525295e-31 -1 4.4408920985006262e-16 -0
+	setAttr ".pm[11]" -type "matrix" 4.4408920985006262e-16 -4.4408920985006262e-16 -1 0
+		 1 1.9721522630525295e-31 4.4408920985006262e-16 0 -1.9721522630525295e-31 -1 4.4408920985006262e-16 0
 		 -21.000000000000004 -1.0000000000000009 -7.9936057773011287e-15 1;
-	setAttr ".pm[12]" -type "matrix" 4.4408920985006262e-16 4.4408920985006242e-16 -1 -0
-		 2.2204460492503101e-16 0.99999999999999978 4.4408920985006262e-16 -0 0.99999999999999978 -2.2204460492503141e-16 4.4408920985006262e-16 -0
+	setAttr ".pm[12]" -type "matrix" 4.4408920985006262e-16 4.4408920985006242e-16 -1 0
+		 2.2204460492503101e-16 0.99999999999999978 4.4408920985006262e-16 0 0.99999999999999978 -2.2204460492503141e-16 4.4408920985006262e-16 0
 		 0.99999999999999556 -22.999999999999996 -7.9936057773011287e-15 1;
-	setAttr ".pm[13]" -type "matrix" 5.2066625625366941e-16 -3.5119382427556156e-16 -1 -0
-		 0.98162718344766375 0.19080899537654458 4.4408920985006262e-16 -0 0.19080899537654458 -0.98162718344766375 4.4408920985006262e-16 -0
+	setAttr ".pm[13]" -type "matrix" 5.2066625625366941e-16 -3.5119382427556156e-16 -1 0
+		 0.98162718344766375 0.19080899537654458 4.4408920985006262e-16 0 0.19080899537654458 -0.98162718344766375 4.4408920985006262e-16 0
 		 -28.456114614768971 -6.5192171145907629 -7.9936057773011239e-15 1;
-	setAttr ".pm[14]" -type "matrix" 5.8230575114746659e-16 -2.3526679491821707e-16 -1 -0
-		 0.92050485345244015 0.39073112848927355 4.4408920985006252e-16 -0 0.39073112848927355 -0.92050485345244015 4.4408920985006262e-16 -0
+	setAttr ".pm[14]" -type "matrix" 5.8230575114746659e-16 -2.3526679491821707e-16 -1 0
+		 0.92050485345244015 0.39073112848927355 4.4408920985006252e-16 0 0.39073112848927355 -0.92050485345244015 4.4408920985006262e-16 0
 		 -27.797811180593893 -12.573467469484537 -7.9936057773011271e-15 1;
-	setAttr ".pm[15]" -type "matrix" 4.4408920985006262e-16 4.4408920985006242e-16 -1 -0
-		 2.7755575615628884e-16 0.99999999999999978 4.4408920985006252e-16 -0 0.99999999999999978 -2.7755575615628918e-16 4.4408920985006262e-16 -0
+	setAttr ".pm[15]" -type "matrix" 4.4408920985006262e-16 4.4408920985006242e-16 -1 0
+		 2.7755575615628884e-16 0.99999999999999978 4.4408920985006252e-16 0 0.99999999999999978 -2.7755575615628918e-16 4.4408920985006262e-16 0
 		 -0.048803801303544413 -32.29430850375099 -7.9936057773011255e-15 1;
-	setAttr ".pm[16]" -type "matrix" 1 -4.4408920985006271e-16 3.3306690738754657e-16 -0
-		 -4.4408920985006262e-16 -0.99999999999999978 -1.2326877045398917e-15 0 2.2204460492503111e-16 1.2326877045398919e-15 -0.99999999999999978 -0
+	setAttr ".pm[16]" -type "matrix" 1 -4.4408920985006271e-16 3.3306690738754657e-16 0
+		 -4.4408920985006262e-16 -0.99999999999999978 -1.2326877045398917e-15 0 2.2204460492503111e-16 1.2326877045398919e-15 -0.99999999999999978 0
 		 0.64347100000001223 27.682099999999995 3.3671569387032217e-14 1;
-	setAttr ".pm[17]" -type "matrix" 0.84623976565966863 0.53146144808506457 0.037775497555895314 -0
-		 0.53101617509891641 -0.8470809636892952 0.021809693682666786 0 0.043589916260372084 0.0016031701534608347 -0.99904822158185758 -0
+	setAttr ".pm[17]" -type "matrix" 0.84623976565966863 0.53146144808506457 0.037775497555895314 0
+		 0.53101617509891641 -0.8470809636892952 0.021809693682666786 0 0.043589916260372084 0.0016031701534608347 -0.99904822158185758 0
 		 -13.057477805269084 25.736212866845868 -1.9911099312328 1;
-	setAttr ".pm[18]" -type "matrix" 0.86462227488974019 0.49709025028743148 -0.073004142578826772 -0
-		 0.49482383573743971 -0.86768380691461833 -0.047688392762204469 0 -0.087049947447303641 0.0051082567803145936 -0.99619085137441798 -0
+	setAttr ".pm[18]" -type "matrix" 0.86462227488974019 0.49709025028743148 -0.073004142578826772 0
+		 0.49482383573743971 -0.86768380691461833 -0.047688392762204469 0 -0.087049947447303641 0.0051082567803145936 -0.99619085137441798 0
 		 -7.1207812701488393 25.885926616987351 -0.74441294362623545 1;
-	setAttr ".pm[19]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 -0
-		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 -0
+	setAttr ".pm[19]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 0
+		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 0
 		 -2.5668491496622345 25.7717417719163 -1.1273419996272447 1;
-	setAttr ".pm[20]" -type "matrix" 0.56823446175996561 0.51125863229629309 -0.64476678525718567 -0
-		 0.42024639619276688 -0.8539767067218188 -0.30678453491587243 0 -0.70746205760828906 -0.09663537281492586 -0.70011359204458079 -0
+	setAttr ".pm[20]" -type "matrix" 0.56823446175996561 0.51125863229629309 -0.64476678525718567 0
+		 0.42024639619276688 -0.8539767067218188 -0.30678453491587243 0 -0.70746205760828906 -0.09663537281492586 -0.70011359204458079 0
 		 -3.3231803673746554 25.501311780927804 -1.0455457526986807 1;
-	setAttr ".pm[21]" -type "matrix" 0.56823446175996573 0.52944707414803149 -0.62991697242132705 -0
-		 0.42024639619276688 -0.84487580662826145 -0.33102543385854227 0 -0.70746205760828917 -0.076620278323253466 -0.70258577411894174 -0
+	setAttr ".pm[21]" -type "matrix" 0.56823446175996573 0.52944707414803149 -0.62991697242132705 0
+		 0.42024639619276688 -0.84487580662826145 -0.33102543385854227 0 -0.70746205760828917 -0.076620278323253466 -0.70258577411894174 0
 		 -2.5829625847185782 25.533544874052748 -0.29941065242087184 1;
-	setAttr ".pm[22]" -type "matrix" 0.56823446175996561 0.52789898131912538 -0.63121490951227677 -0
-		 0.42024639619276688 -0.84568595468417407 -0.32895019765446032 0 -0.70746205760828917 -0.078344952435661322 -0.70239554773111956 -0
+	setAttr ".pm[22]" -type "matrix" 0.56823446175996561 0.52789898131912538 -0.63121490951227677 0
+		 0.42024639619276688 -0.84568595468417407 -0.32895019765446032 0 -0.70746205760828917 -0.078344952435661322 -0.70239554773111956 0
 		 -1.9843429913469879 25.544890903158166 -0.33962283975472468 1;
-	setAttr ".pm[23]" -type "matrix" 0.84710033117724914 0.52660507082169472 -0.071471171141044468 -0
-		 0.52422596124164234 -0.85009470003603638 -0.050260745427388641 0 -0.087224827197711699 0.0051088507042762986 -0.99617555137877689 -0
+	setAttr ".pm[23]" -type "matrix" 0.84710033117724914 0.52660507082169472 -0.071471171141044468 0
+		 0.52422596124164234 -0.85009470003603638 -0.050260745427388641 0 -0.087224827197711699 0.0051088507042762986 -0.99617555137877689 0
 		 -0.56614594312674515 25.745587731832963 -0.55716459630843362 1;
-	setAttr ".pm[24]" -type "matrix" 0.84710033117724903 0.52660506869168744 -0.07147118683509851 -0
-		 0.52422596124164234 -0.85009470153392275 -0.050260720092592304 0 -0.087224827197711685 0.0051088210159313625 -0.99617555153103188 -0
+	setAttr ".pm[24]" -type "matrix" 0.84710033117724903 0.52660506869168744 -0.07147118683509851 0
+		 0.52422596124164234 -0.85009470153392275 -0.050260720092592304 0 -0.087224827197711685 0.0051088210159313625 -0.99617555153103188 0
 		 0.11959105408563345 25.713724643435508 -0.53885155115378569 1;
-	setAttr ".pm[25]" -type "matrix" 0.84710033117724914 0.52660506485176151 -0.071471215127956692 -0
-		 0.52422596124164234 -0.85009470423427447 -0.050260674419638579 0 -0.087224827197711713 0.00510876749450637 -0.99617555180551176 -0
+	setAttr ".pm[25]" -type "matrix" 0.84710033117724914 0.52660506485176151 -0.071471215127956692 0
+		 0.52422596124164234 -0.85009470423427447 -0.050260674419638579 0 -0.087224827197711713 0.00510876749450637 -0.99617555180551176 0
 		 0.68943641542685019 25.685357272835081 -0.5471467860516015 1;
-	setAttr ".pm[26]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 -0
-		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 -0
+	setAttr ".pm[26]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 0
+		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 0
 		 -0.48918826539738708 25.785901200021829 -1.013602171465666 1;
-	setAttr ".pm[27]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 -0
-		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 -0
+	setAttr ".pm[27]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 0
+		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 0
 		 0.39316647899179707 25.747004861864283 -1.0494815781179052 1;
-	setAttr ".pm[28]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 -0
-		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 -0
+	setAttr ".pm[28]" -type "matrix" 0.85010598167638007 0.52660507082169461 0.0026304567884239708 0
+		 0.52661163578974812 -0.85009470003603638 -0.0043801850972831772 0 -7.0490308854011211e-05 0.005108850704276309 -0.99998694725261139 0
 		 1.1052334474846075 25.715335267120722 -1.0536501833303453 1;
-	setAttr ".pm[29]" -type "matrix" 0.84664181234692792 0.52660507082169472 0.076712065353419262 -0
-		 0.52498947781269445 -0.8500947000360366 0.041533711086240675 0 0.087084383053817244 0.0051088507042763133 -0.99618783864922633 -0
+	setAttr ".pm[29]" -type "matrix" 0.84664181234692792 0.52660507082169472 0.076712065353419262 0
+		 0.52498947781269445 -0.8500947000360366 0.041533711086240675 0 0.087084383053817244 0.0051088507042763133 -0.99618783864922633 0
 		 -0.4305843564273269 25.710024564023545 -1.4972718776728262 1;
-	setAttr ".pm[30]" -type "matrix" 0.84664181234692781 0.52660507243828047 0.076712054256047171 -0
-		 0.52498947781269434 -0.85009469916077884 0.041533729000646932 0 0.087084383053817244 0.0051088297111873448 -0.99618783875688699 -0
+	setAttr ".pm[30]" -type "matrix" 0.84664181234692781 0.52660507243828047 0.076712054256047171 0
+		 0.52498947781269434 -0.85009469916077884 0.041533729000646932 0 0.087084383053817244 0.0051088297111873448 -0.99618783875688699 0
 		 0.30765777152712986 25.676687251247824 -1.523271316174065 1;
-	setAttr ".pm[31]" -type "matrix" 0.84664181234692792 0.52660507567145132 0.076712032061302893 -0
-		 0.52498947781269434 -0.85009469741026233 0.041533764829459398 0 0.087084383053817244 0.0051087877250094145 -0.9961878389722072 -0
+	setAttr ".pm[31]" -type "matrix" 0.84664181234692792 0.52660507567145132 0.076712032061302893 0
+		 0.52498947781269434 -0.85009469741026233 0.041533764829459398 0 0.087084383053817244 0.0051087877250094145 -0.9961878389722072 0
 		 0.81933325103875698 25.635243821975667 -1.5348843234987566 1;
-	setAttr ".pm[32]" -type "matrix" 0.82045851046987373 0.52660507082169472 0.22256444456029806 -0
-		 0.5098014547579014 -0.8500947000360366 0.13206618680558685 0 0.25874757839308077 0.0051088507042763133 -0.96593146253768825 -0
+	setAttr ".pm[32]" -type "matrix" 0.82045851046987373 0.52660507082169472 0.22256444456029806 0
+		 0.5098014547579014 -0.8500947000360366 0.13206618680558685 0 0.25874757839308077 0.0051088507042763133 -0.96593146253768825 0
 		 -0.19898654987275013 25.57110283846264 -1.9486578525017162 1;
-	setAttr ".pm[33]" -type "matrix" 0.82045851046987373 0.52660507082169472 0.22256444456029806 -0
-		 0.5098014547579014 -0.8500947000360366 0.13206618680558685 0 0.25874757839308077 0.0051088507042763133 -0.96593146253768825 -0
+	setAttr ".pm[33]" -type "matrix" 0.82045851046987373 0.52660507082169472 0.22256444456029806 0
+		 0.5098014547579014 -0.8500947000360366 0.13206618680558685 0 0.25874757839308077 0.0051088507042763133 -0.96593146253768825 0
 		 0.372881233583017 25.521914305548435 -1.949620104194578 1;
-	setAttr ".pm[34]" -type "matrix" 0.82045851046987373 0.52660507082169472 0.22256444456029806 -0
-		 0.5098014547579014 -0.8500947000360366 0.13206618680558685 0 0.25874757839308077 0.0051088507042763133 -0.96593146253768825 -0
+	setAttr ".pm[34]" -type "matrix" 0.82045851046987373 0.52660507082169472 0.22256444456029806 0
+		 0.5098014547579014 -0.8500947000360366 0.13206618680558685 0 0.25874757839308077 0.0051088507042763133 -0.96593146253768825 0
 		 0.78525793872757266 25.511748639627754 -1.9326342797978626 1;
-	setAttr ".pm[35]" -type "matrix" 1 4.4408920985006242e-16 -3.3306690738754701e-16 -0
-		 -4.4408920985006242e-16 0.99999999999999978 2.2204460492503136e-16 0 3.3306690738754676e-16 -2.2204460492503141e-16 0.99999999999999978 -0
+	setAttr ".pm[35]" -type "matrix" 1 4.4408920985006242e-16 -3.3306690738754701e-16 0
+		 -4.4408920985006242e-16 0.99999999999999978 2.2204460492503136e-16 0 3.3306690738754676e-16 -2.2204460492503141e-16 0.99999999999999978 0
 		 -0.64347099999998758 -27.682099999999995 -5.2662082472565441e-15 1;
-	setAttr ".pm[36]" -type "matrix" 0.84623976565966841 0.53146144808506468 0.03777549755589471 -0
-		 -0.53101617509891652 0.84708096368929486 -0.021809693682667844 0 -0.043589916260372244 -0.0016031701534596893 0.99904822158185747 -0
+	setAttr ".pm[36]" -type "matrix" 0.84623976565966841 0.53146144808506468 0.03777549755589471 0
+		 -0.53101617509891652 0.84708096368929486 -0.021809693682667844 0 -0.043589916260372244 -0.0016031701534596893 0.99904822158185747 0
 		 13.057784001947882 -25.736020567054567 1.9911235996189813 1;
-	setAttr ".pm[37]" -type "matrix" 0.86462227486411092 0.49709024965070153 -0.073004147217900078 -0
-		 -0.49482383572069855 0.8676838073305484 0.047688385368119979 0 0.087049947797025032 -0.0051082480917003896 0.99619085138841146 -0
+	setAttr ".pm[37]" -type "matrix" 0.86462227486411092 0.49709024965070153 -0.073004147217900078 0
+		 -0.49482383572069855 0.8676838073305484 0.047688385368119979 0 0.087049947797025032 -0.0051082480917003896 0.99619085138841146 0
 		 7.1210941590760237 -25.885746748939351 0.74438721616085812 1;
-	setAttr ".pm[38]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 -0
-		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 -0
+	setAttr ".pm[38]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 0
+		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 0
 		 2.5671567278001235 -25.771551223029515 1.1273438239339311 1;
-	setAttr ".pm[39]" -type "matrix" 0.56823446172836156 0.5112586322922934 -0.64476678528820985 -0
-		 -0.4202463961733916 0.85397670672431458 0.30678453493546654 0 0.70746205764518277 0.09663537281403263 0.70011359200742329 -0
+	setAttr ".pm[39]" -type "matrix" 0.56823446172836156 0.5112586322922934 -0.64476678528820985 0
+		 -0.4202463961733916 0.85397670672431458 0.30678453493546654 0 0.70746205764518277 0.09663537281403263 0.70011359200742329 0
 		 3.3234082220970573 -25.501110048224017 1.0452872710752819 1;
-	setAttr ".pm[40]" -type "matrix" 0.56823446172836167 0.52944707414492165 -0.62991697245245026 -0
-		 -0.42024639617339155 0.84487580663019557 0.33102543387820366 0 0.70746205764518288 0.076620278323417376 0.70258577408177436 -0
+	setAttr ".pm[40]" -type "matrix" 0.56823446172836167 0.52944707414492165 -0.62991697245245026 0
+		 -0.42024639617339155 0.84487580663019557 0.33102543387820366 0 0.70746205764518288 0.076620278323417376 0.70258577408177436 0
 		 2.5831870764637501 -25.5333844167303 0.29916731146397518 1;
-	setAttr ".pm[41]" -type "matrix" 0.56823446172836156 0.5278989813159064 -0.63121490954341974 -0
-		 -0.42024639617339155 0.84568595468617358 0.32895019767407302 0 0.70746205764518288 0.078344952435770429 0.70239554769394774 -0
+	setAttr ".pm[41]" -type "matrix" 0.56823446172836156 0.5278989813159064 -0.63121490954341974 0
+		 -0.42024639617339155 0.84568595468617358 0.32895019767407302 0 0.70746205764518288 0.078344952435770429 0.70239554769394774 0
 		 1.9845329122624868 -25.544685391695452 0.33940918420755289 1;
-	setAttr ".pm[42]" -type "matrix" 0.84710033117318806 0.52660507019835334 -0.071471175782003682 -0
-		 -0.52422596123952425 0.85009470047443259 0.050260738034582829 0 0.087224827249880468 -0.0051088420088640819 0.99617555141880298 -0
+	setAttr ".pm[42]" -type "matrix" 0.84710033117318806 0.52660507019835334 -0.071471175782003682 0
+		 -0.52422596123952425 0.85009470047443259 0.050260738034582829 0 0.087224827249880468 -0.0051088420088640819 0.99617555141880298 0
 		 0.56643441125230387 -25.745360199899377 0.55714090065826538 1;
-	setAttr ".pm[43]" -type "matrix" 0.84710033117318806 0.52660507019835334 -0.071471175782003682 -0
-		 -0.52422596123952425 0.85009470047443259 0.050260738034582829 0 0.087224827249880468 -0.0051088420088640819 0.99617555141880298 -0
+	setAttr ".pm[43]" -type "matrix" 0.84710033117318806 0.52660507019835334 -0.071471175782003682 0
+		 -0.52422596123952425 0.85009470047443259 0.050260738034582829 0 0.087224827249880468 -0.0051088420088640819 0.99617555141880298 0
 		 -0.11927965245819865 -25.713553044231443 0.53882512117854298 1;
-	setAttr ".pm[44]" -type "matrix" 0.84710033117318806 0.52660506509077454 -0.071471213415023119 -0
-		 -0.52422596123952436 0.85009470406623655 0.050260677283875288 0 0.087224827249880482 -0.0051087708187138002 0.99617555178389605 -0
+	setAttr ".pm[44]" -type "matrix" 0.84710033117318806 0.52660506509077454 -0.071471213415023119 0
+		 -0.52422596123952436 0.85009470406623655 0.050260677283875288 0 0.087224827249880482 -0.0051087708187138002 0.99617555178389605 0
 		 -0.68917179573893483 -25.685174360196122 0.54712490511993772 1;
-	setAttr ".pm[45]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 -0
-		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 -0
+	setAttr ".pm[45]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 0
+		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 0
 		 0.48946843836718973 -25.785689541484551 1.0136038243536849 1;
-	setAttr ".pm[46]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 -0
-		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 -0
+	setAttr ".pm[46]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 0
+		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 0
 		 -0.39286067973019417 -25.746850676410663 1.0494838232006014 1;
-	setAttr ".pm[47]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 -0
-		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 -0
+	setAttr ".pm[47]" -type "matrix" 0.85010598207682087 0.52660507019835334 0.0026304521647700046 0
+		 -0.52661163514331277 0.85009470047443281 0.0043801777327944925 0 7.0490357337023535e-05 -0.0051088420088640811 0.9999869472970323 0
 		 -1.1049187422414897 -25.715129932086011 1.0536538222588474 1;
-	setAttr ".pm[48]" -type "matrix" 0.84664181314882281 0.52660507019835345 0.076712060782260422 -0
-		 -0.52498947652686134 0.85009470047443281 -0.041533718366364707 0 -0.087084383009390268 -0.0051088420088640828 0.99618783869770355 -0
+	setAttr ".pm[48]" -type "matrix" 0.84664181314882281 0.52660507019835345 0.076712060782260422 0
+		 -0.52498947652686134 0.85009470047443281 -0.041533718366364707 0 -0.087084383009390268 -0.0051088420088640828 0.99618783869770355 0
 		 0.43087353086492952 -25.709789151235064 1.4972945826456843 1;
-	setAttr ".pm[49]" -type "matrix" 0.84664181314882281 0.52660507019835345 0.076712060782260422 -0
-		 -0.52498947652686134 0.85009470047443281 -0.041533718366364707 0 -0.087084383009390268 -0.0051088420088640828 0.99618783869770355 -0
+	setAttr ".pm[49]" -type "matrix" 0.84664181314882281 0.52660507019835345 0.076712060782260422 0
+		 -0.52498947652686134 0.85009470047443281 -0.041533718366364707 0 -0.087084383009390268 -0.0051088420088640828 0.99618783869770355 0
 		 -0.30736587341290433 -25.676512701994934 1.5233017431498144 1;
-	setAttr ".pm[50]" -type "matrix" 0.8466418131488227 0.52660507447543659 0.07671203142137363 -0
-		 -0.52498947652686134 0.85009469815871741 -0.04153376576342855 0 -0.087084383009390268 -0.0051087864663714152 0.9961878389825457 -0
+	setAttr ".pm[50]" -type "matrix" 0.8466418131488227 0.52660507447543659 0.07671203142137363 0
+		 -0.52498947652686134 0.85009469815871741 -0.04153376576342855 0 -0.087084383009390268 -0.0051087864663714152 0.9961878389825457 0
 		 -0.81903221873407117 -25.635005438708557 1.534912688546648 1;
-	setAttr ".pm[51]" -type "matrix" 0.82045851205335929 0.52660507019835334 0.222564440197833 -0
-		 -0.50980145222742279 0.85009470047443259 -0.1320661937518269 0 -0.2587475783577467 -0.0051088420088640889 0.96593146259314344 -0
+	setAttr ".pm[51]" -type "matrix" 0.82045851205335929 0.52660507019835334 0.222564440197833 0
+		 -0.50980145222742279 0.85009470047443259 -0.1320661937518269 0 -0.2587475783577467 -0.0051088420088640889 0.96593146259314344 0
 		 0.1992885827453848 -25.570915627031496 1.948735034754064 1;
-	setAttr ".pm[52]" -type "matrix" 0.82045851205335929 0.52660507019835334 0.222564440197833 -0
-		 -0.50980145222742279 0.85009470047443259 -0.1320661937518269 0 -0.2587475783577467 -0.0051088420088640889 0.96593146259314344 -0
+	setAttr ".pm[52]" -type "matrix" 0.82045851205335929 0.52660507019835334 0.222564440197833 0
+		 -0.50980145222742279 0.85009470047443259 -0.1320661937518269 0 -0.2587475783577467 -0.0051088420088640889 0.96593146259314344 0
 		 -0.37262400112529676 -25.521713324989268 1.9496855525627026 1;
-	setAttr ".pm[53]" -type "matrix" 0.82045851205335929 0.52660507019835334 0.222564440197833 -0
-		 -0.50980145222742279 0.85009470047443259 -0.1320661937518269 0 -0.2587475783577467 -0.0051088420088640889 0.96593146259314344 -0
+	setAttr ".pm[53]" -type "matrix" 0.82045851205335929 0.52660507019835334 0.222564440197833 0
+		 -0.50980145222742279 0.85009470047443259 -0.1320661937518269 0 -0.2587475783577467 -0.0051088420088640889 0.96593146259314344 0
 		 -0.7849842870127911 -25.511611383926368 1.9327104440344287 1;
 	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr -s 54 ".ma";
@@ -21735,2349 +22065,2386 @@ createNode dagPose -n "bindPose1";
 		no no no no no no no no no no no no no no no no no no no no no no no no no no no 
 		no no no no no no no no no no no no no no;
 	setAttr ".bp" yes;
+createNode polyPlanarProj -n "polyPlanarProj1";
+	rename -uid "08153D81-412F-29C2-8813-B888F5768957";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:39]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" 0 35.810214996337891 -0.5167616605758667 ;
+	setAttr ".ro" -type "double3" 0 90 0 ;
+	setAttr ".ps" -type "double2" 0.23514628410339355 0.13376617431640625 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyTweakUV -n "polyTweakUV1";
+	rename -uid "E95EB8DA-4F96-54C9-1E18-B88DF1E4CA1B";
+	setAttr ".uopa" yes;
+	setAttr -s 41 ".uvtk[5442:5482]" -type "float2" 0.048862383 1.0049675703
+		 0.30342734 1.34306312 0.059257314 1.25951529 -0.17109077 0.94792891 0.55128765 1.72891426
+		 0.29623887 1.62186539 0.54401731 2.12754488 0.40159222 1.84207904 0.19434693 2.21091652
+		 0.31315663 1.85569036 -0.14937398 1.82001007 0.022978395 1.57017994 -0.42000782 1.32789612
+		 -0.20445937 1.11230171 -0.27768743 0.94456255 -0.2646814 0.88267803 -0.082965016
+		 1.07840991 -0.23921546 0.82022595 0.15473503 1.38752651 0.28849581 1.5161196 0.29644984
+		 1.44670296 0.10574323 1.22047961 -0.097748697 0.88126814 -0.25230062 0.73911506 -0.13365301
+		 0.93366897 -0.24174997 0.72934538 0.052735135 1.15275693 0.204694 1.25732446 0.22379519
+		 1.18602753 0.098678917 0.98747736 -0.07752642 0.75454998 -0.21879739 0.65229493 -0.10668392
+		 0.81138325 -0.16234224 0.70715606 -0.011466995 0.92397934 0.077797621 0.98453528
+		 0.086573362 0.93418586 0.029128373 0.83430845 -0.062891766 0.71975106 -0.14698425
+		 0.66184086 -0.042956874 0.81336027;
+createNode polyMapCut -n "polyMapCut1";
+	rename -uid "5DC2A9F3-4CB9-14A5-DD68-29BE2E27D15F";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[40:55]";
+createNode polyTweakUV -n "polyTweakUV2";
+	rename -uid "BF80ED2D-4FA1-DE79-F50F-BBA62A76BBEC";
+	setAttr ".uopa" yes;
+	setAttr -s 58 ".uvtk";
+	setAttr ".uvtk[5442]" -type "float2" 0.088847309 -0.12528437 ;
+	setAttr ".uvtk[5443]" -type "float2" -0.24690807 -0.42491704 ;
+	setAttr ".uvtk[5444]" -type "float2" -0.18854211 -0.46352381 ;
+	setAttr ".uvtk[5445]" -type "float2" 0.1789958 -0.22265123 ;
+	setAttr ".uvtk[5446]" -type "float2" -0.40818486 -0.84442031 ;
+	setAttr ".uvtk[5447]" -type "float2" -0.28544554 -0.89152986 ;
+	setAttr ".uvtk[5448]" -type "float2" -0.19443856 -1.3297827 ;
+	setAttr ".uvtk[5449]" -type "float2" -0.075586185 -1.2474844 ;
+	setAttr ".uvtk[5450]" -type "float2" 0.39195141 -1.5161991 ;
+	setAttr ".uvtk[5451]" -type "float2" 0.3452495 -1.3825312 ;
+	setAttr ".uvtk[5452]" -type "float2" 0.82800961 -1.1685705 ;
+	setAttr ".uvtk[5453]" -type "float2" 0.7867744 -1.1421969 ;
+	setAttr ".uvtk[5454]" -type "float2" 1.0005578 -0.6379773 ;
+	setAttr ".uvtk[5455]" -type "float2" 0.86007226 -0.6445626 ;
+	setAttr ".uvtk[5456]" -type "float2" 0.61921901 -0.15380307 ;
+	setAttr ".uvtk[5457]" -type "float2" 0.58676225 -0.2951228 ;
+	setAttr ".uvtk[5458]" -type "float2" -0.10072894 -0.52409053 ;
+	setAttr ".uvtk[5459]" -type "float2" 0.21446528 -0.32528728 ;
+	setAttr ".uvtk[5460]" -type "float2" -0.17675586 -0.88865632 ;
+	setAttr ".uvtk[5461]" -type "float2" 0.0018062834 -1.1669655 ;
+	setAttr ".uvtk[5462]" -type "float2" 0.35222766 -1.2559042 ;
+	setAttr ".uvtk[5463]" -type "float2" 0.70279139 -1.0831763 ;
+	setAttr ".uvtk[5464]" -type "float2" 0.74370027 -0.69439584 ;
+	setAttr ".uvtk[5465]" -type "float2" 0.5389275 -0.39525491 ;
+	setAttr ".uvtk[5466]" -type "float2" -0.0082412716 -0.58734822 ;
+	setAttr ".uvtk[5467]" -type "float2" 0.22039594 -0.43442339 ;
+	setAttr ".uvtk[5468]" -type "float2" -0.072064817 -0.85491902 ;
+	setAttr ".uvtk[5469]" -type "float2" 0.071539029 -1.089388 ;
+	setAttr ".uvtk[5470]" -type "float2" 0.34393218 -1.1515955 ;
+	setAttr ".uvtk[5471]" -type "float2" 0.60831618 -1.0174417 ;
+	setAttr ".uvtk[5472]" -type "float2" 0.64318013 -0.72310477 ;
+	setAttr ".uvtk[5473]" -type "float2" 0.49216852 -0.48848075 ;
+	setAttr ".uvtk[5474]" -type "float2" 0.14207944 -0.69142586 ;
+	setAttr ".uvtk[5475]" -type "float2" 0.25651798 -0.6112147 ;
+	setAttr ".uvtk[5476]" -type "float2" 0.10666904 -0.8265596 ;
+	setAttr ".uvtk[5477]" -type "float2" 0.18169434 -0.95724887 ;
+	setAttr ".uvtk[5478]" -type "float2" 0.32625845 -0.97867119 ;
+	setAttr ".uvtk[5479]" -type "float2" 0.45669803 -0.91147852 ;
+	setAttr ".uvtk[5480]" -type "float2" 0.4746972 -0.76571482 ;
+	setAttr ".uvtk[5481]" -type "float2" 0.40495047 -0.63675231 ;
+	setAttr ".uvtk[5482]" -type "float2" 0.29225478 -0.79620111 ;
+	setAttr ".uvtk[5483]" -type "float2" 0.58609712 -0.2946952 ;
+	setAttr ".uvtk[5484]" -type "float2" 0.85981113 -0.64354181 ;
+	setAttr ".uvtk[5485]" -type "float2" 0.78737116 -1.1413374 ;
+	setAttr ".uvtk[5486]" -type "float2" 0.34629712 -1.3824191 ;
+	setAttr ".uvtk[5487]" -type "float2" -0.074953124 -1.2479582 ;
+	setAttr ".uvtk[5488]" -type "float2" -0.28533205 -0.89226377 ;
+	setAttr ".uvtk[5489]" -type "float2" -0.18907045 -0.46428472 ;
+	setAttr ".uvtk[5490]" -type "float2" 0.17826845 -0.22280155 ;
+	setAttr ".uvtk[5491]" -type "float2" 0.62145764 -0.15516706 ;
+	setAttr ".uvtk[5492]" -type "float2" 1.0010546 -0.6407429 ;
+	setAttr ".uvtk[5493]" -type "float2" 0.82649338 -1.1707544 ;
+	setAttr ".uvtk[5494]" -type "float2" 0.38918653 -1.5167003 ;
+	setAttr ".uvtk[5495]" -type "float2" -0.19649874 -1.3281622 ;
+	setAttr ".uvtk[5496]" -type "float2" -0.40838894 -0.84175676 ;
+	setAttr ".uvtk[5497]" -type "float2" -0.24539411 -0.42273623 ;
+	setAttr ".uvtk[5498]" -type "float2" 0.091414243 -0.1245445 ;
+createNode pairBlend -n "pairBlend3";
+	rename -uid "039F634B-45FC-03D1-0DF8-398AA133052D";
+createNode pairBlend -n "pairBlend4";
+	rename -uid "44638A29-47AB-DE24-23C4-1AA72DB6080D";
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "F2F6F917-4B6E-6512-D340-148D17CA7387";
+	rename -uid "995819BC-423F-4ED6-4459-978A5BAC48B9";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -398.5052746585427 -1634.4057917933492 ;
-	setAttr ".tgi[0].vh" -type "double2" 194.11752793003961 1553.3313801952347 ;
-	setAttr -s 779 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 75300;
-	setAttr ".tgi[0].ni[0].y" -846970;
+	setAttr ".tgi[0].vl" -type "double2" 9105.8953297742028 -68961.816987594721 ;
+	setAttr ".tgi[0].vh" -type "double2" 10320.18099580854 -62533.81270787328 ;
+	setAttr -s 760 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 75012.859375;
+	setAttr ".tgi[0].ni[0].y" -846028.5625;
 	setAttr ".tgi[0].ni[0].nvs" 18304;
-	setAttr ".tgi[0].ni[1].x" 71020;
-	setAttr ".tgi[0].ni[1].y" -832851.4375;
+	setAttr ".tgi[0].ni[1].x" 1045.7142333984375;
+	setAttr ".tgi[0].ni[1].y" -5178.5712890625;
 	setAttr ".tgi[0].ni[1].nvs" 18304;
-	setAttr ".tgi[0].ni[2].x" 74971.4296875;
-	setAttr ".tgi[0].ni[2].y" -840830;
+	setAttr ".tgi[0].ni[2].x" -43851.4296875;
+	setAttr ".tgi[0].ni[2].y" 612670;
 	setAttr ".tgi[0].ni[2].nvs" 18304;
-	setAttr ".tgi[0].ni[3].x" 75012.859375;
-	setAttr ".tgi[0].ni[3].y" -844751.4375;
+	setAttr ".tgi[0].ni[3].x" -24501.427734375;
+	setAttr ".tgi[0].ni[3].y" 261712.859375;
 	setAttr ".tgi[0].ni[3].nvs" 18304;
-	setAttr ".tgi[0].ni[4].x" 21570;
-	setAttr ".tgi[0].ni[4].y" -313558.5625;
+	setAttr ".tgi[0].ni[4].x" -46615.71484375;
+	setAttr ".tgi[0].ni[4].y" 672587.125;
 	setAttr ".tgi[0].ni[4].nvs" 18304;
-	setAttr ".tgi[0].ni[5].x" 34162.85546875;
-	setAttr ".tgi[0].ni[5].y" -459962.84375;
+	setAttr ".tgi[0].ni[5].x" -21737.142578125;
+	setAttr ".tgi[0].ni[5].y" 226007.140625;
 	setAttr ".tgi[0].ni[5].nvs" 18304;
-	setAttr ".tgi[0].ni[6].x" -52144.28515625;
-	setAttr ".tgi[0].ni[6].y" 790075.6875;
+	setAttr ".tgi[0].ni[6].x" 32627.142578125;
+	setAttr ".tgi[0].ni[6].y" -441258.5625;
 	setAttr ".tgi[0].ni[6].nvs" 18304;
-	setAttr ".tgi[0].ni[7].x" 59041.4296875;
-	setAttr ".tgi[0].ni[7].y" -692314.3125;
+	setAttr ".tgi[0].ni[7].x" -58287.14453125;
+	setAttr ".tgi[0].ni[7].y" 838187.125;
 	setAttr ".tgi[0].ni[7].nvs" 18304;
-	setAttr ".tgi[0].ni[8].x" 32320;
-	setAttr ".tgi[0].ni[8].y" -437618.5625;
+	setAttr ".tgi[0].ni[8].x" -37708.5703125;
+	setAttr ".tgi[0].ni[8].y" 509765.71875;
 	setAttr ".tgi[0].ni[8].nvs" 18304;
-	setAttr ".tgi[0].ni[9].x" 67641.4296875;
-	setAttr ".tgi[0].ni[9].y" -832715.6875;
+	setAttr ".tgi[0].ni[9].x" 47984.28515625;
+	setAttr ".tgi[0].ni[9].y" -616960;
 	setAttr ".tgi[0].ni[9].nvs" 18304;
-	setAttr ".tgi[0].ni[10].x" 10820;
-	setAttr ".tgi[0].ni[10].y" -196912.859375;
+	setAttr ".tgi[0].ni[10].x" 56584.28515625;
+	setAttr ".tgi[0].ni[10].y" -827084.3125;
 	setAttr ".tgi[0].ni[10].nvs" 18304;
-	setAttr ".tgi[0].ni[11].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[11].y" -2222.857177734375;
+	setAttr ".tgi[0].ni[11].x" 74398.5703125;
+	setAttr ".tgi[0].ni[11].y" -815167.125;
 	setAttr ".tgi[0].ni[11].nvs" 18304;
-	setAttr ".tgi[0].ni[12].x" -27265.71484375;
-	setAttr ".tgi[0].ni[12].y" 312617.15625;
+	setAttr ".tgi[0].ni[12].x" -22658.572265625;
+	setAttr ".tgi[0].ni[12].y" 235101.421875;
 	setAttr ".tgi[0].ni[12].nvs" 18304;
-	setAttr ".tgi[0].ni[13].x" 74705.7109375;
-	setAttr ".tgi[0].ni[13].y" -817681.4375;
+	setAttr ".tgi[0].ni[13].x" 75320;
+	setAttr ".tgi[0].ni[13].y" -838261.4375;
 	setAttr ".tgi[0].ni[13].nvs" 18304;
-	setAttr ".tgi[0].ni[14].x" 75012.859375;
-	setAttr ".tgi[0].ni[14].y" -846454.3125;
+	setAttr ".tgi[0].ni[14].x" -73337.140625;
+	setAttr ".tgi[0].ni[14].y" 815185.6875;
 	setAttr ".tgi[0].ni[14].nvs" 18304;
-	setAttr ".tgi[0].ni[15].x" 55970;
-	setAttr ".tgi[0].ni[15].y" -667777.125;
+	setAttr ".tgi[0].ni[15].x" 55355.71484375;
+	setAttr ".tgi[0].ni[15].y" -826324.3125;
 	setAttr ".tgi[0].ni[15].nvs" 18304;
-	setAttr ".tgi[0].ni[16].x" 24027.142578125;
-	setAttr ".tgi[0].ni[16].y" -335867.15625;
+	setAttr ".tgi[0].ni[16].x" -69037.140625;
+	setAttr ".tgi[0].ni[16].y" 815185.6875;
 	setAttr ".tgi[0].ni[16].nvs" 18304;
-	setAttr ".tgi[0].ni[17].x" 16655.71484375;
-	setAttr ".tgi[0].ni[17].y" -269452.84375;
+	setAttr ".tgi[0].ni[17].x" 52591.4296875;
+	setAttr ".tgi[0].ni[17].y" -641248.5625;
 	setAttr ".tgi[0].ni[17].nvs" 18304;
-	setAttr ".tgi[0].ni[18].x" 74968.5703125;
-	setAttr ".tgi[0].ni[18].y" -838955.6875;
+	setAttr ".tgi[0].ni[18].x" 58120;
+	setAttr ".tgi[0].ni[18].y" -681521.4375;
 	setAttr ".tgi[0].ni[18].nvs" 18304;
-	setAttr ".tgi[0].ni[19].x" 75320;
-	setAttr ".tgi[0].ni[19].y" -836871.4375;
+	setAttr ".tgi[0].ni[19].x" 6827.14306640625;
+	setAttr ".tgi[0].ni[19].y" -147944.28125;
 	setAttr ".tgi[0].ni[19].nvs" 18304;
-	setAttr ".tgi[0].ni[20].x" 13277.142578125;
-	setAttr ".tgi[0].ni[20].y" -226692.859375;
+	setAttr ".tgi[0].ni[20].x" 58120;
+	setAttr ".tgi[0].ni[20].y" -827965.6875;
 	setAttr ".tgi[0].ni[20].nvs" 18304;
-	setAttr ".tgi[0].ni[21].x" -23887.142578125;
-	setAttr ".tgi[0].ni[21].y" 251011.421875;
+	setAttr ".tgi[0].ni[21].x" -46308.5703125;
+	setAttr ".tgi[0].ni[21].y" 665841.4375;
 	setAttr ".tgi[0].ni[21].nvs" 18304;
-	setAttr ".tgi[0].ni[22].x" 70405.7109375;
-	setAttr ".tgi[0].ni[22].y" -782848.5625;
+	setAttr ".tgi[0].ni[22].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[22].y" -4752.85693359375;
 	setAttr ".tgi[0].ni[22].nvs" 18304;
-	setAttr ".tgi[0].ni[23].x" -69037.140625;
-	setAttr ".tgi[0].ni[23].y" 815185.6875;
+	setAttr ".tgi[0].ni[23].x" -3308.571533203125;
+	setAttr ".tgi[0].ni[23].y" -14324.2861328125;
 	setAttr ".tgi[0].ni[23].nvs" 18304;
-	setAttr ".tgi[0].ni[24].x" 74705.7109375;
-	setAttr ".tgi[0].ni[24].y" -846302.875;
+	setAttr ".tgi[0].ni[24].x" -40472.85546875;
+	setAttr ".tgi[0].ni[24].y" 547831.4375;
 	setAttr ".tgi[0].ni[24].nvs" 18304;
-	setAttr ".tgi[0].ni[25].x" 74971.4296875;
-	setAttr ".tgi[0].ni[25].y" -839754.3125;
+	setAttr ".tgi[0].ni[25].x" -16515.71484375;
+	setAttr ".tgi[0].ni[25].y" 172995.71875;
 	setAttr ".tgi[0].ni[25].nvs" 18304;
-	setAttr ".tgi[0].ni[26].x" 69484.2890625;
-	setAttr ".tgi[0].ni[26].y" -832901.4375;
+	setAttr ".tgi[0].ni[26].x" 74705.7109375;
+	setAttr ".tgi[0].ni[26].y" -846090;
 	setAttr ".tgi[0].ni[26].nvs" 18304;
-	setAttr ".tgi[0].ni[27].x" -550;
-	setAttr ".tgi[0].ni[27].y" -854.28570556640625;
+	setAttr ".tgi[0].ni[27].x" 22184.28515625;
+	setAttr ".tgi[0].ni[27].y" -317684.28125;
 	setAttr ".tgi[0].ni[27].nvs" 18304;
-	setAttr ".tgi[0].ni[28].x" 13891.4287109375;
-	setAttr ".tgi[0].ni[28].y" -234942.859375;
+	setAttr ".tgi[0].ni[28].x" 33241.4296875;
+	setAttr ".tgi[0].ni[28].y" -449008.5625;
 	setAttr ".tgi[0].ni[28].nvs" 18304;
-	setAttr ".tgi[0].ni[29].x" 69791.4296875;
-	setAttr ".tgi[0].ni[29].y" -776847.125;
+	setAttr ".tgi[0].ni[29].x" 61191.4296875;
+	setAttr ".tgi[0].ni[29].y" -828650;
 	setAttr ".tgi[0].ni[29].nvs" 18304;
-	setAttr ".tgi[0].ni[30].x" 1298.5714111328125;
-	setAttr ".tgi[0].ni[30].y" -78492.859375;
+	setAttr ".tgi[0].ni[30].x" 8362.857421875;
+	setAttr ".tgi[0].ni[30].y" -162934.28125;
 	setAttr ".tgi[0].ni[30].nvs" 18304;
-	setAttr ".tgi[0].ni[31].x" -34637.14453125;
-	setAttr ".tgi[0].ni[31].y" 459980;
+	setAttr ".tgi[0].ni[31].x" 2630;
+	setAttr ".tgi[0].ni[31].y" -1698.5714111328125;
 	setAttr ".tgi[0].ni[31].nvs" 18304;
-	setAttr ".tgi[0].ni[32].x" 2527.142822265625;
-	setAttr ".tgi[0].ni[32].y" -95317.140625;
+	setAttr ".tgi[0].ni[32].x" 75012.859375;
+	setAttr ".tgi[0].ni[32].y" -845602.875;
 	setAttr ".tgi[0].ni[32].nvs" 18304;
-	setAttr ".tgi[0].ni[33].x" 64877.14453125;
-	setAttr ".tgi[0].ni[33].y" -724357.125;
+	setAttr ".tgi[0].ni[33].x" -30337.142578125;
+	setAttr ".tgi[0].ni[33].y" 373147.15625;
 	setAttr ".tgi[0].ni[33].nvs" 18304;
-	setAttr ".tgi[0].ni[34].x" 74661.4296875;
-	setAttr ".tgi[0].ni[34].y" -839304.3125;
+	setAttr ".tgi[0].ni[34].x" 738.5714111328125;
+	setAttr ".tgi[0].ni[34].y" -4572.85693359375;
 	setAttr ".tgi[0].ni[34].nvs" 18304;
-	setAttr ".tgi[0].ni[35].x" 39384.28515625;
-	setAttr ".tgi[0].ni[35].y" -519800;
+	setAttr ".tgi[0].ni[35].x" 51977.14453125;
+	setAttr ".tgi[0].ni[35].y" -823362.875;
 	setAttr ".tgi[0].ni[35].nvs" 18304;
-	setAttr ".tgi[0].ni[36].x" 65184.28515625;
-	setAttr ".tgi[0].ni[36].y" -830478.5625;
+	setAttr ".tgi[0].ni[36].x" -40165.71484375;
+	setAttr ".tgi[0].ni[36].y" 547591.4375;
 	setAttr ".tgi[0].ni[36].nvs" 18304;
-	setAttr ".tgi[0].ni[37].x" 75320;
-	setAttr ".tgi[0].ni[37].y" -844812.875;
+	setAttr ".tgi[0].ni[37].x" 74968.5703125;
+	setAttr ".tgi[0].ni[37].y" -838955.6875;
 	setAttr ".tgi[0].ni[37].nvs" 18304;
-	setAttr ".tgi[0].ni[38].x" 1605.7142333984375;
-	setAttr ".tgi[0].ni[38].y" -83022.859375;
+	setAttr ".tgi[0].ni[38].x" 72862.859375;
+	setAttr ".tgi[0].ni[38].y" -802644.3125;
 	setAttr ".tgi[0].ni[38].nvs" 18304;
-	setAttr ".tgi[0].ni[39].x" 75320;
-	setAttr ".tgi[0].ni[39].y" -838261.4375;
+	setAttr ".tgi[0].ni[39].x" 56891.4296875;
+	setAttr ".tgi[0].ni[39].y" -669262.875;
 	setAttr ".tgi[0].ni[39].nvs" 18304;
-	setAttr ".tgi[0].ni[40].x" 75320;
-	setAttr ".tgi[0].ni[40].y" -848397.125;
+	setAttr ".tgi[0].ni[40].x" 44605.71484375;
+	setAttr ".tgi[0].ni[40].y" -577024.3125;
 	setAttr ".tgi[0].ni[40].nvs" 18304;
-	setAttr ".tgi[0].ni[41].x" 74558.5703125;
-	setAttr ".tgi[0].ni[41].y" -838261.4375;
+	setAttr ".tgi[0].ni[41].x" 58427.14453125;
+	setAttr ".tgi[0].ni[41].y" -685122.875;
 	setAttr ".tgi[0].ni[41].nvs" 18304;
-	setAttr ".tgi[0].ni[42].x" 75320;
-	setAttr ".tgi[0].ni[42].y" -847942.875;
+	setAttr ".tgi[0].ni[42].x" 2630;
+	setAttr ".tgi[0].ni[42].y" -2112.857177734375;
 	setAttr ".tgi[0].ni[42].nvs" 18304;
-	setAttr ".tgi[0].ni[43].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[43].y" 594.28570556640625;
+	setAttr ".tgi[0].ni[43].x" 69484.2890625;
+	setAttr ".tgi[0].ni[43].y" -832901.4375;
 	setAttr ".tgi[0].ni[43].nvs" 18304;
-	setAttr ".tgi[0].ni[44].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[44].y" 377.14285278320312;
+	setAttr ".tgi[0].ni[44].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[44].y" -4630;
 	setAttr ".tgi[0].ni[44].nvs" 18304;
-	setAttr ".tgi[0].ni[45].x" 71941.4296875;
-	setAttr ".tgi[0].ni[45].y" -833855.6875;
+	setAttr ".tgi[0].ni[45].x" -50301.4296875;
+	setAttr ".tgi[0].ni[45].y" 753967.125;
 	setAttr ".tgi[0].ni[45].nvs" 18304;
-	setAttr ".tgi[0].ni[46].x" 75320;
-	setAttr ".tgi[0].ni[46].y" -840901.4375;
+	setAttr ".tgi[0].ni[46].x" 67027.140625;
+	setAttr ".tgi[0].ni[46].y" -749372.875;
 	setAttr ".tgi[0].ni[46].nvs" 18304;
-	setAttr ".tgi[0].ni[47].x" 75012.859375;
-	setAttr ".tgi[0].ni[47].y" -845815.6875;
+	setAttr ".tgi[0].ni[47].x" 8055.71435546875;
+	setAttr ".tgi[0].ni[47].y" -159831.421875;
 	setAttr ".tgi[0].ni[47].nvs" 18304;
-	setAttr ".tgi[0].ni[48].x" 54434.28515625;
-	setAttr ".tgi[0].ni[48].y" -656941.4375;
+	setAttr ".tgi[0].ni[48].x" 1660;
+	setAttr ".tgi[0].ni[48].y" -3550;
 	setAttr ".tgi[0].ni[48].nvs" 18304;
-	setAttr ".tgi[0].ni[49].x" -9758.5712890625;
-	setAttr ".tgi[0].ni[49].y" 65308.5703125;
+	setAttr ".tgi[0].ni[49].x" -75180;
+	setAttr ".tgi[0].ni[49].y" 815185.6875;
 	setAttr ".tgi[0].ni[49].nvs" 18304;
-	setAttr ".tgi[0].ni[50].x" 74664.2890625;
-	setAttr ".tgi[0].ni[50].y" -840657.125;
+	setAttr ".tgi[0].ni[50].x" -54908.5703125;
+	setAttr ".tgi[0].ni[50].y" 826700;
 	setAttr ".tgi[0].ni[50].nvs" 18304;
-	setAttr ".tgi[0].ni[51].x" -20508.572265625;
-	setAttr ".tgi[0].ni[51].y" 212875.71875;
+	setAttr ".tgi[0].ni[51].x" 13584.2861328125;
+	setAttr ".tgi[0].ni[51].y" -230927.140625;
 	setAttr ".tgi[0].ni[51].nvs" 18304;
-	setAttr ".tgi[0].ni[52].x" -11601.4287109375;
-	setAttr ".tgi[0].ni[52].y" 93038.5703125;
+	setAttr ".tgi[0].ni[52].x" 49520;
+	setAttr ".tgi[0].ni[52].y" -618645.6875;
 	setAttr ".tgi[0].ni[52].nvs" 18304;
-	setAttr ".tgi[0].ni[53].x" -16822.857421875;
-	setAttr ".tgi[0].ni[53].y" 178911.421875;
+	setAttr ".tgi[0].ni[53].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[53].y" -6004.28564453125;
 	setAttr ".tgi[0].ni[53].nvs" 18304;
-	setAttr ".tgi[0].ni[54].x" -28187.142578125;
-	setAttr ".tgi[0].ni[54].y" 330410;
+	setAttr ".tgi[0].ni[54].x" 69177.140625;
+	setAttr ".tgi[0].ni[54].y" -833091.4375;
 	setAttr ".tgi[0].ni[54].nvs" 18304;
-	setAttr ".tgi[0].ni[55].x" -71494.2890625;
-	setAttr ".tgi[0].ni[55].y" 815185.6875;
+	setAttr ".tgi[0].ni[55].x" 24948.572265625;
+	setAttr ".tgi[0].ni[55].y" -345841.4375;
 	setAttr ".tgi[0].ni[55].nvs" 18304;
-	setAttr ".tgi[0].ni[56].x" 54434.28515625;
-	setAttr ".tgi[0].ni[56].y" -825640;
+	setAttr ".tgi[0].ni[56].x" 40305.71484375;
+	setAttr ".tgi[0].ni[56].y" -528528.5625;
 	setAttr ".tgi[0].ni[56].nvs" 18304;
-	setAttr ".tgi[0].ni[57].x" 36927.14453125;
-	setAttr ".tgi[0].ni[57].y" -493551.4375;
+	setAttr ".tgi[0].ni[57].x" 16041.4287109375;
+	setAttr ".tgi[0].ni[57].y" -261568.578125;
 	setAttr ".tgi[0].ni[57].nvs" 18304;
-	setAttr ".tgi[0].ni[58].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[58].y" -680;
+	setAttr ".tgi[0].ni[58].x" -23272.857421875;
+	setAttr ".tgi[0].ni[58].y" 242198.578125;
 	setAttr ".tgi[0].ni[58].nvs" 18304;
-	setAttr ".tgi[0].ni[59].x" 57812.85546875;
-	setAttr ".tgi[0].ni[59].y" -677920;
+	setAttr ".tgi[0].ni[59].x" 32012.857421875;
+	setAttr ".tgi[0].ni[59].y" -433910;
 	setAttr ".tgi[0].ni[59].nvs" 18304;
-	setAttr ".tgi[0].ni[60].x" 63648.5703125;
-	setAttr ".tgi[0].ni[60].y" -829630;
+	setAttr ".tgi[0].ni[60].x" 74091.4296875;
+	setAttr ".tgi[0].ni[60].y" -835515.6875;
 	setAttr ".tgi[0].ni[60].nvs" 18304;
-	setAttr ".tgi[0].ni[61].x" 51977.14453125;
-	setAttr ".tgi[0].ni[61].y" -823362.875;
+	setAttr ".tgi[0].ni[61].x" -34637.14453125;
+	setAttr ".tgi[0].ni[61].y" 459980;
 	setAttr ".tgi[0].ni[61].nvs" 18304;
-	setAttr ".tgi[0].ni[62].x" 5598.5712890625;
-	setAttr ".tgi[0].ni[62].y" -137835.71875;
+	setAttr ".tgi[0].ni[62].x" -64430;
+	setAttr ".tgi[0].ni[62].y" 837434.3125;
 	setAttr ".tgi[0].ni[62].nvs" 18304;
-	setAttr ".tgi[0].ni[63].x" 26791.427734375;
-	setAttr ".tgi[0].ni[63].y" -367642.84375;
+	setAttr ".tgi[0].ni[63].x" 18498.572265625;
+	setAttr ".tgi[0].ni[63].y" -293355.71875;
 	setAttr ".tgi[0].ni[63].nvs" 18304;
-	setAttr ".tgi[0].ni[64].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[64].y" -424.28570556640625;
+	setAttr ".tgi[0].ni[64].x" 71327.140625;
+	setAttr ".tgi[0].ni[64].y" -832941.4375;
 	setAttr ".tgi[0].ni[64].nvs" 18304;
-	setAttr ".tgi[0].ni[65].x" 51362.85546875;
-	setAttr ".tgi[0].ni[65].y" -632902.875;
+	setAttr ".tgi[0].ni[65].x" 61805.71484375;
+	setAttr ".tgi[0].ni[65].y" -707360;
 	setAttr ".tgi[0].ni[65].nvs" 18304;
-	setAttr ".tgi[0].ni[66].x" -550;
-	setAttr ".tgi[0].ni[66].y" 5.7142858505249023;
+	setAttr ".tgi[0].ni[66].x" 49827.14453125;
+	setAttr ".tgi[0].ni[66].y" -822750;
 	setAttr ".tgi[0].ni[66].nvs" 18304;
-	setAttr ".tgi[0].ni[67].x" -5458.5712890625;
-	setAttr ".tgi[0].ni[67].y" 10574.2861328125;
+	setAttr ".tgi[0].ni[67].x" 33548.5703125;
+	setAttr ".tgi[0].ni[67].y" -452355.71875;
 	setAttr ".tgi[0].ni[67].nvs" 18304;
-	setAttr ".tgi[0].ni[68].x" 75012.859375;
-	setAttr ".tgi[0].ni[68].y" -845602.875;
+	setAttr ".tgi[0].ni[68].x" 31705.71484375;
+	setAttr ".tgi[0].ni[68].y" -430011.4375;
 	setAttr ".tgi[0].ni[68].nvs" 18304;
-	setAttr ".tgi[0].ni[69].x" -34022.85546875;
-	setAttr ".tgi[0].ni[69].y" 446604.28125;
+	setAttr ".tgi[0].ni[69].x" -10065.7138671875;
+	setAttr ".tgi[0].ni[69].y" 70297.140625;
 	setAttr ".tgi[0].ni[69].nvs" 18304;
-	setAttr ".tgi[0].ni[70].x" -58901.4296875;
-	setAttr ".tgi[0].ni[70].y" 841180;
+	setAttr ".tgi[0].ni[70].x" 65491.4296875;
+	setAttr ".tgi[0].ni[70].y" -830670;
 	setAttr ".tgi[0].ni[70].nvs" 18304;
-	setAttr ".tgi[0].ni[71].x" 26177.142578125;
-	setAttr ".tgi[0].ni[71].y" -359802.84375;
+	setAttr ".tgi[0].ni[71].x" -56751.4296875;
+	setAttr ".tgi[0].ni[71].y" 833462.875;
 	setAttr ".tgi[0].ni[71].nvs" 18304;
-	setAttr ".tgi[0].ni[72].x" 48291.4296875;
-	setAttr ".tgi[0].ni[72].y" -823017.125;
+	setAttr ".tgi[0].ni[72].x" 51055.71484375;
+	setAttr ".tgi[0].ni[72].y" -629131.4375;
 	setAttr ".tgi[0].ni[72].nvs" 18304;
-	setAttr ".tgi[0].ni[73].x" 75320;
-	setAttr ".tgi[0].ni[73].y" -846667.125;
+	setAttr ".tgi[0].ni[73].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[73].y" -6860;
 	setAttr ".tgi[0].ni[73].nvs" 18304;
-	setAttr ".tgi[0].ni[74].x" 33548.5703125;
-	setAttr ".tgi[0].ni[74].y" -452355.71875;
+	setAttr ".tgi[0].ni[74].x" -33101.4296875;
+	setAttr ".tgi[0].ni[74].y" 426952.84375;
 	setAttr ".tgi[0].ni[74].nvs" 18304;
-	setAttr ".tgi[0].ni[75].x" 184.28572082519531;
-	setAttr ".tgi[0].ni[75].y" 1278.5714111328125;
+	setAttr ".tgi[0].ni[75].x" 64262.85546875;
+	setAttr ".tgi[0].ni[75].y" -721221.4375;
 	setAttr ".tgi[0].ni[75].nvs" 18304;
-	setAttr ".tgi[0].ni[76].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[76].y" -320;
+	setAttr ".tgi[0].ni[76].x" -49994.28515625;
+	setAttr ".tgi[0].ni[76].y" 747018.5625;
 	setAttr ".tgi[0].ni[76].nvs" 18304;
-	setAttr ".tgi[0].ni[77].x" -550;
-	setAttr ".tgi[0].ni[77].y" -608.5714111328125;
+	setAttr ".tgi[0].ni[77].x" -10680;
+	setAttr ".tgi[0].ni[77].y" 80455.7109375;
 	setAttr ".tgi[0].ni[77].nvs" 18304;
-	setAttr ".tgi[0].ni[78].x" -75501.4296875;
-	setAttr ".tgi[0].ni[78].y" 815185.6875;
+	setAttr ".tgi[0].ni[78].x" -60437.14453125;
+	setAttr ".tgi[0].ni[78].y" 841962.875;
 	setAttr ".tgi[0].ni[78].nvs" 18304;
-	setAttr ".tgi[0].ni[79].x" 52898.5703125;
-	setAttr ".tgi[0].ni[79].y" -824120;
+	setAttr ".tgi[0].ni[79].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[79].y" -1637.142822265625;
 	setAttr ".tgi[0].ni[79].nvs" 18304;
-	setAttr ".tgi[0].ni[80].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[80].y" 411.42855834960938;
+	setAttr ".tgi[0].ni[80].x" 684.28570556640625;
+	setAttr ".tgi[0].ni[80].y" -70702.859375;
 	setAttr ".tgi[0].ni[80].nvs" 18304;
-	setAttr ".tgi[0].ni[81].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[81].y" -48861.4296875;
+	setAttr ".tgi[0].ni[81].x" -3922.857177734375;
+	setAttr ".tgi[0].ni[81].y" -7618.5712890625;
 	setAttr ".tgi[0].ni[81].nvs" 18304;
-	setAttr ".tgi[0].ni[82].x" 46448.5703125;
-	setAttr ".tgi[0].ni[82].y" -600785.6875;
+	setAttr ".tgi[0].ni[82].x" -11294.2861328125;
+	setAttr ".tgi[0].ni[82].y" 91030;
 	setAttr ".tgi[0].ni[82].nvs" 18304;
-	setAttr ".tgi[0].ni[83].x" 46141.4296875;
-	setAttr ".tgi[0].ni[83].y" -596697.125;
+	setAttr ".tgi[0].ni[83].x" -57672.85546875;
+	setAttr ".tgi[0].ni[83].y" 836347.125;
 	setAttr ".tgi[0].ni[83].nvs" 18304;
-	setAttr ".tgi[0].ni[84].x" -28801.427734375;
-	setAttr ".tgi[0].ni[84].y" 342588.5625;
+	setAttr ".tgi[0].ni[84].x" -2080;
+	setAttr ".tgi[0].ni[84].y" -32488.572265625;
 	setAttr ".tgi[0].ni[84].nvs" 18304;
-	setAttr ".tgi[0].ni[85].x" 65491.4296875;
-	setAttr ".tgi[0].ni[85].y" -731731.4375;
+	setAttr ".tgi[0].ni[85].x" 75320;
+	setAttr ".tgi[0].ni[85].y" -849457.125;
 	setAttr ".tgi[0].ni[85].nvs" 18304;
-	setAttr ".tgi[0].ni[86].x" 53820;
-	setAttr ".tgi[0].ni[86].y" -653835.6875;
+	setAttr ".tgi[0].ni[86].x" -21122.857421875;
+	setAttr ".tgi[0].ni[86].y" 220277.140625;
 	setAttr ".tgi[0].ni[86].nvs" 18304;
-	setAttr ".tgi[0].ni[87].x" -29722.857421875;
-	setAttr ".tgi[0].ni[87].y" 360847.15625;
+	setAttr ".tgi[0].ni[87].x" -30030;
+	setAttr ".tgi[0].ni[87].y" 367035.71875;
 	setAttr ".tgi[0].ni[87].nvs" 18304;
-	setAttr ".tgi[0].ni[88].x" 64570;
-	setAttr ".tgi[0].ni[88].y" -723521.4375;
+	setAttr ".tgi[0].ni[88].x" 27405.71484375;
+	setAttr ".tgi[0].ni[88].y" -374792.84375;
 	setAttr ".tgi[0].ni[88].nvs" 18304;
-	setAttr ".tgi[0].ni[89].x" -63815.71484375;
-	setAttr ".tgi[0].ni[89].y" 837852.875;
+	setAttr ".tgi[0].ni[89].x" 59962.85546875;
+	setAttr ".tgi[0].ni[89].y" -699968.5625;
 	setAttr ".tgi[0].ni[89].nvs" 18304;
 	setAttr ".tgi[0].ni[90].x" 75320;
-	setAttr ".tgi[0].ni[90].y" -849154.3125;
+	setAttr ".tgi[0].ni[90].y" -821520;
 	setAttr ".tgi[0].ni[90].nvs" 18304;
-	setAttr ".tgi[0].ni[91].x" -46615.71484375;
-	setAttr ".tgi[0].ni[91].y" 672587.125;
+	setAttr ".tgi[0].ni[91].x" 64877.14453125;
+	setAttr ".tgi[0].ni[91].y" -724357.125;
 	setAttr ".tgi[0].ni[91].nvs" 18304;
-	setAttr ".tgi[0].ni[92].x" -36172.85546875;
-	setAttr ".tgi[0].ni[92].y" 481507.15625;
+	setAttr ".tgi[0].ni[92].x" -544.28570556640625;
+	setAttr ".tgi[0].ni[92].y" -53500;
 	setAttr ".tgi[0].ni[92].nvs" 18304;
-	setAttr ".tgi[0].ni[93].x" 74664.2890625;
-	setAttr ".tgi[0].ni[93].y" -840391.4375;
+	setAttr ".tgi[0].ni[93].x" -39244.28515625;
+	setAttr ".tgi[0].ni[93].y" 533202.875;
 	setAttr ".tgi[0].ni[93].nvs" 18304;
-	setAttr ".tgi[0].ni[94].x" 74968.5703125;
-	setAttr ".tgi[0].ni[94].y" -839232.875;
+	setAttr ".tgi[0].ni[94].x" 75320;
+	setAttr ".tgi[0].ni[94].y" -836871.4375;
 	setAttr ".tgi[0].ni[94].nvs" 18304;
-	setAttr ".tgi[0].ni[95].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[95].y" 1442.857177734375;
+	setAttr ".tgi[0].ni[95].x" 75012.859375;
+	setAttr ".tgi[0].ni[95].y" -844964.3125;
 	setAttr ".tgi[0].ni[95].nvs" 18304;
-	setAttr ".tgi[0].ni[96].x" -550;
-	setAttr ".tgi[0].ni[96].y" -362.85714721679688;
+	setAttr ".tgi[0].ni[96].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[96].y" -6250;
 	setAttr ".tgi[0].ni[96].nvs" 18304;
-	setAttr ".tgi[0].ni[97].x" 45834.28515625;
-	setAttr ".tgi[0].ni[97].y" -592655.6875;
+	setAttr ".tgi[0].ni[97].x" 5598.5712890625;
+	setAttr ".tgi[0].ni[97].y" -137835.71875;
 	setAttr ".tgi[0].ni[97].nvs" 18304;
-	setAttr ".tgi[0].ni[98].x" 55048.5703125;
-	setAttr ".tgi[0].ni[98].y" -826125.6875;
+	setAttr ".tgi[0].ni[98].x" -8837.142578125;
+	setAttr ".tgi[0].ni[98].y" 52521.4296875;
 	setAttr ".tgi[0].ni[98].nvs" 18304;
-	setAttr ".tgi[0].ni[99].x" 35698.5703125;
-	setAttr ".tgi[0].ni[99].y" -477900;
+	setAttr ".tgi[0].ni[99].x" 63034.28515625;
+	setAttr ".tgi[0].ni[99].y" -713265.6875;
 	setAttr ".tgi[0].ni[99].nvs" 18304;
-	setAttr ".tgi[0].ni[100].x" 16348.5712890625;
-	setAttr ".tgi[0].ni[100].y" -265611.4375;
+	setAttr ".tgi[0].ni[100].x" -66272.859375;
+	setAttr ".tgi[0].ni[100].y" 827181.4375;
 	setAttr ".tgi[0].ni[100].nvs" 18304;
-	setAttr ".tgi[0].ni[101].x" 37541.4296875;
-	setAttr ".tgi[0].ni[101].y" -499938.5625;
+	setAttr ".tgi[0].ni[101].x" -54601.4296875;
+	setAttr ".tgi[0].ni[101].y" 822407.125;
 	setAttr ".tgi[0].ni[101].nvs" 18304;
-	setAttr ".tgi[0].ni[102].x" 1768.5714111328125;
-	setAttr ".tgi[0].ni[102].y" -328.57144165039062;
+	setAttr ".tgi[0].ni[102].x" 73170;
+	setAttr ".tgi[0].ni[102].y" -805068.5625;
 	setAttr ".tgi[0].ni[102].nvs" 18304;
-	setAttr ".tgi[0].ni[103].x" 1412.857177734375;
-	setAttr ".tgi[0].ni[103].y" 1321.4285888671875;
+	setAttr ".tgi[0].ni[103].x" 46448.5703125;
+	setAttr ".tgi[0].ni[103].y" -600785.6875;
 	setAttr ".tgi[0].ni[103].nvs" 18304;
-	setAttr ".tgi[0].ni[104].x" 74664.2890625;
-	setAttr ".tgi[0].ni[104].y" -839837.125;
+	setAttr ".tgi[0].ni[104].x" 52284.28515625;
+	setAttr ".tgi[0].ni[104].y" -637630;
 	setAttr ".tgi[0].ni[104].nvs" 18304;
-	setAttr ".tgi[0].ni[105].x" -25730;
-	setAttr ".tgi[0].ni[105].y" 283792.84375;
+	setAttr ".tgi[0].ni[105].x" -14980;
+	setAttr ".tgi[0].ni[105].y" 147225.71875;
 	setAttr ".tgi[0].ni[105].nvs" 18304;
-	setAttr ".tgi[0].ni[106].x" -60130;
-	setAttr ".tgi[0].ni[106].y" 834922.875;
+	setAttr ".tgi[0].ni[106].x" -47844.28515625;
+	setAttr ".tgi[0].ni[106].y" 699362.875;
 	setAttr ".tgi[0].ni[106].nvs" 18304;
-	setAttr ".tgi[0].ni[107].x" -39858.5703125;
-	setAttr ".tgi[0].ni[107].y" 540820;
+	setAttr ".tgi[0].ni[107].x" 12048.5712890625;
+	setAttr ".tgi[0].ni[107].y" -213964.28125;
 	setAttr ".tgi[0].ni[107].nvs" 18304;
-	setAttr ".tgi[0].ni[108].x" 61498.5703125;
-	setAttr ".tgi[0].ni[108].y" -828634.3125;
+	setAttr ".tgi[0].ni[108].x" 54741.4296875;
+	setAttr ".tgi[0].ni[108].y" -825832.875;
 	setAttr ".tgi[0].ni[108].nvs" 18304;
-	setAttr ".tgi[0].ni[109].x" -18358.572265625;
-	setAttr ".tgi[0].ni[109].y" 193297.140625;
+	setAttr ".tgi[0].ni[109].x" 75012.859375;
+	setAttr ".tgi[0].ni[109].y" -844538.5625;
 	setAttr ".tgi[0].ni[109].nvs" 18304;
-	setAttr ".tgi[0].ni[110].x" 184.28572082519531;
-	setAttr ".tgi[0].ni[110].y" 918.5714111328125;
+	setAttr ".tgi[0].ni[110].x" 66720;
+	setAttr ".tgi[0].ni[110].y" -831595.6875;
 	setAttr ".tgi[0].ni[110].nvs" 18304;
-	setAttr ".tgi[0].ni[111].x" -22965.71484375;
-	setAttr ".tgi[0].ni[111].y" 237761.421875;
+	setAttr ".tgi[0].ni[111].x" -36787.14453125;
+	setAttr ".tgi[0].ni[111].y" 494784.28125;
 	setAttr ".tgi[0].ni[111].nvs" 18304;
-	setAttr ".tgi[0].ni[112].x" -10987.142578125;
-	setAttr ".tgi[0].ni[112].y" 85814.2890625;
+	setAttr ".tgi[0].ni[112].x" 26177.142578125;
+	setAttr ".tgi[0].ni[112].y" -359802.84375;
 	setAttr ".tgi[0].ni[112].nvs" 18304;
-	setAttr ".tgi[0].ni[113].x" -26958.572265625;
-	setAttr ".tgi[0].ni[113].y" 306827.15625;
+	setAttr ".tgi[0].ni[113].x" -23887.142578125;
+	setAttr ".tgi[0].ni[113].y" 251011.421875;
 	setAttr ".tgi[0].ni[113].nvs" 18304;
-	setAttr ".tgi[0].ni[114].x" 37848.5703125;
-	setAttr ".tgi[0].ni[114].y" -503572.84375;
+	setAttr ".tgi[0].ni[114].x" 59348.5703125;
+	setAttr ".tgi[0].ni[114].y" -695925.6875;
 	setAttr ".tgi[0].ni[114].nvs" 18304;
-	setAttr ".tgi[0].ni[115].x" 74705.7109375;
-	setAttr ".tgi[0].ni[115].y" -846090;
+	setAttr ".tgi[0].ni[115].x" -1158.5714111328125;
+	setAttr ".tgi[0].ni[115].y" -47101.4296875;
 	setAttr ".tgi[0].ni[115].nvs" 18304;
-	setAttr ".tgi[0].ni[116].x" 14812.857421875;
-	setAttr ".tgi[0].ni[116].y" -247891.421875;
+	setAttr ".tgi[0].ni[116].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[116].y" -7685.71435546875;
 	setAttr ".tgi[0].ni[116].nvs" 18304;
-	setAttr ".tgi[0].ni[117].x" 75320;
-	setAttr ".tgi[0].ni[117].y" -840657.125;
+	setAttr ".tgi[0].ni[117].x" -49687.14453125;
+	setAttr ".tgi[0].ni[117].y" 740181.4375;
 	setAttr ".tgi[0].ni[117].nvs" 18304;
-	setAttr ".tgi[0].ni[118].x" 6212.85693359375;
-	setAttr ".tgi[0].ni[118].y" -142982.859375;
+	setAttr ".tgi[0].ni[118].x" -74565.7109375;
+	setAttr ".tgi[0].ni[118].y" 815185.6875;
 	setAttr ".tgi[0].ni[118].nvs" 18304;
-	setAttr ".tgi[0].ni[119].x" -550;
-	setAttr ".tgi[0].ni[119].y" -731.4285888671875;
+	setAttr ".tgi[0].ni[119].x" 37234.28515625;
+	setAttr ".tgi[0].ni[119].y" -497420;
 	setAttr ".tgi[0].ni[119].nvs" 18304;
-	setAttr ".tgi[0].ni[120].x" -12215.7138671875;
-	setAttr ".tgi[0].ni[120].y" 103978.5703125;
+	setAttr ".tgi[0].ni[120].x" -65965.7109375;
+	setAttr ".tgi[0].ni[120].y" 832841.4375;
 	setAttr ".tgi[0].ni[120].nvs" 18304;
-	setAttr ".tgi[0].ni[121].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[121].y" -1682.857177734375;
+	setAttr ".tgi[0].ni[121].x" 43991.4296875;
+	setAttr ".tgi[0].ni[121].y" -570850;
 	setAttr ".tgi[0].ni[121].nvs" 18304;
-	setAttr ".tgi[0].ni[122].x" 60884.28515625;
-	setAttr ".tgi[0].ni[122].y" -703098.5625;
+	setAttr ".tgi[0].ni[122].x" 75320;
+	setAttr ".tgi[0].ni[122].y" -840657.125;
 	setAttr ".tgi[0].ni[122].nvs" 18304;
-	setAttr ".tgi[0].ni[123].x" -64122.85546875;
-	setAttr ".tgi[0].ni[123].y" 840151.4375;
+	setAttr ".tgi[0].ni[123].x" 124.28571319580078;
+	setAttr ".tgi[0].ni[123].y" -4338.5712890625;
 	setAttr ".tgi[0].ni[123].nvs" 18304;
-	setAttr ".tgi[0].ni[124].x" -41394.28515625;
-	setAttr ".tgi[0].ni[124].y" 565332.875;
+	setAttr ".tgi[0].ni[124].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[124].y" -1940;
 	setAttr ".tgi[0].ni[124].nvs" 18304;
-	setAttr ".tgi[0].ni[125].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[125].y" -77.142860412597656;
+	setAttr ".tgi[0].ni[125].x" 75320;
+	setAttr ".tgi[0].ni[125].y" -847142.875;
 	setAttr ".tgi[0].ni[125].nvs" 18304;
-	setAttr ".tgi[0].ni[126].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[126].y" 471.42855834960938;
+	setAttr ".tgi[0].ni[126].x" -34022.85546875;
+	setAttr ".tgi[0].ni[126].y" 446604.28125;
 	setAttr ".tgi[0].ni[126].nvs" 18304;
-	setAttr ".tgi[0].ni[127].x" 19727.142578125;
-	setAttr ".tgi[0].ni[127].y" -302210;
+	setAttr ".tgi[0].ni[127].x" 19420;
+	setAttr ".tgi[0].ni[127].y" -298740;
 	setAttr ".tgi[0].ni[127].nvs" 18304;
-	setAttr ".tgi[0].ni[128].x" 47062.85546875;
-	setAttr ".tgi[0].ni[128].y" -608301.4375;
+	setAttr ".tgi[0].ni[128].x" 75320;
+	setAttr ".tgi[0].ni[128].y" -846090;
 	setAttr ".tgi[0].ni[128].nvs" 18304;
-	setAttr ".tgi[0].ni[129].x" 74865.7109375;
-	setAttr ".tgi[0].ni[129].y" -838190;
+	setAttr ".tgi[0].ni[129].x" 17270;
+	setAttr ".tgi[0].ni[129].y" -277268.5625;
 	setAttr ".tgi[0].ni[129].nvs" 18304;
-	setAttr ".tgi[0].ni[130].x" -550;
-	setAttr ".tgi[0].ni[130].y" -117.14286041259766;
+	setAttr ".tgi[0].ni[130].x" -40780;
+	setAttr ".tgi[0].ni[130].y" 553044.3125;
 	setAttr ".tgi[0].ni[130].nvs" 18304;
-	setAttr ".tgi[0].ni[131].x" 35084.28515625;
-	setAttr ".tgi[0].ni[131].y" -471164.28125;
+	setAttr ".tgi[0].ni[131].x" 6212.85693359375;
+	setAttr ".tgi[0].ni[131].y" -142982.859375;
 	setAttr ".tgi[0].ni[131].nvs" 18304;
-	setAttr ".tgi[0].ni[132].x" 74664.2890625;
-	setAttr ".tgi[0].ni[132].y" -840114.3125;
+	setAttr ".tgi[0].ni[132].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[132].y" -3360;
 	setAttr ".tgi[0].ni[132].nvs" 18304;
-	setAttr ".tgi[0].ni[133].x" 377.14285278320312;
-	setAttr ".tgi[0].ni[133].y" -65997.140625;
+	setAttr ".tgi[0].ni[133].x" 75320;
+	setAttr ".tgi[0].ni[133].y" -840114.3125;
 	setAttr ".tgi[0].ni[133].nvs" 18304;
-	setAttr ".tgi[0].ni[134].x" 72248.5703125;
-	setAttr ".tgi[0].ni[134].y" -797952.875;
+	setAttr ".tgi[0].ni[134].x" 74664.2890625;
+	setAttr ".tgi[0].ni[134].y" -840391.4375;
 	setAttr ".tgi[0].ni[134].nvs" 18304;
-	setAttr ".tgi[0].ni[135].x" -9144.2861328125;
-	setAttr ".tgi[0].ni[135].y" 56894.28515625;
+	setAttr ".tgi[0].ni[135].x" 74874.2890625;
+	setAttr ".tgi[0].ni[135].y" -838434.3125;
 	setAttr ".tgi[0].ni[135].nvs" 18304;
-	setAttr ".tgi[0].ni[136].x" 54741.4296875;
-	setAttr ".tgi[0].ni[136].y" -658408.5625;
+	setAttr ".tgi[0].ni[136].x" -69651.4296875;
+	setAttr ".tgi[0].ni[136].y" 815185.6875;
 	setAttr ".tgi[0].ni[136].nvs" 18304;
-	setAttr ".tgi[0].ni[137].x" 43070;
-	setAttr ".tgi[0].ni[137].y" -561594.3125;
+	setAttr ".tgi[0].ni[137].x" -7301.4287109375;
+	setAttr ".tgi[0].ni[137].y" 31074.28515625;
 	setAttr ".tgi[0].ni[137].nvs" 18304;
-	setAttr ".tgi[0].ni[138].x" -10372.857421875;
-	setAttr ".tgi[0].ni[138].y" 75685.7109375;
+	setAttr ".tgi[0].ni[138].x" 71634.2890625;
+	setAttr ".tgi[0].ni[138].y" -792920;
 	setAttr ".tgi[0].ni[138].nvs" 18304;
-	setAttr ".tgi[0].ni[139].x" 50748.5703125;
-	setAttr ".tgi[0].ni[139].y" -822655.6875;
+	setAttr ".tgi[0].ni[139].x" 63341.4296875;
+	setAttr ".tgi[0].ni[139].y" -829470;
 	setAttr ".tgi[0].ni[139].nvs" 18304;
-	setAttr ".tgi[0].ni[140].x" 74705.7109375;
-	setAttr ".tgi[0].ni[140].y" -844045.6875;
+	setAttr ".tgi[0].ni[140].x" 32320;
+	setAttr ".tgi[0].ni[140].y" -437618.5625;
 	setAttr ".tgi[0].ni[140].nvs" 18304;
-	setAttr ".tgi[0].ni[141].x" 12970;
-	setAttr ".tgi[0].ni[141].y" -224320;
+	setAttr ".tgi[0].ni[141].x" -31258.572265625;
+	setAttr ".tgi[0].ni[141].y" 392292.84375;
 	setAttr ".tgi[0].ni[141].nvs" 18304;
-	setAttr ".tgi[0].ni[142].x" 49520;
-	setAttr ".tgi[0].ni[142].y" -822887.125;
+	setAttr ".tgi[0].ni[142].x" 52898.5703125;
+	setAttr ".tgi[0].ni[142].y" -644845.6875;
 	setAttr ".tgi[0].ni[142].nvs" 18304;
-	setAttr ".tgi[0].ni[143].x" 74091.4296875;
-	setAttr ".tgi[0].ni[143].y" -835515.6875;
+	setAttr ".tgi[0].ni[143].x" 61805.71484375;
+	setAttr ".tgi[0].ni[143].y" -828928.5625;
 	setAttr ".tgi[0].ni[143].nvs" 18304;
-	setAttr ".tgi[0].ni[144].x" -430;
-	setAttr ".tgi[0].ni[144].y" 1395.7142333984375;
+	setAttr ".tgi[0].ni[144].x" -12522.857421875;
+	setAttr ".tgi[0].ni[144].y" 109595.7109375;
 	setAttr ".tgi[0].ni[144].nvs" 18304;
-	setAttr ".tgi[0].ni[145].x" 68562.859375;
-	setAttr ".tgi[0].ni[145].y" -833172.875;
+	setAttr ".tgi[0].ni[145].x" -55522.85546875;
+	setAttr ".tgi[0].ni[145].y" 826835.6875;
 	setAttr ".tgi[0].ni[145].nvs" 18304;
-	setAttr ".tgi[0].ni[146].x" 10205.7138671875;
-	setAttr ".tgi[0].ni[146].y" -188285.71875;
+	setAttr ".tgi[0].ni[146].x" 2630;
+	setAttr ".tgi[0].ni[146].y" -2881.428466796875;
 	setAttr ".tgi[0].ni[146].nvs" 18304;
-	setAttr ".tgi[0].ni[147].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[147].y" 717.14288330078125;
+	setAttr ".tgi[0].ni[147].x" 55970;
+	setAttr ".tgi[0].ni[147].y" -667777.125;
 	setAttr ".tgi[0].ni[147].nvs" 18304;
-	setAttr ".tgi[0].ni[148].x" 75320;
-	setAttr ".tgi[0].ni[148].y" -844344.3125;
+	setAttr ".tgi[0].ni[148].x" -57980;
+	setAttr ".tgi[0].ni[148].y" 835958.5625;
 	setAttr ".tgi[0].ni[148].nvs" 18304;
-	setAttr ".tgi[0].ni[149].x" -57058.5703125;
-	setAttr ".tgi[0].ni[149].y" 834137.125;
+	setAttr ".tgi[0].ni[149].x" 72248.5703125;
+	setAttr ".tgi[0].ni[149].y" -797952.875;
 	setAttr ".tgi[0].ni[149].nvs" 18304;
-	setAttr ".tgi[0].ni[150].x" -4844.28564453125;
-	setAttr ".tgi[0].ni[150].y" 4241.4287109375;
+	setAttr ".tgi[0].ni[150].x" -9758.5712890625;
+	setAttr ".tgi[0].ni[150].y" 65308.5703125;
 	setAttr ".tgi[0].ni[150].nvs" 18304;
-	setAttr ".tgi[0].ni[151].x" -65658.5703125;
-	setAttr ".tgi[0].ni[151].y" 834767.125;
+	setAttr ".tgi[0].ni[151].x" 29248.572265625;
+	setAttr ".tgi[0].ni[151].y" -398587.15625;
 	setAttr ".tgi[0].ni[151].nvs" 18304;
-	setAttr ".tgi[0].ni[152].x" 48291.4296875;
-	setAttr ".tgi[0].ni[152].y" -616688.5625;
+	setAttr ".tgi[0].ni[152].x" 68562.859375;
+	setAttr ".tgi[0].ni[152].y" -833172.875;
 	setAttr ".tgi[0].ni[152].nvs" 18304;
-	setAttr ".tgi[0].ni[153].x" -13444.2861328125;
-	setAttr ".tgi[0].ni[153].y" 123532.859375;
+	setAttr ".tgi[0].ni[153].x" -237.14285278320312;
+	setAttr ".tgi[0].ni[153].y" -56911.4296875;
 	setAttr ".tgi[0].ni[153].nvs" 18304;
-	setAttr ".tgi[0].ni[154].x" -72108.5703125;
-	setAttr ".tgi[0].ni[154].y" 815185.6875;
+	setAttr ".tgi[0].ni[154].x" -16208.5712890625;
+	setAttr ".tgi[0].ni[154].y" 168157.140625;
 	setAttr ".tgi[0].ni[154].nvs" 18304;
-	setAttr ".tgi[0].ni[155].x" -55522.85546875;
-	setAttr ".tgi[0].ni[155].y" 826835.6875;
+	setAttr ".tgi[0].ni[155].x" 26791.427734375;
+	setAttr ".tgi[0].ni[155].y" -367642.84375;
 	setAttr ".tgi[0].ni[155].nvs" 18304;
-	setAttr ".tgi[0].ni[156].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[156].y" -194.28572082519531;
+	setAttr ".tgi[0].ni[156].x" 63341.4296875;
+	setAttr ".tgi[0].ni[156].y" -715541.4375;
 	setAttr ".tgi[0].ni[156].nvs" 18304;
-	setAttr ".tgi[0].ni[157].x" 5291.4287109375;
-	setAttr ".tgi[0].ni[157].y" -133588.578125;
+	setAttr ".tgi[0].ni[157].x" 75320;
+	setAttr ".tgi[0].ni[157].y" -848700;
 	setAttr ".tgi[0].ni[157].nvs" 18304;
-	setAttr ".tgi[0].ni[158].x" 75320;
-	setAttr ".tgi[0].ni[158].y" -838517.125;
+	setAttr ".tgi[0].ni[158].x" 72555.7109375;
+	setAttr ".tgi[0].ni[158].y" -833954.3125;
 	setAttr ".tgi[0].ni[158].nvs" 18304;
-	setAttr ".tgi[0].ni[159].x" 15427.142578125;
-	setAttr ".tgi[0].ni[159].y" -253444.28125;
+	setAttr ".tgi[0].ni[159].x" -19587.142578125;
+	setAttr ".tgi[0].ni[159].y" 205032.859375;
 	setAttr ".tgi[0].ni[159].nvs" 18304;
-	setAttr ".tgi[0].ni[160].x" 47984.28515625;
-	setAttr ".tgi[0].ni[160].y" -616960;
+	setAttr ".tgi[0].ni[160].x" 36005.71484375;
+	setAttr ".tgi[0].ni[160].y" -482037.15625;
 	setAttr ".tgi[0].ni[160].nvs" 18304;
-	setAttr ".tgi[0].ni[161].x" 2075.71435546875;
-	setAttr ".tgi[0].ni[161].y" -328.57144165039062;
+	setAttr ".tgi[0].ni[161].x" 14812.857421875;
+	setAttr ".tgi[0].ni[161].y" -247891.421875;
 	setAttr ".tgi[0].ni[161].nvs" 18304;
-	setAttr ".tgi[0].ni[162].x" -56444.28515625;
-	setAttr ".tgi[0].ni[162].y" 834131.4375;
+	setAttr ".tgi[0].ni[162].x" 75320;
+	setAttr ".tgi[0].ni[162].y" -847488.5625;
 	setAttr ".tgi[0].ni[162].nvs" 18304;
-	setAttr ".tgi[0].ni[163].x" 69177.140625;
-	setAttr ".tgi[0].ni[163].y" -833091.4375;
+	setAttr ".tgi[0].ni[163].x" 1660;
+	setAttr ".tgi[0].ni[163].y" -6085.71435546875;
 	setAttr ".tgi[0].ni[163].nvs" 18304;
-	setAttr ".tgi[0].ni[164].x" 11434.2861328125;
-	setAttr ".tgi[0].ni[164].y" -205491.421875;
+	setAttr ".tgi[0].ni[164].x" 39998.5703125;
+	setAttr ".tgi[0].ni[164].y" -525687.125;
 	setAttr ".tgi[0].ni[164].nvs" 18304;
-	setAttr ".tgi[0].ni[165].x" 59655.71484375;
-	setAttr ".tgi[0].ni[165].y" -828485.6875;
+	setAttr ".tgi[0].ni[165].x" 75320;
+	setAttr ".tgi[0].ni[165].y" -848397.125;
 	setAttr ".tgi[0].ni[165].nvs" 18304;
-	setAttr ".tgi[0].ni[166].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[166].y" 514.28570556640625;
+	setAttr ".tgi[0].ni[166].x" 67641.4296875;
+	setAttr ".tgi[0].ni[166].y" -832715.6875;
 	setAttr ".tgi[0].ni[166].nvs" 18304;
-	setAttr ".tgi[0].ni[167].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[167].y" -2402.857177734375;
+	setAttr ".tgi[0].ni[167].x" 74705.7109375;
+	setAttr ".tgi[0].ni[167].y" -845451.4375;
 	setAttr ".tgi[0].ni[167].nvs" 18304;
-	setAttr ".tgi[0].ni[168].x" 33855.71484375;
-	setAttr ".tgi[0].ni[168].y" -456177.15625;
+	setAttr ".tgi[0].ni[168].x" 19112.857421875;
+	setAttr ".tgi[0].ni[168].y" -298801.4375;
 	setAttr ".tgi[0].ni[168].nvs" 18304;
-	setAttr ".tgi[0].ni[169].x" 67027.140625;
-	setAttr ".tgi[0].ni[169].y" -749372.875;
+	setAttr ".tgi[0].ni[169].x" -51837.14453125;
+	setAttr ".tgi[0].ni[169].y" 783695.6875;
 	setAttr ".tgi[0].ni[169].nvs" 18304;
-	setAttr ".tgi[0].ni[170].x" -24501.427734375;
-	setAttr ".tgi[0].ni[170].y" 261712.859375;
+	setAttr ".tgi[0].ni[170].x" 46755.71484375;
+	setAttr ".tgi[0].ni[170].y" -604902.875;
 	setAttr ".tgi[0].ni[170].nvs" 18304;
-	setAttr ".tgi[0].ni[171].x" 58734.28515625;
-	setAttr ".tgi[0].ni[171].y" -828181.4375;
+	setAttr ".tgi[0].ni[171].x" 75320;
+	setAttr ".tgi[0].ni[171].y" -844812.875;
 	setAttr ".tgi[0].ni[171].nvs" 18304;
-	setAttr ".tgi[0].ni[172].x" -54294.28515625;
-	setAttr ".tgi[0].ni[172].y" 819862.875;
+	setAttr ".tgi[0].ni[172].x" 46141.4296875;
+	setAttr ".tgi[0].ni[172].y" -596697.125;
 	setAttr ".tgi[0].ni[172].nvs" 18304;
-	setAttr ".tgi[0].ni[173].x" -64430;
-	setAttr ".tgi[0].ni[173].y" 837434.3125;
+	setAttr ".tgi[0].ni[173].x" 6520;
+	setAttr ".tgi[0].ni[173].y" -145895.71875;
 	setAttr ".tgi[0].ni[173].nvs" 18304;
-	setAttr ".tgi[0].ni[174].x" 73784.2890625;
-	setAttr ".tgi[0].ni[174].y" -810078.5625;
+	setAttr ".tgi[0].ni[174].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[174].y" -6912.85693359375;
 	setAttr ".tgi[0].ni[174].nvs" 18304;
-	setAttr ".tgi[0].ni[175].x" 29862.857421875;
-	setAttr ".tgi[0].ni[175].y" -407141.4375;
+	setAttr ".tgi[0].ni[175].x" -490;
+	setAttr ".tgi[0].ni[175].y" -4464.28564453125;
 	setAttr ".tgi[0].ni[175].nvs" 18304;
-	setAttr ".tgi[0].ni[176].x" -68115.7109375;
-	setAttr ".tgi[0].ni[176].y" 815185.6875;
+	setAttr ".tgi[0].ni[176].x" -53680;
+	setAttr ".tgi[0].ni[176].y" 811568.5625;
 	setAttr ".tgi[0].ni[176].nvs" 18304;
-	setAttr ".tgi[0].ni[177].x" -61665.71484375;
-	setAttr ".tgi[0].ni[177].y" 849251.4375;
+	setAttr ".tgi[0].ni[177].x" 57505.71484375;
+	setAttr ".tgi[0].ni[177].y" -827658.5625;
 	setAttr ".tgi[0].ni[177].nvs" 18304;
-	setAttr ".tgi[0].ni[178].x" -30951.427734375;
-	setAttr ".tgi[0].ni[178].y" 385855.71875;
+	setAttr ".tgi[0].ni[178].x" 55970;
+	setAttr ".tgi[0].ni[178].y" -826717.125;
 	setAttr ".tgi[0].ni[178].nvs" 18304;
-	setAttr ".tgi[0].ni[179].x" 64.285713195800781;
-	setAttr ".tgi[0].ni[179].y" -460;
+	setAttr ".tgi[0].ni[179].x" 43377.14453125;
+	setAttr ".tgi[0].ni[179].y" -565052.875;
 	setAttr ".tgi[0].ni[179].nvs" 18304;
-	setAttr ".tgi[0].ni[180].x" 22184.28515625;
-	setAttr ".tgi[0].ni[180].y" -317684.28125;
+	setAttr ".tgi[0].ni[180].x" -44158.5703125;
+	setAttr ".tgi[0].ni[180].y" 619287.125;
 	setAttr ".tgi[0].ni[180].nvs" 18304;
-	setAttr ".tgi[0].ni[181].x" 60577.14453125;
-	setAttr ".tgi[0].ni[181].y" -700601.4375;
+	setAttr ".tgi[0].ni[181].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[181].y" -1817.142822265625;
 	setAttr ".tgi[0].ni[181].nvs" 18304;
-	setAttr ".tgi[0].ni[182].x" -17744.28515625;
-	setAttr ".tgi[0].ni[182].y" 187718.578125;
+	setAttr ".tgi[0].ni[182].x" 29862.857421875;
+	setAttr ".tgi[0].ni[182].y" -407141.4375;
 	setAttr ".tgi[0].ni[182].nvs" 18304;
-	setAttr ".tgi[0].ni[183].x" 73477.140625;
-	setAttr ".tgi[0].ni[183].y" -807560;
+	setAttr ".tgi[0].ni[183].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[183].y" -5275.71435546875;
 	setAttr ".tgi[0].ni[183].nvs" 18304;
-	setAttr ".tgi[0].ni[184].x" -52451.4296875;
-	setAttr ".tgi[0].ni[184].y" 797112.875;
+	setAttr ".tgi[0].ni[184].x" 74398.5703125;
+	setAttr ".tgi[0].ni[184].y" -835572.875;
 	setAttr ".tgi[0].ni[184].nvs" 18304;
-	setAttr ".tgi[0].ni[185].x" 57198.5703125;
-	setAttr ".tgi[0].ni[185].y" -827482.875;
+	setAttr ".tgi[0].ni[185].x" -24808.572265625;
+	setAttr ".tgi[0].ni[185].y" 267148.5625;
 	setAttr ".tgi[0].ni[185].nvs" 18304;
-	setAttr ".tgi[0].ni[186].x" 51670;
-	setAttr ".tgi[0].ni[186].y" -634240;
+	setAttr ".tgi[0].ni[186].x" -18665.71484375;
+	setAttr ".tgi[0].ni[186].y" 198074.28125;
 	setAttr ".tgi[0].ni[186].nvs" 18304;
-	setAttr ".tgi[0].ni[187].x" 62112.85546875;
-	setAttr ".tgi[0].ni[187].y" -710790;
+	setAttr ".tgi[0].ni[187].x" 48291.4296875;
+	setAttr ".tgi[0].ni[187].y" -823017.125;
 	setAttr ".tgi[0].ni[187].nvs" 18304;
-	setAttr ".tgi[0].ni[188].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[188].y" 231.42857360839844;
+	setAttr ".tgi[0].ni[188].x" 42148.5703125;
+	setAttr ".tgi[0].ni[188].y" -550158.5625;
 	setAttr ".tgi[0].ni[188].nvs" 18304;
-	setAttr ".tgi[0].ni[189].x" -430;
-	setAttr ".tgi[0].ni[189].y" 1965.7142333984375;
+	setAttr ".tgi[0].ni[189].x" 67334.2890625;
+	setAttr ".tgi[0].ni[189].y" -752848.5625;
 	setAttr ".tgi[0].ni[189].nvs" 18304;
-	setAttr ".tgi[0].ni[190].x" -42008.5703125;
-	setAttr ".tgi[0].ni[190].y" 578195.6875;
+	setAttr ".tgi[0].ni[190].x" 53512.85546875;
+	setAttr ".tgi[0].ni[190].y" -824764.3125;
 	setAttr ".tgi[0].ni[190].nvs" 18304;
-	setAttr ".tgi[0].ni[191].x" -27572.857421875;
-	setAttr ".tgi[0].ni[191].y" 318514.28125;
+	setAttr ".tgi[0].ni[191].x" 1045.7142333984375;
+	setAttr ".tgi[0].ni[191].y" -3002.857177734375;
 	setAttr ".tgi[0].ni[191].nvs" 18304;
-	setAttr ".tgi[0].ni[192].x" 17577.142578125;
-	setAttr ".tgi[0].ni[192].y" -281342.84375;
+	setAttr ".tgi[0].ni[192].x" 65184.28515625;
+	setAttr ".tgi[0].ni[192].y" -728004.3125;
 	setAttr ".tgi[0].ni[192].nvs" 18304;
-	setAttr ".tgi[0].ni[193].x" -73644.2890625;
+	setAttr ".tgi[0].ni[193].x" -73030;
 	setAttr ".tgi[0].ni[193].y" 815185.6875;
 	setAttr ".tgi[0].ni[193].nvs" 18304;
-	setAttr ".tgi[0].ni[194].x" -30644.28515625;
-	setAttr ".tgi[0].ni[194].y" 379537.15625;
+	setAttr ".tgi[0].ni[194].x" -57058.5703125;
+	setAttr ".tgi[0].ni[194].y" 834137.125;
 	setAttr ".tgi[0].ni[194].nvs" 18304;
-	setAttr ".tgi[0].ni[195].x" -57365.71484375;
-	setAttr ".tgi[0].ni[195].y" 838632.875;
+	setAttr ".tgi[0].ni[195].x" -37401.4296875;
+	setAttr ".tgi[0].ni[195].y" 508444.28125;
 	setAttr ".tgi[0].ni[195].nvs" 18304;
-	setAttr ".tgi[0].ni[196].x" 75320;
-	setAttr ".tgi[0].ni[196].y" -845877.125;
+	setAttr ".tgi[0].ni[196].x" 27098.572265625;
+	setAttr ".tgi[0].ni[196].y" -371422.84375;
 	setAttr ".tgi[0].ni[196].nvs" 18304;
-	setAttr ".tgi[0].ni[197].x" 75320;
-	setAttr ".tgi[0].ni[197].y" -849305.6875;
+	setAttr ".tgi[0].ni[197].x" 15427.142578125;
+	setAttr ".tgi[0].ni[197].y" -253444.28125;
 	setAttr ".tgi[0].ni[197].nvs" 18304;
-	setAttr ".tgi[0].ni[198].x" 9591.4287109375;
-	setAttr ".tgi[0].ni[198].y" -179494.28125;
+	setAttr ".tgi[0].ni[198].x" -25115.71484375;
+	setAttr ".tgi[0].ni[198].y" 272545.71875;
 	setAttr ".tgi[0].ni[198].nvs" 18304;
-	setAttr ".tgi[0].ni[199].x" 670;
-	setAttr ".tgi[0].ni[199].y" 78.571426391601562;
+	setAttr ".tgi[0].ni[199].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[199].y" -2062.857177734375;
 	setAttr ".tgi[0].ni[199].nvs" 18304;
-	setAttr ".tgi[0].ni[200].x" 15120;
-	setAttr ".tgi[0].ni[200].y" -249320;
+	setAttr ".tgi[0].ni[200].x" 54127.14453125;
+	setAttr ".tgi[0].ni[200].y" -825351.4375;
 	setAttr ".tgi[0].ni[200].nvs" 18304;
-	setAttr ".tgi[0].ni[201].x" -33101.4296875;
-	setAttr ".tgi[0].ni[201].y" 426952.84375;
+	setAttr ".tgi[0].ni[201].x" 15120;
+	setAttr ".tgi[0].ni[201].y" -249320;
 	setAttr ".tgi[0].ni[201].nvs" 18304;
-	setAttr ".tgi[0].ni[202].x" 74971.4296875;
-	setAttr ".tgi[0].ni[202].y" -839477.125;
+	setAttr ".tgi[0].ni[202].x" 67948.5703125;
+	setAttr ".tgi[0].ni[202].y" -832511.4375;
 	setAttr ".tgi[0].ni[202].nvs" 18304;
-	setAttr ".tgi[0].ni[203].x" -13137.142578125;
-	setAttr ".tgi[0].ni[203].y" 117962.859375;
+	setAttr ".tgi[0].ni[203].x" 2527.142822265625;
+	setAttr ".tgi[0].ni[203].y" -95317.140625;
 	setAttr ".tgi[0].ni[203].nvs" 18304;
-	setAttr ".tgi[0].ni[204].x" -14672.857421875;
-	setAttr ".tgi[0].ni[204].y" 141985.71875;
+	setAttr ".tgi[0].ni[204].x" 75012.859375;
+	setAttr ".tgi[0].ni[204].y" -819058.5625;
 	setAttr ".tgi[0].ni[204].nvs" 18304;
-	setAttr ".tgi[0].ni[205].x" 2220;
-	setAttr ".tgi[0].ni[205].y" -92285.7109375;
+	setAttr ".tgi[0].ni[205].x" -11908.5712890625;
+	setAttr ".tgi[0].ni[205].y" 98702.859375;
 	setAttr ".tgi[0].ni[205].nvs" 18304;
-	setAttr ".tgi[0].ni[206].x" -21430;
-	setAttr ".tgi[0].ni[206].y" 223397.140625;
+	setAttr ".tgi[0].ni[206].x" -31565.71484375;
+	setAttr ".tgi[0].ni[206].y" 398658.5625;
 	setAttr ".tgi[0].ni[206].nvs" 18304;
-	setAttr ".tgi[0].ni[207].x" 64262.85546875;
-	setAttr ".tgi[0].ni[207].y" -721221.4375;
+	setAttr ".tgi[0].ni[207].x" -59208.5703125;
+	setAttr ".tgi[0].ni[207].y" 837461.4375;
 	setAttr ".tgi[0].ni[207].nvs" 18304;
-	setAttr ".tgi[0].ni[208].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[208].y" 108.57142639160156;
+	setAttr ".tgi[0].ni[208].x" 3141.428466796875;
+	setAttr ".tgi[0].ni[208].y" -102975.7109375;
 	setAttr ".tgi[0].ni[208].nvs" 18304;
-	setAttr ".tgi[0].ni[209].x" 55662.85546875;
-	setAttr ".tgi[0].ni[209].y" -665145.6875;
+	setAttr ".tgi[0].ni[209].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[209].y" -6610;
 	setAttr ".tgi[0].ni[209].nvs" 18304;
-	setAttr ".tgi[0].ni[210].x" 53820;
-	setAttr ".tgi[0].ni[210].y" -825114.3125;
+	setAttr ".tgi[0].ni[210].x" 8670;
+	setAttr ".tgi[0].ni[210].y" -167471.421875;
 	setAttr ".tgi[0].ni[210].nvs" 18304;
-	setAttr ".tgi[0].ni[211].x" -550;
-	setAttr ".tgi[0].ni[211].y" -240;
+	setAttr ".tgi[0].ni[211].x" 59041.4296875;
+	setAttr ".tgi[0].ni[211].y" -692314.3125;
 	setAttr ".tgi[0].ni[211].nvs" 18304;
 	setAttr ".tgi[0].ni[212].x" 74661.4296875;
-	setAttr ".tgi[0].ni[212].y" -839038.5625;
+	setAttr ".tgi[0].ni[212].y" -839304.3125;
 	setAttr ".tgi[0].ni[212].nvs" 18304;
-	setAttr ".tgi[0].ni[213].x" 67334.2890625;
-	setAttr ".tgi[0].ni[213].y" -832175.6875;
+	setAttr ".tgi[0].ni[213].x" 48598.5703125;
+	setAttr ".tgi[0].ni[213].y" -823177.125;
 	setAttr ".tgi[0].ni[213].nvs" 18304;
-	setAttr ".tgi[0].ni[214].x" 30170;
-	setAttr ".tgi[0].ni[214].y" -411095.71875;
+	setAttr ".tgi[0].ni[214].x" 50748.5703125;
+	setAttr ".tgi[0].ni[214].y" -629154.3125;
 	setAttr ".tgi[0].ni[214].nvs" 18304;
-	setAttr ".tgi[0].ni[215].x" -49380;
-	setAttr ".tgi[0].ni[215].y" 733281.4375;
+	setAttr ".tgi[0].ni[215].x" 64877.14453125;
+	setAttr ".tgi[0].ni[215].y" -830260;
 	setAttr ".tgi[0].ni[215].nvs" 18304;
-	setAttr ".tgi[0].ni[216].x" 17884.28515625;
-	setAttr ".tgi[0].ni[216].y" -285327.15625;
+	setAttr ".tgi[0].ni[216].x" -72722.859375;
+	setAttr ".tgi[0].ni[216].y" 815185.6875;
 	setAttr ".tgi[0].ni[216].nvs" 18304;
-	setAttr ".tgi[0].ni[217].x" 678.5714111328125;
-	setAttr ".tgi[0].ni[217].y" 708.5714111328125;
+	setAttr ".tgi[0].ni[217].x" 50441.4296875;
+	setAttr ".tgi[0].ni[217].y" -625395.6875;
 	setAttr ".tgi[0].ni[217].nvs" 18304;
-	setAttr ".tgi[0].ni[218].x" -36480;
-	setAttr ".tgi[0].ni[218].y" 487897.15625;
+	setAttr ".tgi[0].ni[218].x" 44298.5703125;
+	setAttr ".tgi[0].ni[218].y" -574238.5625;
 	setAttr ".tgi[0].ni[218].nvs" 18304;
-	setAttr ".tgi[0].ni[219].x" 42762.85546875;
-	setAttr ".tgi[0].ni[219].y" -557791.4375;
+	setAttr ".tgi[0].ni[219].x" 12355.7138671875;
+	setAttr ".tgi[0].ni[219].y" -218232.859375;
 	setAttr ".tgi[0].ni[219].nvs" 18304;
-	setAttr ".tgi[0].ni[220].x" 24641.427734375;
-	setAttr ".tgi[0].ni[220].y" -342480;
+	setAttr ".tgi[0].ni[220].x" 49212.85546875;
+	setAttr ".tgi[0].ni[220].y" -617711.4375;
 	setAttr ".tgi[0].ni[220].nvs" 18304;
-	setAttr ".tgi[0].ni[221].x" 50441.4296875;
-	setAttr ".tgi[0].ni[221].y" -822714.3125;
+	setAttr ".tgi[0].ni[221].x" -38322.85546875;
+	setAttr ".tgi[0].ni[221].y" 521172.84375;
 	setAttr ".tgi[0].ni[221].nvs" 18304;
-	setAttr ".tgi[0].ni[222].x" 71327.140625;
-	setAttr ".tgi[0].ni[222].y" -832941.4375;
+	setAttr ".tgi[0].ni[222].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[222].y" -2365.71435546875;
 	setAttr ".tgi[0].ni[222].nvs" 18304;
-	setAttr ".tgi[0].ni[223].x" 30477.142578125;
-	setAttr ".tgi[0].ni[223].y" -415117.15625;
+	setAttr ".tgi[0].ni[223].x" 22491.427734375;
+	setAttr ".tgi[0].ni[223].y" -320964.28125;
 	setAttr ".tgi[0].ni[223].nvs" 18304;
-	setAttr ".tgi[0].ni[224].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[224].y" 1325.7142333984375;
+	setAttr ".tgi[0].ni[224].x" -68422.859375;
+	setAttr ".tgi[0].ni[224].y" 815185.6875;
 	setAttr ".tgi[0].ni[224].nvs" 18304;
-	setAttr ".tgi[0].ni[225].x" -15287.142578125;
-	setAttr ".tgi[0].ni[225].y" 152417.140625;
+	setAttr ".tgi[0].ni[225].x" 28941.427734375;
+	setAttr ".tgi[0].ni[225].y" -394205.71875;
 	setAttr ".tgi[0].ni[225].nvs" 18304;
-	setAttr ".tgi[0].ni[226].x" 66412.859375;
-	setAttr ".tgi[0].ni[226].y" -742564.3125;
+	setAttr ".tgi[0].ni[226].x" -8222.857421875;
+	setAttr ".tgi[0].ni[226].y" 45187.14453125;
 	setAttr ".tgi[0].ni[226].nvs" 18304;
-	setAttr ".tgi[0].ni[227].x" 15734.2861328125;
-	setAttr ".tgi[0].ni[227].y" -257451.421875;
+	setAttr ".tgi[0].ni[227].x" 12662.857421875;
+	setAttr ".tgi[0].ni[227].y" -220904.28125;
 	setAttr ".tgi[0].ni[227].nvs" 18304;
 	setAttr ".tgi[0].ni[228].x" 75320;
-	setAttr ".tgi[0].ni[228].y" -847315.6875;
+	setAttr ".tgi[0].ni[228].y" -847942.875;
 	setAttr ".tgi[0].ni[228].nvs" 18304;
-	setAttr ".tgi[0].ni[229].x" -55215.71484375;
-	setAttr ".tgi[0].ni[229].y" 825748.5625;
+	setAttr ".tgi[0].ni[229].x" -67194.2890625;
+	setAttr ".tgi[0].ni[229].y" 821900;
 	setAttr ".tgi[0].ni[229].nvs" 18304;
-	setAttr ".tgi[0].ni[230].x" -42930;
-	setAttr ".tgi[0].ni[230].y" 597567.125;
+	setAttr ".tgi[0].ni[230].x" -55830;
+	setAttr ".tgi[0].ni[230].y" 832038.5625;
 	setAttr ".tgi[0].ni[230].nvs" 18304;
-	setAttr ".tgi[0].ni[231].x" 21262.857421875;
-	setAttr ".tgi[0].ni[231].y" -310482.84375;
+	setAttr ".tgi[0].ni[231].x" -36480;
+	setAttr ".tgi[0].ni[231].y" 487897.15625;
 	setAttr ".tgi[0].ni[231].nvs" 18304;
-	setAttr ".tgi[0].ni[232].x" 72555.7109375;
-	setAttr ".tgi[0].ni[232].y" -833954.3125;
+	setAttr ".tgi[0].ni[232].x" 75012.859375;
+	setAttr ".tgi[0].ni[232].y" -819181.4375;
 	setAttr ".tgi[0].ni[232].nvs" 18304;
-	setAttr ".tgi[0].ni[233].x" 74705.7109375;
-	setAttr ".tgi[0].ni[233].y" -845025.6875;
+	setAttr ".tgi[0].ni[233].x" 56277.14453125;
+	setAttr ".tgi[0].ni[233].y" -665972.875;
 	setAttr ".tgi[0].ni[233].nvs" 18304;
-	setAttr ".tgi[0].ni[234].x" -25115.71484375;
-	setAttr ".tgi[0].ni[234].y" 272545.71875;
+	setAttr ".tgi[0].ni[234].x" -61358.5703125;
+	setAttr ".tgi[0].ni[234].y" 849710;
 	setAttr ".tgi[0].ni[234].nvs" 18304;
-	setAttr ".tgi[0].ni[235].x" -58287.14453125;
-	setAttr ".tgi[0].ni[235].y" 838187.125;
+	setAttr ".tgi[0].ni[235].x" 24334.28515625;
+	setAttr ".tgi[0].ni[235].y" -339667.15625;
 	setAttr ".tgi[0].ni[235].nvs" 18304;
-	setAttr ".tgi[0].ni[236].x" -1351.4285888671875;
-	setAttr ".tgi[0].ni[236].y" 1985.7142333984375;
+	setAttr ".tgi[0].ni[236].x" 50748.5703125;
+	setAttr ".tgi[0].ni[236].y" -822655.6875;
 	setAttr ".tgi[0].ni[236].nvs" 18304;
-	setAttr ".tgi[0].ni[237].x" 73784.2890625;
-	setAttr ".tgi[0].ni[237].y" -835361.4375;
+	setAttr ".tgi[0].ni[237].x" 1660;
+	setAttr ".tgi[0].ni[237].y" -7552.85693359375;
 	setAttr ".tgi[0].ni[237].nvs" 18304;
-	setAttr ".tgi[0].ni[238].x" 56277.14453125;
-	setAttr ".tgi[0].ni[238].y" -665972.875;
+	setAttr ".tgi[0].ni[238].x" 59041.4296875;
+	setAttr ".tgi[0].ni[238].y" -828341.4375;
 	setAttr ".tgi[0].ni[238].nvs" 18304;
-	setAttr ".tgi[0].ni[239].x" 678.5714111328125;
-	setAttr ".tgi[0].ni[239].y" 311.42855834960938;
+	setAttr ".tgi[0].ni[239].x" -182.85714721679688;
+	setAttr ".tgi[0].ni[239].y" -4512.85693359375;
 	setAttr ".tgi[0].ni[239].nvs" 18304;
-	setAttr ".tgi[0].ni[240].x" 14505.7138671875;
-	setAttr ".tgi[0].ni[240].y" -243332.859375;
+	setAttr ".tgi[0].ni[240].x" 18191.427734375;
+	setAttr ".tgi[0].ni[240].y" -289404.28125;
 	setAttr ".tgi[0].ni[240].nvs" 18304;
-	setAttr ".tgi[0].ni[241].x" -33715.71484375;
-	setAttr ".tgi[0].ni[241].y" 440025.71875;
+	setAttr ".tgi[0].ni[241].x" 75012.859375;
+	setAttr ".tgi[0].ni[241].y" -836241.4375;
 	setAttr ".tgi[0].ni[241].nvs" 18304;
-	setAttr ".tgi[0].ni[242].x" 74971.4296875;
-	setAttr ".tgi[0].ni[242].y" -840585.6875;
+	setAttr ".tgi[0].ni[242].x" -66580;
+	setAttr ".tgi[0].ni[242].y" 827755.6875;
 	setAttr ".tgi[0].ni[242].nvs" 18304;
-	setAttr ".tgi[0].ni[243].x" 18805.71484375;
-	setAttr ".tgi[0].ni[243].y" -296672.84375;
+	setAttr ".tgi[0].ni[243].x" 2220;
+	setAttr ".tgi[0].ni[243].y" -92285.7109375;
 	setAttr ".tgi[0].ni[243].nvs" 18304;
-	setAttr ".tgi[0].ni[244].x" 56277.14453125;
-	setAttr ".tgi[0].ni[244].y" -826857.125;
+	setAttr ".tgi[0].ni[244].x" -1104.2857666015625;
+	setAttr ".tgi[0].ni[244].y" -4412.85693359375;
 	setAttr ".tgi[0].ni[244].nvs" 18304;
-	setAttr ".tgi[0].ni[245].x" -50608.5703125;
-	setAttr ".tgi[0].ni[245].y" 760831.4375;
+	setAttr ".tgi[0].ni[245].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[245].y" -5881.4287109375;
 	setAttr ".tgi[0].ni[245].nvs" 18304;
-	setAttr ".tgi[0].ni[246].x" 20955.71484375;
-	setAttr ".tgi[0].ni[246].y" -309020;
+	setAttr ".tgi[0].ni[246].x" 35391.4296875;
+	setAttr ".tgi[0].ni[246].y" -474615.71875;
 	setAttr ".tgi[0].ni[246].nvs" 18304;
-	setAttr ".tgi[0].ni[247].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[247].y" 2500;
+	setAttr ".tgi[0].ni[247].x" 1660;
+	setAttr ".tgi[0].ni[247].y" -7012.85693359375;
 	setAttr ".tgi[0].ni[247].nvs" 18304;
-	setAttr ".tgi[0].ni[248].x" -61358.5703125;
-	setAttr ".tgi[0].ni[248].y" 849710;
+	setAttr ".tgi[0].ni[248].x" -43237.14453125;
+	setAttr ".tgi[0].ni[248].y" 601007.125;
 	setAttr ".tgi[0].ni[248].nvs" 18304;
-	setAttr ".tgi[0].ni[249].x" 8362.857421875;
-	setAttr ".tgi[0].ni[249].y" -162934.28125;
+	setAttr ".tgi[0].ni[249].x" 64570;
+	setAttr ".tgi[0].ni[249].y" -723521.4375;
 	setAttr ".tgi[0].ni[249].nvs" 18304;
-	setAttr ".tgi[0].ni[250].x" 4370;
-	setAttr ".tgi[0].ni[250].y" -121618.5703125;
+	setAttr ".tgi[0].ni[250].x" 75320;
+	setAttr ".tgi[0].ni[250].y" -845877.125;
 	setAttr ".tgi[0].ni[250].nvs" 18304;
-	setAttr ".tgi[0].ni[251].x" 32012.857421875;
-	setAttr ".tgi[0].ni[251].y" -433910;
+	setAttr ".tgi[0].ni[251].x" -11601.4287109375;
+	setAttr ".tgi[0].ni[251].y" 93038.5703125;
 	setAttr ".tgi[0].ni[251].nvs" 18304;
-	setAttr ".tgi[0].ni[252].x" 63341.4296875;
-	setAttr ".tgi[0].ni[252].y" -715541.4375;
+	setAttr ".tgi[0].ni[252].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[252].y" -9174.2861328125;
 	setAttr ".tgi[0].ni[252].nvs" 18304;
-	setAttr ".tgi[0].ni[253].x" 63034.28515625;
-	setAttr ".tgi[0].ni[253].y" -829315.6875;
+	setAttr ".tgi[0].ni[253].x" 74558.5703125;
+	setAttr ".tgi[0].ni[253].y" -838261.4375;
 	setAttr ".tgi[0].ni[253].nvs" 18304;
 	setAttr ".tgi[0].ni[254].x" 75320;
-	setAttr ".tgi[0].ni[254].y" -845664.3125;
+	setAttr ".tgi[0].ni[254].y" -847315.6875;
 	setAttr ".tgi[0].ni[254].nvs" 18304;
-	setAttr ".tgi[0].ni[255].x" 44912.85546875;
-	setAttr ".tgi[0].ni[255].y" -580794.3125;
+	setAttr ".tgi[0].ni[255].x" -51222.85546875;
+	setAttr ".tgi[0].ni[255].y" 770234.3125;
 	setAttr ".tgi[0].ni[255].nvs" 18304;
-	setAttr ".tgi[0].ni[256].x" 61805.71484375;
-	setAttr ".tgi[0].ni[256].y" -707360;
+	setAttr ".tgi[0].ni[256].x" -42008.5703125;
+	setAttr ".tgi[0].ni[256].y" 578195.6875;
 	setAttr ".tgi[0].ni[256].nvs" 18304;
-	setAttr ".tgi[0].ni[257].x" -8222.857421875;
-	setAttr ".tgi[0].ni[257].y" 45187.14453125;
+	setAttr ".tgi[0].ni[257].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[257].y" -2748.571533203125;
 	setAttr ".tgi[0].ni[257].nvs" 18304;
-	setAttr ".tgi[0].ni[258].x" 9898.5712890625;
-	setAttr ".tgi[0].ni[258].y" -184001.421875;
+	setAttr ".tgi[0].ni[258].x" 45220;
+	setAttr ".tgi[0].ni[258].y" -584722.875;
 	setAttr ".tgi[0].ni[258].nvs" 18304;
-	setAttr ".tgi[0].ni[259].x" 75320;
-	setAttr ".tgi[0].ni[259].y" -849457.125;
+	setAttr ".tgi[0].ni[259].x" 738.5714111328125;
+	setAttr ".tgi[0].ni[259].y" -4098.5712890625;
 	setAttr ".tgi[0].ni[259].nvs" 18304;
-	setAttr ".tgi[0].ni[260].x" 73477.140625;
-	setAttr ".tgi[0].ni[260].y" -834737.125;
+	setAttr ".tgi[0].ni[260].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[260].y" -7220;
 	setAttr ".tgi[0].ni[260].nvs" 18304;
-	setAttr ".tgi[0].ni[261].x" 64570;
-	setAttr ".tgi[0].ni[261].y" -829995.6875;
+	setAttr ".tgi[0].ni[261].x" -75501.4296875;
+	setAttr ".tgi[0].ni[261].y" 815185.6875;
 	setAttr ".tgi[0].ni[261].nvs" 18304;
-	setAttr ".tgi[0].ni[262].x" 50748.5703125;
-	setAttr ".tgi[0].ni[262].y" -629154.3125;
+	setAttr ".tgi[0].ni[262].x" 62112.85546875;
+	setAttr ".tgi[0].ni[262].y" -710790;
 	setAttr ".tgi[0].ni[262].nvs" 18304;
-	setAttr ".tgi[0].ni[263].x" -55830;
-	setAttr ".tgi[0].ni[263].y" 832038.5625;
+	setAttr ".tgi[0].ni[263].x" 65798.5703125;
+	setAttr ".tgi[0].ni[263].y" -830927.125;
 	setAttr ".tgi[0].ni[263].nvs" 18304;
-	setAttr ".tgi[0].ni[264].x" 7748.5712890625;
-	setAttr ".tgi[0].ni[264].y" -155290;
+	setAttr ".tgi[0].ni[264].x" 70405.7109375;
+	setAttr ".tgi[0].ni[264].y" -782848.5625;
 	setAttr ".tgi[0].ni[264].nvs" 18304;
-	setAttr ".tgi[0].ni[265].x" -36787.14453125;
-	setAttr ".tgi[0].ni[265].y" 494784.28125;
+	setAttr ".tgi[0].ni[265].x" -71801.4296875;
+	setAttr ".tgi[0].ni[265].y" 815185.6875;
 	setAttr ".tgi[0].ni[265].nvs" 18304;
-	setAttr ".tgi[0].ni[266].x" 43991.4296875;
-	setAttr ".tgi[0].ni[266].y" -570850;
+	setAttr ".tgi[0].ni[266].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[266].y" -3237.142822265625;
 	setAttr ".tgi[0].ni[266].nvs" 18304;
-	setAttr ".tgi[0].ni[267].x" -45080;
-	setAttr ".tgi[0].ni[267].y" 639197.125;
+	setAttr ".tgi[0].ni[267].x" 66105.7109375;
+	setAttr ".tgi[0].ni[267].y" -738955.6875;
 	setAttr ".tgi[0].ni[267].nvs" 18304;
-	setAttr ".tgi[0].ni[268].x" 74705.7109375;
-	setAttr ".tgi[0].ni[268].y" -844344.3125;
+	setAttr ".tgi[0].ni[268].x" 48598.5703125;
+	setAttr ".tgi[0].ni[268].y" -615614.3125;
 	setAttr ".tgi[0].ni[268].nvs" 18304;
-	setAttr ".tgi[0].ni[269].x" -47844.28515625;
-	setAttr ".tgi[0].ni[269].y" 699362.875;
+	setAttr ".tgi[0].ni[269].x" -48765.71484375;
+	setAttr ".tgi[0].ni[269].y" 719700;
 	setAttr ".tgi[0].ni[269].nvs" 18304;
-	setAttr ".tgi[0].ni[270].x" -40165.71484375;
-	setAttr ".tgi[0].ni[270].y" 547591.4375;
+	setAttr ".tgi[0].ni[270].x" -49380;
+	setAttr ".tgi[0].ni[270].y" 733281.4375;
 	setAttr ".tgi[0].ni[270].nvs" 18304;
-	setAttr ".tgi[0].ni[271].x" -10680;
-	setAttr ".tgi[0].ni[271].y" 80455.7109375;
+	setAttr ".tgi[0].ni[271].x" 63955.71484375;
+	setAttr ".tgi[0].ni[271].y" -829748.5625;
 	setAttr ".tgi[0].ni[271].nvs" 18304;
-	setAttr ".tgi[0].ni[272].x" 72862.859375;
-	setAttr ".tgi[0].ni[272].y" -834544.3125;
+	setAttr ".tgi[0].ni[272].x" 48905.71484375;
+	setAttr ".tgi[0].ni[272].y" -615940;
 	setAttr ".tgi[0].ni[272].nvs" 18304;
-	setAttr ".tgi[0].ni[273].x" 1412.857177734375;
-	setAttr ".tgi[0].ni[273].y" 591.4285888671875;
+	setAttr ".tgi[0].ni[273].x" 54127.14453125;
+	setAttr ".tgi[0].ni[273].y" -654150;
 	setAttr ".tgi[0].ni[273].nvs" 18304;
-	setAttr ".tgi[0].ni[274].x" -50301.4296875;
-	setAttr ".tgi[0].ni[274].y" 753967.125;
+	setAttr ".tgi[0].ni[274].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[274].y" -8634.2861328125;
 	setAttr ".tgi[0].ni[274].nvs" 18304;
-	setAttr ".tgi[0].ni[275].x" -6380;
-	setAttr ".tgi[0].ni[275].y" 22627.142578125;
+	setAttr ".tgi[0].ni[275].x" 74705.7109375;
+	setAttr ".tgi[0].ni[275].y" -835614.3125;
 	setAttr ".tgi[0].ni[275].nvs" 18304;
-	setAttr ".tgi[0].ni[276].x" 75320;
-	setAttr ".tgi[0].ni[276].y" -840114.3125;
+	setAttr ".tgi[0].ni[276].x" 36927.14453125;
+	setAttr ".tgi[0].ni[276].y" -493551.4375;
 	setAttr ".tgi[0].ni[276].nvs" 18304;
-	setAttr ".tgi[0].ni[277].x" 31705.71484375;
-	setAttr ".tgi[0].ni[277].y" -430011.4375;
+	setAttr ".tgi[0].ni[277].x" 55355.71484375;
+	setAttr ".tgi[0].ni[277].y" -663628.5625;
 	setAttr ".tgi[0].ni[277].nvs" 18304;
-	setAttr ".tgi[0].ni[278].x" -44772.85546875;
-	setAttr ".tgi[0].ni[278].y" 632521.4375;
+	setAttr ".tgi[0].ni[278].x" -63201.4296875;
+	setAttr ".tgi[0].ni[278].y" 844507.125;
 	setAttr ".tgi[0].ni[278].nvs" 18304;
-	setAttr ".tgi[0].ni[279].x" -550;
-	setAttr ".tgi[0].ni[279].y" 292.85714721679688;
+	setAttr ".tgi[0].ni[279].x" 72248.5703125;
+	setAttr ".tgi[0].ni[279].y" -833928.5625;
 	setAttr ".tgi[0].ni[279].nvs" 18304;
-	setAttr ".tgi[0].ni[280].x" -40472.85546875;
-	setAttr ".tgi[0].ni[280].y" 547831.4375;
+	setAttr ".tgi[0].ni[280].x" -3001.428466796875;
+	setAttr ".tgi[0].ni[280].y" -19128.572265625;
 	setAttr ".tgi[0].ni[280].nvs" 18304;
-	setAttr ".tgi[0].ni[281].x" 75012.859375;
-	setAttr ".tgi[0].ni[281].y" -846241.4375;
+	setAttr ".tgi[0].ni[281].x" 33855.71484375;
+	setAttr ".tgi[0].ni[281].y" -456177.15625;
 	setAttr ".tgi[0].ni[281].nvs" 18304;
-	setAttr ".tgi[0].ni[282].x" -6687.14306640625;
-	setAttr ".tgi[0].ni[282].y" 27272.857421875;
+	setAttr ".tgi[0].ni[282].x" 47062.85546875;
+	setAttr ".tgi[0].ni[282].y" -608301.4375;
 	setAttr ".tgi[0].ni[282].nvs" 18304;
-	setAttr ".tgi[0].ni[283].x" 74705.7109375;
-	setAttr ".tgi[0].ni[283].y" -844600;
+	setAttr ".tgi[0].ni[283].x" -14058.5712890625;
+	setAttr ".tgi[0].ni[283].y" 132030;
 	setAttr ".tgi[0].ni[283].nvs" 18304;
-	setAttr ".tgi[0].ni[284].x" -62587.14453125;
-	setAttr ".tgi[0].ni[284].y" 847454.3125;
+	setAttr ".tgi[0].ni[284].x" 20648.572265625;
+	setAttr ".tgi[0].ni[284].y" -305424.28125;
 	setAttr ".tgi[0].ni[284].nvs" 18304;
-	setAttr ".tgi[0].ni[285].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[285].y" -620;
+	setAttr ".tgi[0].ni[285].x" 47984.28515625;
+	setAttr ".tgi[0].ni[285].y" -822841.4375;
 	setAttr ".tgi[0].ni[285].nvs" 18304;
-	setAttr ".tgi[0].ni[286].x" 217.14285278320312;
-	setAttr ".tgi[0].ni[286].y" 40;
+	setAttr ".tgi[0].ni[286].x" 60884.28515625;
+	setAttr ".tgi[0].ni[286].y" -828622.875;
 	setAttr ".tgi[0].ni[286].nvs" 18304;
-	setAttr ".tgi[0].ni[287].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[287].y" -1445.7142333984375;
+	setAttr ".tgi[0].ni[287].x" -28801.427734375;
+	setAttr ".tgi[0].ni[287].y" 342588.5625;
 	setAttr ".tgi[0].ni[287].nvs" 18304;
-	setAttr ".tgi[0].ni[288].x" 19420;
-	setAttr ".tgi[0].ni[288].y" -298740;
+	setAttr ".tgi[0].ni[288].x" -35251.4296875;
+	setAttr ".tgi[0].ni[288].y" 469214.28125;
 	setAttr ".tgi[0].ni[288].nvs" 18304;
-	setAttr ".tgi[0].ni[289].x" -9451.4287109375;
-	setAttr ".tgi[0].ni[289].y" 61645.71484375;
+	setAttr ".tgi[0].ni[289].x" -58594.28515625;
+	setAttr ".tgi[0].ni[289].y" 842548.5625;
 	setAttr ".tgi[0].ni[289].nvs" 18304;
-	setAttr ".tgi[0].ni[290].x" -73951.4296875;
-	setAttr ".tgi[0].ni[290].y" 815185.6875;
+	setAttr ".tgi[0].ni[290].x" 61191.4296875;
+	setAttr ".tgi[0].ni[290].y" -704962.875;
 	setAttr ".tgi[0].ni[290].nvs" 18304;
-	setAttr ".tgi[0].ni[291].x" 66720;
-	setAttr ".tgi[0].ni[291].y" -745902.875;
+	setAttr ".tgi[0].ni[291].x" 12970;
+	setAttr ".tgi[0].ni[291].y" -224320;
 	setAttr ".tgi[0].ni[291].nvs" 18304;
-	setAttr ".tgi[0].ni[292].x" 49212.85546875;
-	setAttr ".tgi[0].ni[292].y" -617711.4375;
+	setAttr ".tgi[0].ni[292].x" 74971.4296875;
+	setAttr ".tgi[0].ni[292].y" -839754.3125;
 	setAttr ".tgi[0].ni[292].nvs" 18304;
-	setAttr ".tgi[0].ni[293].x" 63955.71484375;
-	setAttr ".tgi[0].ni[293].y" -829748.5625;
+	setAttr ".tgi[0].ni[293].x" 63034.28515625;
+	setAttr ".tgi[0].ni[293].y" -829315.6875;
 	setAttr ".tgi[0].ni[293].nvs" 18304;
-	setAttr ".tgi[0].ni[294].x" 21877.142578125;
-	setAttr ".tgi[0].ni[294].y" -315330;
+	setAttr ".tgi[0].ni[294].x" 67948.5703125;
+	setAttr ".tgi[0].ni[294].y" -833184.3125;
 	setAttr ".tgi[0].ni[294].nvs" 18304;
-	setAttr ".tgi[0].ni[295].x" 41534.28515625;
-	setAttr ".tgi[0].ni[295].y" -542855.6875;
+	setAttr ".tgi[0].ni[295].x" -32487.142578125;
+	setAttr ".tgi[0].ni[295].y" 417957.15625;
 	setAttr ".tgi[0].ni[295].nvs" 18304;
-	setAttr ".tgi[0].ni[296].x" 48905.71484375;
-	setAttr ".tgi[0].ni[296].y" -615940;
+	setAttr ".tgi[0].ni[296].x" 4984.28564453125;
+	setAttr ".tgi[0].ni[296].y" -129175.7109375;
 	setAttr ".tgi[0].ni[296].nvs" 18304;
-	setAttr ".tgi[0].ni[297].x" 72862.859375;
-	setAttr ".tgi[0].ni[297].y" -802644.3125;
+	setAttr ".tgi[0].ni[297].x" 69484.2890625;
+	setAttr ".tgi[0].ni[297].y" -774268.5625;
 	setAttr ".tgi[0].ni[297].nvs" 18304;
-	setAttr ".tgi[0].ni[298].x" 30784.28515625;
-	setAttr ".tgi[0].ni[298].y" -418957.15625;
+	setAttr ".tgi[0].ni[298].x" 31398.572265625;
+	setAttr ".tgi[0].ni[298].y" -426137.15625;
 	setAttr ".tgi[0].ni[298].nvs" 18304;
-	setAttr ".tgi[0].ni[299].x" -29108.572265625;
-	setAttr ".tgi[0].ni[299].y" 348580;
+	setAttr ".tgi[0].ni[299].x" 59962.85546875;
+	setAttr ".tgi[0].ni[299].y" -828511.4375;
 	setAttr ".tgi[0].ni[299].nvs" 18304;
-	setAttr ".tgi[0].ni[300].x" -30337.142578125;
-	setAttr ".tgi[0].ni[300].y" 373147.15625;
+	setAttr ".tgi[0].ni[300].x" -59822.85546875;
+	setAttr ".tgi[0].ni[300].y" 836160;
 	setAttr ".tgi[0].ni[300].nvs" 18304;
-	setAttr ".tgi[0].ni[301].x" 75320;
-	setAttr ".tgi[0].ni[301].y" -846302.875;
+	setAttr ".tgi[0].ni[301].x" -38015.71484375;
+	setAttr ".tgi[0].ni[301].y" 516638.5625;
 	setAttr ".tgi[0].ni[301].nvs" 18304;
-	setAttr ".tgi[0].ni[302].x" 49520;
-	setAttr ".tgi[0].ni[302].y" -618645.6875;
+	setAttr ".tgi[0].ni[302].x" 7748.5712890625;
+	setAttr ".tgi[0].ni[302].y" -155290;
 	setAttr ".tgi[0].ni[302].nvs" 18304;
-	setAttr ".tgi[0].ni[303].x" 58120;
-	setAttr ".tgi[0].ni[303].y" -827965.6875;
+	setAttr ".tgi[0].ni[303].x" -797.14288330078125;
+	setAttr ".tgi[0].ni[303].y" -4390;
 	setAttr ".tgi[0].ni[303].nvs" 18304;
-	setAttr ".tgi[0].ni[304].x" 75320;
-	setAttr ".tgi[0].ni[304].y" -847488.5625;
+	setAttr ".tgi[0].ni[304].x" -68115.7109375;
+	setAttr ".tgi[0].ni[304].y" 815185.6875;
 	setAttr ".tgi[0].ni[304].nvs" 18304;
-	setAttr ".tgi[0].ni[305].x" 61498.5703125;
-	setAttr ".tgi[0].ni[305].y" -707087.125;
+	setAttr ".tgi[0].ni[305].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[305].y" -8928.5712890625;
 	setAttr ".tgi[0].ni[305].nvs" 18304;
-	setAttr ".tgi[0].ni[306].x" -14058.5712890625;
-	setAttr ".tgi[0].ni[306].y" 132030;
+	setAttr ".tgi[0].ni[306].x" 24027.142578125;
+	setAttr ".tgi[0].ni[306].y" -335867.15625;
 	setAttr ".tgi[0].ni[306].nvs" 18304;
-	setAttr ".tgi[0].ni[307].x" -59822.85546875;
-	setAttr ".tgi[0].ni[307].y" 836160;
+	setAttr ".tgi[0].ni[307].x" 75320;
+	setAttr ".tgi[0].ni[307].y" -844045.6875;
 	setAttr ".tgi[0].ni[307].nvs" 18304;
-	setAttr ".tgi[0].ni[308].x" 38155.71484375;
-	setAttr ".tgi[0].ni[308].y" -505028.5625;
+	setAttr ".tgi[0].ni[308].x" 377.14285278320312;
+	setAttr ".tgi[0].ni[308].y" -65997.140625;
 	setAttr ".tgi[0].ni[308].nvs" 18304;
-	setAttr ".tgi[0].ni[309].x" 11127.142578125;
-	setAttr ".tgi[0].ni[309].y" -201257.140625;
+	setAttr ".tgi[0].ni[309].x" 74664.2890625;
+	setAttr ".tgi[0].ni[309].y" -840901.4375;
 	setAttr ".tgi[0].ni[309].nvs" 18304;
-	setAttr ".tgi[0].ni[310].x" -56137.14453125;
-	setAttr ".tgi[0].ni[310].y" 829980;
+	setAttr ".tgi[0].ni[310].x" 11127.142578125;
+	setAttr ".tgi[0].ni[310].y" -201257.140625;
 	setAttr ".tgi[0].ni[310].nvs" 18304;
-	setAttr ".tgi[0].ni[311].x" 3448.571533203125;
-	setAttr ".tgi[0].ni[311].y" -107728.5703125;
+	setAttr ".tgi[0].ni[311].x" -30951.427734375;
+	setAttr ".tgi[0].ni[311].y" 385855.71875;
 	setAttr ".tgi[0].ni[311].nvs" 18304;
-	setAttr ".tgi[0].ni[312].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[312].y" -800;
+	setAttr ".tgi[0].ni[312].x" -65658.5703125;
+	setAttr ".tgi[0].ni[312].y" 834767.125;
 	setAttr ".tgi[0].ni[312].nvs" 18304;
-	setAttr ".tgi[0].ni[313].x" 991.4285888671875;
-	setAttr ".tgi[0].ni[313].y" -73854.2890625;
+	setAttr ".tgi[0].ni[313].x" -26651.427734375;
+	setAttr ".tgi[0].ni[313].y" 300958.5625;
 	setAttr ".tgi[0].ni[313].nvs" 18304;
-	setAttr ".tgi[0].ni[314].x" 40305.71484375;
-	setAttr ".tgi[0].ni[314].y" -528528.5625;
+	setAttr ".tgi[0].ni[314].x" -65044.28515625;
+	setAttr ".tgi[0].ni[314].y" 835621.4375;
 	setAttr ".tgi[0].ni[314].nvs" 18304;
-	setAttr ".tgi[0].ni[315].x" -17130;
-	setAttr ".tgi[0].ni[315].y" 184297.140625;
+	setAttr ".tgi[0].ni[315].x" 1045.7142333984375;
+	setAttr ".tgi[0].ni[315].y" -5511.4287109375;
 	setAttr ".tgi[0].ni[315].nvs" 18304;
-	setAttr ".tgi[0].ni[316].x" 20648.572265625;
-	setAttr ".tgi[0].ni[316].y" -305424.28125;
+	setAttr ".tgi[0].ni[316].x" 74567.140625;
+	setAttr ".tgi[0].ni[316].y" -838782.875;
 	setAttr ".tgi[0].ni[316].nvs" 18304;
-	setAttr ".tgi[0].ni[317].x" -54601.4296875;
-	setAttr ".tgi[0].ni[317].y" 822407.125;
+	setAttr ".tgi[0].ni[317].x" 74558.5703125;
+	setAttr ".tgi[0].ni[317].y" -837995.6875;
 	setAttr ".tgi[0].ni[317].nvs" 18304;
-	setAttr ".tgi[0].ni[318].x" 45527.14453125;
-	setAttr ".tgi[0].ni[318].y" -588678.5625;
+	setAttr ".tgi[0].ni[318].x" 51670;
+	setAttr ".tgi[0].ni[318].y" -823087.125;
 	setAttr ".tgi[0].ni[318].nvs" 18304;
-	setAttr ".tgi[0].ni[319].x" -44465.71484375;
-	setAttr ".tgi[0].ni[319].y" 625841.4375;
+	setAttr ".tgi[0].ni[319].x" -26958.572265625;
+	setAttr ".tgi[0].ni[319].y" 306827.15625;
 	setAttr ".tgi[0].ni[319].nvs" 18304;
-	setAttr ".tgi[0].ni[320].x" 74567.140625;
-	setAttr ".tgi[0].ni[320].y" -838782.875;
+	setAttr ".tgi[0].ni[320].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[320].y" -7865.71435546875;
 	setAttr ".tgi[0].ni[320].nvs" 18304;
-	setAttr ".tgi[0].ni[321].x" -29415.71484375;
-	setAttr ".tgi[0].ni[321].y" 354824.28125;
+	setAttr ".tgi[0].ni[321].x" 19727.142578125;
+	setAttr ".tgi[0].ni[321].y" -302210;
 	setAttr ".tgi[0].ni[321].nvs" 18304;
-	setAttr ".tgi[0].ni[322].x" 71020;
-	setAttr ".tgi[0].ni[322].y" -788604.3125;
+	setAttr ".tgi[0].ni[322].x" 1045.7142333984375;
+	setAttr ".tgi[0].ni[322].y" -3927.142822265625;
 	setAttr ".tgi[0].ni[322].nvs" 18304;
-	setAttr ".tgi[0].ni[323].x" -35251.4296875;
-	setAttr ".tgi[0].ni[323].y" 469214.28125;
+	setAttr ".tgi[0].ni[323].x" -39551.4296875;
+	setAttr ".tgi[0].ni[323].y" 536742.875;
 	setAttr ".tgi[0].ni[323].nvs" 18304;
-	setAttr ".tgi[0].ni[324].x" 74398.5703125;
-	setAttr ".tgi[0].ni[324].y" -815167.125;
+	setAttr ".tgi[0].ni[324].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[324].y" -3560;
 	setAttr ".tgi[0].ni[324].nvs" 18304;
-	setAttr ".tgi[0].ni[325].x" -41701.4296875;
-	setAttr ".tgi[0].ni[325].y" 571928.5625;
+	setAttr ".tgi[0].ni[325].x" -10987.142578125;
+	setAttr ".tgi[0].ni[325].y" 85814.2890625;
 	setAttr ".tgi[0].ni[325].nvs" 18304;
-	setAttr ".tgi[0].ni[326].x" -14980;
-	setAttr ".tgi[0].ni[326].y" 147225.71875;
+	setAttr ".tgi[0].ni[326].x" -29415.71484375;
+	setAttr ".tgi[0].ni[326].y" 354824.28125;
 	setAttr ".tgi[0].ni[326].nvs" 18304;
-	setAttr ".tgi[0].ni[327].x" -122.85713958740234;
-	setAttr ".tgi[0].ni[327].y" 1217.142822265625;
+	setAttr ".tgi[0].ni[327].x" 74971.4296875;
+	setAttr ".tgi[0].ni[327].y" -840585.6875;
 	setAttr ".tgi[0].ni[327].nvs" 18304;
-	setAttr ".tgi[0].ni[328].x" -72415.7109375;
-	setAttr ".tgi[0].ni[328].y" 815185.6875;
+	setAttr ".tgi[0].ni[328].x" -3615.71435546875;
+	setAttr ".tgi[0].ni[328].y" -11828.5712890625;
 	setAttr ".tgi[0].ni[328].nvs" 18304;
-	setAttr ".tgi[0].ni[329].x" -50915.71484375;
-	setAttr ".tgi[0].ni[329].y" 768107.125;
+	setAttr ".tgi[0].ni[329].x" 39691.4296875;
+	setAttr ".tgi[0].ni[329].y" -522977.15625;
 	setAttr ".tgi[0].ni[329].nvs" 18304;
-	setAttr ".tgi[0].ni[330].x" -3922.857177734375;
-	setAttr ".tgi[0].ni[330].y" -7618.5712890625;
+	setAttr ".tgi[0].ni[330].x" -56444.28515625;
+	setAttr ".tgi[0].ni[330].y" 834131.4375;
 	setAttr ".tgi[0].ni[330].nvs" 18304;
-	setAttr ".tgi[0].ni[331].x" -3001.428466796875;
-	setAttr ".tgi[0].ni[331].y" -19128.572265625;
+	setAttr ".tgi[0].ni[331].x" -23580;
+	setAttr ".tgi[0].ni[331].y" 246190;
 	setAttr ".tgi[0].ni[331].nvs" 18304;
-	setAttr ".tgi[0].ni[332].x" 58427.14453125;
-	setAttr ".tgi[0].ni[332].y" -828054.3125;
+	setAttr ".tgi[0].ni[332].x" 1660;
+	setAttr ".tgi[0].ni[332].y" -5848.5712890625;
 	setAttr ".tgi[0].ni[332].nvs" 18304;
-	setAttr ".tgi[0].ni[333].x" -53065.71484375;
-	setAttr ".tgi[0].ni[333].y" 804002.875;
+	setAttr ".tgi[0].ni[333].x" 62112.85546875;
+	setAttr ".tgi[0].ni[333].y" -829021.4375;
 	setAttr ".tgi[0].ni[333].nvs" 18304;
-	setAttr ".tgi[0].ni[334].x" 2834.28564453125;
-	setAttr ".tgi[0].ni[334].y" -98234.2890625;
+	setAttr ".tgi[0].ni[334].x" -17437.142578125;
+	setAttr ".tgi[0].ni[334].y" 182461.421875;
 	setAttr ".tgi[0].ni[334].nvs" 18304;
-	setAttr ".tgi[0].ni[335].x" 75320;
-	setAttr ".tgi[0].ni[335].y" -844045.6875;
+	setAttr ".tgi[0].ni[335].x" -8530;
+	setAttr ".tgi[0].ni[335].y" 50005.71484375;
 	setAttr ".tgi[0].ni[335].nvs" 18304;
-	setAttr ".tgi[0].ni[336].x" 18191.427734375;
-	setAttr ".tgi[0].ni[336].y" -289404.28125;
+	setAttr ".tgi[0].ni[336].x" 53820;
+	setAttr ".tgi[0].ni[336].y" -653835.6875;
 	setAttr ".tgi[0].ni[336].nvs" 18304;
-	setAttr ".tgi[0].ni[337].x" -75180;
-	setAttr ".tgi[0].ni[337].y" 815185.6875;
+	setAttr ".tgi[0].ni[337].x" -31872.857421875;
+	setAttr ".tgi[0].ni[337].y" 405110;
 	setAttr ".tgi[0].ni[337].nvs" 18304;
-	setAttr ".tgi[0].ni[338].x" 37234.28515625;
-	setAttr ".tgi[0].ni[338].y" -497420;
+	setAttr ".tgi[0].ni[338].x" 50134.28515625;
+	setAttr ".tgi[0].ni[338].y" -622614.3125;
 	setAttr ".tgi[0].ni[338].nvs" 18304;
-	setAttr ".tgi[0].ni[339].x" -69651.4296875;
-	setAttr ".tgi[0].ni[339].y" 815185.6875;
+	setAttr ".tgi[0].ni[339].x" 74971.4296875;
+	setAttr ".tgi[0].ni[339].y" -839477.125;
 	setAttr ".tgi[0].ni[339].nvs" 18304;
-	setAttr ".tgi[0].ni[340].x" 47662.85546875;
-	setAttr ".tgi[0].ni[340].y" -821942.875;
+	setAttr ".tgi[0].ni[340].x" 24641.427734375;
+	setAttr ".tgi[0].ni[340].y" -342480;
 	setAttr ".tgi[0].ni[340].nvs" 18304;
-	setAttr ".tgi[0].ni[341].x" 65184.28515625;
-	setAttr ".tgi[0].ni[341].y" -728004.3125;
+	setAttr ".tgi[0].ni[341].x" -27880;
+	setAttr ".tgi[0].ni[341].y" 324340;
 	setAttr ".tgi[0].ni[341].nvs" 18304;
-	setAttr ".tgi[0].ni[342].x" 36620;
-	setAttr ".tgi[0].ni[342].y" -489751.4375;
+	setAttr ".tgi[0].ni[342].x" 74971.4296875;
+	setAttr ".tgi[0].ni[342].y" -840031.4375;
 	setAttr ".tgi[0].ni[342].nvs" 18304;
-	setAttr ".tgi[0].ni[343].x" 53205.71484375;
-	setAttr ".tgi[0].ni[343].y" -648515.6875;
+	setAttr ".tgi[0].ni[343].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[343].y" -7097.14306640625;
 	setAttr ".tgi[0].ni[343].nvs" 18304;
-	setAttr ".tgi[0].ni[344].x" 68562.859375;
-	setAttr ".tgi[0].ni[344].y" -765948.5625;
+	setAttr ".tgi[0].ni[344].x" 30477.142578125;
+	setAttr ".tgi[0].ni[344].y" -415117.15625;
 	setAttr ".tgi[0].ni[344].nvs" 18304;
-	setAttr ".tgi[0].ni[345].x" 72555.7109375;
-	setAttr ".tgi[0].ni[345].y" -800427.125;
+	setAttr ".tgi[0].ni[345].x" 75320;
+	setAttr ".tgi[0].ni[345].y" -840901.4375;
 	setAttr ".tgi[0].ni[345].nvs" 18304;
-	setAttr ".tgi[0].ni[346].x" 74705.7109375;
-	setAttr ".tgi[0].ni[346].y" -845664.3125;
+	setAttr ".tgi[0].ni[346].x" -45387.14453125;
+	setAttr ".tgi[0].ni[346].y" 645861.4375;
 	setAttr ".tgi[0].ni[346].nvs" 18304;
-	setAttr ".tgi[0].ni[347].x" 60884.28515625;
-	setAttr ".tgi[0].ni[347].y" -828622.875;
+	setAttr ".tgi[0].ni[347].x" -41394.28515625;
+	setAttr ".tgi[0].ni[347].y" 565332.875;
 	setAttr ".tgi[0].ni[347].nvs" 18304;
 	setAttr ".tgi[0].ni[348].x" 75320;
-	setAttr ".tgi[0].ni[348].y" -845238.5625;
+	setAttr ".tgi[0].ni[348].y" -837995.6875;
 	setAttr ".tgi[0].ni[348].nvs" 18304;
-	setAttr ".tgi[0].ni[349].x" 75012.859375;
-	setAttr ".tgi[0].ni[349].y" -843952.875;
+	setAttr ".tgi[0].ni[349].x" -15287.142578125;
+	setAttr ".tgi[0].ni[349].y" 152417.140625;
 	setAttr ".tgi[0].ni[349].nvs" 18304;
-	setAttr ".tgi[0].ni[350].x" 75320;
-	setAttr ".tgi[0].ni[350].y" -821520;
+	setAttr ".tgi[0].ni[350].x" 62420;
+	setAttr ".tgi[0].ni[350].y" -829120;
 	setAttr ".tgi[0].ni[350].nvs" 18304;
-	setAttr ".tgi[0].ni[351].x" 74705.7109375;
-	setAttr ".tgi[0].ni[351].y" -846515.6875;
+	setAttr ".tgi[0].ni[351].x" 69177.140625;
+	setAttr ".tgi[0].ni[351].y" -771031.4375;
 	setAttr ".tgi[0].ni[351].nvs" 18304;
-	setAttr ".tgi[0].ni[352].x" 58734.28515625;
-	setAttr ".tgi[0].ni[352].y" -688791.4375;
+	setAttr ".tgi[0].ni[352].x" 73784.2890625;
+	setAttr ".tgi[0].ni[352].y" -810078.5625;
 	setAttr ".tgi[0].ni[352].nvs" 18304;
-	setAttr ".tgi[0].ni[353].x" 74874.2890625;
-	setAttr ".tgi[0].ni[353].y" -838711.4375;
+	setAttr ".tgi[0].ni[353].x" 75012.859375;
+	setAttr ".tgi[0].ni[353].y" -845815.6875;
 	setAttr ".tgi[0].ni[353].nvs" 18304;
-	setAttr ".tgi[0].ni[354].x" -1658.5714111328125;
-	setAttr ".tgi[0].ni[354].y" 2041.4285888671875;
+	setAttr ".tgi[0].ni[354].x" -63508.5703125;
+	setAttr ".tgi[0].ni[354].y" 842615.6875;
 	setAttr ".tgi[0].ni[354].nvs" 18304;
-	setAttr ".tgi[0].ni[355].x" -51222.85546875;
-	setAttr ".tgi[0].ni[355].y" 770234.3125;
+	setAttr ".tgi[0].ni[355].x" 68870;
+	setAttr ".tgi[0].ni[355].y" -767580;
 	setAttr ".tgi[0].ni[355].nvs" 18304;
-	setAttr ".tgi[0].ni[356].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[356].y" -322.85714721679688;
+	setAttr ".tgi[0].ni[356].x" 74705.7109375;
+	setAttr ".tgi[0].ni[356].y" -844600;
 	setAttr ".tgi[0].ni[356].nvs" 18304;
-	setAttr ".tgi[0].ni[357].x" 47677.14453125;
-	setAttr ".tgi[0].ni[357].y" -614645.6875;
+	setAttr ".tgi[0].ni[357].x" 9284.2861328125;
+	setAttr ".tgi[0].ni[357].y" -175177.140625;
 	setAttr ".tgi[0].ni[357].nvs" 18304;
-	setAttr ".tgi[0].ni[358].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[358].y" 1197.142822265625;
+	setAttr ".tgi[0].ni[358].x" 52898.5703125;
+	setAttr ".tgi[0].ni[358].y" -824120;
 	setAttr ".tgi[0].ni[358].nvs" 18304;
-	setAttr ".tgi[0].ni[359].x" 184.28572082519531;
-	setAttr ".tgi[0].ni[359].y" 795.71429443359375;
+	setAttr ".tgi[0].ni[359].x" 72862.859375;
+	setAttr ".tgi[0].ni[359].y" -834544.3125;
 	setAttr ".tgi[0].ni[359].nvs" 18304;
-	setAttr ".tgi[0].ni[360].x" -34330;
-	setAttr ".tgi[0].ni[360].y" 453404.28125;
+	setAttr ".tgi[0].ni[360].x" 41841.4296875;
+	setAttr ".tgi[0].ni[360].y" -546447.125;
 	setAttr ".tgi[0].ni[360].nvs" 18304;
-	setAttr ".tgi[0].ni[361].x" -70880;
-	setAttr ".tgi[0].ni[361].y" 815185.6875;
+	setAttr ".tgi[0].ni[361].x" -15594.2861328125;
+	setAttr ".tgi[0].ni[361].y" 157777.140625;
 	setAttr ".tgi[0].ni[361].nvs" 18304;
-	setAttr ".tgi[0].ni[362].x" -48765.71484375;
-	setAttr ".tgi[0].ni[362].y" 719700;
+	setAttr ".tgi[0].ni[362].x" 73170;
+	setAttr ".tgi[0].ni[362].y" -834614.3125;
 	setAttr ".tgi[0].ni[362].nvs" 18304;
-	setAttr ".tgi[0].ni[363].x" -45387.14453125;
-	setAttr ".tgi[0].ni[363].y" 645861.4375;
+	setAttr ".tgi[0].ni[363].x" 41227.14453125;
+	setAttr ".tgi[0].ni[363].y" -538967.125;
 	setAttr ".tgi[0].ni[363].nvs" 18304;
-	setAttr ".tgi[0].ni[364].x" -43237.14453125;
-	setAttr ".tgi[0].ni[364].y" 601007.125;
+	setAttr ".tgi[0].ni[364].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[364].y" -1931.4285888671875;
 	setAttr ".tgi[0].ni[364].nvs" 18304;
-	setAttr ".tgi[0].ni[365].x" 51055.71484375;
-	setAttr ".tgi[0].ni[365].y" -822784.3125;
+	setAttr ".tgi[0].ni[365].x" 30784.28515625;
+	setAttr ".tgi[0].ni[365].y" -418957.15625;
 	setAttr ".tgi[0].ni[365].nvs" 18304;
-	setAttr ".tgi[0].ni[366].x" 184.28572082519531;
-	setAttr ".tgi[0].ni[366].y" 1041.4285888671875;
+	setAttr ".tgi[0].ni[366].x" 2630;
+	setAttr ".tgi[0].ni[366].y" -7041.4287109375;
 	setAttr ".tgi[0].ni[366].nvs" 18304;
-	setAttr ".tgi[0].ni[367].x" -72722.859375;
-	setAttr ".tgi[0].ni[367].y" 815185.6875;
+	setAttr ".tgi[0].ni[367].x" -55215.71484375;
+	setAttr ".tgi[0].ni[367].y" 825748.5625;
 	setAttr ".tgi[0].ni[367].nvs" 18304;
-	setAttr ".tgi[0].ni[368].x" 57812.85546875;
-	setAttr ".tgi[0].ni[368].y" -827780;
+	setAttr ".tgi[0].ni[368].x" 71325.7109375;
+	setAttr ".tgi[0].ni[368].y" -48535.71484375;
 	setAttr ".tgi[0].ni[368].nvs" 18304;
-	setAttr ".tgi[0].ni[369].x" 48905.71484375;
-	setAttr ".tgi[0].ni[369].y" -823025.6875;
+	setAttr ".tgi[0].ni[369].x" 65184.28515625;
+	setAttr ".tgi[0].ni[369].y" -830478.5625;
 	setAttr ".tgi[0].ni[369].nvs" 18304;
-	setAttr ".tgi[0].ni[370].x" -7608.5712890625;
-	setAttr ".tgi[0].ni[370].y" 35741.4296875;
+	setAttr ".tgi[0].ni[370].x" 45527.14453125;
+	setAttr ".tgi[0].ni[370].y" -588678.5625;
 	setAttr ".tgi[0].ni[370].nvs" 18304;
-	setAttr ".tgi[0].ni[371].x" 71634.2890625;
-	setAttr ".tgi[0].ni[371].y" -792920;
+	setAttr ".tgi[0].ni[371].x" 10512.857421875;
+	setAttr ".tgi[0].ni[371].y" -192652.859375;
 	setAttr ".tgi[0].ni[371].nvs" 18304;
-	setAttr ".tgi[0].ni[372].x" 69484.2890625;
-	setAttr ".tgi[0].ni[372].y" -774268.5625;
+	setAttr ".tgi[0].ni[372].x" 20341.427734375;
+	setAttr ".tgi[0].ni[372].y" -304941.4375;
 	setAttr ".tgi[0].ni[372].nvs" 18304;
-	setAttr ".tgi[0].ni[373].x" 51055.71484375;
-	setAttr ".tgi[0].ni[373].y" -629131.4375;
+	setAttr ".tgi[0].ni[373].x" 30170;
+	setAttr ".tgi[0].ni[373].y" -411095.71875;
 	setAttr ".tgi[0].ni[373].nvs" 18304;
-	setAttr ".tgi[0].ni[374].x" 25562.857421875;
-	setAttr ".tgi[0].ni[374].y" -352934.28125;
+	setAttr ".tgi[0].ni[374].x" 74705.7109375;
+	setAttr ".tgi[0].ni[374].y" -844344.3125;
 	setAttr ".tgi[0].ni[374].nvs" 18304;
-	setAttr ".tgi[0].ni[375].x" -53372.85546875;
-	setAttr ".tgi[0].ni[375].y" 808711.4375;
+	setAttr ".tgi[0].ni[375].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[375].y" -4384.28564453125;
 	setAttr ".tgi[0].ni[375].nvs" 18304;
-	setAttr ".tgi[0].ni[376].x" -6994.28564453125;
-	setAttr ".tgi[0].ni[376].y" 27480;
+	setAttr ".tgi[0].ni[376].x" 2630;
+	setAttr ".tgi[0].ni[376].y" -2635.71435546875;
 	setAttr ".tgi[0].ni[376].nvs" 18304;
-	setAttr ".tgi[0].ni[377].x" -63508.5703125;
-	setAttr ".tgi[0].ni[377].y" 842615.6875;
+	setAttr ".tgi[0].ni[377].x" -18358.572265625;
+	setAttr ".tgi[0].ni[377].y" 193297.140625;
 	setAttr ".tgi[0].ni[377].nvs" 18304;
-	setAttr ".tgi[0].ni[378].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[378].y" 168.57142639160156;
+	setAttr ".tgi[0].ni[378].x" 73477.140625;
+	setAttr ".tgi[0].ni[378].y" -834737.125;
 	setAttr ".tgi[0].ni[378].nvs" 18304;
-	setAttr ".tgi[0].ni[379].x" 66720;
-	setAttr ".tgi[0].ni[379].y" -831595.6875;
+	setAttr ".tgi[0].ni[379].x" 4370;
+	setAttr ".tgi[0].ni[379].y" -121618.5703125;
 	setAttr ".tgi[0].ni[379].nvs" 18304;
-	setAttr ".tgi[0].ni[380].x" -40780;
-	setAttr ".tgi[0].ni[380].y" 553044.3125;
+	setAttr ".tgi[0].ni[380].x" 50441.4296875;
+	setAttr ".tgi[0].ni[380].y" -822714.3125;
 	setAttr ".tgi[0].ni[380].nvs" 18304;
-	setAttr ".tgi[0].ni[381].x" -60437.14453125;
-	setAttr ".tgi[0].ni[381].y" 841962.875;
+	setAttr ".tgi[0].ni[381].x" 67948.5703125;
+	setAttr ".tgi[0].ni[381].y" -759474.3125;
 	setAttr ".tgi[0].ni[381].nvs" 18304;
-	setAttr ".tgi[0].ni[382].x" -45694.28515625;
-	setAttr ".tgi[0].ni[382].y" 652475.6875;
+	setAttr ".tgi[0].ni[382].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[382].y" -5577.14306640625;
 	setAttr ".tgi[0].ni[382].nvs" 18304;
-	setAttr ".tgi[0].ni[383].x" 75012.859375;
-	setAttr ".tgi[0].ni[383].y" -836241.4375;
+	setAttr ".tgi[0].ni[383].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[383].y" -2868.571533203125;
 	setAttr ".tgi[0].ni[383].nvs" 18304;
-	setAttr ".tgi[0].ni[384].x" -52758.5703125;
-	setAttr ".tgi[0].ni[384].y" 801192.875;
+	setAttr ".tgi[0].ni[384].x" 54434.28515625;
+	setAttr ".tgi[0].ni[384].y" -825640;
 	setAttr ".tgi[0].ni[384].nvs" 18304;
-	setAttr ".tgi[0].ni[385].x" -37401.4296875;
-	setAttr ".tgi[0].ni[385].y" 508444.28125;
+	setAttr ".tgi[0].ni[385].x" 75012.859375;
+	setAttr ".tgi[0].ni[385].y" -846241.4375;
 	setAttr ".tgi[0].ni[385].nvs" 18304;
-	setAttr ".tgi[0].ni[386].x" 24334.28515625;
-	setAttr ".tgi[0].ni[386].y" -339667.15625;
+	setAttr ".tgi[0].ni[386].x" 48905.71484375;
+	setAttr ".tgi[0].ni[386].y" -823025.6875;
 	setAttr ".tgi[0].ni[386].nvs" 18304;
-	setAttr ".tgi[0].ni[387].x" 22798.572265625;
-	setAttr ".tgi[0].ni[387].y" -322638.5625;
+	setAttr ".tgi[0].ni[387].x" 36620;
+	setAttr ".tgi[0].ni[387].y" -489751.4375;
 	setAttr ".tgi[0].ni[387].nvs" 18304;
-	setAttr ".tgi[0].ni[388].x" 71325.7109375;
-	setAttr ".tgi[0].ni[388].y" -47778.5703125;
+	setAttr ".tgi[0].ni[388].x" 20034.28515625;
+	setAttr ".tgi[0].ni[388].y" -301444.28125;
 	setAttr ".tgi[0].ni[388].nvs" 18304;
-	setAttr ".tgi[0].ni[389].x" -66580;
-	setAttr ".tgi[0].ni[389].y" 827755.6875;
+	setAttr ".tgi[0].ni[389].x" -67501.4296875;
+	setAttr ".tgi[0].ni[389].y" 818541.4375;
 	setAttr ".tgi[0].ni[389].nvs" 18304;
-	setAttr ".tgi[0].ni[390].x" -67194.2890625;
-	setAttr ".tgi[0].ni[390].y" 821900;
+	setAttr ".tgi[0].ni[390].x" 70098.5703125;
+	setAttr ".tgi[0].ni[390].y" -832807.125;
 	setAttr ".tgi[0].ni[390].nvs" 18304;
-	setAttr ".tgi[0].ni[391].x" -19280;
-	setAttr ".tgi[0].ni[391].y" 203011.421875;
+	setAttr ".tgi[0].ni[391].x" 25562.857421875;
+	setAttr ".tgi[0].ni[391].y" -352934.28125;
 	setAttr ".tgi[0].ni[391].nvs" 18304;
-	setAttr ".tgi[0].ni[392].x" 55355.71484375;
-	setAttr ".tgi[0].ni[392].y" -663628.5625;
+	setAttr ".tgi[0].ni[392].x" 1660;
+	setAttr ".tgi[0].ni[392].y" -3427.142822265625;
 	setAttr ".tgi[0].ni[392].nvs" 18304;
-	setAttr ".tgi[0].ni[393].x" 44298.5703125;
-	setAttr ".tgi[0].ni[393].y" -574238.5625;
+	setAttr ".tgi[0].ni[393].x" 738.5714111328125;
+	setAttr ".tgi[0].ni[393].y" -5271.4287109375;
 	setAttr ".tgi[0].ni[393].nvs" 18304;
 	setAttr ".tgi[0].ni[394].x" 75320;
-	setAttr ".tgi[0].ni[394].y" -839837.125;
+	setAttr ".tgi[0].ni[394].y" -845238.5625;
 	setAttr ".tgi[0].ni[394].nvs" 18304;
-	setAttr ".tgi[0].ni[395].x" 27712.857421875;
-	setAttr ".tgi[0].ni[395].y" -378271.4375;
+	setAttr ".tgi[0].ni[395].x" 56277.14453125;
+	setAttr ".tgi[0].ni[395].y" -826857.125;
 	setAttr ".tgi[0].ni[395].nvs" 18304;
-	setAttr ".tgi[0].ni[396].x" 62727.14453125;
-	setAttr ".tgi[0].ni[396].y" -712631.4375;
+	setAttr ".tgi[0].ni[396].x" -34330;
+	setAttr ".tgi[0].ni[396].y" 453404.28125;
 	setAttr ".tgi[0].ni[396].nvs" 18304;
-	setAttr ".tgi[0].ni[397].x" 55355.71484375;
-	setAttr ".tgi[0].ni[397].y" -826324.3125;
+	setAttr ".tgi[0].ni[397].x" 75320;
+	setAttr ".tgi[0].ni[397].y" -849305.6875;
 	setAttr ".tgi[0].ni[397].nvs" 18304;
-	setAttr ".tgi[0].ni[398].x" 68870;
-	setAttr ".tgi[0].ni[398].y" -767580;
+	setAttr ".tgi[0].ni[398].x" 66412.859375;
+	setAttr ".tgi[0].ni[398].y" -831377.125;
 	setAttr ".tgi[0].ni[398].nvs" 18304;
-	setAttr ".tgi[0].ni[399].x" -2694.28564453125;
-	setAttr ".tgi[0].ni[399].y" -24005.71484375;
+	setAttr ".tgi[0].ni[399].x" 1660;
+	setAttr ".tgi[0].ni[399].y" -6775.71435546875;
 	setAttr ".tgi[0].ni[399].nvs" 18304;
-	setAttr ".tgi[0].ni[400].x" 75012.859375;
-	setAttr ".tgi[0].ni[400].y" -819181.4375;
+	setAttr ".tgi[0].ni[400].x" -72108.5703125;
+	setAttr ".tgi[0].ni[400].y" 815185.6875;
 	setAttr ".tgi[0].ni[400].nvs" 18304;
-	setAttr ".tgi[0].ni[401].x" 10512.857421875;
-	setAttr ".tgi[0].ni[401].y" -192652.859375;
+	setAttr ".tgi[0].ni[401].x" -33408.5703125;
+	setAttr ".tgi[0].ni[401].y" 433351.4375;
 	setAttr ".tgi[0].ni[401].nvs" 18304;
-	setAttr ".tgi[0].ni[402].x" 41227.14453125;
-	setAttr ".tgi[0].ni[402].y" -538967.125;
+	setAttr ".tgi[0].ni[402].x" -68730;
+	setAttr ".tgi[0].ni[402].y" 815185.6875;
 	setAttr ".tgi[0].ni[402].nvs" 18304;
-	setAttr ".tgi[0].ni[403].x" -46922.85546875;
-	setAttr ".tgi[0].ni[403].y" 679247.125;
+	setAttr ".tgi[0].ni[403].x" 38462.85546875;
+	setAttr ".tgi[0].ni[403].y" -508895.71875;
 	setAttr ".tgi[0].ni[403].nvs" 18304;
-	setAttr ".tgi[0].ni[404].x" 23105.71484375;
-	setAttr ".tgi[0].ni[404].y" -326642.84375;
+	setAttr ".tgi[0].ni[404].x" -71494.2890625;
+	setAttr ".tgi[0].ni[404].y" 815185.6875;
 	setAttr ".tgi[0].ni[404].nvs" 18304;
-	setAttr ".tgi[0].ni[405].x" -61051.4296875;
-	setAttr ".tgi[0].ni[405].y" 844810;
+	setAttr ".tgi[0].ni[405].x" 49520;
+	setAttr ".tgi[0].ni[405].y" -822887.125;
 	setAttr ".tgi[0].ni[405].nvs" 18304;
-	setAttr ".tgi[0].ni[406].x" 68255.7109375;
-	setAttr ".tgi[0].ni[406].y" -762591.4375;
+	setAttr ".tgi[0].ni[406].x" 66720;
+	setAttr ".tgi[0].ni[406].y" -745902.875;
 	setAttr ".tgi[0].ni[406].nvs" 18304;
-	setAttr ".tgi[0].ni[407].x" 44605.71484375;
-	setAttr ".tgi[0].ni[407].y" -577024.3125;
+	setAttr ".tgi[0].ni[407].x" 75320;
+	setAttr ".tgi[0].ni[407].y" -845025.6875;
 	setAttr ".tgi[0].ni[407].nvs" 18304;
-	setAttr ".tgi[0].ni[408].x" -69344.2890625;
-	setAttr ".tgi[0].ni[408].y" 815185.6875;
+	setAttr ".tgi[0].ni[408].x" 9898.5712890625;
+	setAttr ".tgi[0].ni[408].y" -184001.421875;
 	setAttr ".tgi[0].ni[408].nvs" 18304;
-	setAttr ".tgi[0].ni[409].x" -46308.5703125;
-	setAttr ".tgi[0].ni[409].y" 665841.4375;
+	setAttr ".tgi[0].ni[409].x" 60577.14453125;
+	setAttr ".tgi[0].ni[409].y" -700601.4375;
 	setAttr ".tgi[0].ni[409].nvs" 18304;
-	setAttr ".tgi[0].ni[410].x" 8055.71435546875;
-	setAttr ".tgi[0].ni[410].y" -159831.421875;
+	setAttr ".tgi[0].ni[410].x" -74872.859375;
+	setAttr ".tgi[0].ni[410].y" 815185.6875;
 	setAttr ".tgi[0].ni[410].nvs" 18304;
-	setAttr ".tgi[0].ni[411].x" 8670;
-	setAttr ".tgi[0].ni[411].y" -167471.421875;
+	setAttr ".tgi[0].ni[411].x" 1660;
+	setAttr ".tgi[0].ni[411].y" -3304.28564453125;
 	setAttr ".tgi[0].ni[411].nvs" 18304;
-	setAttr ".tgi[0].ni[412].x" 42455.71484375;
-	setAttr ".tgi[0].ni[412].y" -553950;
+	setAttr ".tgi[0].ni[412].x" 60270;
+	setAttr ".tgi[0].ni[412].y" -701325.6875;
 	setAttr ".tgi[0].ni[412].nvs" 18304;
-	setAttr ".tgi[0].ni[413].x" 20341.427734375;
-	setAttr ".tgi[0].ni[413].y" -304941.4375;
+	setAttr ".tgi[0].ni[413].x" -10372.857421875;
+	setAttr ".tgi[0].ni[413].y" 75685.7109375;
 	setAttr ".tgi[0].ni[413].nvs" 18304;
-	setAttr ".tgi[0].ni[414].x" 362.85714721679688;
-	setAttr ".tgi[0].ni[414].y" 175.71427917480469;
+	setAttr ".tgi[0].ni[414].x" 738.5714111328125;
+	setAttr ".tgi[0].ni[414].y" -4695.71435546875;
 	setAttr ".tgi[0].ni[414].nvs" 18304;
-	setAttr ".tgi[0].ni[415].x" 13584.2861328125;
-	setAttr ".tgi[0].ni[415].y" -230927.140625;
+	setAttr ".tgi[0].ni[415].x" 27712.857421875;
+	setAttr ".tgi[0].ni[415].y" -378271.4375;
 	setAttr ".tgi[0].ni[415].nvs" 18304;
-	setAttr ".tgi[0].ni[416].x" 28634.28515625;
-	setAttr ".tgi[0].ni[416].y" -390484.28125;
+	setAttr ".tgi[0].ni[416].x" 50134.28515625;
+	setAttr ".tgi[0].ni[416].y" -822755.6875;
 	setAttr ".tgi[0].ni[416].nvs" 18304;
-	setAttr ".tgi[0].ni[417].x" 31398.572265625;
-	setAttr ".tgi[0].ni[417].y" -426137.15625;
+	setAttr ".tgi[0].ni[417].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[417].y" -5388.5712890625;
 	setAttr ".tgi[0].ni[417].nvs" 18304;
-	setAttr ".tgi[0].ni[418].x" 66105.7109375;
-	setAttr ".tgi[0].ni[418].y" -738955.6875;
+	setAttr ".tgi[0].ni[418].x" -22044.28515625;
+	setAttr ".tgi[0].ni[418].y" 229220;
 	setAttr ".tgi[0].ni[418].nvs" 18304;
-	setAttr ".tgi[0].ni[419].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[419].y" 220;
+	setAttr ".tgi[0].ni[419].x" 74664.2890625;
+	setAttr ".tgi[0].ni[419].y" -839560;
 	setAttr ".tgi[0].ni[419].nvs" 18304;
-	setAttr ".tgi[0].ni[420].x" 59041.4296875;
-	setAttr ".tgi[0].ni[420].y" -828341.4375;
+	setAttr ".tgi[0].ni[420].x" 11741.4287109375;
+	setAttr ".tgi[0].ni[420].y" -209788.578125;
 	setAttr ".tgi[0].ni[420].nvs" 18304;
-	setAttr ".tgi[0].ni[421].x" -18972.857421875;
-	setAttr ".tgi[0].ni[421].y" 198150;
+	setAttr ".tgi[0].ni[421].x" -19894.28515625;
+	setAttr ".tgi[0].ni[421].y" 202682.859375;
 	setAttr ".tgi[0].ni[421].nvs" 18304;
-	setAttr ".tgi[0].ni[422].x" 62420;
-	setAttr ".tgi[0].ni[422].y" -829120;
+	setAttr ".tgi[0].ni[422].x" -2387.142822265625;
+	setAttr ".tgi[0].ni[422].y" -28465.71484375;
 	setAttr ".tgi[0].ni[422].nvs" 18304;
-	setAttr ".tgi[0].ni[423].x" 75320;
-	setAttr ".tgi[0].ni[423].y" -837995.6875;
+	setAttr ".tgi[0].ni[423].x" 63648.5703125;
+	setAttr ".tgi[0].ni[423].y" -717172.875;
 	setAttr ".tgi[0].ni[423].nvs" 18304;
-	setAttr ".tgi[0].ni[424].x" 49827.14453125;
-	setAttr ".tgi[0].ni[424].y" -822750;
+	setAttr ".tgi[0].ni[424].x" 2630;
+	setAttr ".tgi[0].ni[424].y" -3427.142822265625;
 	setAttr ".tgi[0].ni[424].nvs" 18304;
-	setAttr ".tgi[0].ni[425].x" -75487.140625;
-	setAttr ".tgi[0].ni[425].y" 815185.6875;
+	setAttr ".tgi[0].ni[425].x" -45080;
+	setAttr ".tgi[0].ni[425].y" 639197.125;
 	setAttr ".tgi[0].ni[425].nvs" 18304;
-	setAttr ".tgi[0].ni[426].x" 60577.14453125;
-	setAttr ".tgi[0].ni[426].y" -828632.875;
+	setAttr ".tgi[0].ni[426].x" 9591.4287109375;
+	setAttr ".tgi[0].ni[426].y" -179494.28125;
 	setAttr ".tgi[0].ni[426].nvs" 18304;
-	setAttr ".tgi[0].ni[427].x" 75012.859375;
-	setAttr ".tgi[0].ni[427].y" -846028.5625;
+	setAttr ".tgi[0].ni[427].x" 69791.4296875;
+	setAttr ".tgi[0].ni[427].y" -832954.3125;
 	setAttr ".tgi[0].ni[427].nvs" 18304;
-	setAttr ".tgi[0].ni[428].x" 52898.5703125;
-	setAttr ".tgi[0].ni[428].y" -644845.6875;
+	setAttr ".tgi[0].ni[428].x" 35698.5703125;
+	setAttr ".tgi[0].ni[428].y" -477900;
 	setAttr ".tgi[0].ni[428].nvs" 18304;
-	setAttr ".tgi[0].ni[429].x" 63034.28515625;
-	setAttr ".tgi[0].ni[429].y" -713265.6875;
+	setAttr ".tgi[0].ni[429].x" -37094.28515625;
+	setAttr ".tgi[0].ni[429].y" 501527.15625;
 	setAttr ".tgi[0].ni[429].nvs" 18304;
-	setAttr ".tgi[0].ni[430].x" -58594.28515625;
-	setAttr ".tgi[0].ni[430].y" 842548.5625;
+	setAttr ".tgi[0].ni[430].x" 75320;
+	setAttr ".tgi[0].ni[430].y" -839837.125;
 	setAttr ".tgi[0].ni[430].nvs" 18304;
-	setAttr ".tgi[0].ni[431].x" 57505.71484375;
-	setAttr ".tgi[0].ni[431].y" -674098.5625;
+	setAttr ".tgi[0].ni[431].x" 4062.857177734375;
+	setAttr ".tgi[0].ni[431].y" -117031.4296875;
 	setAttr ".tgi[0].ni[431].nvs" 18304;
-	setAttr ".tgi[0].ni[432].x" 75012.859375;
-	setAttr ".tgi[0].ni[432].y" -845177.125;
+	setAttr ".tgi[0].ni[432].x" 21262.857421875;
+	setAttr ".tgi[0].ni[432].y" -310482.84375;
 	setAttr ".tgi[0].ni[432].nvs" 18304;
-	setAttr ".tgi[0].ni[433].x" -3308.571533203125;
-	setAttr ".tgi[0].ni[433].y" -14324.2861328125;
+	setAttr ".tgi[0].ni[433].x" 55048.5703125;
+	setAttr ".tgi[0].ni[433].y" -826125.6875;
 	setAttr ".tgi[0].ni[433].nvs" 18304;
-	setAttr ".tgi[0].ni[434].x" 63648.5703125;
-	setAttr ".tgi[0].ni[434].y" -717172.875;
+	setAttr ".tgi[0].ni[434].x" 15734.2861328125;
+	setAttr ".tgi[0].ni[434].y" -257451.421875;
 	setAttr ".tgi[0].ni[434].nvs" 18304;
-	setAttr ".tgi[0].ni[435].x" -46001.4296875;
-	setAttr ".tgi[0].ni[435].y" 659191.4375;
+	setAttr ".tgi[0].ni[435].x" 37848.5703125;
+	setAttr ".tgi[0].ni[435].y" -503572.84375;
 	setAttr ".tgi[0].ni[435].nvs" 18304;
-	setAttr ".tgi[0].ni[436].x" 39998.5703125;
-	setAttr ".tgi[0].ni[436].y" -525687.125;
+	setAttr ".tgi[0].ni[436].x" -42930;
+	setAttr ".tgi[0].ni[436].y" 597567.125;
 	setAttr ".tgi[0].ni[436].nvs" 18304;
-	setAttr ".tgi[0].ni[437].x" 40920;
-	setAttr ".tgi[0].ni[437].y" -535254.3125;
+	setAttr ".tgi[0].ni[437].x" 42455.71484375;
+	setAttr ".tgi[0].ni[437].y" -553950;
 	setAttr ".tgi[0].ni[437].nvs" 18304;
-	setAttr ".tgi[0].ni[438].x" 4677.14306640625;
-	setAttr ".tgi[0].ni[438].y" -124657.140625;
+	setAttr ".tgi[0].ni[438].x" 75320;
+	setAttr ".tgi[0].ni[438].y" -839560;
 	setAttr ".tgi[0].ni[438].nvs" 18304;
-	setAttr ".tgi[0].ni[439].x" 67641.4296875;
-	setAttr ".tgi[0].ni[439].y" -756094.3125;
+	setAttr ".tgi[0].ni[439].x" 71325.7109375;
+	setAttr ".tgi[0].ni[439].y" -50201.4296875;
 	setAttr ".tgi[0].ni[439].nvs" 18304;
-	setAttr ".tgi[0].ni[440].x" 39691.4296875;
-	setAttr ".tgi[0].ni[440].y" -522977.15625;
+	setAttr ".tgi[0].ni[440].x" 60577.14453125;
+	setAttr ".tgi[0].ni[440].y" -828632.875;
 	setAttr ".tgi[0].ni[440].nvs" 18304;
-	setAttr ".tgi[0].ni[441].x" 75320;
-	setAttr ".tgi[0].ni[441].y" -848094.3125;
+	setAttr ".tgi[0].ni[441].x" 28327.142578125;
+	setAttr ".tgi[0].ni[441].y" -386447.15625;
 	setAttr ".tgi[0].ni[441].nvs" 18304;
-	setAttr ".tgi[0].ni[442].x" 71325.7109375;
-	setAttr ".tgi[0].ni[442].y" -50201.4296875;
+	setAttr ".tgi[0].ni[442].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[442].y" -2991.428466796875;
 	setAttr ".tgi[0].ni[442].nvs" 18304;
-	setAttr ".tgi[0].ni[443].x" 50441.4296875;
-	setAttr ".tgi[0].ni[443].y" -625395.6875;
+	setAttr ".tgi[0].ni[443].x" 55048.5703125;
+	setAttr ".tgi[0].ni[443].y" -661667.125;
 	setAttr ".tgi[0].ni[443].nvs" 18304;
-	setAttr ".tgi[0].ni[444].x" -19894.28515625;
-	setAttr ".tgi[0].ni[444].y" 202682.859375;
+	setAttr ".tgi[0].ni[444].x" -2694.28564453125;
+	setAttr ".tgi[0].ni[444].y" -24005.71484375;
 	setAttr ".tgi[0].ni[444].nvs" 18304;
-	setAttr ".tgi[0].ni[445].x" 75012.859375;
-	setAttr ".tgi[0].ni[445].y" -819058.5625;
+	setAttr ".tgi[0].ni[445].x" 74705.7109375;
+	setAttr ".tgi[0].ni[445].y" -846515.6875;
 	setAttr ".tgi[0].ni[445].nvs" 18304;
-	setAttr ".tgi[0].ni[446].x" 43377.14453125;
-	setAttr ".tgi[0].ni[446].y" -565052.875;
+	setAttr ".tgi[0].ni[446].x" 75012.859375;
+	setAttr ".tgi[0].ni[446].y" -846667.125;
 	setAttr ".tgi[0].ni[446].nvs" 18304;
-	setAttr ".tgi[0].ni[447].x" -44158.5703125;
-	setAttr ".tgi[0].ni[447].y" 619287.125;
+	setAttr ".tgi[0].ni[447].x" -56137.14453125;
+	setAttr ".tgi[0].ni[447].y" 829980;
 	setAttr ".tgi[0].ni[447].nvs" 18304;
-	setAttr ".tgi[0].ni[448].x" -66887.140625;
-	setAttr ".tgi[0].ni[448].y" 822707.125;
+	setAttr ".tgi[0].ni[448].x" -52144.28515625;
+	setAttr ".tgi[0].ni[448].y" 790075.6875;
 	setAttr ".tgi[0].ni[448].nvs" 18304;
-	setAttr ".tgi[0].ni[449].x" 63341.4296875;
-	setAttr ".tgi[0].ni[449].y" -829470;
+	setAttr ".tgi[0].ni[449].x" 75012.859375;
+	setAttr ".tgi[0].ni[449].y" -844751.4375;
 	setAttr ".tgi[0].ni[449].nvs" 18304;
-	setAttr ".tgi[0].ni[450].x" 51977.14453125;
-	setAttr ".tgi[0].ni[450].y" -636332.875;
+	setAttr ".tgi[0].ni[450].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[450].y" -3114.28564453125;
 	setAttr ".tgi[0].ni[450].nvs" 18304;
-	setAttr ".tgi[0].ni[451].x" -2387.142822265625;
-	setAttr ".tgi[0].ni[451].y" -28465.71484375;
+	setAttr ".tgi[0].ni[451].x" 75320;
+	setAttr ".tgi[0].ni[451].y" -839304.3125;
 	setAttr ".tgi[0].ni[451].nvs" 18304;
-	setAttr ".tgi[0].ni[452].x" 43684.28515625;
-	setAttr ".tgi[0].ni[452].y" -568160;
+	setAttr ".tgi[0].ni[452].x" 60884.28515625;
+	setAttr ".tgi[0].ni[452].y" -703098.5625;
 	setAttr ".tgi[0].ni[452].nvs" 18304;
-	setAttr ".tgi[0].ni[453].x" 58427.14453125;
-	setAttr ".tgi[0].ni[453].y" -685122.875;
+	setAttr ".tgi[0].ni[453].x" -58901.4296875;
+	setAttr ".tgi[0].ni[453].y" 841180;
 	setAttr ".tgi[0].ni[453].nvs" 18304;
-	setAttr ".tgi[0].ni[454].x" 52591.4296875;
-	setAttr ".tgi[0].ni[454].y" -641248.5625;
+	setAttr ".tgi[0].ni[454].x" 75320;
+	setAttr ".tgi[0].ni[454].y" -848548.5625;
 	setAttr ".tgi[0].ni[454].nvs" 18304;
-	setAttr ".tgi[0].ni[455].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[455].y" -82.857139587402344;
+	setAttr ".tgi[0].ni[455].x" 20955.71484375;
+	setAttr ".tgi[0].ni[455].y" -309020;
 	setAttr ".tgi[0].ni[455].nvs" 18304;
-	setAttr ".tgi[0].ni[456].x" -62280;
-	setAttr ".tgi[0].ni[456].y" 849078.5625;
+	setAttr ".tgi[0].ni[456].x" 61498.5703125;
+	setAttr ".tgi[0].ni[456].y" -707087.125;
 	setAttr ".tgi[0].ni[456].nvs" 18304;
-	setAttr ".tgi[0].ni[457].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[457].y" -317.14285278320312;
+	setAttr ".tgi[0].ni[457].x" -61051.4296875;
+	setAttr ".tgi[0].ni[457].y" 844810;
 	setAttr ".tgi[0].ni[457].nvs" 18304;
-	setAttr ".tgi[0].ni[458].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[458].y" -1277.142822265625;
+	setAttr ".tgi[0].ni[458].x" 5905.71435546875;
+	setAttr ".tgi[0].ni[458].y" -139842.859375;
 	setAttr ".tgi[0].ni[458].nvs" 18304;
-	setAttr ".tgi[0].ni[459].x" 75012.859375;
-	setAttr ".tgi[0].ni[459].y" -844964.3125;
+	setAttr ".tgi[0].ni[459].x" -33715.71484375;
+	setAttr ".tgi[0].ni[459].y" 440025.71875;
 	setAttr ".tgi[0].ni[459].nvs" 18304;
-	setAttr ".tgi[0].ni[460].x" 371.42855834960938;
-	setAttr ".tgi[0].ni[460].y" 480;
+	setAttr ".tgi[0].ni[460].x" 65491.4296875;
+	setAttr ".tgi[0].ni[460].y" -731731.4375;
 	setAttr ".tgi[0].ni[460].nvs" 18304;
-	setAttr ".tgi[0].ni[461].x" 69791.4296875;
-	setAttr ".tgi[0].ni[461].y" -832954.3125;
+	setAttr ".tgi[0].ni[461].x" -48151.4296875;
+	setAttr ".tgi[0].ni[461].y" 706080;
 	setAttr ".tgi[0].ni[461].nvs" 18304;
-	setAttr ".tgi[0].ni[462].x" -22658.572265625;
-	setAttr ".tgi[0].ni[462].y" 235101.421875;
+	setAttr ".tgi[0].ni[462].x" 58427.14453125;
+	setAttr ".tgi[0].ni[462].y" -828054.3125;
 	setAttr ".tgi[0].ni[462].nvs" 18304;
-	setAttr ".tgi[0].ni[463].x" 67948.5703125;
-	setAttr ".tgi[0].ni[463].y" -832511.4375;
+	setAttr ".tgi[0].ni[463].x" 18805.71484375;
+	setAttr ".tgi[0].ni[463].y" -296672.84375;
 	setAttr ".tgi[0].ni[463].nvs" 18304;
-	setAttr ".tgi[0].ni[464].x" 53205.71484375;
-	setAttr ".tgi[0].ni[464].y" -824488.5625;
+	setAttr ".tgi[0].ni[464].x" 52284.28515625;
+	setAttr ".tgi[0].ni[464].y" -823531.4375;
 	setAttr ".tgi[0].ni[464].nvs" 18304;
-	setAttr ".tgi[0].ni[465].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[465].y" -497.14285278320312;
+	setAttr ".tgi[0].ni[465].x" 14198.5712890625;
+	setAttr ".tgi[0].ni[465].y" -239181.421875;
 	setAttr ".tgi[0].ni[465].nvs" 18304;
-	setAttr ".tgi[0].ni[466].x" 74971.4296875;
-	setAttr ".tgi[0].ni[466].y" -840031.4375;
+	setAttr ".tgi[0].ni[466].x" 71634.2890625;
+	setAttr ".tgi[0].ni[466].y" -833544.3125;
 	setAttr ".tgi[0].ni[466].nvs" 18304;
-	setAttr ".tgi[0].ni[467].x" 11741.4287109375;
-	setAttr ".tgi[0].ni[467].y" -209788.578125;
+	setAttr ".tgi[0].ni[467].x" 54741.4296875;
+	setAttr ".tgi[0].ni[467].y" -658408.5625;
 	setAttr ".tgi[0].ni[467].nvs" 18304;
-	setAttr ".tgi[0].ni[468].x" 74705.7109375;
-	setAttr ".tgi[0].ni[468].y" -845451.4375;
+	setAttr ".tgi[0].ni[468].x" 40612.85546875;
+	setAttr ".tgi[0].ni[468].y" -531714.3125;
 	setAttr ".tgi[0].ni[468].nvs" 18304;
-	setAttr ".tgi[0].ni[469].x" 23412.857421875;
-	setAttr ".tgi[0].ni[469].y" -328781.4375;
+	setAttr ".tgi[0].ni[469].x" -20508.572265625;
+	setAttr ".tgi[0].ni[469].y" 212875.71875;
 	setAttr ".tgi[0].ni[469].nvs" 18304;
-	setAttr ".tgi[0].ni[470].x" 61191.4296875;
-	setAttr ".tgi[0].ni[470].y" -828650;
+	setAttr ".tgi[0].ni[470].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[470].y" -6790;
 	setAttr ".tgi[0].ni[470].nvs" 18304;
-	setAttr ".tgi[0].ni[471].x" 47984.28515625;
-	setAttr ".tgi[0].ni[471].y" -822841.4375;
+	setAttr ".tgi[0].ni[471].x" 5291.4287109375;
+	setAttr ".tgi[0].ni[471].y" -133588.578125;
 	setAttr ".tgi[0].ni[471].nvs" 18304;
-	setAttr ".tgi[0].ni[472].x" 75012.859375;
-	setAttr ".tgi[0].ni[472].y" -845390;
+	setAttr ".tgi[0].ni[472].x" 75300;
+	setAttr ".tgi[0].ni[472].y" -846970;
 	setAttr ".tgi[0].ni[472].nvs" 18304;
-	setAttr ".tgi[0].ni[473].x" -25422.857421875;
-	setAttr ".tgi[0].ni[473].y" 278045.71875;
+	setAttr ".tgi[0].ni[473].x" -73951.4296875;
+	setAttr ".tgi[0].ni[473].y" 815185.6875;
 	setAttr ".tgi[0].ni[473].nvs" 18304;
-	setAttr ".tgi[0].ni[474].x" -237.14285278320312;
-	setAttr ".tgi[0].ni[474].y" -56911.4296875;
+	setAttr ".tgi[0].ni[474].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[474].y" -5225.71435546875;
 	setAttr ".tgi[0].ni[474].nvs" 18304;
-	setAttr ".tgi[0].ni[475].x" 53512.85546875;
-	setAttr ".tgi[0].ni[475].y" -651200;
+	setAttr ".tgi[0].ni[475].x" -6687.14306640625;
+	setAttr ".tgi[0].ni[475].y" 27272.857421875;
 	setAttr ".tgi[0].ni[475].nvs" 18304;
-	setAttr ".tgi[0].ni[476].x" -2080;
-	setAttr ".tgi[0].ni[476].y" -32488.572265625;
+	setAttr ".tgi[0].ni[476].x" 47677.14453125;
+	setAttr ".tgi[0].ni[476].y" -821671.4375;
 	setAttr ".tgi[0].ni[476].nvs" 18304;
-	setAttr ".tgi[0].ni[477].x" -1044.2857666015625;
-	setAttr ".tgi[0].ni[477].y" 1932.857177734375;
+	setAttr ".tgi[0].ni[477].x" 7441.4287109375;
+	setAttr ".tgi[0].ni[477].y" -152541.421875;
 	setAttr ".tgi[0].ni[477].nvs" 18304;
-	setAttr ".tgi[0].ni[478].x" -22044.28515625;
-	setAttr ".tgi[0].ni[478].y" 229220;
+	setAttr ".tgi[0].ni[478].x" -63815.71484375;
+	setAttr ".tgi[0].ni[478].y" 837852.875;
 	setAttr ".tgi[0].ni[478].nvs" 18304;
-	setAttr ".tgi[0].ni[479].x" 55048.5703125;
-	setAttr ".tgi[0].ni[479].y" -661667.125;
+	setAttr ".tgi[0].ni[479].x" 74705.7109375;
+	setAttr ".tgi[0].ni[479].y" -844812.875;
 	setAttr ".tgi[0].ni[479].nvs" 18304;
-	setAttr ".tgi[0].ni[480].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[480].y" -1862.857177734375;
+	setAttr ".tgi[0].ni[480].x" 7134.28564453125;
+	setAttr ".tgi[0].ni[480].y" -148062.859375;
 	setAttr ".tgi[0].ni[480].nvs" 18304;
-	setAttr ".tgi[0].ni[481].x" -4230;
-	setAttr ".tgi[0].ni[481].y" -2585.71435546875;
+	setAttr ".tgi[0].ni[481].x" 2075.71435546875;
+	setAttr ".tgi[0].ni[481].y" -328.57144165039062;
 	setAttr ".tgi[0].ni[481].nvs" 18304;
-	setAttr ".tgi[0].ni[482].x" 42148.5703125;
-	setAttr ".tgi[0].ni[482].y" -550158.5625;
+	setAttr ".tgi[0].ni[482].x" 34162.85546875;
+	setAttr ".tgi[0].ni[482].y" -459962.84375;
 	setAttr ".tgi[0].ni[482].nvs" 18304;
-	setAttr ".tgi[0].ni[483].x" 4984.28564453125;
-	setAttr ".tgi[0].ni[483].y" -129175.7109375;
+	setAttr ".tgi[0].ni[483].x" -6994.28564453125;
+	setAttr ".tgi[0].ni[483].y" 27480;
 	setAttr ".tgi[0].ni[483].nvs" 18304;
-	setAttr ".tgi[0].ni[484].x" 68255.7109375;
-	setAttr ".tgi[0].ni[484].y" -832660;
+	setAttr ".tgi[0].ni[484].x" 51670;
+	setAttr ".tgi[0].ni[484].y" -634240;
 	setAttr ".tgi[0].ni[484].nvs" 18304;
-	setAttr ".tgi[0].ni[485].x" -24808.572265625;
-	setAttr ".tgi[0].ni[485].y" 267148.5625;
+	setAttr ".tgi[0].ni[485].x" 56891.4296875;
+	setAttr ".tgi[0].ni[485].y" -827248.5625;
 	setAttr ".tgi[0].ni[485].nvs" 18304;
-	setAttr ".tgi[0].ni[486].x" 54127.14453125;
-	setAttr ".tgi[0].ni[486].y" -654150;
+	setAttr ".tgi[0].ni[486].x" -70265.7109375;
+	setAttr ".tgi[0].ni[486].y" 815185.6875;
 	setAttr ".tgi[0].ni[486].nvs" 18304;
-	setAttr ".tgi[0].ni[487].x" -32487.142578125;
-	setAttr ".tgi[0].ni[487].y" 417957.15625;
+	setAttr ".tgi[0].ni[487].x" 1660;
+	setAttr ".tgi[0].ni[487].y" -8092.85693359375;
 	setAttr ".tgi[0].ni[487].nvs" 18304;
-	setAttr ".tgi[0].ni[488].x" -49072.85546875;
-	setAttr ".tgi[0].ni[488].y" 726457.125;
+	setAttr ".tgi[0].ni[488].x" 1660;
+	setAttr ".tgi[0].ni[488].y" -6187.14306640625;
 	setAttr ".tgi[0].ni[488].nvs" 18304;
-	setAttr ".tgi[0].ni[489].x" -8837.142578125;
-	setAttr ".tgi[0].ni[489].y" 52521.4296875;
+	setAttr ".tgi[0].ni[489].x" -12830;
+	setAttr ".tgi[0].ni[489].y" 115228.5703125;
 	setAttr ".tgi[0].ni[489].nvs" 18304;
-	setAttr ".tgi[0].ni[490].x" -18051.427734375;
-	setAttr ".tgi[0].ni[490].y" 187688.578125;
+	setAttr ".tgi[0].ni[490].x" 62727.14453125;
+	setAttr ".tgi[0].ni[490].y" -829215.6875;
 	setAttr ".tgi[0].ni[490].nvs" 18304;
-	setAttr ".tgi[0].ni[491].x" 71325.7109375;
-	setAttr ".tgi[0].ni[491].y" -48535.71484375;
+	setAttr ".tgi[0].ni[491].x" 75320;
+	setAttr ".tgi[0].ni[491].y" -840391.4375;
 	setAttr ".tgi[0].ni[491].nvs" 18304;
-	setAttr ".tgi[0].ni[492].x" 73170;
-	setAttr ".tgi[0].ni[492].y" -805068.5625;
+	setAttr ".tgi[0].ni[492].x" 37541.4296875;
+	setAttr ".tgi[0].ni[492].y" -499938.5625;
 	setAttr ".tgi[0].ni[492].nvs" 18304;
-	setAttr ".tgi[0].ni[493].x" -47230;
-	setAttr ".tgi[0].ni[493].y" 686022.875;
+	setAttr ".tgi[0].ni[493].x" -25422.857421875;
+	setAttr ".tgi[0].ni[493].y" 278045.71875;
 	setAttr ".tgi[0].ni[493].nvs" 18304;
-	setAttr ".tgi[0].ni[494].x" 50134.28515625;
-	setAttr ".tgi[0].ni[494].y" -822755.6875;
+	setAttr ".tgi[0].ni[494].x" 1660;
+	setAttr ".tgi[0].ni[494].y" -7798.5712890625;
 	setAttr ".tgi[0].ni[494].nvs" 18304;
-	setAttr ".tgi[0].ni[495].x" 72248.5703125;
-	setAttr ".tgi[0].ni[495].y" -833928.5625;
+	setAttr ".tgi[0].ni[495].x" -5151.4287109375;
+	setAttr ".tgi[0].ni[495].y" 8448.5712890625;
 	setAttr ".tgi[0].ni[495].nvs" 18304;
-	setAttr ".tgi[0].ni[496].x" 38462.85546875;
-	setAttr ".tgi[0].ni[496].y" -508895.71875;
+	setAttr ".tgi[0].ni[496].x" 53205.71484375;
+	setAttr ".tgi[0].ni[496].y" -648515.6875;
 	setAttr ".tgi[0].ni[496].nvs" 18304;
-	setAttr ".tgi[0].ni[497].x" 74664.2890625;
-	setAttr ".tgi[0].ni[497].y" -839560;
+	setAttr ".tgi[0].ni[497].x" 13891.4287109375;
+	setAttr ".tgi[0].ni[497].y" -234942.859375;
 	setAttr ".tgi[0].ni[497].nvs" 18304;
-	setAttr ".tgi[0].ni[498].x" 75320;
-	setAttr ".tgi[0].ni[498].y" -847640;
+	setAttr ".tgi[0].ni[498].x" 55662.85546875;
+	setAttr ".tgi[0].ni[498].y" -665145.6875;
 	setAttr ".tgi[0].ni[498].nvs" 18304;
-	setAttr ".tgi[0].ni[499].x" 18498.572265625;
-	setAttr ".tgi[0].ni[499].y" -293355.71875;
+	setAttr ".tgi[0].ni[499].x" 44912.85546875;
+	setAttr ".tgi[0].ni[499].y" -580794.3125;
 	setAttr ".tgi[0].ni[499].nvs" 18304;
-	setAttr ".tgi[0].ni[500].x" 371.42855834960938;
-	setAttr ".tgi[0].ni[500].y" 357.14285278320312;
+	setAttr ".tgi[0].ni[500].x" 63955.71484375;
+	setAttr ".tgi[0].ni[500].y" -719640;
 	setAttr ".tgi[0].ni[500].nvs" 18304;
-	setAttr ".tgi[0].ni[501].x" 64877.14453125;
-	setAttr ".tgi[0].ni[501].y" -830260;
+	setAttr ".tgi[0].ni[501].x" -14672.857421875;
+	setAttr ".tgi[0].ni[501].y" 141985.71875;
 	setAttr ".tgi[0].ni[501].nvs" 18304;
-	setAttr ".tgi[0].ni[502].x" 71327.140625;
-	setAttr ".tgi[0].ni[502].y" -790458.5625;
+	setAttr ".tgi[0].ni[502].x" 63648.5703125;
+	setAttr ".tgi[0].ni[502].y" -829630;
 	setAttr ".tgi[0].ni[502].nvs" 18304;
-	setAttr ".tgi[0].ni[503].x" 48598.5703125;
-	setAttr ".tgi[0].ni[503].y" -823177.125;
+	setAttr ".tgi[0].ni[503].x" 8977.142578125;
+	setAttr ".tgi[0].ni[503].y" -171957.140625;
 	setAttr ".tgi[0].ni[503].nvs" 18304;
-	setAttr ".tgi[0].ni[504].x" -65044.28515625;
-	setAttr ".tgi[0].ni[504].y" 835621.4375;
+	setAttr ".tgi[0].ni[504].x" -20815.71484375;
+	setAttr ".tgi[0].ni[504].y" 215028.578125;
 	setAttr ".tgi[0].ni[504].nvs" 18304;
-	setAttr ".tgi[0].ni[505].x" -544.28570556640625;
-	setAttr ".tgi[0].ni[505].y" -53500;
+	setAttr ".tgi[0].ni[505].x" -75487.140625;
+	setAttr ".tgi[0].ni[505].y" 815185.6875;
 	setAttr ".tgi[0].ni[505].nvs" 18304;
-	setAttr ".tgi[0].ni[506].x" 64.285713195800781;
-	setAttr ".tgi[0].ni[506].y" 234.28572082519531;
+	setAttr ".tgi[0].ni[506].x" -53372.85546875;
+	setAttr ".tgi[0].ni[506].y" 808711.4375;
 	setAttr ".tgi[0].ni[506].nvs" 18304;
-	setAttr ".tgi[0].ni[507].x" -6072.85693359375;
-	setAttr ".tgi[0].ni[507].y" 20247.142578125;
+	setAttr ".tgi[0].ni[507].x" -41087.14453125;
+	setAttr ".tgi[0].ni[507].y" 559151.4375;
 	setAttr ".tgi[0].ni[507].nvs" 18304;
-	setAttr ".tgi[0].ni[508].x" 6827.14306640625;
-	setAttr ".tgi[0].ni[508].y" -147944.28125;
+	setAttr ".tgi[0].ni[508].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[508].y" -4507.14306640625;
 	setAttr ".tgi[0].ni[508].nvs" 18304;
-	setAttr ".tgi[0].ni[509].x" -1158.5714111328125;
-	setAttr ".tgi[0].ni[509].y" -47101.4296875;
+	setAttr ".tgi[0].ni[509].x" 75320;
+	setAttr ".tgi[0].ni[509].y" -844344.3125;
 	setAttr ".tgi[0].ni[509].nvs" 18304;
-	setAttr ".tgi[0].ni[510].x" -74872.859375;
-	setAttr ".tgi[0].ni[510].y" 815185.6875;
+	setAttr ".tgi[0].ni[510].x" -4844.28564453125;
+	setAttr ".tgi[0].ni[510].y" 4241.4287109375;
 	setAttr ".tgi[0].ni[510].nvs" 18304;
-	setAttr ".tgi[0].ni[511].x" 16962.857421875;
-	setAttr ".tgi[0].ni[511].y" -273554.28125;
+	setAttr ".tgi[0].ni[511].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[511].y" -8102.85693359375;
 	setAttr ".tgi[0].ni[511].nvs" 18304;
-	setAttr ".tgi[0].ni[512].x" 70;
-	setAttr ".tgi[0].ni[512].y" -61180;
+	setAttr ".tgi[0].ni[512].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[512].y" -3371.428466796875;
 	setAttr ".tgi[0].ni[512].nvs" 18304;
-	setAttr ".tgi[0].ni[513].x" 47370;
-	setAttr ".tgi[0].ni[513].y" -611900;
+	setAttr ".tgi[0].ni[513].x" -32794.28515625;
+	setAttr ".tgi[0].ni[513].y" 420498.5625;
 	setAttr ".tgi[0].ni[513].nvs" 18304;
-	setAttr ".tgi[0].ni[514].x" 65491.4296875;
-	setAttr ".tgi[0].ni[514].y" -830670;
+	setAttr ".tgi[0].ni[514].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[514].y" -9051.4287109375;
 	setAttr ".tgi[0].ni[514].nvs" 18304;
-	setAttr ".tgi[0].ni[515].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[515].y" 40;
+	setAttr ".tgi[0].ni[515].x" 1660;
+	setAttr ".tgi[0].ni[515].y" -8272.857421875;
 	setAttr ".tgi[0].ni[515].nvs" 18304;
-	setAttr ".tgi[0].ni[516].x" 75320;
-	setAttr ".tgi[0].ni[516].y" -838782.875;
+	setAttr ".tgi[0].ni[516].x" 41534.28515625;
+	setAttr ".tgi[0].ni[516].y" -542855.6875;
 	setAttr ".tgi[0].ni[516].nvs" 18304;
-	setAttr ".tgi[0].ni[517].x" 40612.85546875;
-	setAttr ".tgi[0].ni[517].y" -531714.3125;
+	setAttr ".tgi[0].ni[517].x" 70712.859375;
+	setAttr ".tgi[0].ni[517].y" -832821.4375;
 	setAttr ".tgi[0].ni[517].nvs" 18304;
-	setAttr ".tgi[0].ni[518].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[518].y" 1017.1428833007812;
+	setAttr ".tgi[0].ni[518].x" 431.42855834960938;
+	setAttr ".tgi[0].ni[518].y" -4327.14306640625;
 	setAttr ".tgi[0].ni[518].nvs" 18304;
-	setAttr ".tgi[0].ni[519].x" -550;
-	setAttr ".tgi[0].ni[519].y" -485.71429443359375;
+	setAttr ".tgi[0].ni[519].x" 75012.859375;
+	setAttr ".tgi[0].ni[519].y" -843952.875;
 	setAttr ".tgi[0].ni[519].nvs" 18304;
-	setAttr ".tgi[0].ni[520].x" 60270;
-	setAttr ".tgi[0].ni[520].y" -701325.6875;
+	setAttr ".tgi[0].ni[520].x" 68870;
+	setAttr ".tgi[0].ni[520].y" -833175.6875;
 	setAttr ".tgi[0].ni[520].nvs" 18304;
-	setAttr ".tgi[0].ni[521].x" -74565.7109375;
-	setAttr ".tgi[0].ni[521].y" 815185.6875;
+	setAttr ".tgi[0].ni[521].x" -54294.28515625;
+	setAttr ".tgi[0].ni[521].y" 819862.875;
 	setAttr ".tgi[0].ni[521].nvs" 18304;
-	setAttr ".tgi[0].ni[522].x" -39244.28515625;
-	setAttr ".tgi[0].ni[522].y" 533202.875;
+	setAttr ".tgi[0].ni[522].x" 68562.859375;
+	setAttr ".tgi[0].ni[522].y" -765948.5625;
 	setAttr ".tgi[0].ni[522].nvs" 18304;
-	setAttr ".tgi[0].ni[523].x" 75320;
-	setAttr ".tgi[0].ni[523].y" -848851.4375;
+	setAttr ".tgi[0].ni[523].x" 58734.28515625;
+	setAttr ".tgi[0].ni[523].y" -828181.4375;
 	setAttr ".tgi[0].ni[523].nvs" 18304;
-	setAttr ".tgi[0].ni[524].x" 75320;
-	setAttr ".tgi[0].ni[524].y" -844600;
+	setAttr ".tgi[0].ni[524].x" -72415.7109375;
+	setAttr ".tgi[0].ni[524].y" 815185.6875;
 	setAttr ".tgi[0].ni[524].nvs" 18304;
-	setAttr ".tgi[0].ni[525].x" 70098.5703125;
-	setAttr ".tgi[0].ni[525].y" -779675.6875;
+	setAttr ".tgi[0].ni[525].x" 124.28571319580078;
+	setAttr ".tgi[0].ni[525].y" -4518.5712890625;
 	setAttr ".tgi[0].ni[525].nvs" 18304;
-	setAttr ".tgi[0].ni[526].x" -64737.14453125;
-	setAttr ".tgi[0].ni[526].y" 835337.125;
+	setAttr ".tgi[0].ni[526].x" -66887.140625;
+	setAttr ".tgi[0].ni[526].y" 822707.125;
 	setAttr ".tgi[0].ni[526].nvs" 18304;
-	setAttr ".tgi[0].ni[527].x" 75012.859375;
-	setAttr ".tgi[0].ni[527].y" -846667.125;
+	setAttr ".tgi[0].ni[527].x" 74705.7109375;
+	setAttr ".tgi[0].ni[527].y" -845025.6875;
 	setAttr ".tgi[0].ni[527].nvs" 18304;
-	setAttr ".tgi[0].ni[528].x" -37094.28515625;
-	setAttr ".tgi[0].ni[528].y" 501527.15625;
+	setAttr ".tgi[0].ni[528].x" 51055.71484375;
+	setAttr ".tgi[0].ni[528].y" -822784.3125;
 	setAttr ".tgi[0].ni[528].nvs" 18304;
-	setAttr ".tgi[0].ni[529].x" 3141.428466796875;
-	setAttr ".tgi[0].ni[529].y" -102975.7109375;
+	setAttr ".tgi[0].ni[529].x" 16962.857421875;
+	setAttr ".tgi[0].ni[529].y" -273554.28125;
 	setAttr ".tgi[0].ni[529].nvs" 18304;
-	setAttr ".tgi[0].ni[530].x" -67808.5703125;
-	setAttr ".tgi[0].ni[530].y" 815185.6875;
+	setAttr ".tgi[0].ni[530].x" 1660;
+	setAttr ".tgi[0].ni[530].y" -3181.428466796875;
 	setAttr ".tgi[0].ni[530].nvs" 18304;
-	setAttr ".tgi[0].ni[531].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[531].y" 714.28570556640625;
+	setAttr ".tgi[0].ni[531].x" 74705.7109375;
+	setAttr ".tgi[0].ni[531].y" -845877.125;
 	setAttr ".tgi[0].ni[531].nvs" 18304;
-	setAttr ".tgi[0].ni[532].x" -38937.14453125;
-	setAttr ".tgi[0].ni[532].y" 529894.3125;
+	setAttr ".tgi[0].ni[532].x" 10205.7138671875;
+	setAttr ".tgi[0].ni[532].y" -188285.71875;
 	setAttr ".tgi[0].ni[532].nvs" 18304;
-	setAttr ".tgi[0].ni[533].x" 64.285713195800781;
-	setAttr ".tgi[0].ni[533].y" -214.28572082519531;
+	setAttr ".tgi[0].ni[533].x" 72555.7109375;
+	setAttr ".tgi[0].ni[533].y" -800427.125;
 	setAttr ".tgi[0].ni[533].nvs" 18304;
-	setAttr ".tgi[0].ni[534].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[534].y" -71.428573608398438;
+	setAttr ".tgi[0].ni[534].x" 34470;
+	setAttr ".tgi[0].ni[534].y" -463685.71875;
 	setAttr ".tgi[0].ni[534].nvs" 18304;
-	setAttr ".tgi[0].ni[535].x" 75320;
-	setAttr ".tgi[0].ni[535].y" -848245.6875;
+	setAttr ".tgi[0].ni[535].x" -4230;
+	setAttr ".tgi[0].ni[535].y" -2585.71435546875;
 	setAttr ".tgi[0].ni[535].nvs" 18304;
-	setAttr ".tgi[0].ni[536].x" 64.285713195800781;
-	setAttr ".tgi[0].ni[536].y" -337.14285278320312;
+	setAttr ".tgi[0].ni[536].x" -42315.71484375;
+	setAttr ".tgi[0].ni[536].y" 584525.6875;
 	setAttr ".tgi[0].ni[536].nvs" 18304;
-	setAttr ".tgi[0].ni[537].x" 9284.2861328125;
-	setAttr ".tgi[0].ni[537].y" -175177.140625;
+	setAttr ".tgi[0].ni[537].x" -28494.28515625;
+	setAttr ".tgi[0].ni[537].y" 336378.5625;
 	setAttr ".tgi[0].ni[537].nvs" 18304;
-	setAttr ".tgi[0].ni[538].x" -71801.4296875;
-	setAttr ".tgi[0].ni[538].y" 815185.6875;
+	setAttr ".tgi[0].ni[538].x" -21430;
+	setAttr ".tgi[0].ni[538].y" 223397.140625;
 	setAttr ".tgi[0].ni[538].nvs" 18304;
-	setAttr ".tgi[0].ni[539].x" 24948.572265625;
-	setAttr ".tgi[0].ni[539].y" -345841.4375;
+	setAttr ".tgi[0].ni[539].x" 74865.7109375;
+	setAttr ".tgi[0].ni[539].y" -837912.875;
 	setAttr ".tgi[0].ni[539].nvs" 18304;
-	setAttr ".tgi[0].ni[540].x" -18665.71484375;
-	setAttr ".tgi[0].ni[540].y" 198074.28125;
+	setAttr ".tgi[0].ni[540].x" 1298.5714111328125;
+	setAttr ".tgi[0].ni[540].y" -78492.859375;
 	setAttr ".tgi[0].ni[540].nvs" 18304;
-	setAttr ".tgi[0].ni[541].x" 6520;
-	setAttr ".tgi[0].ni[541].y" -145895.71875;
+	setAttr ".tgi[0].ni[541].x" 21570;
+	setAttr ".tgi[0].ni[541].y" -313558.5625;
 	setAttr ".tgi[0].ni[541].nvs" 18304;
-	setAttr ".tgi[0].ni[542].x" -73030;
-	setAttr ".tgi[0].ni[542].y" 815185.6875;
+	setAttr ".tgi[0].ni[542].x" -60744.28515625;
+	setAttr ".tgi[0].ni[542].y" 843968.5625;
 	setAttr ".tgi[0].ni[542].nvs" 18304;
-	setAttr ".tgi[0].ni[543].x" -26037.142578125;
-	setAttr ".tgi[0].ni[543].y" 289378.5625;
+	setAttr ".tgi[0].ni[543].x" -1772.857177734375;
+	setAttr ".tgi[0].ni[543].y" -37185.71484375;
 	setAttr ".tgi[0].ni[543].nvs" 18304;
-	setAttr ".tgi[0].ni[544].x" -59208.5703125;
-	setAttr ".tgi[0].ni[544].y" 837461.4375;
+	setAttr ".tgi[0].ni[544].x" 74661.4296875;
+	setAttr ".tgi[0].ni[544].y" -839038.5625;
 	setAttr ".tgi[0].ni[544].nvs" 18304;
-	setAttr ".tgi[0].ni[545].x" 14198.5712890625;
-	setAttr ".tgi[0].ni[545].y" -239181.421875;
+	setAttr ".tgi[0].ni[545].x" 47370;
+	setAttr ".tgi[0].ni[545].y" -611900;
 	setAttr ".tgi[0].ni[545].nvs" 18304;
-	setAttr ".tgi[0].ni[546].x" -65351.4296875;
-	setAttr ".tgi[0].ni[546].y" 833502.875;
+	setAttr ".tgi[0].ni[546].x" 43684.28515625;
+	setAttr ".tgi[0].ni[546].y" -568160;
 	setAttr ".tgi[0].ni[546].nvs" 18304;
-	setAttr ".tgi[0].ni[547].x" -42315.71484375;
-	setAttr ".tgi[0].ni[547].y" 584525.6875;
+	setAttr ".tgi[0].ni[547].x" 75320;
+	setAttr ".tgi[0].ni[547].y" -847791.4375;
 	setAttr ".tgi[0].ni[547].nvs" 18304;
-	setAttr ".tgi[0].ni[548].x" -61972.85546875;
-	setAttr ".tgi[0].ni[548].y" 844155.6875;
+	setAttr ".tgi[0].ni[548].x" 23105.71484375;
+	setAttr ".tgi[0].ni[548].y" -326642.84375;
 	setAttr ".tgi[0].ni[548].nvs" 18304;
-	setAttr ".tgi[0].ni[549].x" 73170;
-	setAttr ".tgi[0].ni[549].y" -834614.3125;
+	setAttr ".tgi[0].ni[549].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[549].y" -6127.14306640625;
 	setAttr ".tgi[0].ni[549].nvs" 18304;
-	setAttr ".tgi[0].ni[550].x" -49687.14453125;
-	setAttr ".tgi[0].ni[550].y" 740181.4375;
+	setAttr ".tgi[0].ni[550].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[550].y" -48861.4296875;
 	setAttr ".tgi[0].ni[550].nvs" 18304;
-	setAttr ".tgi[0].ni[551].x" 32627.142578125;
-	setAttr ".tgi[0].ni[551].y" -441258.5625;
+	setAttr ".tgi[0].ni[551].x" 75320;
+	setAttr ".tgi[0].ni[551].y" -846302.875;
 	setAttr ".tgi[0].ni[551].nvs" 18304;
-	setAttr ".tgi[0].ni[552].x" 1912.857177734375;
-	setAttr ".tgi[0].ni[552].y" -87628.5703125;
+	setAttr ".tgi[0].ni[552].x" -14365.7138671875;
+	setAttr ".tgi[0].ni[552].y" 137411.421875;
 	setAttr ".tgi[0].ni[552].nvs" 18304;
-	setAttr ".tgi[0].ni[553].x" 5905.71435546875;
-	setAttr ".tgi[0].ni[553].y" -139842.859375;
+	setAttr ".tgi[0].ni[553].x" 21877.142578125;
+	setAttr ".tgi[0].ni[553].y" -315330;
 	setAttr ".tgi[0].ni[553].nvs" 18304;
-	setAttr ".tgi[0].ni[554].x" -59515.71484375;
-	setAttr ".tgi[0].ni[554].y" 836097.125;
+	setAttr ".tgi[0].ni[554].x" 71325.7109375;
+	setAttr ".tgi[0].ni[554].y" -47778.5703125;
 	setAttr ".tgi[0].ni[554].nvs" 18304;
-	setAttr ".tgi[0].ni[555].x" 4062.857177734375;
-	setAttr ".tgi[0].ni[555].y" -117031.4296875;
+	setAttr ".tgi[0].ni[555].x" -61665.71484375;
+	setAttr ".tgi[0].ni[555].y" 849251.4375;
 	setAttr ".tgi[0].ni[555].nvs" 18304;
-	setAttr ".tgi[0].ni[556].x" 684.28570556640625;
-	setAttr ".tgi[0].ni[556].y" -70702.859375;
+	setAttr ".tgi[0].ni[556].x" -47537.14453125;
+	setAttr ".tgi[0].ni[556].y" 692574.3125;
 	setAttr ".tgi[0].ni[556].nvs" 18304;
-	setAttr ".tgi[0].ni[557].x" 74874.2890625;
-	setAttr ".tgi[0].ni[557].y" -838434.3125;
+	setAttr ".tgi[0].ni[557].x" 65798.5703125;
+	setAttr ".tgi[0].ni[557].y" -735494.3125;
 	setAttr ".tgi[0].ni[557].nvs" 18304;
-	setAttr ".tgi[0].ni[558].x" -70265.7109375;
-	setAttr ".tgi[0].ni[558].y" 815185.6875;
+	setAttr ".tgi[0].ni[558].x" 71941.4296875;
+	setAttr ".tgi[0].ni[558].y" -833855.6875;
 	setAttr ".tgi[0].ni[558].nvs" 18304;
-	setAttr ".tgi[0].ni[559].x" 71941.4296875;
-	setAttr ".tgi[0].ni[559].y" -795577.125;
+	setAttr ".tgi[0].ni[559].x" 57812.85546875;
+	setAttr ".tgi[0].ni[559].y" -827780;
 	setAttr ".tgi[0].ni[559].nvs" 18304;
-	setAttr ".tgi[0].ni[560].x" -38015.71484375;
-	setAttr ".tgi[0].ni[560].y" 516638.5625;
+	setAttr ".tgi[0].ni[560].x" 31091.427734375;
+	setAttr ".tgi[0].ni[560].y" -422945.71875;
 	setAttr ".tgi[0].ni[560].nvs" 18304;
-	setAttr ".tgi[0].ni[561].x" 75320;
-	setAttr ".tgi[0].ni[561].y" -848548.5625;
+	setAttr ".tgi[0].ni[561].x" -15901.4287109375;
+	setAttr ".tgi[0].ni[561].y" 162771.421875;
 	setAttr ".tgi[0].ni[561].nvs" 18304;
-	setAttr ".tgi[0].ni[562].x" -7915.71435546875;
-	setAttr ".tgi[0].ni[562].y" 40501.4296875;
+	setAttr ".tgi[0].ni[562].x" 2630;
+	setAttr ".tgi[0].ni[562].y" -2758.571533203125;
 	setAttr ".tgi[0].ni[562].nvs" 18304;
-	setAttr ".tgi[0].ni[563].x" -57980;
-	setAttr ".tgi[0].ni[563].y" 835958.5625;
+	setAttr ".tgi[0].ni[563].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[563].y" -2185.71435546875;
 	setAttr ".tgi[0].ni[563].nvs" 18304;
-	setAttr ".tgi[0].ni[564].x" 70405.7109375;
-	setAttr ".tgi[0].ni[564].y" -832738.5625;
+	setAttr ".tgi[0].ni[564].x" 431.42855834960938;
+	setAttr ".tgi[0].ni[564].y" -4147.14306640625;
 	setAttr ".tgi[0].ni[564].nvs" 18304;
-	setAttr ".tgi[0].ni[565].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[565].y" 291.42855834960938;
+	setAttr ".tgi[0].ni[565].x" 71325.7109375;
+	setAttr ".tgi[0].ni[565].y" -49292.85546875;
 	setAttr ".tgi[0].ni[565].nvs" 18304;
-	setAttr ".tgi[0].ni[566].x" 75320;
-	setAttr ".tgi[0].ni[566].y" -845451.4375;
+	setAttr ".tgi[0].ni[566].x" 217.14285278320312;
+	setAttr ".tgi[0].ni[566].y" 40;
 	setAttr ".tgi[0].ni[566].nvs" 18304;
-	setAttr ".tgi[0].ni[567].x" -857.14288330078125;
-	setAttr ".tgi[0].ni[567].y" 614.28570556640625;
+	setAttr ".tgi[0].ni[567].x" 74705.7109375;
+	setAttr ".tgi[0].ni[567].y" -845238.5625;
 	setAttr ".tgi[0].ni[567].nvs" 18304;
-	setAttr ".tgi[0].ni[568].x" -48151.4296875;
-	setAttr ".tgi[0].ni[568].y" 706080;
+	setAttr ".tgi[0].ni[568].x" 75320;
+	setAttr ".tgi[0].ni[568].y" -846515.6875;
 	setAttr ".tgi[0].ni[568].nvs" 18304;
-	setAttr ".tgi[0].ni[569].x" 61805.71484375;
-	setAttr ".tgi[0].ni[569].y" -828928.5625;
+	setAttr ".tgi[0].ni[569].x" 51362.85546875;
+	setAttr ".tgi[0].ni[569].y" -822984.3125;
 	setAttr ".tgi[0].ni[569].nvs" 18304;
 	setAttr ".tgi[0].ni[570].x" 75320;
-	setAttr ".tgi[0].ni[570].y" -846090;
+	setAttr ".tgi[0].ni[570].y" -844600;
 	setAttr ".tgi[0].ni[570].nvs" 18304;
-	setAttr ".tgi[0].ni[571].x" 58120;
-	setAttr ".tgi[0].ni[571].y" -681521.4375;
+	setAttr ".tgi[0].ni[571].x" -7608.5712890625;
+	setAttr ".tgi[0].ni[571].y" 35741.4296875;
 	setAttr ".tgi[0].ni[571].nvs" 18304;
-	setAttr ".tgi[0].ni[572].x" 74091.4296875;
-	setAttr ".tgi[0].ni[572].y" -812655.6875;
+	setAttr ".tgi[0].ni[572].x" 23412.857421875;
+	setAttr ".tgi[0].ni[572].y" -328781.4375;
 	setAttr ".tgi[0].ni[572].nvs" 18304;
-	setAttr ".tgi[0].ni[573].x" 46755.71484375;
-	setAttr ".tgi[0].ni[573].y" -604902.875;
+	setAttr ".tgi[0].ni[573].x" 75320;
+	setAttr ".tgi[0].ni[573].y" -849154.3125;
 	setAttr ".tgi[0].ni[573].nvs" 18304;
-	setAttr ".tgi[0].ni[574].x" 74705.7109375;
-	setAttr ".tgi[0].ni[574].y" -845877.125;
+	setAttr ".tgi[0].ni[574].x" 52591.4296875;
+	setAttr ".tgi[0].ni[574].y" -823821.4375;
 	setAttr ".tgi[0].ni[574].nvs" 18304;
-	setAttr ".tgi[0].ni[575].x" 56891.4296875;
-	setAttr ".tgi[0].ni[575].y" -827248.5625;
+	setAttr ".tgi[0].ni[575].x" -61972.85546875;
+	setAttr ".tgi[0].ni[575].y" 844155.6875;
 	setAttr ".tgi[0].ni[575].nvs" 18304;
-	setAttr ".tgi[0].ni[576].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[576].y" -145.71427917480469;
+	setAttr ".tgi[0].ni[576].x" 28634.28515625;
+	setAttr ".tgi[0].ni[576].y" -390484.28125;
 	setAttr ".tgi[0].ni[576].nvs" 18304;
-	setAttr ".tgi[0].ni[577].x" -20201.427734375;
-	setAttr ".tgi[0].ni[577].y" 208558.578125;
+	setAttr ".tgi[0].ni[577].x" -13444.2861328125;
+	setAttr ".tgi[0].ni[577].y" 123532.859375;
 	setAttr ".tgi[0].ni[577].nvs" 18304;
-	setAttr ".tgi[0].ni[578].x" -35558.5703125;
-	setAttr ".tgi[0].ni[578].y" 475670;
+	setAttr ".tgi[0].ni[578].x" 73477.140625;
+	setAttr ".tgi[0].ni[578].y" -807560;
 	setAttr ".tgi[0].ni[578].nvs" 18304;
-	setAttr ".tgi[0].ni[579].x" 56891.4296875;
-	setAttr ".tgi[0].ni[579].y" -669262.875;
+	setAttr ".tgi[0].ni[579].x" 71020;
+	setAttr ".tgi[0].ni[579].y" -832851.4375;
 	setAttr ".tgi[0].ni[579].nvs" 18304;
-	setAttr ".tgi[0].ni[580].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[580].y" -200;
+	setAttr ".tgi[0].ni[580].x" 28020;
+	setAttr ".tgi[0].ni[580].y" -382050;
 	setAttr ".tgi[0].ni[580].nvs" 18304;
-	setAttr ".tgi[0].ni[581].x" 54127.14453125;
-	setAttr ".tgi[0].ni[581].y" -825351.4375;
+	setAttr ".tgi[0].ni[581].x" 61498.5703125;
+	setAttr ".tgi[0].ni[581].y" -828634.3125;
 	setAttr ".tgi[0].ni[581].nvs" 18304;
-	setAttr ".tgi[0].ni[582].x" 75320;
-	setAttr ".tgi[0].ni[582].y" -839038.5625;
+	setAttr ".tgi[0].ni[582].x" 49212.85546875;
+	setAttr ".tgi[0].ni[582].y" -823005.6875;
 	setAttr ".tgi[0].ni[582].nvs" 18304;
-	setAttr ".tgi[0].ni[583].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[583].y" 1857.142822265625;
+	setAttr ".tgi[0].ni[583].x" -44465.71484375;
+	setAttr ".tgi[0].ni[583].y" 625841.4375;
 	setAttr ".tgi[0].ni[583].nvs" 18304;
-	setAttr ".tgi[0].ni[584].x" -41087.14453125;
-	setAttr ".tgi[0].ni[584].y" 559151.4375;
+	setAttr ".tgi[0].ni[584].x" 49827.14453125;
+	setAttr ".tgi[0].ni[584].y" -621334.3125;
 	setAttr ".tgi[0].ni[584].nvs" 18304;
-	setAttr ".tgi[0].ni[585].x" 54741.4296875;
-	setAttr ".tgi[0].ni[585].y" -825832.875;
+	setAttr ".tgi[0].ni[585].x" 59655.71484375;
+	setAttr ".tgi[0].ni[585].y" -828485.6875;
 	setAttr ".tgi[0].ni[585].nvs" 18304;
-	setAttr ".tgi[0].ni[586].x" 52591.4296875;
-	setAttr ".tgi[0].ni[586].y" -823821.4375;
+	setAttr ".tgi[0].ni[586].x" -7915.71435546875;
+	setAttr ".tgi[0].ni[586].y" 40501.4296875;
 	setAttr ".tgi[0].ni[586].nvs" 18304;
-	setAttr ".tgi[0].ni[587].x" -5151.4287109375;
-	setAttr ".tgi[0].ni[587].y" 8448.5712890625;
+	setAttr ".tgi[0].ni[587].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[587].y" -6430;
 	setAttr ".tgi[0].ni[587].nvs" 18304;
-	setAttr ".tgi[0].ni[588].x" 65798.5703125;
-	setAttr ".tgi[0].ni[588].y" -830927.125;
+	setAttr ".tgi[0].ni[588].x" 75012.859375;
+	setAttr ".tgi[0].ni[588].y" -845390;
 	setAttr ".tgi[0].ni[588].nvs" 18304;
-	setAttr ".tgi[0].ni[589].x" 34470;
-	setAttr ".tgi[0].ni[589].y" -463685.71875;
+	setAttr ".tgi[0].ni[589].x" 35084.28515625;
+	setAttr ".tgi[0].ni[589].y" -471164.28125;
 	setAttr ".tgi[0].ni[589].nvs" 18304;
-	setAttr ".tgi[0].ni[590].x" 62727.14453125;
-	setAttr ".tgi[0].ni[590].y" -829215.6875;
+	setAttr ".tgi[0].ni[590].x" -70572.859375;
+	setAttr ".tgi[0].ni[590].y" 815185.6875;
 	setAttr ".tgi[0].ni[590].nvs" 18304;
-	setAttr ".tgi[0].ni[591].x" 3755.71435546875;
-	setAttr ".tgi[0].ni[591].y" -112511.4296875;
+	setAttr ".tgi[0].ni[591].x" -69958.5703125;
+	setAttr ".tgi[0].ni[591].y" 815185.6875;
 	setAttr ".tgi[0].ni[591].nvs" 18304;
-	setAttr ".tgi[0].ni[592].x" 59655.71484375;
-	setAttr ".tgi[0].ni[592].y" -699348.5625;
+	setAttr ".tgi[0].ni[592].x" -71187.140625;
+	setAttr ".tgi[0].ni[592].y" 815185.6875;
 	setAttr ".tgi[0].ni[592].nvs" 18304;
-	setAttr ".tgi[0].ni[593].x" 61191.4296875;
-	setAttr ".tgi[0].ni[593].y" -704962.875;
+	setAttr ".tgi[0].ni[593].x" 57198.5703125;
+	setAttr ".tgi[0].ni[593].y" -827482.875;
 	setAttr ".tgi[0].ni[593].nvs" 18304;
-	setAttr ".tgi[0].ni[594].x" 74705.7109375;
-	setAttr ".tgi[0].ni[594].y" -844812.875;
+	setAttr ".tgi[0].ni[594].x" 1605.7142333984375;
+	setAttr ".tgi[0].ni[594].y" -83022.859375;
 	setAttr ".tgi[0].ni[594].nvs" 18304;
-	setAttr ".tgi[0].ni[595].x" 75320;
-	setAttr ".tgi[0].ni[595].y" -839560;
+	setAttr ".tgi[0].ni[595].x" 71327.140625;
+	setAttr ".tgi[0].ni[595].y" -790458.5625;
 	setAttr ".tgi[0].ni[595].nvs" 18304;
-	setAttr ".tgi[0].ni[596].x" -48458.5703125;
-	setAttr ".tgi[0].ni[596].y" 712821.4375;
+	setAttr ".tgi[0].ni[596].x" -60130;
+	setAttr ".tgi[0].ni[596].y" 834922.875;
 	setAttr ".tgi[0].ni[596].nvs" 18304;
-	setAttr ".tgi[0].ni[597].x" 28020;
-	setAttr ".tgi[0].ni[597].y" -382050;
+	setAttr ".tgi[0].ni[597].x" -47230;
+	setAttr ".tgi[0].ni[597].y" 686022.875;
 	setAttr ".tgi[0].ni[597].nvs" 18304;
-	setAttr ".tgi[0].ni[598].x" 49212.85546875;
-	setAttr ".tgi[0].ni[598].y" -823005.6875;
+	setAttr ".tgi[0].ni[598].x" -32180;
+	setAttr ".tgi[0].ni[598].y" 411502.84375;
 	setAttr ".tgi[0].ni[598].nvs" 18304;
-	setAttr ".tgi[0].ni[599].x" 67027.140625;
-	setAttr ".tgi[0].ni[599].y" -831872.875;
+	setAttr ".tgi[0].ni[599].x" 70712.859375;
+	setAttr ".tgi[0].ni[599].y" -785635.6875;
 	setAttr ".tgi[0].ni[599].nvs" 18304;
-	setAttr ".tgi[0].ni[600].x" 28941.427734375;
-	setAttr ".tgi[0].ni[600].y" -394205.71875;
+	setAttr ".tgi[0].ni[600].x" 74705.7109375;
+	setAttr ".tgi[0].ni[600].y" -817681.4375;
 	setAttr ".tgi[0].ni[600].nvs" 18304;
-	setAttr ".tgi[0].ni[601].x" 25255.71484375;
-	setAttr ".tgi[0].ni[601].y" -349907.15625;
+	setAttr ".tgi[0].ni[601].x" 17884.28515625;
+	setAttr ".tgi[0].ni[601].y" -285327.15625;
 	setAttr ".tgi[0].ni[601].nvs" 18304;
-	setAttr ".tgi[0].ni[602].x" 59348.5703125;
-	setAttr ".tgi[0].ni[602].y" -828362.875;
+	setAttr ".tgi[0].ni[602].x" 23720;
+	setAttr ".tgi[0].ni[602].y" -332811.4375;
 	setAttr ".tgi[0].ni[602].nvs" 18304;
-	setAttr ".tgi[0].ni[603].x" -73337.140625;
-	setAttr ".tgi[0].ni[603].y" 815185.6875;
+	setAttr ".tgi[0].ni[603].x" 74664.2890625;
+	setAttr ".tgi[0].ni[603].y" -839837.125;
 	setAttr ".tgi[0].ni[603].nvs" 18304;
-	setAttr ".tgi[0].ni[604].x" -10065.7138671875;
-	setAttr ".tgi[0].ni[604].y" 70297.140625;
+	setAttr ".tgi[0].ni[604].x" 74971.4296875;
+	setAttr ".tgi[0].ni[604].y" -840830;
 	setAttr ".tgi[0].ni[604].nvs" 18304;
-	setAttr ".tgi[0].ni[605].x" 64262.85546875;
-	setAttr ".tgi[0].ni[605].y" -829877.125;
+	setAttr ".tgi[0].ni[605].x" -9451.4287109375;
+	setAttr ".tgi[0].ni[605].y" 61645.71484375;
 	setAttr ".tgi[0].ni[605].nvs" 18304;
-	setAttr ".tgi[0].ni[606].x" 69177.140625;
-	setAttr ".tgi[0].ni[606].y" -771031.4375;
+	setAttr ".tgi[0].ni[606].x" 14505.7138671875;
+	setAttr ".tgi[0].ni[606].y" -243332.859375;
 	setAttr ".tgi[0].ni[606].nvs" 18304;
-	setAttr ".tgi[0].ni[607].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[607].y" 837.14288330078125;
+	setAttr ".tgi[0].ni[607].x" 75320;
+	setAttr ".tgi[0].ni[607].y" -848094.3125;
 	setAttr ".tgi[0].ni[607].nvs" 18304;
-	setAttr ".tgi[0].ni[608].x" 51670;
-	setAttr ".tgi[0].ni[608].y" -823087.125;
+	setAttr ".tgi[0].ni[608].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[608].y" -6614.28564453125;
 	setAttr ".tgi[0].ni[608].nvs" 18304;
-	setAttr ".tgi[0].ni[609].x" 75012.859375;
-	setAttr ".tgi[0].ni[609].y" -844538.5625;
+	setAttr ".tgi[0].ni[609].x" -27572.857421875;
+	setAttr ".tgi[0].ni[609].y" 318514.28125;
 	setAttr ".tgi[0].ni[609].nvs" 18304;
-	setAttr ".tgi[0].ni[610].x" 74705.7109375;
-	setAttr ".tgi[0].ni[610].y" -817558.5625;
+	setAttr ".tgi[0].ni[610].x" 66412.859375;
+	setAttr ".tgi[0].ni[610].y" -742564.3125;
 	setAttr ".tgi[0].ni[610].nvs" 18304;
-	setAttr ".tgi[0].ni[611].x" -54908.5703125;
-	setAttr ".tgi[0].ni[611].y" 826700;
+	setAttr ".tgi[0].ni[611].x" -46001.4296875;
+	setAttr ".tgi[0].ni[611].y" 659191.4375;
 	setAttr ".tgi[0].ni[611].nvs" 18304;
-	setAttr ".tgi[0].ni[612].x" -68422.859375;
-	setAttr ".tgi[0].ni[612].y" 815185.6875;
+	setAttr ".tgi[0].ni[612].x" -24194.28515625;
+	setAttr ".tgi[0].ni[612].y" 256407.140625;
 	setAttr ".tgi[0].ni[612].nvs" 18304;
-	setAttr ".tgi[0].ni[613].x" -43851.4296875;
-	setAttr ".tgi[0].ni[613].y" 612670;
+	setAttr ".tgi[0].ni[613].x" -12215.7138671875;
+	setAttr ".tgi[0].ni[613].y" 103978.5703125;
 	setAttr ".tgi[0].ni[613].nvs" 18304;
-	setAttr ".tgi[0].ni[614].x" 75320;
-	setAttr ".tgi[0].ni[614].y" -847791.4375;
+	setAttr ".tgi[0].ni[614].x" 53205.71484375;
+	setAttr ".tgi[0].ni[614].y" -824488.5625;
 	setAttr ".tgi[0].ni[614].nvs" 18304;
-	setAttr ".tgi[0].ni[615].x" -21122.857421875;
-	setAttr ".tgi[0].ni[615].y" 220277.140625;
+	setAttr ".tgi[0].ni[615].x" 22798.572265625;
+	setAttr ".tgi[0].ni[615].y" -322638.5625;
 	setAttr ".tgi[0].ni[615].nvs" 18304;
-	setAttr ".tgi[0].ni[616].x" 371.42855834960938;
-	setAttr ".tgi[0].ni[616].y" -448.57144165039062;
+	setAttr ".tgi[0].ni[616].x" 53512.85546875;
+	setAttr ".tgi[0].ni[616].y" -651200;
 	setAttr ".tgi[0].ni[616].nvs" 18304;
 	setAttr ".tgi[0].ni[617].x" 74971.4296875;
 	setAttr ".tgi[0].ni[617].y" -840308.5625;
 	setAttr ".tgi[0].ni[617].nvs" 18304;
-	setAttr ".tgi[0].ni[618].x" -66272.859375;
-	setAttr ".tgi[0].ni[618].y" 827181.4375;
+	setAttr ".tgi[0].ni[618].x" 39077.14453125;
+	setAttr ".tgi[0].ni[618].y" -516565.71875;
 	setAttr ".tgi[0].ni[618].nvs" 18304;
-	setAttr ".tgi[0].ni[619].x" -34944.28515625;
-	setAttr ".tgi[0].ni[619].y" 466294.28125;
+	setAttr ".tgi[0].ni[619].x" 431.42855834960938;
+	setAttr ".tgi[0].ni[619].y" -4822.85693359375;
 	setAttr ".tgi[0].ni[619].nvs" 18304;
-	setAttr ".tgi[0].ni[620].x" 39077.14453125;
-	setAttr ".tgi[0].ni[620].y" -516565.71875;
+	setAttr ".tgi[0].ni[620].x" 74567.140625;
+	setAttr ".tgi[0].ni[620].y" -838517.125;
 	setAttr ".tgi[0].ni[620].nvs" 18304;
-	setAttr ".tgi[0].ni[621].x" 17270;
-	setAttr ".tgi[0].ni[621].y" -277268.5625;
+	setAttr ".tgi[0].ni[621].x" -29108.572265625;
+	setAttr ".tgi[0].ni[621].y" 348580;
 	setAttr ".tgi[0].ni[621].nvs" 18304;
-	setAttr ".tgi[0].ni[622].x" 70712.859375;
-	setAttr ".tgi[0].ni[622].y" -785635.6875;
+	setAttr ".tgi[0].ni[622].x" -19280;
+	setAttr ".tgi[0].ni[622].y" 203011.421875;
 	setAttr ".tgi[0].ni[622].nvs" 18304;
-	setAttr ".tgi[0].ni[623].x" -17437.142578125;
-	setAttr ".tgi[0].ni[623].y" 182461.421875;
+	setAttr ".tgi[0].ni[623].x" -25730;
+	setAttr ".tgi[0].ni[623].y" 283792.84375;
 	setAttr ".tgi[0].ni[623].nvs" 18304;
-	setAttr ".tgi[0].ni[624].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[624].y" -860;
+	setAttr ".tgi[0].ni[624].x" -62894.28515625;
+	setAttr ".tgi[0].ni[624].y" 845580;
 	setAttr ".tgi[0].ni[624].nvs" 18304;
-	setAttr ".tgi[0].ni[625].x" -122.85713958740234;
-	setAttr ".tgi[0].ni[625].y" 1397.142822265625;
+	setAttr ".tgi[0].ni[625].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[625].y" -3747.142822265625;
 	setAttr ".tgi[0].ni[625].nvs" 18304;
-	setAttr ".tgi[0].ni[626].x" -51837.14453125;
-	setAttr ".tgi[0].ni[626].y" 783695.6875;
+	setAttr ".tgi[0].ni[626].x" 75320;
+	setAttr ".tgi[0].ni[626].y" -845664.3125;
 	setAttr ".tgi[0].ni[626].nvs" 18304;
-	setAttr ".tgi[0].ni[627].x" 65798.5703125;
-	setAttr ".tgi[0].ni[627].y" -735494.3125;
+	setAttr ".tgi[0].ni[627].x" 75320;
+	setAttr ".tgi[0].ni[627].y" -849608.5625;
 	setAttr ".tgi[0].ni[627].nvs" 18304;
-	setAttr ".tgi[0].ni[628].x" -737.14288330078125;
-	setAttr ".tgi[0].ni[628].y" 1880;
+	setAttr ".tgi[0].ni[628].x" 75320;
+	setAttr ".tgi[0].ni[628].y" -848245.6875;
 	setAttr ".tgi[0].ni[628].nvs" 18304;
-	setAttr ".tgi[0].ni[629].x" 74664.2890625;
-	setAttr ".tgi[0].ni[629].y" -840901.4375;
+	setAttr ".tgi[0].ni[629].x" -18051.427734375;
+	setAttr ".tgi[0].ni[629].y" 187688.578125;
 	setAttr ".tgi[0].ni[629].nvs" 18304;
-	setAttr ".tgi[0].ni[630].x" 20034.28515625;
-	setAttr ".tgi[0].ni[630].y" -301444.28125;
+	setAttr ".tgi[0].ni[630].x" -35558.5703125;
+	setAttr ".tgi[0].ni[630].y" 475670;
 	setAttr ".tgi[0].ni[630].nvs" 18304;
-	setAttr ".tgi[0].ni[631].x" 12662.857421875;
-	setAttr ".tgi[0].ni[631].y" -220904.28125;
+	setAttr ".tgi[0].ni[631].x" 59348.5703125;
+	setAttr ".tgi[0].ni[631].y" -828362.875;
 	setAttr ".tgi[0].ni[631].nvs" 18304;
-	setAttr ".tgi[0].ni[632].x" 75320;
-	setAttr ".tgi[0].ni[632].y" -848700;
+	setAttr ".tgi[0].ni[632].x" 11434.2861328125;
+	setAttr ".tgi[0].ni[632].y" -205491.421875;
 	setAttr ".tgi[0].ni[632].nvs" 18304;
-	setAttr ".tgi[0].ni[633].x" 56584.28515625;
-	setAttr ".tgi[0].ni[633].y" -666348.5625;
+	setAttr ".tgi[0].ni[633].x" 75320;
+	setAttr ".tgi[0].ni[633].y" -848851.4375;
 	setAttr ".tgi[0].ni[633].nvs" 18304;
-	setAttr ".tgi[0].ni[634].x" 62420;
-	setAttr ".tgi[0].ni[634].y" -708988.5625;
+	setAttr ".tgi[0].ni[634].x" -50915.71484375;
+	setAttr ".tgi[0].ni[634].y" 768107.125;
 	setAttr ".tgi[0].ni[634].nvs" 18304;
-	setAttr ".tgi[0].ni[635].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[635].y" 591.4285888671875;
+	setAttr ".tgi[0].ni[635].x" 26484.28515625;
+	setAttr ".tgi[0].ni[635].y" -363935.71875;
 	setAttr ".tgi[0].ni[635].nvs" 18304;
-	setAttr ".tgi[0].ni[636].x" 55662.85546875;
-	setAttr ".tgi[0].ni[636].y" -826490;
+	setAttr ".tgi[0].ni[636].x" 48291.4296875;
+	setAttr ".tgi[0].ni[636].y" -616688.5625;
 	setAttr ".tgi[0].ni[636].nvs" 18304;
-	setAttr ".tgi[0].ni[637].x" 12048.5712890625;
-	setAttr ".tgi[0].ni[637].y" -213964.28125;
+	setAttr ".tgi[0].ni[637].x" 75012.859375;
+	setAttr ".tgi[0].ni[637].y" -846454.3125;
 	setAttr ".tgi[0].ni[637].nvs" 18304;
-	setAttr ".tgi[0].ni[638].x" 22491.427734375;
-	setAttr ".tgi[0].ni[638].y" -320964.28125;
+	setAttr ".tgi[0].ni[638].x" 62727.14453125;
+	setAttr ".tgi[0].ni[638].y" -712631.4375;
 	setAttr ".tgi[0].ni[638].nvs" 18304;
-	setAttr ".tgi[0].ni[639].x" 75320;
-	setAttr ".tgi[0].ni[639].y" -839304.3125;
+	setAttr ".tgi[0].ni[639].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[639].y" -3494.28564453125;
 	setAttr ".tgi[0].ni[639].nvs" 18304;
-	setAttr ".tgi[0].ni[640].x" -11908.5712890625;
-	setAttr ".tgi[0].ni[640].y" 98702.859375;
+	setAttr ".tgi[0].ni[640].x" -45694.28515625;
+	setAttr ".tgi[0].ni[640].y" 652475.6875;
 	setAttr ".tgi[0].ni[640].nvs" 18304;
-	setAttr ".tgi[0].ni[641].x" -8530;
-	setAttr ".tgi[0].ni[641].y" 50005.71484375;
+	setAttr ".tgi[0].ni[641].x" -57365.71484375;
+	setAttr ".tgi[0].ni[641].y" 838632.875;
 	setAttr ".tgi[0].ni[641].nvs" 18304;
-	setAttr ".tgi[0].ni[642].x" -12830;
-	setAttr ".tgi[0].ni[642].y" 115228.5703125;
+	setAttr ".tgi[0].ni[642].x" 73784.2890625;
+	setAttr ".tgi[0].ni[642].y" -835361.4375;
 	setAttr ".tgi[0].ni[642].nvs" 18304;
-	setAttr ".tgi[0].ni[643].x" -43544.28515625;
-	setAttr ".tgi[0].ni[643].y" 606141.4375;
+	setAttr ".tgi[0].ni[643].x" 34777.14453125;
+	setAttr ".tgi[0].ni[643].y" -467531.4375;
 	setAttr ".tgi[0].ni[643].nvs" 18304;
-	setAttr ".tgi[0].ni[644].x" -38630;
-	setAttr ".tgi[0].ni[644].y" 527792.875;
+	setAttr ".tgi[0].ni[644].x" 2834.28564453125;
+	setAttr ".tgi[0].ni[644].y" -98234.2890625;
 	setAttr ".tgi[0].ni[644].nvs" 18304;
-	setAttr ".tgi[0].ni[645].x" 70712.859375;
-	setAttr ".tgi[0].ni[645].y" -832821.4375;
+	setAttr ".tgi[0].ni[645].x" 68255.7109375;
+	setAttr ".tgi[0].ni[645].y" -832660;
 	setAttr ".tgi[0].ni[645].nvs" 18304;
-	setAttr ".tgi[0].ni[646].x" 74705.7109375;
-	setAttr ".tgi[0].ni[646].y" -835614.3125;
+	setAttr ".tgi[0].ni[646].x" 74664.2890625;
+	setAttr ".tgi[0].ni[646].y" -840114.3125;
 	setAttr ".tgi[0].ni[646].nvs" 18304;
-	setAttr ".tgi[0].ni[647].x" -33408.5703125;
-	setAttr ".tgi[0].ni[647].y" 433351.4375;
+	setAttr ".tgi[0].ni[647].x" -29722.857421875;
+	setAttr ".tgi[0].ni[647].y" 360847.15625;
 	setAttr ".tgi[0].ni[647].nvs" 18304;
-	setAttr ".tgi[0].ni[648].x" 19112.857421875;
-	setAttr ".tgi[0].ni[648].y" -298801.4375;
+	setAttr ".tgi[0].ni[648].x" 57505.71484375;
+	setAttr ".tgi[0].ni[648].y" -674098.5625;
 	setAttr ".tgi[0].ni[648].nvs" 18304;
-	setAttr ".tgi[0].ni[649].x" -70572.859375;
-	setAttr ".tgi[0].ni[649].y" 815185.6875;
+	setAttr ".tgi[0].ni[649].x" -49072.85546875;
+	setAttr ".tgi[0].ni[649].y" 726457.125;
 	setAttr ".tgi[0].ni[649].nvs" 18304;
-	setAttr ".tgi[0].ni[650].x" -16208.5712890625;
-	setAttr ".tgi[0].ni[650].y" 168157.140625;
+	setAttr ".tgi[0].ni[650].x" 64262.85546875;
+	setAttr ".tgi[0].ni[650].y" -829877.125;
 	setAttr ".tgi[0].ni[650].nvs" 18304;
-	setAttr ".tgi[0].ni[651].x" 62112.85546875;
-	setAttr ".tgi[0].ni[651].y" -829021.4375;
+	setAttr ".tgi[0].ni[651].x" -30644.28515625;
+	setAttr ".tgi[0].ni[651].y" 379537.15625;
 	setAttr ".tgi[0].ni[651].nvs" 18304;
-	setAttr ".tgi[0].ni[652].x" -4537.14306640625;
-	setAttr ".tgi[0].ni[652].y" 2231.428466796875;
+	setAttr ".tgi[0].ni[652].x" -6380;
+	setAttr ".tgi[0].ni[652].y" 22627.142578125;
 	setAttr ".tgi[0].ni[652].nvs" 18304;
-	setAttr ".tgi[0].ni[653].x" 23720;
-	setAttr ".tgi[0].ni[653].y" -332811.4375;
+	setAttr ".tgi[0].ni[653].x" 74968.5703125;
+	setAttr ".tgi[0].ni[653].y" -839232.875;
 	setAttr ".tgi[0].ni[653].nvs" 18304;
-	setAttr ".tgi[0].ni[654].x" 67948.5703125;
-	setAttr ".tgi[0].ni[654].y" -833184.3125;
+	setAttr ".tgi[0].ni[654].x" 25255.71484375;
+	setAttr ".tgi[0].ni[654].y" -349907.15625;
 	setAttr ".tgi[0].ni[654].nvs" 18304;
-	setAttr ".tgi[0].ni[655].x" 33241.4296875;
-	setAttr ".tgi[0].ni[655].y" -449008.5625;
+	setAttr ".tgi[0].ni[655].x" 38155.71484375;
+	setAttr ".tgi[0].ni[655].y" -505028.5625;
 	setAttr ".tgi[0].ni[655].nvs" 18304;
-	setAttr ".tgi[0].ni[656].x" 491.42855834960938;
-	setAttr ".tgi[0].ni[656].y" 1320;
+	setAttr ".tgi[0].ni[656].x" 75012.859375;
+	setAttr ".tgi[0].ni[656].y" -845177.125;
 	setAttr ".tgi[0].ni[656].nvs" 18304;
-	setAttr ".tgi[0].ni[657].x" -62894.28515625;
-	setAttr ".tgi[0].ni[657].y" 845580;
+	setAttr ".tgi[0].ni[657].x" -67808.5703125;
+	setAttr ".tgi[0].ni[657].y" 815185.6875;
 	setAttr ".tgi[0].ni[657].nvs" 18304;
-	setAttr ".tgi[0].ni[658].x" 678.5714111328125;
-	setAttr ".tgi[0].ni[658].y" 954.28570556640625;
+	setAttr ".tgi[0].ni[658].x" -26037.142578125;
+	setAttr ".tgi[0].ni[658].y" 289378.5625;
 	setAttr ".tgi[0].ni[658].nvs" 18304;
-	setAttr ".tgi[0].ni[659].x" -122.85713958740234;
-	setAttr ".tgi[0].ni[659].y" 1577.142822265625;
+	setAttr ".tgi[0].ni[659].x" 68255.7109375;
+	setAttr ".tgi[0].ni[659].y" -762591.4375;
 	setAttr ".tgi[0].ni[659].nvs" 18304;
-	setAttr ".tgi[0].ni[660].x" -32794.28515625;
-	setAttr ".tgi[0].ni[660].y" 420498.5625;
+	setAttr ".tgi[0].ni[660].x" 75320;
+	setAttr ".tgi[0].ni[660].y" -839038.5625;
 	setAttr ".tgi[0].ni[660].nvs" 18304;
-	setAttr ".tgi[0].ni[661].x" -2272.857177734375;
-	setAttr ".tgi[0].ni[661].y" 2045.7142333984375;
+	setAttr ".tgi[0].ni[661].x" 39384.28515625;
+	setAttr ".tgi[0].ni[661].y" -519800;
 	setAttr ".tgi[0].ni[661].nvs" 18304;
-	setAttr ".tgi[0].ni[662].x" -63201.4296875;
-	setAttr ".tgi[0].ni[662].y" 844507.125;
+	setAttr ".tgi[0].ni[662].x" 55662.85546875;
+	setAttr ".tgi[0].ni[662].y" -826490;
 	setAttr ".tgi[0].ni[662].nvs" 18304;
-	setAttr ".tgi[0].ni[663].x" -49994.28515625;
-	setAttr ".tgi[0].ni[663].y" 747018.5625;
+	setAttr ".tgi[0].ni[663].x" 74865.7109375;
+	setAttr ".tgi[0].ni[663].y" -838190;
 	setAttr ".tgi[0].ni[663].nvs" 18304;
-	setAttr ".tgi[0].ni[664].x" 75320;
-	setAttr ".tgi[0].ni[664].y" -849608.5625;
+	setAttr ".tgi[0].ni[664].x" 16348.5712890625;
+	setAttr ".tgi[0].ni[664].y" -265611.4375;
 	setAttr ".tgi[0].ni[664].nvs" 18304;
-	setAttr ".tgi[0].ni[665].x" 55970;
-	setAttr ".tgi[0].ni[665].y" -826717.125;
+	setAttr ".tgi[0].ni[665].x" 47662.85546875;
+	setAttr ".tgi[0].ni[665].y" -821942.875;
 	setAttr ".tgi[0].ni[665].nvs" 18304;
-	setAttr ".tgi[0].ni[666].x" -19587.142578125;
-	setAttr ".tgi[0].ni[666].y" 205032.859375;
+	setAttr ".tgi[0].ni[666].x" 1660;
+	setAttr ".tgi[0].ni[666].y" -7372.85693359375;
 	setAttr ".tgi[0].ni[666].nvs" 18304;
-	setAttr ".tgi[0].ni[667].x" -60744.28515625;
-	setAttr ".tgi[0].ni[667].y" 843968.5625;
+	setAttr ".tgi[0].ni[667].x" -59515.71484375;
+	setAttr ".tgi[0].ni[667].y" 836097.125;
 	setAttr ".tgi[0].ni[667].nvs" 18304;
-	setAttr ".tgi[0].ni[668].x" -31565.71484375;
-	setAttr ".tgi[0].ni[668].y" 398658.5625;
+	setAttr ".tgi[0].ni[668].x" -43544.28515625;
+	setAttr ".tgi[0].ni[668].y" 606141.4375;
 	setAttr ".tgi[0].ni[668].nvs" 18304;
-	setAttr ".tgi[0].ni[669].x" -35865.71484375;
-	setAttr ".tgi[0].ni[669].y" 474730;
+	setAttr ".tgi[0].ni[669].x" -13137.142578125;
+	setAttr ".tgi[0].ni[669].y" 117962.859375;
 	setAttr ".tgi[0].ni[669].nvs" 18304;
-	setAttr ".tgi[0].ni[670].x" 59962.85546875;
-	setAttr ".tgi[0].ni[670].y" -699968.5625;
+	setAttr ".tgi[0].ni[670].x" 74705.7109375;
+	setAttr ".tgi[0].ni[670].y" -845664.3125;
 	setAttr ".tgi[0].ni[670].nvs" 18304;
-	setAttr ".tgi[0].ni[671].x" 31091.427734375;
-	setAttr ".tgi[0].ni[671].y" -422945.71875;
+	setAttr ".tgi[0].ni[671].x" -73644.2890625;
+	setAttr ".tgi[0].ni[671].y" 815185.6875;
 	setAttr ".tgi[0].ni[671].nvs" 18304;
-	setAttr ".tgi[0].ni[672].x" 71634.2890625;
-	setAttr ".tgi[0].ni[672].y" -833544.3125;
+	setAttr ".tgi[0].ni[672].x" 57198.5703125;
+	setAttr ".tgi[0].ni[672].y" -670341.4375;
 	setAttr ".tgi[0].ni[672].nvs" 18304;
-	setAttr ".tgi[0].ni[673].x" 32934.28515625;
-	setAttr ".tgi[0].ni[673].y" -444995.71875;
+	setAttr ".tgi[0].ni[673].x" 1660;
+	setAttr ".tgi[0].ni[673].y" -4995.71435546875;
 	setAttr ".tgi[0].ni[673].nvs" 18304;
-	setAttr ".tgi[0].ni[674].x" -26651.427734375;
-	setAttr ".tgi[0].ni[674].y" 300958.5625;
+	setAttr ".tgi[0].ni[674].x" 16655.71484375;
+	setAttr ".tgi[0].ni[674].y" -269452.84375;
 	setAttr ".tgi[0].ni[674].nvs" 18304;
-	setAttr ".tgi[0].ni[675].x" 74865.7109375;
-	setAttr ".tgi[0].ni[675].y" -837912.875;
+	setAttr ".tgi[0].ni[675].x" 74091.4296875;
+	setAttr ".tgi[0].ni[675].y" -812655.6875;
 	setAttr ".tgi[0].ni[675].nvs" 18304;
-	setAttr ".tgi[0].ni[676].x" -15594.2861328125;
-	setAttr ".tgi[0].ni[676].y" 157777.140625;
+	setAttr ".tgi[0].ni[676].x" 75320;
+	setAttr ".tgi[0].ni[676].y" -838782.875;
 	setAttr ".tgi[0].ni[676].nvs" 18304;
-	setAttr ".tgi[0].ni[677].x" -3615.71435546875;
-	setAttr ".tgi[0].ni[677].y" -11828.5712890625;
+	setAttr ".tgi[0].ni[677].x" 47677.14453125;
+	setAttr ".tgi[0].ni[677].y" -614645.6875;
 	setAttr ".tgi[0].ni[677].nvs" 18304;
-	setAttr ".tgi[0].ni[678].x" -1772.857177734375;
-	setAttr ".tgi[0].ni[678].y" -37185.71484375;
+	setAttr ".tgi[0].ni[678].x" -38630;
+	setAttr ".tgi[0].ni[678].y" 527792.875;
 	setAttr ".tgi[0].ni[678].nvs" 18304;
-	setAttr ".tgi[0].ni[679].x" 38770;
-	setAttr ".tgi[0].ni[679].y" -512695.71875;
+	setAttr ".tgi[0].ni[679].x" -4537.14306640625;
+	setAttr ".tgi[0].ni[679].y" 2231.428466796875;
 	setAttr ".tgi[0].ni[679].nvs" 18304;
-	setAttr ".tgi[0].ni[680].x" 67334.2890625;
-	setAttr ".tgi[0].ni[680].y" -752848.5625;
+	setAttr ".tgi[0].ni[680].x" 62420;
+	setAttr ".tgi[0].ni[680].y" -708988.5625;
 	setAttr ".tgi[0].ni[680].nvs" 18304;
-	setAttr ".tgi[0].ni[681].x" 36005.71484375;
-	setAttr ".tgi[0].ni[681].y" -482037.15625;
+	setAttr ".tgi[0].ni[681].x" -38937.14453125;
+	setAttr ".tgi[0].ni[681].y" 529894.3125;
 	setAttr ".tgi[0].ni[681].nvs" 18304;
-	setAttr ".tgi[0].ni[682].x" -5765.71435546875;
-	setAttr ".tgi[0].ni[682].y" 15375.7138671875;
+	setAttr ".tgi[0].ni[682].x" 670;
+	setAttr ".tgi[0].ni[682].y" 78.571426391601562;
 	setAttr ".tgi[0].ni[682].nvs" 18304;
-	setAttr ".tgi[0].ni[683].x" 66105.7109375;
-	setAttr ".tgi[0].ni[683].y" -831087.125;
+	setAttr ".tgi[0].ni[683].x" 40920;
+	setAttr ".tgi[0].ni[683].y" -535254.3125;
 	setAttr ".tgi[0].ni[683].nvs" 18304;
-	setAttr ".tgi[0].ni[684].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[684].y" -2042.857177734375;
+	setAttr ".tgi[0].ni[684].x" 74664.2890625;
+	setAttr ".tgi[0].ni[684].y" -840657.125;
 	setAttr ".tgi[0].ni[684].nvs" 18304;
-	setAttr ".tgi[0].ni[685].x" -53680;
-	setAttr ".tgi[0].ni[685].y" 811568.5625;
+	setAttr ".tgi[0].ni[685].x" -16822.857421875;
+	setAttr ".tgi[0].ni[685].y" 178911.421875;
 	setAttr ".tgi[0].ni[685].nvs" 18304;
-	setAttr ".tgi[0].ni[686].x" -37708.5703125;
-	setAttr ".tgi[0].ni[686].y" 509765.71875;
+	setAttr ".tgi[0].ni[686].x" -1411.4285888671875;
+	setAttr ".tgi[0].ni[686].y" -4384.28564453125;
 	setAttr ".tgi[0].ni[686].nvs" 18304;
-	setAttr ".tgi[0].ni[687].x" 56584.28515625;
-	setAttr ".tgi[0].ni[687].y" -827084.3125;
+	setAttr ".tgi[0].ni[687].x" 43070;
+	setAttr ".tgi[0].ni[687].y" -561594.3125;
 	setAttr ".tgi[0].ni[687].nvs" 18304;
-	setAttr ".tgi[0].ni[688].x" 60270;
-	setAttr ".tgi[0].ni[688].y" -828595.6875;
+	setAttr ".tgi[0].ni[688].x" -28187.142578125;
+	setAttr ".tgi[0].ni[688].y" 330410;
 	setAttr ".tgi[0].ni[688].nvs" 18304;
-	setAttr ".tgi[0].ni[689].x" -38322.85546875;
-	setAttr ".tgi[0].ni[689].y" 521172.84375;
+	setAttr ".tgi[0].ni[689].x" 58734.28515625;
+	setAttr ".tgi[0].ni[689].y" -688791.4375;
 	setAttr ".tgi[0].ni[689].nvs" 18304;
-	setAttr ".tgi[0].ni[690].x" 66412.859375;
-	setAttr ".tgi[0].ni[690].y" -831377.125;
+	setAttr ".tgi[0].ni[690].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[690].y" -3248.571533203125;
 	setAttr ".tgi[0].ni[690].nvs" 18304;
-	setAttr ".tgi[0].ni[691].x" 49827.14453125;
-	setAttr ".tgi[0].ni[691].y" -621334.3125;
+	setAttr ".tgi[0].ni[691].x" -5765.71435546875;
+	setAttr ".tgi[0].ni[691].y" 15375.7138671875;
 	setAttr ".tgi[0].ni[691].nvs" 18304;
-	setAttr ".tgi[0].ni[692].x" -737.14288330078125;
-	setAttr ".tgi[0].ni[692].y" 1700;
+	setAttr ".tgi[0].ni[692].x" 66105.7109375;
+	setAttr ".tgi[0].ni[692].y" -831087.125;
 	setAttr ".tgi[0].ni[692].nvs" 18304;
-	setAttr ".tgi[0].ni[693].x" -22351.427734375;
-	setAttr ".tgi[0].ni[693].y" 232695.71875;
+	setAttr ".tgi[0].ni[693].x" 70;
+	setAttr ".tgi[0].ni[693].y" -61180;
 	setAttr ".tgi[0].ni[693].nvs" 18304;
-	setAttr ".tgi[0].ni[694].x" 27098.572265625;
-	setAttr ".tgi[0].ni[694].y" -371422.84375;
+	setAttr ".tgi[0].ni[694].x" -9144.2861328125;
+	setAttr ".tgi[0].ni[694].y" 56894.28515625;
 	setAttr ".tgi[0].ni[694].nvs" 18304;
-	setAttr ".tgi[0].ni[695].x" -11294.2861328125;
-	setAttr ".tgi[0].ni[695].y" 91030;
+	setAttr ".tgi[0].ni[695].x" 74874.2890625;
+	setAttr ".tgi[0].ni[695].y" -838711.4375;
 	setAttr ".tgi[0].ni[695].nvs" 18304;
-	setAttr ".tgi[0].ni[696].x" 74705.7109375;
-	setAttr ".tgi[0].ni[696].y" -845238.5625;
+	setAttr ".tgi[0].ni[696].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[696].y" -5287.14306640625;
 	setAttr ".tgi[0].ni[696].nvs" 18304;
-	setAttr ".tgi[0].ni[697].x" -23580;
-	setAttr ".tgi[0].ni[697].y" 246190;
+	setAttr ".tgi[0].ni[697].x" 4677.14306640625;
+	setAttr ".tgi[0].ni[697].y" -124657.140625;
 	setAttr ".tgi[0].ni[697].nvs" 18304;
-	setAttr ".tgi[0].ni[698].x" -13751.4287109375;
-	setAttr ".tgi[0].ni[698].y" 128862.859375;
+	setAttr ".tgi[0].ni[698].x" -42622.85546875;
+	setAttr ".tgi[0].ni[698].y" 590970;
 	setAttr ".tgi[0].ni[698].nvs" 18304;
-	setAttr ".tgi[0].ni[699].x" -1965.7142333984375;
-	setAttr ".tgi[0].ni[699].y" 2017.142822265625;
+	setAttr ".tgi[0].ni[699].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[699].y" -5635.71435546875;
 	setAttr ".tgi[0].ni[699].nvs" 18304;
-	setAttr ".tgi[0].ni[700].x" 50134.28515625;
-	setAttr ".tgi[0].ni[700].y" -622614.3125;
+	setAttr ".tgi[0].ni[700].x" -70880;
+	setAttr ".tgi[0].ni[700].y" 815185.6875;
 	setAttr ".tgi[0].ni[700].nvs" 18304;
-	setAttr ".tgi[0].ni[701].x" 75320;
-	setAttr ".tgi[0].ni[701].y" -845025.6875;
+	setAttr ".tgi[0].ni[701].x" -27265.71484375;
+	setAttr ".tgi[0].ni[701].y" 312617.15625;
 	setAttr ".tgi[0].ni[701].nvs" 18304;
-	setAttr ".tgi[0].ni[702].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[702].y" -500;
+	setAttr ".tgi[0].ni[702].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[702].y" -5512.85693359375;
 	setAttr ".tgi[0].ni[702].nvs" 18304;
-	setAttr ".tgi[0].ni[703].x" -68730;
-	setAttr ".tgi[0].ni[703].y" 815185.6875;
+	setAttr ".tgi[0].ni[703].x" -48458.5703125;
+	setAttr ".tgi[0].ni[703].y" 712821.4375;
 	setAttr ".tgi[0].ni[703].nvs" 18304;
-	setAttr ".tgi[0].ni[704].x" -1465.7142333984375;
-	setAttr ".tgi[0].ni[704].y" -42265.71484375;
+	setAttr ".tgi[0].ni[704].x" 67334.2890625;
+	setAttr ".tgi[0].ni[704].y" -832175.6875;
 	setAttr ".tgi[0].ni[704].nvs" 18304;
-	setAttr ".tgi[0].ni[705].x" -20815.71484375;
-	setAttr ".tgi[0].ni[705].y" 215028.578125;
+	setAttr ".tgi[0].ni[705].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[705].y" -8282.857421875;
 	setAttr ".tgi[0].ni[705].nvs" 18304;
-	setAttr ".tgi[0].ni[706].x" 75320;
-	setAttr ".tgi[0].ni[706].y" -840391.4375;
+	setAttr ".tgi[0].ni[706].x" 991.4285888671875;
+	setAttr ".tgi[0].ni[706].y" -73854.2890625;
 	setAttr ".tgi[0].ni[706].nvs" 18304;
-	setAttr ".tgi[0].ni[707].x" 74398.5703125;
-	setAttr ".tgi[0].ni[707].y" -835572.875;
+	setAttr ".tgi[0].ni[707].x" 71941.4296875;
+	setAttr ".tgi[0].ni[707].y" -795577.125;
 	setAttr ".tgi[0].ni[707].nvs" 18304;
-	setAttr ".tgi[0].ni[708].x" 52284.28515625;
-	setAttr ".tgi[0].ni[708].y" -637630;
+	setAttr ".tgi[0].ni[708].x" -6072.85693359375;
+	setAttr ".tgi[0].ni[708].y" 20247.142578125;
 	setAttr ".tgi[0].ni[708].nvs" 18304;
-	setAttr ".tgi[0].ni[709].x" 25870;
-	setAttr ".tgi[0].ni[709].y" -356245.71875;
+	setAttr ".tgi[0].ni[709].x" 67641.4296875;
+	setAttr ".tgi[0].ni[709].y" -756094.3125;
 	setAttr ".tgi[0].ni[709].nvs" 18304;
-	setAttr ".tgi[0].ni[710].x" 70098.5703125;
-	setAttr ".tgi[0].ni[710].y" -832807.125;
+	setAttr ".tgi[0].ni[710].x" 1045.7142333984375;
+	setAttr ".tgi[0].ni[710].y" -4432.85693359375;
 	setAttr ".tgi[0].ni[710].nvs" 18304;
-	setAttr ".tgi[0].ni[711].x" -27880;
-	setAttr ".tgi[0].ni[711].y" 324340;
+	setAttr ".tgi[0].ni[711].x" 74705.7109375;
+	setAttr ".tgi[0].ni[711].y" -846302.875;
 	setAttr ".tgi[0].ni[711].nvs" 18304;
-	setAttr ".tgi[0].ni[712].x" 41841.4296875;
-	setAttr ".tgi[0].ni[712].y" -546447.125;
+	setAttr ".tgi[0].ni[712].x" 1352.857177734375;
+	setAttr ".tgi[0].ni[712].y" -5758.5712890625;
 	setAttr ".tgi[0].ni[712].nvs" 18304;
-	setAttr ".tgi[0].ni[713].x" 12355.7138671875;
-	setAttr ".tgi[0].ni[713].y" -218232.859375;
+	setAttr ".tgi[0].ni[713].x" -1465.7142333984375;
+	setAttr ".tgi[0].ni[713].y" -42265.71484375;
 	setAttr ".tgi[0].ni[713].nvs" 18304;
-	setAttr ".tgi[0].ni[714].x" -26344.28515625;
-	setAttr ".tgi[0].ni[714].y" 295205.71875;
+	setAttr ".tgi[0].ni[714].x" -34944.28515625;
+	setAttr ".tgi[0].ni[714].y" 466294.28125;
 	setAttr ".tgi[0].ni[714].nvs" 18304;
-	setAttr ".tgi[0].ni[715].x" 74558.5703125;
-	setAttr ".tgi[0].ni[715].y" -837995.6875;
+	setAttr ".tgi[0].ni[715].x" -26344.28515625;
+	setAttr ".tgi[0].ni[715].y" 295205.71875;
 	setAttr ".tgi[0].ni[715].nvs" 18304;
-	setAttr ".tgi[0].ni[716].x" -28494.28515625;
-	setAttr ".tgi[0].ni[716].y" 336378.5625;
+	setAttr ".tgi[0].ni[716].x" -52758.5703125;
+	setAttr ".tgi[0].ni[716].y" 801192.875;
 	setAttr ".tgi[0].ni[716].nvs" 18304;
-	setAttr ".tgi[0].ni[717].x" 75320;
-	setAttr ".tgi[0].ni[717].y" -847142.875;
+	setAttr ".tgi[0].ni[717].x" -53987.14453125;
+	setAttr ".tgi[0].ni[717].y" 817035.6875;
 	setAttr ".tgi[0].ni[717].nvs" 18304;
-	setAttr ".tgi[0].ni[718].x" 8977.142578125;
-	setAttr ".tgi[0].ni[718].y" -171957.140625;
+	setAttr ".tgi[0].ni[718].x" 59655.71484375;
+	setAttr ".tgi[0].ni[718].y" -699348.5625;
 	setAttr ".tgi[0].ni[718].nvs" 18304;
-	setAttr ".tgi[0].ni[719].x" 67948.5703125;
-	setAttr ".tgi[0].ni[719].y" -759474.3125;
+	setAttr ".tgi[0].ni[719].x" 70405.7109375;
+	setAttr ".tgi[0].ni[719].y" -832738.5625;
 	setAttr ".tgi[0].ni[719].nvs" 18304;
-	setAttr ".tgi[0].ni[720].x" -69958.5703125;
+	setAttr ".tgi[0].ni[720].x" -74258.5703125;
 	setAttr ".tgi[0].ni[720].y" 815185.6875;
 	setAttr ".tgi[0].ni[720].nvs" 18304;
-	setAttr ".tgi[0].ni[721].x" 45220;
-	setAttr ".tgi[0].ni[721].y" -584722.875;
+	setAttr ".tgi[0].ni[721].x" 32934.28515625;
+	setAttr ".tgi[0].ni[721].y" -444995.71875;
 	setAttr ".tgi[0].ni[721].nvs" 18304;
-	setAttr ".tgi[0].ni[722].x" -30030;
-	setAttr ".tgi[0].ni[722].y" 367035.71875;
+	setAttr ".tgi[0].ni[722].x" -18972.857421875;
+	setAttr ".tgi[0].ni[722].y" 198150;
 	setAttr ".tgi[0].ni[722].nvs" 18304;
-	setAttr ".tgi[0].ni[723].x" -74258.5703125;
-	setAttr ".tgi[0].ni[723].y" 815185.6875;
+	setAttr ".tgi[0].ni[723].x" -22351.427734375;
+	setAttr ".tgi[0].ni[723].y" 232695.71875;
 	setAttr ".tgi[0].ni[723].nvs" 18304;
-	setAttr ".tgi[0].ni[724].x" -31872.857421875;
-	setAttr ".tgi[0].ni[724].y" 405110;
+	setAttr ".tgi[0].ni[724].x" -53065.71484375;
+	setAttr ".tgi[0].ni[724].y" 804002.875;
 	setAttr ".tgi[0].ni[724].nvs" 18304;
-	setAttr ".tgi[0].ni[725].x" -14365.7138671875;
-	setAttr ".tgi[0].ni[725].y" 137411.421875;
+	setAttr ".tgi[0].ni[725].x" -69344.2890625;
+	setAttr ".tgi[0].ni[725].y" 815185.6875;
 	setAttr ".tgi[0].ni[725].nvs" 18304;
-	setAttr ".tgi[0].ni[726].x" 59348.5703125;
-	setAttr ".tgi[0].ni[726].y" -695925.6875;
+	setAttr ".tgi[0].ni[726].x" 36312.85546875;
+	setAttr ".tgi[0].ni[726].y" -485557.15625;
 	setAttr ".tgi[0].ni[726].nvs" 18304;
-	setAttr ".tgi[0].ni[727].x" -67501.4296875;
-	setAttr ".tgi[0].ni[727].y" 818541.4375;
+	setAttr ".tgi[0].ni[727].x" 51362.85546875;
+	setAttr ".tgi[0].ni[727].y" -632902.875;
 	setAttr ".tgi[0].ni[727].nvs" 18304;
-	setAttr ".tgi[0].ni[728].x" -21737.142578125;
-	setAttr ".tgi[0].ni[728].y" 226007.140625;
+	setAttr ".tgi[0].ni[728].x" 56584.28515625;
+	setAttr ".tgi[0].ni[728].y" -666348.5625;
 	setAttr ".tgi[0].ni[728].nvs" 18304;
-	setAttr ".tgi[0].ni[729].x" -12522.857421875;
-	setAttr ".tgi[0].ni[729].y" 109595.7109375;
+	setAttr ".tgi[0].ni[729].x" -39858.5703125;
+	setAttr ".tgi[0].ni[729].y" 540820;
 	setAttr ".tgi[0].ni[729].nvs" 18304;
-	setAttr ".tgi[0].ni[730].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[730].y" -982.85711669921875;
+	setAttr ".tgi[0].ni[730].x" -62280;
+	setAttr ".tgi[0].ni[730].y" 849078.5625;
 	setAttr ".tgi[0].ni[730].nvs" 18304;
-	setAttr ".tgi[0].ni[731].x" 29248.572265625;
-	setAttr ".tgi[0].ni[731].y" -398587.15625;
+	setAttr ".tgi[0].ni[731].x" 75012.859375;
+	setAttr ".tgi[0].ni[731].y" -844261.4375;
 	setAttr ".tgi[0].ni[731].nvs" 18304;
-	setAttr ".tgi[0].ni[732].x" -51530;
-	setAttr ".tgi[0].ni[732].y" 777207.125;
+	setAttr ".tgi[0].ni[732].x" -17744.28515625;
+	setAttr ".tgi[0].ni[732].y" 187718.578125;
 	setAttr ".tgi[0].ni[732].nvs" 18304;
-	setAttr ".tgi[0].ni[733].x" 71325.7109375;
-	setAttr ".tgi[0].ni[733].y" -49292.85546875;
+	setAttr ".tgi[0].ni[733].x" 67027.140625;
+	setAttr ".tgi[0].ni[733].y" -831872.875;
 	setAttr ".tgi[0].ni[733].nvs" 18304;
-	setAttr ".tgi[0].ni[734].x" 7441.4287109375;
-	setAttr ".tgi[0].ni[734].y" -152541.421875;
+	setAttr ".tgi[0].ni[734].x" -64737.14453125;
+	setAttr ".tgi[0].ni[734].y" 835337.125;
 	setAttr ".tgi[0].ni[734].nvs" 18304;
-	setAttr ".tgi[0].ni[735].x" -15901.4287109375;
-	setAttr ".tgi[0].ni[735].y" 162771.421875;
+	setAttr ".tgi[0].ni[735].x" 1045.7142333984375;
+	setAttr ".tgi[0].ni[735].y" -5634.28564453125;
 	setAttr ".tgi[0].ni[735].nvs" 18304;
-	setAttr ".tgi[0].ni[736].x" -32180;
-	setAttr ".tgi[0].ni[736].y" 411502.84375;
+	setAttr ".tgi[0].ni[736].x" 51977.14453125;
+	setAttr ".tgi[0].ni[736].y" -636332.875;
 	setAttr ".tgi[0].ni[736].nvs" 18304;
-	setAttr ".tgi[0].ni[737].x" 59962.85546875;
-	setAttr ".tgi[0].ni[737].y" -828511.4375;
+	setAttr ".tgi[0].ni[737].x" 38770;
+	setAttr ".tgi[0].ni[737].y" -512695.71875;
 	setAttr ".tgi[0].ni[737].nvs" 18304;
-	setAttr ".tgi[0].ni[738].x" -56751.4296875;
-	setAttr ".tgi[0].ni[738].y" 833462.875;
+	setAttr ".tgi[0].ni[738].x" 64570;
+	setAttr ".tgi[0].ni[738].y" -829995.6875;
 	setAttr ".tgi[0].ni[738].nvs" 18304;
-	setAttr ".tgi[0].ni[739].x" 53512.85546875;
-	setAttr ".tgi[0].ni[739].y" -824764.3125;
+	setAttr ".tgi[0].ni[739].x" -51530;
+	setAttr ".tgi[0].ni[739].y" 777207.125;
 	setAttr ".tgi[0].ni[739].nvs" 18304;
-	setAttr ".tgi[0].ni[740].x" 35391.4296875;
-	setAttr ".tgi[0].ni[740].y" -474615.71875;
+	setAttr ".tgi[0].ni[740].x" 75320;
+	setAttr ".tgi[0].ni[740].y" -847640;
 	setAttr ".tgi[0].ni[740].nvs" 18304;
-	setAttr ".tgi[0].ni[741].x" 27405.71484375;
-	setAttr ".tgi[0].ni[741].y" -374792.84375;
+	setAttr ".tgi[0].ni[741].x" 17577.142578125;
+	setAttr ".tgi[0].ni[741].y" -281342.84375;
 	setAttr ".tgi[0].ni[741].nvs" 18304;
-	setAttr ".tgi[0].ni[742].x" -31258.572265625;
-	setAttr ".tgi[0].ni[742].y" 392292.84375;
+	setAttr ".tgi[0].ni[742].x" 1967.142822265625;
+	setAttr ".tgi[0].ni[742].y" -6737.14306640625;
 	setAttr ".tgi[0].ni[742].nvs" 18304;
-	setAttr ".tgi[0].ni[743].x" -65965.7109375;
-	setAttr ".tgi[0].ni[743].y" 832841.4375;
+	setAttr ".tgi[0].ni[743].x" 13277.142578125;
+	setAttr ".tgi[0].ni[743].y" -226692.859375;
 	setAttr ".tgi[0].ni[743].nvs" 18304;
-	setAttr ".tgi[0].ni[744].x" 47677.14453125;
-	setAttr ".tgi[0].ni[744].y" -821671.4375;
+	setAttr ".tgi[0].ni[744].x" -46922.85546875;
+	setAttr ".tgi[0].ni[744].y" 679247.125;
 	setAttr ".tgi[0].ni[744].nvs" 18304;
-	setAttr ".tgi[0].ni[745].x" -24194.28515625;
-	setAttr ".tgi[0].ni[745].y" 256407.140625;
+	setAttr ".tgi[0].ni[745].x" 57812.85546875;
+	setAttr ".tgi[0].ni[745].y" -677920;
 	setAttr ".tgi[0].ni[745].nvs" 18304;
-	setAttr ".tgi[0].ni[746].x" -71187.140625;
-	setAttr ".tgi[0].ni[746].y" 815185.6875;
+	setAttr ".tgi[0].ni[746].x" 29555.71484375;
+	setAttr ".tgi[0].ni[746].y" -402938.5625;
 	setAttr ".tgi[0].ni[746].nvs" 18304;
-	setAttr ".tgi[0].ni[747].x" 75012.859375;
-	setAttr ".tgi[0].ni[747].y" -844261.4375;
+	setAttr ".tgi[0].ni[747].x" -62587.14453125;
+	setAttr ".tgi[0].ni[747].y" 847454.3125;
 	setAttr ".tgi[0].ni[747].nvs" 18304;
-	setAttr ".tgi[0].ni[748].x" 678.5714111328125;
-	setAttr ".tgi[0].ni[748].y" 831.4285888671875;
+	setAttr ".tgi[0].ni[748].x" 70098.5703125;
+	setAttr ".tgi[0].ni[748].y" -779675.6875;
 	setAttr ".tgi[0].ni[748].nvs" 18304;
-	setAttr ".tgi[0].ni[749].x" 75320;
-	setAttr ".tgi[0].ni[749].y" -849002.875;
+	setAttr ".tgi[0].ni[749].x" 60270;
+	setAttr ".tgi[0].ni[749].y" -828595.6875;
 	setAttr ".tgi[0].ni[749].nvs" 18304;
-	setAttr ".tgi[0].ni[750].x" -7301.4287109375;
-	setAttr ".tgi[0].ni[750].y" 31074.28515625;
+	setAttr ".tgi[0].ni[750].x" 71020;
+	setAttr ".tgi[0].ni[750].y" -788604.3125;
 	setAttr ".tgi[0].ni[750].nvs" 18304;
-	setAttr ".tgi[0].ni[751].x" 28327.142578125;
-	setAttr ".tgi[0].ni[751].y" -386447.15625;
+	setAttr ".tgi[0].ni[751].x" -35865.71484375;
+	setAttr ".tgi[0].ni[751].y" 474730;
 	setAttr ".tgi[0].ni[751].nvs" 18304;
-	setAttr ".tgi[0].ni[752].x" -47537.14453125;
-	setAttr ".tgi[0].ni[752].y" 692574.3125;
+	setAttr ".tgi[0].ni[752].x" 3755.71435546875;
+	setAttr ".tgi[0].ni[752].y" -112511.4296875;
 	setAttr ".tgi[0].ni[752].nvs" 18304;
-	setAttr ".tgi[0].ni[753].x" 798.5714111328125;
-	setAttr ".tgi[0].ni[753].y" 1448.5714111328125;
+	setAttr ".tgi[0].ni[753].x" 45834.28515625;
+	setAttr ".tgi[0].ni[753].y" -592655.6875;
 	setAttr ".tgi[0].ni[753].nvs" 18304;
-	setAttr ".tgi[0].ni[754].x" -39551.4296875;
-	setAttr ".tgi[0].ni[754].y" 536742.875;
+	setAttr ".tgi[0].ni[754].x" 3448.571533203125;
+	setAttr ".tgi[0].ni[754].y" -107728.5703125;
 	setAttr ".tgi[0].ni[754].nvs" 18304;
-	setAttr ".tgi[0].ni[755].x" -57672.85546875;
-	setAttr ".tgi[0].ni[755].y" 836347.125;
+	setAttr ".tgi[0].ni[755].x" 2274.28564453125;
+	setAttr ".tgi[0].ni[755].y" -7147.14306640625;
 	setAttr ".tgi[0].ni[755].nvs" 18304;
-	setAttr ".tgi[0].ni[756].x" 1105.7142333984375;
-	setAttr ".tgi[0].ni[756].y" -1322.857177734375;
+	setAttr ".tgi[0].ni[756].x" 42762.85546875;
+	setAttr ".tgi[0].ni[756].y" -557791.4375;
 	setAttr ".tgi[0].ni[756].nvs" 18304;
-	setAttr ".tgi[0].ni[757].x" 26484.28515625;
-	setAttr ".tgi[0].ni[757].y" -363935.71875;
+	setAttr ".tgi[0].ni[757].x" 25870;
+	setAttr ".tgi[0].ni[757].y" -356245.71875;
 	setAttr ".tgi[0].ni[757].nvs" 18304;
-	setAttr ".tgi[0].ni[758].x" -53987.14453125;
-	setAttr ".tgi[0].ni[758].y" 817035.6875;
+	setAttr ".tgi[0].ni[758].x" 75320;
+	setAttr ".tgi[0].ni[758].y" -838517.125;
 	setAttr ".tgi[0].ni[758].nvs" 18304;
-	setAttr ".tgi[0].ni[759].x" 57505.71484375;
-	setAttr ".tgi[0].ni[759].y" -827658.5625;
+	setAttr ".tgi[0].ni[759].x" -36172.85546875;
+	setAttr ".tgi[0].ni[759].y" 481507.15625;
 	setAttr ".tgi[0].ni[759].nvs" 18304;
-	setAttr ".tgi[0].ni[760].x" -16515.71484375;
-	setAttr ".tgi[0].ni[760].y" 172995.71875;
-	setAttr ".tgi[0].ni[760].nvs" 18304;
-	setAttr ".tgi[0].ni[761].x" 16041.4287109375;
-	setAttr ".tgi[0].ni[761].y" -261568.578125;
-	setAttr ".tgi[0].ni[761].nvs" 18304;
-	setAttr ".tgi[0].ni[762].x" 34777.14453125;
-	setAttr ".tgi[0].ni[762].y" -467531.4375;
-	setAttr ".tgi[0].ni[762].nvs" 18304;
-	setAttr ".tgi[0].ni[763].x" 57198.5703125;
-	setAttr ".tgi[0].ni[763].y" -670341.4375;
-	setAttr ".tgi[0].ni[763].nvs" 18304;
-	setAttr ".tgi[0].ni[764].x" -242.85714721679688;
-	setAttr ".tgi[0].ni[764].y" 45.714286804199219;
-	setAttr ".tgi[0].ni[764].nvs" 18304;
-	setAttr ".tgi[0].ni[765].x" 7134.28564453125;
-	setAttr ".tgi[0].ni[765].y" -148062.859375;
-	setAttr ".tgi[0].ni[765].nvs" 18304;
-	setAttr ".tgi[0].ni[766].x" -23272.857421875;
-	setAttr ".tgi[0].ni[766].y" 242198.578125;
-	setAttr ".tgi[0].ni[766].nvs" 18304;
-	setAttr ".tgi[0].ni[767].x" 52284.28515625;
-	setAttr ".tgi[0].ni[767].y" -823531.4375;
-	setAttr ".tgi[0].ni[767].nvs" 18304;
-	setAttr ".tgi[0].ni[768].x" 75320;
-	setAttr ".tgi[0].ni[768].y" -846515.6875;
-	setAttr ".tgi[0].ni[768].nvs" 18304;
-	setAttr ".tgi[0].ni[769].x" 63955.71484375;
-	setAttr ".tgi[0].ni[769].y" -719640;
-	setAttr ".tgi[0].ni[769].nvs" 18304;
-	setAttr ".tgi[0].ni[770].x" 51362.85546875;
-	setAttr ".tgi[0].ni[770].y" -822984.3125;
-	setAttr ".tgi[0].ni[770].nvs" 18304;
-	setAttr ".tgi[0].ni[771].x" 36312.85546875;
-	setAttr ".tgi[0].ni[771].y" -485557.15625;
-	setAttr ".tgi[0].ni[771].nvs" 18304;
-	setAttr ".tgi[0].ni[772].x" 74567.140625;
-	setAttr ".tgi[0].ni[772].y" -838517.125;
-	setAttr ".tgi[0].ni[772].nvs" 18304;
-	setAttr ".tgi[0].ni[773].x" 371.42855834960938;
-	setAttr ".tgi[0].ni[773].y" 847.14288330078125;
-	setAttr ".tgi[0].ni[773].nvs" 18304;
-	setAttr ".tgi[0].ni[774].x" -42622.85546875;
-	setAttr ".tgi[0].ni[774].y" 590970;
-	setAttr ".tgi[0].ni[774].nvs" 18304;
-	setAttr ".tgi[0].ni[775].x" 371.42855834960938;
-	setAttr ".tgi[0].ni[775].y" 177.14285278320312;
-	setAttr ".tgi[0].ni[775].nvs" 18304;
-	setAttr ".tgi[0].ni[776].x" 68870;
-	setAttr ".tgi[0].ni[776].y" -833175.6875;
-	setAttr ".tgi[0].ni[776].nvs" 18304;
-	setAttr ".tgi[0].ni[777].x" 29555.71484375;
-	setAttr ".tgi[0].ni[777].y" -402938.5625;
-	setAttr ".tgi[0].ni[777].nvs" 18304;
-	setAttr ".tgi[0].ni[778].x" 48598.5703125;
-	setAttr ".tgi[0].ni[778].y" -615614.3125;
-	setAttr ".tgi[0].ni[778].nvs" 18304;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24132,7 +24499,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".fo";
 	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
-	setAttr -s 3 ".gn";
+	setAttr -s 4 ".gn";
 select -ne :initialParticleSE;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24189,1688 +24556,1745 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
-connectAttr "cartoonCharacterRN.phl[47]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[699].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[48]" "bindPose1.m[1]";
-connectAttr "cartoonCharacterRN.phl[49]" "skinCluster1.lw[0]";
-connectAttr "cartoonCharacterRN.phl[50]" "bindPose1.wm[1]";
-connectAttr "Root_Joint.s" "cartoonCharacterRN.phl[51]";
-connectAttr "cartoonCharacterRN.phl[52]" "skinCluster1.ma[0]";
-connectAttr "cartoonCharacterRN.phl[53]" "skinCluster1.ifcl[0]";
-connectAttr "cartoonCharacterRN.phl[54]" "cartoonCharacter:L_Hip_J.is";
-connectAttr "cartoonCharacterRN.phl[55]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[327].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[56]" "bindPose1.m[2]";
-connectAttr "cartoonCharacterRN.phl[57]" "skinCluster1.lw[1]";
-connectAttr "cartoonCharacterRN.phl[58]" "bindPose1.wm[2]";
-connectAttr "cartoonCharacterRN.phl[59]" "skinCluster1.ma[1]";
-connectAttr "cartoonCharacterRN.phl[60]" "skinCluster1.ifcl[1]";
-connectAttr "cartoonCharacterRN.phl[61]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[366].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[62]" "bindPose1.m[3]";
-connectAttr "cartoonCharacterRN.phl[63]" "skinCluster1.lw[2]";
-connectAttr "cartoonCharacterRN.phl[64]" "bindPose1.wm[3]";
-connectAttr "cartoonCharacterRN.phl[65]" "skinCluster1.ma[2]";
-connectAttr "cartoonCharacterRN.phl[66]" "skinCluster1.ifcl[2]";
-connectAttr "cartoonCharacterRN.phl[67]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[80].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[68]" "bindPose1.m[4]";
-connectAttr "cartoonCharacterRN.phl[69]" "skinCluster1.lw[3]";
-connectAttr "cartoonCharacterRN.phl[70]" "bindPose1.wm[4]";
-connectAttr "cartoonCharacterRN.phl[71]" "skinCluster1.ma[3]";
-connectAttr "cartoonCharacterRN.phl[72]" "skinCluster1.ifcl[3]";
-connectAttr "cartoonCharacterRN.phl[73]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[458].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[74]" "bindPose1.m[5]";
-connectAttr "cartoonCharacterRN.phl[75]" "skinCluster1.lw[4]";
-connectAttr "cartoonCharacterRN.phl[76]" "bindPose1.wm[5]";
-connectAttr "cartoonCharacterRN.phl[77]" "skinCluster1.ma[4]";
-connectAttr "cartoonCharacterRN.phl[78]" "skinCluster1.ifcl[4]";
-connectAttr "cartoonCharacterRN.phl[79]" "bindPose1.m[6]";
-connectAttr "cartoonCharacterRN.phl[80]" "skinCluster1.ptt";
-connectAttr "cartoonCharacterRN.phl[81]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[756].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[82]" "skinCluster1.lw[5]";
-connectAttr "cartoonCharacterRN.phl[83]" "bindPose1.wm[6]";
-connectAttr "cartoonCharacterRN.phl[84]" "skinCluster1.ma[5]";
-connectAttr "cartoonCharacterRN.phl[85]" "skinCluster1.ifcl[5]";
-connectAttr "cartoonCharacterRN.phl[86]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[354].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[87]" "bindPose1.m[11]";
-connectAttr "cartoonCharacterRN.phl[88]" "skinCluster1.lw[10]";
-connectAttr "cartoonCharacterRN.phl[89]" "bindPose1.wm[11]";
-connectAttr "cartoonCharacterRN.phl[90]" "skinCluster1.ma[10]";
-connectAttr "cartoonCharacterRN.phl[91]" "skinCluster1.ifcl[10]";
-connectAttr "cartoonCharacterRN.phl[92]" "skinCluster1.lw[11]";
-connectAttr "cartoonCharacterRN.phl[93]" "bindPose1.wm[12]";
-connectAttr "cartoonCharacterRN.phl[94]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[236].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[95]" "bindPose1.m[12]";
-connectAttr "cartoonCharacterRN.phl[96]" "skinCluster1.ma[11]";
-connectAttr "cartoonCharacterRN.phl[97]" "skinCluster1.ifcl[11]";
-connectAttr "cartoonCharacterRN.phl[98]" "cartoonCharacter:L_clav_J.is";
-connectAttr "cartoonCharacterRN.phl[99]" "skinCluster1.lw[12]";
-connectAttr "cartoonCharacterRN.phl[100]" "bindPose1.wm[13]";
-connectAttr "cartoonCharacterRN.phl[101]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[477].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[102]" "bindPose1.m[13]";
-connectAttr "cartoonCharacterRN.phl[103]" "skinCluster1.ma[12]";
-connectAttr "cartoonCharacterRN.phl[104]" "skinCluster1.ifcl[12]";
-connectAttr "cartoonCharacterRN.phl[105]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[531].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[106]" "bindPose1.m[14]";
-connectAttr "cartoonCharacterRN.phl[107]" "skinCluster1.lw[13]";
-connectAttr "cartoonCharacterRN.phl[108]" "bindPose1.wm[14]";
-connectAttr "cartoonCharacterRN.phl[109]" "skinCluster1.ma[13]";
-connectAttr "cartoonCharacterRN.phl[110]" "skinCluster1.ifcl[13]";
-connectAttr "cartoonCharacterRN.phl[111]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[730].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[112]" "bindPose1.m[15]";
-connectAttr "cartoonCharacterRN.phl[113]" "skinCluster1.lw[14]";
-connectAttr "cartoonCharacterRN.phl[114]" "bindPose1.wm[15]";
-connectAttr "cartoonCharacterRN.phl[115]" "skinCluster1.ma[14]";
-connectAttr "cartoonCharacterRN.phl[116]" "skinCluster1.ifcl[14]";
-connectAttr "cartoonCharacterRN.phl[117]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[287].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[118]" "bindPose1.m[16]";
-connectAttr "cartoonCharacterRN.phl[119]" "skinCluster1.lw[15]";
-connectAttr "cartoonCharacterRN.phl[120]" "bindPose1.wm[16]";
-connectAttr "cartoonCharacterRN.phl[121]" "skinCluster1.ma[15]";
-connectAttr "cartoonCharacterRN.phl[122]" "skinCluster1.ifcl[15]";
-connectAttr "cartoonCharacterRN.phl[123]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[628].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[124]" "bindPose1.m[17]";
-connectAttr "cartoonCharacterRN.phl[125]" "skinCluster1.lw[16]";
-connectAttr "cartoonCharacterRN.phl[126]" "bindPose1.wm[17]";
-connectAttr "cartoonCharacterRN.phl[127]" "skinCluster1.ma[16]";
-connectAttr "cartoonCharacterRN.phl[128]" "skinCluster1.ifcl[16]";
-connectAttr "cartoonCharacterRN.phl[129]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[189].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[130]" "bindPose1.m[18]";
-connectAttr "cartoonCharacterRN.phl[131]" "skinCluster1.lw[17]";
-connectAttr "cartoonCharacterRN.phl[132]" "bindPose1.wm[18]";
-connectAttr "cartoonCharacterRN.phl[133]" "skinCluster1.ma[17]";
-connectAttr "cartoonCharacterRN.phl[134]" "skinCluster1.ifcl[17]";
-connectAttr "cartoonCharacterRN.phl[135]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[659].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[136]" "bindPose1.m[19]";
-connectAttr "cartoonCharacterRN.phl[137]" "skinCluster1.lw[18]";
-connectAttr "cartoonCharacterRN.phl[138]" "bindPose1.wm[19]";
-connectAttr "cartoonCharacterRN.phl[139]" "skinCluster1.ma[18]";
-connectAttr "cartoonCharacterRN.phl[140]" "skinCluster1.ifcl[18]";
-connectAttr "cartoonCharacterRN.phl[141]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[75].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[142]" "bindPose1.m[20]";
-connectAttr "cartoonCharacterRN.phl[143]" "skinCluster1.lw[19]";
-connectAttr "cartoonCharacterRN.phl[144]" "bindPose1.wm[20]";
-connectAttr "cartoonCharacterRN.phl[145]" "skinCluster1.ma[19]";
-connectAttr "cartoonCharacterRN.phl[146]" "skinCluster1.ifcl[19]";
-connectAttr "cartoonCharacterRN.phl[147]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[607].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[148]" "bindPose1.m[21]";
-connectAttr "cartoonCharacterRN.phl[149]" "skinCluster1.lw[20]";
-connectAttr "cartoonCharacterRN.phl[150]" "bindPose1.wm[21]";
-connectAttr "cartoonCharacterRN.phl[151]" "skinCluster1.ma[20]";
-connectAttr "cartoonCharacterRN.phl[152]" "skinCluster1.ifcl[20]";
-connectAttr "cartoonCharacterRN.phl[153]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[583].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[154]" "bindPose1.m[22]";
-connectAttr "cartoonCharacterRN.phl[155]" "skinCluster1.lw[21]";
-connectAttr "cartoonCharacterRN.phl[156]" "bindPose1.wm[22]";
-connectAttr "cartoonCharacterRN.phl[157]" "skinCluster1.ma[21]";
-connectAttr "cartoonCharacterRN.phl[158]" "skinCluster1.ifcl[21]";
-connectAttr "cartoonCharacterRN.phl[159]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[247].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[160]" "bindPose1.m[23]";
-connectAttr "cartoonCharacterRN.phl[161]" "skinCluster1.lw[22]";
-connectAttr "cartoonCharacterRN.phl[162]" "bindPose1.wm[23]";
-connectAttr "cartoonCharacterRN.phl[163]" "skinCluster1.ma[22]";
-connectAttr "cartoonCharacterRN.phl[164]" "skinCluster1.ifcl[22]";
-connectAttr "cartoonCharacterRN.phl[165]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[534].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[166]" "bindPose1.m[24]";
-connectAttr "cartoonCharacterRN.phl[167]" "skinCluster1.lw[23]";
-connectAttr "cartoonCharacterRN.phl[168]" "bindPose1.wm[24]";
-connectAttr "cartoonCharacterRN.phl[169]" "skinCluster1.ma[23]";
-connectAttr "cartoonCharacterRN.phl[170]" "skinCluster1.ifcl[23]";
-connectAttr "cartoonCharacterRN.phl[171]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[58].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[172]" "bindPose1.m[25]";
-connectAttr "cartoonCharacterRN.phl[173]" "skinCluster1.lw[24]";
-connectAttr "cartoonCharacterRN.phl[174]" "bindPose1.wm[25]";
-connectAttr "cartoonCharacterRN.phl[175]" "skinCluster1.ma[24]";
-connectAttr "cartoonCharacterRN.phl[176]" "skinCluster1.ifcl[24]";
-connectAttr "cartoonCharacterRN.phl[177]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[121].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[178]" "bindPose1.m[26]";
-connectAttr "cartoonCharacterRN.phl[179]" "skinCluster1.lw[25]";
-connectAttr "cartoonCharacterRN.phl[180]" "bindPose1.wm[26]";
-connectAttr "cartoonCharacterRN.phl[181]" "skinCluster1.ma[25]";
-connectAttr "cartoonCharacterRN.phl[182]" "skinCluster1.ifcl[25]";
-connectAttr "cartoonCharacterRN.phl[183]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[156].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[184]" "bindPose1.m[27]";
-connectAttr "cartoonCharacterRN.phl[185]" "skinCluster1.lw[26]";
-connectAttr "cartoonCharacterRN.phl[186]" "bindPose1.wm[27]";
-connectAttr "cartoonCharacterRN.phl[187]" "skinCluster1.ma[26]";
-connectAttr "cartoonCharacterRN.phl[188]" "skinCluster1.ifcl[26]";
-connectAttr "cartoonCharacterRN.phl[189]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[624].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[190]" "bindPose1.m[28]";
-connectAttr "cartoonCharacterRN.phl[191]" "skinCluster1.lw[27]";
-connectAttr "cartoonCharacterRN.phl[192]" "bindPose1.wm[28]";
-connectAttr "cartoonCharacterRN.phl[193]" "skinCluster1.ma[27]";
-connectAttr "cartoonCharacterRN.phl[194]" "skinCluster1.ifcl[27]";
-connectAttr "cartoonCharacterRN.phl[195]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[465].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[196]" "bindPose1.m[29]";
-connectAttr "cartoonCharacterRN.phl[197]" "skinCluster1.lw[28]";
-connectAttr "cartoonCharacterRN.phl[198]" "bindPose1.wm[29]";
-connectAttr "cartoonCharacterRN.phl[199]" "skinCluster1.ma[28]";
-connectAttr "cartoonCharacterRN.phl[200]" "skinCluster1.ifcl[28]";
-connectAttr "cartoonCharacterRN.phl[201]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[95].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[202]" "bindPose1.m[30]";
-connectAttr "cartoonCharacterRN.phl[203]" "skinCluster1.lw[29]";
-connectAttr "cartoonCharacterRN.phl[204]" "bindPose1.wm[30]";
-connectAttr "cartoonCharacterRN.phl[205]" "skinCluster1.ma[29]";
-connectAttr "cartoonCharacterRN.phl[206]" "skinCluster1.ifcl[29]";
-connectAttr "cartoonCharacterRN.phl[207]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[224].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[208]" "bindPose1.m[31]";
-connectAttr "cartoonCharacterRN.phl[209]" "skinCluster1.lw[30]";
-connectAttr "cartoonCharacterRN.phl[210]" "bindPose1.wm[31]";
-connectAttr "cartoonCharacterRN.phl[211]" "skinCluster1.ma[30]";
-connectAttr "cartoonCharacterRN.phl[212]" "skinCluster1.ifcl[30]";
-connectAttr "cartoonCharacterRN.phl[213]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[480].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[214]" "bindPose1.m[32]";
-connectAttr "cartoonCharacterRN.phl[215]" "skinCluster1.lw[31]";
-connectAttr "cartoonCharacterRN.phl[216]" "bindPose1.wm[32]";
-connectAttr "cartoonCharacterRN.phl[217]" "skinCluster1.ma[31]";
-connectAttr "cartoonCharacterRN.phl[218]" "skinCluster1.ifcl[31]";
-connectAttr "cartoonCharacterRN.phl[219]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[656].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[220]" "bindPose1.m[33]";
-connectAttr "cartoonCharacterRN.phl[221]" "skinCluster1.lw[32]";
-connectAttr "cartoonCharacterRN.phl[222]" "bindPose1.wm[33]";
-connectAttr "cartoonCharacterRN.phl[223]" "skinCluster1.ma[32]";
-connectAttr "cartoonCharacterRN.phl[224]" "skinCluster1.ifcl[32]";
-connectAttr "cartoonCharacterRN.phl[225]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[419].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[226]" "bindPose1.m[34]";
-connectAttr "cartoonCharacterRN.phl[227]" "skinCluster1.lw[33]";
-connectAttr "cartoonCharacterRN.phl[228]" "bindPose1.wm[34]";
-connectAttr "cartoonCharacterRN.phl[229]" "skinCluster1.ma[33]";
-connectAttr "cartoonCharacterRN.phl[230]" "skinCluster1.ifcl[33]";
-connectAttr "cartoonCharacterRN.phl[231]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[285].dn"
+connectAttr "cartoonCharacterRN.phl[971]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[244].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[972]" "bindPose1.m[1]";
+connectAttr "cartoonCharacterRN.phl[973]" "skinCluster1.lw[0]";
+connectAttr "cartoonCharacterRN.phl[974]" "bindPose1.wm[1]";
+connectAttr "Root_Joint.s" "cartoonCharacterRN.phl[975]";
+connectAttr "cartoonCharacterRN.phl[976]" "skinCluster1.ma[0]";
+connectAttr "cartoonCharacterRN.phl[977]" "skinCluster1.ifcl[0]";
+connectAttr "cartoonCharacterRN.phl[978]" "cartoonCharacter:L_Hip_J.is";
+connectAttr "cartoonCharacterRN.phl[979]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[414].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[980]" "bindPose1.m[2]";
+connectAttr "cartoonCharacterRN.phl[981]" "skinCluster1.lw[1]";
+connectAttr "cartoonCharacterRN.phl[982]" "bindPose1.wm[2]";
+connectAttr "cartoonCharacterRN.phl[983]" "skinCluster1.ma[1]";
+connectAttr "cartoonCharacterRN.phl[984]" "skinCluster1.ifcl[1]";
+connectAttr "cartoonCharacterRN.phl[985]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[710].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[986]" "bindPose1.m[3]";
+connectAttr "cartoonCharacterRN.phl[987]" "skinCluster1.lw[2]";
+connectAttr "cartoonCharacterRN.phl[988]" "bindPose1.wm[3]";
+connectAttr "cartoonCharacterRN.phl[989]" "skinCluster1.ma[2]";
+connectAttr "cartoonCharacterRN.phl[990]" "skinCluster1.ifcl[2]";
+connectAttr "cartoonCharacterRN.phl[991]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[712].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[992]" "bindPose1.m[4]";
+connectAttr "cartoonCharacterRN.phl[993]" "skinCluster1.lw[3]";
+connectAttr "cartoonCharacterRN.phl[994]" "bindPose1.wm[4]";
+connectAttr "cartoonCharacterRN.phl[995]" "skinCluster1.ma[3]";
+connectAttr "cartoonCharacterRN.phl[996]" "skinCluster1.ifcl[3]";
+connectAttr "cartoonCharacterRN.phl[997]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[332].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[998]" "bindPose1.m[5]";
+connectAttr "cartoonCharacterRN.phl[999]" "skinCluster1.lw[4]";
+connectAttr "cartoonCharacterRN.phl[1000]" "bindPose1.wm[5]";
+connectAttr "cartoonCharacterRN.phl[1001]" "skinCluster1.ma[4]";
+connectAttr "cartoonCharacterRN.phl[1002]" "skinCluster1.ifcl[4]";
+connectAttr "cartoonCharacterRN.phl[1003]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[343].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1004]" "bindPose1.m[6]";
+connectAttr "cartoonCharacterRN.phl[1005]" "skinCluster1.lw[5]";
+connectAttr "cartoonCharacterRN.phl[1006]" "bindPose1.wm[6]";
+connectAttr "cartoonCharacterRN.phl[1007]" "skinCluster1.ma[5]";
+connectAttr "cartoonCharacterRN.phl[1008]" "skinCluster1.ifcl[5]";
+connectAttr "cartoonCharacterRN.phl[1009]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[303].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[232]" "bindPose1.m[35]";
-connectAttr "cartoonCharacterRN.phl[233]" "skinCluster1.lw[34]";
-connectAttr "cartoonCharacterRN.phl[234]" "bindPose1.wm[35]";
-connectAttr "cartoonCharacterRN.phl[235]" "skinCluster1.ma[34]";
-connectAttr "cartoonCharacterRN.phl[236]" "skinCluster1.ifcl[34]";
-connectAttr "cartoonCharacterRN.phl[237]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[733].dn"
+connectAttr "cartoonCharacterRN.phl[1010]" "bindPose1.m[11]";
+connectAttr "cartoonCharacterRN.phl[1011]" "skinCluster1.lw[10]";
+connectAttr "cartoonCharacterRN.phl[1012]" "bindPose1.wm[11]";
+connectAttr "cartoonCharacterRN.phl[1013]" "skinCluster1.ma[10]";
+connectAttr "cartoonCharacterRN.phl[1014]" "skinCluster1.ifcl[10]";
+connectAttr "cartoonCharacterRN.phl[1015]" "skinCluster1.lw[11]";
+connectAttr "cartoonCharacterRN.phl[1016]" "bindPose1.wm[12]";
+connectAttr "cartoonCharacterRN.phl[1017]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[175].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1018]" "bindPose1.m[12]";
+connectAttr "cartoonCharacterRN.phl[1019]" "skinCluster1.ma[11]";
+connectAttr "cartoonCharacterRN.phl[1020]" "skinCluster1.ifcl[11]";
+connectAttr "cartoonCharacterRN.phl[1021]" "cartoonCharacter:L_clav_J.is";
+connectAttr "cartoonCharacterRN.phl[1022]" "skinCluster1.lw[12]";
+connectAttr "cartoonCharacterRN.phl[1023]" "bindPose1.wm[13]";
+connectAttr "cartoonCharacterRN.phl[1024]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[239].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1025]" "bindPose1.m[13]";
+connectAttr "cartoonCharacterRN.phl[1026]" "skinCluster1.ma[12]";
+connectAttr "cartoonCharacterRN.phl[1027]" "skinCluster1.ifcl[12]";
+connectAttr "cartoonCharacterRN.phl[1028]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[564].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1029]" "bindPose1.m[14]";
+connectAttr "cartoonCharacterRN.phl[1030]" "skinCluster1.lw[13]";
+connectAttr "cartoonCharacterRN.phl[1031]" "bindPose1.wm[14]";
+connectAttr "cartoonCharacterRN.phl[1032]" "skinCluster1.ma[13]";
+connectAttr "cartoonCharacterRN.phl[1033]" "skinCluster1.ifcl[13]";
+connectAttr "cartoonCharacterRN.phl[1034]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[259].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1035]" "bindPose1.m[15]";
+connectAttr "cartoonCharacterRN.phl[1036]" "skinCluster1.lw[14]";
+connectAttr "cartoonCharacterRN.phl[1037]" "bindPose1.wm[15]";
+connectAttr "cartoonCharacterRN.phl[1038]" "skinCluster1.ma[14]";
+connectAttr "cartoonCharacterRN.phl[1039]" "skinCluster1.ifcl[14]";
+connectAttr "cartoonCharacterRN.phl[1040]" "RightEye_parentConstraint1.tg[0].tis"
+		;
+connectAttr "cartoonCharacterRN.phl[1041]" "LeftEye_parentConstraint1.tg[0].tis"
+		;
+connectAttr "cartoonCharacterRN.phl[1042]" "glasses_parentConstraint1.tg[0].tis"
+		;
+connectAttr "cartoonCharacterRN.phl[1043]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[322].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1044]" "bindPose1.m[16]";
+connectAttr "cartoonCharacterRN.phl[1045]" "skinCluster1.lw[15]";
+connectAttr "cartoonCharacterRN.phl[1046]" "RightEye_parentConstraint1.tg[0].tt"
+		;
+connectAttr "cartoonCharacterRN.phl[1047]" "LeftEye_parentConstraint1.tg[0].tt";
+connectAttr "cartoonCharacterRN.phl[1048]" "glasses_parentConstraint1.tg[0].tt";
+connectAttr "cartoonCharacterRN.phl[1049]" "RightEye_parentConstraint1.tg[0].tr"
+		;
+connectAttr "cartoonCharacterRN.phl[1050]" "LeftEye_parentConstraint1.tg[0].tr";
+connectAttr "cartoonCharacterRN.phl[1051]" "glasses_parentConstraint1.tg[0].tr";
+connectAttr "cartoonCharacterRN.phl[1052]" "bindPose1.wm[16]";
+connectAttr "cartoonCharacterRN.phl[1053]" "skinCluster1.ma[15]";
+connectAttr "cartoonCharacterRN.phl[1054]" "skinCluster1.ifcl[15]";
+connectAttr "cartoonCharacterRN.phl[1055]" "RightEye_parentConstraint1.tg[0].trp"
 		;
-connectAttr "cartoonCharacterRN.phl[238]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[42].dn"
+connectAttr "cartoonCharacterRN.phl[1056]" "LeftEye_parentConstraint1.tg[0].trp"
 		;
-connectAttr "cartoonCharacterRN.phl[239]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[40].dn"
+connectAttr "cartoonCharacterRN.phl[1057]" "glasses_parentConstraint1.tg[0].trp"
 		;
-connectAttr "cartoonCharacterRN.phl[240]" "LeftEye_aimConstraint1.ct";
-connectAttr "pairBlend2.orx" "cartoonCharacterRN.phl[241]";
-connectAttr "pairBlend2.ory" "cartoonCharacterRN.phl[242]";
-connectAttr "cartoonCharacterRN.phl[243]" "pairBlend2.w";
-connectAttr "cartoonCharacterRN.phl[244]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[64].dn"
+connectAttr "cartoonCharacterRN.phl[1058]" "RightEye_parentConstraint1.tg[0].trt"
 		;
-connectAttr "cartoonCharacterRN.phl[245]" "LeftEye_aimConstraint1.cro";
-connectAttr "cartoonCharacterRN.phl[246]" "pairBlend2.ro";
-connectAttr "cartoonCharacterRN.phl[247]" "LeftEye_aimConstraint1.cpim";
-connectAttr "cartoonCharacterRN.phl[248]" "LeftEye_aimConstraint1.crp";
-connectAttr "cartoonCharacterRN.phl[249]" "LeftEye_aimConstraint1.crt";
-connectAttr "cartoonCharacterRN.phl[250]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[441].dn"
+connectAttr "cartoonCharacterRN.phl[1059]" "LeftEye_parentConstraint1.tg[0].trt"
 		;
-connectAttr "cartoonCharacterRN.phl[251]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[498].dn"
+connectAttr "cartoonCharacterRN.phl[1060]" "glasses_parentConstraint1.tg[0].trt"
 		;
-connectAttr "cartoonCharacterRN.phl[252]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[463].dn"
+connectAttr "cartoonCharacterRN.phl[1061]" "RightEye_parentConstraint1.tg[0].tro"
 		;
-connectAttr "cartoonCharacterRN.phl[253]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[561].dn"
+connectAttr "cartoonCharacterRN.phl[1062]" "LeftEye_parentConstraint1.tg[0].tro"
 		;
-connectAttr "cartoonCharacterRN.phl[254]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[654].dn"
+connectAttr "cartoonCharacterRN.phl[1063]" "glasses_parentConstraint1.tg[0].tro"
 		;
-connectAttr "cartoonCharacterRN.phl[255]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[535].dn"
+connectAttr "cartoonCharacterRN.phl[1064]" "RightEye_parentConstraint1.tg[0].ts"
 		;
-connectAttr "cartoonCharacterRN.phl[256]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[614].dn"
+connectAttr "cartoonCharacterRN.phl[1065]" "LeftEye_parentConstraint1.tg[0].ts";
+connectAttr "cartoonCharacterRN.phl[1066]" "glasses_parentConstraint1.tg[0].ts";
+connectAttr "cartoonCharacterRN.phl[1067]" "glasses_scaleConstraint1.tg[0].ts";
+connectAttr "cartoonCharacterRN.phl[1068]" "RightEye_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "cartoonCharacterRN.phl[1069]" "LeftEye_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "cartoonCharacterRN.phl[1070]" "glasses_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "cartoonCharacterRN.phl[1071]" "glasses_scaleConstraint1.tg[0].tpm";
+connectAttr "cartoonCharacterRN.phl[1072]" "RightEye_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "cartoonCharacterRN.phl[1073]" "LeftEye_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "cartoonCharacterRN.phl[1074]" "glasses_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "cartoonCharacterRN.phl[1075]" "RightEye_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "cartoonCharacterRN.phl[1076]" "LeftEye_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "cartoonCharacterRN.phl[1077]" "glasses_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "cartoonCharacterRN.phl[1078]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[123].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1079]" "bindPose1.m[17]";
+connectAttr "cartoonCharacterRN.phl[1080]" "skinCluster1.lw[16]";
+connectAttr "cartoonCharacterRN.phl[1081]" "bindPose1.wm[17]";
+connectAttr "cartoonCharacterRN.phl[1082]" "skinCluster1.ma[16]";
+connectAttr "cartoonCharacterRN.phl[1083]" "skinCluster1.ifcl[16]";
+connectAttr "cartoonCharacterRN.phl[1084]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[518].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1085]" "bindPose1.m[18]";
+connectAttr "cartoonCharacterRN.phl[1086]" "skinCluster1.lw[17]";
+connectAttr "cartoonCharacterRN.phl[1087]" "bindPose1.wm[18]";
+connectAttr "cartoonCharacterRN.phl[1088]" "skinCluster1.ma[17]";
+connectAttr "cartoonCharacterRN.phl[1089]" "skinCluster1.ifcl[17]";
+connectAttr "cartoonCharacterRN.phl[1090]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[34].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1091]" "bindPose1.m[19]";
+connectAttr "cartoonCharacterRN.phl[1092]" "skinCluster1.lw[18]";
+connectAttr "cartoonCharacterRN.phl[1093]" "bindPose1.wm[19]";
+connectAttr "cartoonCharacterRN.phl[1094]" "skinCluster1.ma[18]";
+connectAttr "cartoonCharacterRN.phl[1095]" "skinCluster1.ifcl[18]";
+connectAttr "cartoonCharacterRN.phl[1096]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1097]" "bindPose1.m[20]";
+connectAttr "cartoonCharacterRN.phl[1098]" "skinCluster1.lw[19]";
+connectAttr "cartoonCharacterRN.phl[1099]" "bindPose1.wm[20]";
+connectAttr "cartoonCharacterRN.phl[1100]" "skinCluster1.ma[19]";
+connectAttr "cartoonCharacterRN.phl[1101]" "skinCluster1.ifcl[19]";
+connectAttr "cartoonCharacterRN.phl[1102]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[702].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1103]" "bindPose1.m[21]";
+connectAttr "cartoonCharacterRN.phl[1104]" "skinCluster1.lw[20]";
+connectAttr "cartoonCharacterRN.phl[1105]" "bindPose1.wm[21]";
+connectAttr "cartoonCharacterRN.phl[1106]" "skinCluster1.ma[20]";
+connectAttr "cartoonCharacterRN.phl[1107]" "skinCluster1.ifcl[20]";
+connectAttr "cartoonCharacterRN.phl[1108]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[487].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1109]" "bindPose1.m[22]";
+connectAttr "cartoonCharacterRN.phl[1110]" "skinCluster1.lw[21]";
+connectAttr "cartoonCharacterRN.phl[1111]" "bindPose1.wm[22]";
+connectAttr "cartoonCharacterRN.phl[1112]" "skinCluster1.ma[21]";
+connectAttr "cartoonCharacterRN.phl[1113]" "skinCluster1.ifcl[21]";
+connectAttr "cartoonCharacterRN.phl[1114]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[260].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1115]" "bindPose1.m[23]";
+connectAttr "cartoonCharacterRN.phl[1116]" "skinCluster1.lw[22]";
+connectAttr "cartoonCharacterRN.phl[1117]" "bindPose1.wm[23]";
+connectAttr "cartoonCharacterRN.phl[1118]" "skinCluster1.ma[22]";
+connectAttr "cartoonCharacterRN.phl[1119]" "skinCluster1.ifcl[22]";
+connectAttr "cartoonCharacterRN.phl[1120]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[183].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1121]" "bindPose1.m[24]";
+connectAttr "cartoonCharacterRN.phl[1122]" "skinCluster1.lw[23]";
+connectAttr "cartoonCharacterRN.phl[1123]" "bindPose1.wm[24]";
+connectAttr "cartoonCharacterRN.phl[1124]" "skinCluster1.ma[23]";
+connectAttr "cartoonCharacterRN.phl[1125]" "skinCluster1.ifcl[23]";
+connectAttr "cartoonCharacterRN.phl[1126]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[515].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1127]" "bindPose1.m[25]";
+connectAttr "cartoonCharacterRN.phl[1128]" "skinCluster1.lw[24]";
+connectAttr "cartoonCharacterRN.phl[1129]" "bindPose1.wm[25]";
+connectAttr "cartoonCharacterRN.phl[1130]" "skinCluster1.ma[24]";
+connectAttr "cartoonCharacterRN.phl[1131]" "skinCluster1.ifcl[24]";
+connectAttr "cartoonCharacterRN.phl[1132]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[116].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1133]" "bindPose1.m[26]";
+connectAttr "cartoonCharacterRN.phl[1134]" "skinCluster1.lw[25]";
+connectAttr "cartoonCharacterRN.phl[1135]" "bindPose1.wm[26]";
+connectAttr "cartoonCharacterRN.phl[1136]" "skinCluster1.ma[25]";
+connectAttr "cartoonCharacterRN.phl[1137]" "skinCluster1.ifcl[25]";
+connectAttr "cartoonCharacterRN.phl[1138]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[699].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1139]" "bindPose1.m[27]";
+connectAttr "cartoonCharacterRN.phl[1140]" "skinCluster1.lw[26]";
+connectAttr "cartoonCharacterRN.phl[1141]" "bindPose1.wm[27]";
+connectAttr "cartoonCharacterRN.phl[1142]" "skinCluster1.ma[26]";
+connectAttr "cartoonCharacterRN.phl[1143]" "skinCluster1.ifcl[26]";
+connectAttr "cartoonCharacterRN.phl[1144]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[488].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1145]" "bindPose1.m[28]";
+connectAttr "cartoonCharacterRN.phl[1146]" "skinCluster1.lw[27]";
+connectAttr "cartoonCharacterRN.phl[1147]" "bindPose1.wm[28]";
+connectAttr "cartoonCharacterRN.phl[1148]" "skinCluster1.ma[27]";
+connectAttr "cartoonCharacterRN.phl[1149]" "skinCluster1.ifcl[27]";
+connectAttr "cartoonCharacterRN.phl[1150]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[73].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1151]" "bindPose1.m[29]";
+connectAttr "cartoonCharacterRN.phl[1152]" "skinCluster1.lw[28]";
+connectAttr "cartoonCharacterRN.phl[1153]" "bindPose1.wm[29]";
+connectAttr "cartoonCharacterRN.phl[1154]" "skinCluster1.ma[28]";
+connectAttr "cartoonCharacterRN.phl[1155]" "skinCluster1.ifcl[28]";
+connectAttr "cartoonCharacterRN.phl[1156]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[53].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1157]" "bindPose1.m[30]";
+connectAttr "cartoonCharacterRN.phl[1158]" "skinCluster1.lw[29]";
+connectAttr "cartoonCharacterRN.phl[1159]" "bindPose1.wm[30]";
+connectAttr "cartoonCharacterRN.phl[1160]" "skinCluster1.ma[29]";
+connectAttr "cartoonCharacterRN.phl[1161]" "skinCluster1.ifcl[29]";
+connectAttr "cartoonCharacterRN.phl[1162]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[237].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1163]" "bindPose1.m[31]";
+connectAttr "cartoonCharacterRN.phl[1164]" "skinCluster1.lw[30]";
+connectAttr "cartoonCharacterRN.phl[1165]" "bindPose1.wm[31]";
+connectAttr "cartoonCharacterRN.phl[1166]" "skinCluster1.ma[30]";
+connectAttr "cartoonCharacterRN.phl[1167]" "skinCluster1.ifcl[30]";
+connectAttr "cartoonCharacterRN.phl[1168]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[511].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1169]" "bindPose1.m[32]";
+connectAttr "cartoonCharacterRN.phl[1170]" "skinCluster1.lw[31]";
+connectAttr "cartoonCharacterRN.phl[1171]" "bindPose1.wm[32]";
+connectAttr "cartoonCharacterRN.phl[1172]" "skinCluster1.ma[31]";
+connectAttr "cartoonCharacterRN.phl[1173]" "skinCluster1.ifcl[31]";
+connectAttr "cartoonCharacterRN.phl[1174]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[549].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1175]" "bindPose1.m[33]";
+connectAttr "cartoonCharacterRN.phl[1176]" "skinCluster1.lw[32]";
+connectAttr "cartoonCharacterRN.phl[1177]" "bindPose1.wm[33]";
+connectAttr "cartoonCharacterRN.phl[1178]" "skinCluster1.ma[32]";
+connectAttr "cartoonCharacterRN.phl[1179]" "skinCluster1.ifcl[32]";
+connectAttr "cartoonCharacterRN.phl[1180]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[666].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1181]" "bindPose1.m[34]";
+connectAttr "cartoonCharacterRN.phl[1182]" "skinCluster1.lw[33]";
+connectAttr "cartoonCharacterRN.phl[1183]" "bindPose1.wm[34]";
+connectAttr "cartoonCharacterRN.phl[1184]" "skinCluster1.ma[33]";
+connectAttr "cartoonCharacterRN.phl[1185]" "skinCluster1.ifcl[33]";
+connectAttr "cartoonCharacterRN.phl[1186]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[274].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1187]" "bindPose1.m[35]";
+connectAttr "cartoonCharacterRN.phl[1188]" "skinCluster1.lw[34]";
+connectAttr "cartoonCharacterRN.phl[1189]" "bindPose1.wm[35]";
+connectAttr "cartoonCharacterRN.phl[1190]" "skinCluster1.ma[34]";
+connectAttr "cartoonCharacterRN.phl[1191]" "skinCluster1.ifcl[34]";
+connectAttr "cartoonCharacterRN.phl[1192]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[565].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1193]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[228].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1194]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[165].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1195]" "LeftEye_aimConstraint1.ct";
+connectAttr "pairBlend4.otx" "cartoonCharacterRN.phl[1196]";
+connectAttr "pairBlend4.otz" "cartoonCharacterRN.phl[1197]";
+connectAttr "pairBlend4.oty" "cartoonCharacterRN.phl[1198]";
+connectAttr "pairBlend2.orx" "cartoonCharacterRN.phl[1199]";
+connectAttr "pairBlend2.ory" "cartoonCharacterRN.phl[1200]";
+connectAttr "pairBlend4.orz" "cartoonCharacterRN.phl[1201]";
+connectAttr "cartoonCharacterRN.phl[1202]" "pairBlend2.w";
+connectAttr "cartoonCharacterRN.phl[1203]" "pairBlend4.w";
+connectAttr "cartoonCharacterRN.phl[1204]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[673].dn"
+		;
+connectAttr "cartoonCharacterRN.phl[1205]" "LeftEye_aimConstraint1.cro";
+connectAttr "cartoonCharacterRN.phl[1206]" "pairBlend2.ro";
+connectAttr "cartoonCharacterRN.phl[1207]" "pairBlend4.ro";
+connectAttr "cartoonCharacterRN.phl[1208]" "LeftEye_parentConstraint1.cro";
+connectAttr "cartoonCharacterRN.phl[1209]" "LeftEye_aimConstraint1.cpim";
+connectAttr "cartoonCharacterRN.phl[1210]" "LeftEye_parentConstraint1.cpim";
+connectAttr "cartoonCharacterRN.phl[1211]" "LeftEye_aimConstraint1.crp";
+connectAttr "cartoonCharacterRN.phl[1212]" "LeftEye_parentConstraint1.crp";
+connectAttr "cartoonCharacterRN.phl[1213]" "LeftEye_aimConstraint1.crt";
+connectAttr "cartoonCharacterRN.phl[1214]" "LeftEye_parentConstraint1.crt";
+connectAttr "cartoonCharacterRN.phl[1215]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[607].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[257]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[350].dn"
+connectAttr "cartoonCharacterRN.phl[1216]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[740].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[258]" "RightEye_aimConstraint1.ct";
-connectAttr "pairBlend1.orx" "cartoonCharacterRN.phl[259]";
-connectAttr "pairBlend1.ory" "cartoonCharacterRN.phl[260]";
-connectAttr "cartoonCharacterRN.phl[261]" "pairBlend1.w";
-connectAttr "cartoonCharacterRN.phl[262]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[506].dn"
+connectAttr "cartoonCharacterRN.phl[1217]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[202].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[263]" "RightEye_aimConstraint1.cro";
-connectAttr "cartoonCharacterRN.phl[264]" "pairBlend1.ro";
-connectAttr "cartoonCharacterRN.phl[265]" "RightEye_aimConstraint1.cpim";
-connectAttr "cartoonCharacterRN.phl[266]" "RightEye_aimConstraint1.crp";
-connectAttr "cartoonCharacterRN.phl[267]" "RightEye_aimConstraint1.crt";
-connectAttr "cartoonCharacterRN.phl[268]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[259].dn"
+connectAttr "cartoonCharacterRN.phl[1218]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[454].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[269]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[748].dn"
+connectAttr "cartoonCharacterRN.phl[1219]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[294].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[270]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[199].dn"
+connectAttr "cartoonCharacterRN.phl[1220]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[628].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[271]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[197].dn"
+connectAttr "cartoonCharacterRN.phl[1221]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[547].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[272]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[73].dn"
+connectAttr "cartoonCharacterRN.phl[1222]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[90].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[273]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[749].dn"
+connectAttr "cartoonCharacterRN.phl[1223]" "RightEye_aimConstraint1.ct";
+connectAttr "pairBlend3.otx" "cartoonCharacterRN.phl[1224]";
+connectAttr "pairBlend3.otz" "cartoonCharacterRN.phl[1225]";
+connectAttr "pairBlend3.oty" "cartoonCharacterRN.phl[1226]";
+connectAttr "pairBlend1.orx" "cartoonCharacterRN.phl[1227]";
+connectAttr "pairBlend1.ory" "cartoonCharacterRN.phl[1228]";
+connectAttr "pairBlend3.orz" "cartoonCharacterRN.phl[1229]";
+connectAttr "cartoonCharacterRN.phl[1230]" "pairBlend1.w";
+connectAttr "cartoonCharacterRN.phl[1231]" "pairBlend3.w";
+connectAttr "cartoonCharacterRN.phl[1232]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[324].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[274]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[491].dn"
+connectAttr "cartoonCharacterRN.phl[1233]" "RightEye_aimConstraint1.cro";
+connectAttr "cartoonCharacterRN.phl[1234]" "pairBlend1.ro";
+connectAttr "cartoonCharacterRN.phl[1235]" "pairBlend3.ro";
+connectAttr "cartoonCharacterRN.phl[1236]" "RightEye_parentConstraint1.cro";
+connectAttr "cartoonCharacterRN.phl[1237]" "RightEye_aimConstraint1.cpim";
+connectAttr "cartoonCharacterRN.phl[1238]" "RightEye_parentConstraint1.cpim";
+connectAttr "cartoonCharacterRN.phl[1239]" "RightEye_aimConstraint1.crp";
+connectAttr "cartoonCharacterRN.phl[1240]" "RightEye_parentConstraint1.crp";
+connectAttr "cartoonCharacterRN.phl[1241]" "RightEye_aimConstraint1.crt";
+connectAttr "cartoonCharacterRN.phl[1242]" "RightEye_parentConstraint1.crt";
+connectAttr "cartoonCharacterRN.phl[1243]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[85].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[275]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[567].dn"
+connectAttr "cartoonCharacterRN.phl[1244]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[562].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[276]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[658].dn"
+connectAttr "cartoonCharacterRN.phl[1245]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[682].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[277]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[90].dn"
+connectAttr "cartoonCharacterRN.phl[1246]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[397].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[278]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[94].dn"
+connectAttr "cartoonCharacterRN.phl[1247]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[79].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[279]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[639].dn"
+connectAttr "glasses_parentConstraint1.ctz" "cartoonCharacterRN.phl[1248]";
+connectAttr "glasses_parentConstraint1.ctx" "cartoonCharacterRN.phl[1249]";
+connectAttr "glasses_parentConstraint1.cty" "cartoonCharacterRN.phl[1250]";
+connectAttr "glasses_parentConstraint1.crz" "cartoonCharacterRN.phl[1251]";
+connectAttr "glasses_parentConstraint1.crx" "cartoonCharacterRN.phl[1252]";
+connectAttr "glasses_parentConstraint1.cry" "cartoonCharacterRN.phl[1253]";
+connectAttr "cartoonCharacterRN.phl[1254]" "glasses_parentConstraint1.cro";
+connectAttr "cartoonCharacterRN.phl[1255]" "glasses_parentConstraint1.cpim";
+connectAttr "cartoonCharacterRN.phl[1256]" "glasses_scaleConstraint1.cpim";
+connectAttr "cartoonCharacterRN.phl[1257]" "glasses_parentConstraint1.crp";
+connectAttr "cartoonCharacterRN.phl[1258]" "glasses_parentConstraint1.crt";
+connectAttr "glasses_scaleConstraint1.csx" "cartoonCharacterRN.phl[1259]";
+connectAttr "glasses_scaleConstraint1.csy" "cartoonCharacterRN.phl[1260]";
+connectAttr "glasses_scaleConstraint1.csz" "cartoonCharacterRN.phl[1261]";
+connectAttr "cartoonCharacterRN.phl[1262]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[368].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[280]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[34].dn"
+connectAttr "cartoonCharacterRN.phl[1263]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[191].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[281]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[242].dn"
+connectAttr "cartoonCharacterRN.phl[1264]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[376].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[282]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[117].dn"
+connectAttr "cartoonCharacterRN.phl[1265]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[573].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[283]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[50].dn"
+connectAttr "cartoonCharacterRN.phl[1266]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[653].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[284]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[523].dn"
+connectAttr "cartoonCharacterRN.phl[1267]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[451].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[285]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[353].dn"
+connectAttr "cartoonCharacterRN.phl[1268]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[212].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[286]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[516].dn"
+connectAttr "cartoonCharacterRN.phl[1269]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[327].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[287]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[320].dn"
+connectAttr "cartoonCharacterRN.phl[1270]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[122].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[288]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "cartoonCharacterRN.phl[1271]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[684].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[289]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[46].dn"
+connectAttr "cartoonCharacterRN.phl[1272]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[633].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[290]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[629].dn"
+connectAttr "cartoonCharacterRN.phl[1273]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[695].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[291]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[129].dn"
+connectAttr "cartoonCharacterRN.phl[1274]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[676].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[292]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[39].dn"
+connectAttr "cartoonCharacterRN.phl[1275]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[316].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[293]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[41].dn"
+connectAttr "cartoonCharacterRN.phl[1276]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[604].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[294]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[747].dn"
+connectAttr "cartoonCharacterRN.phl[1277]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[345].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[295]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[148].dn"
+connectAttr "cartoonCharacterRN.phl[1278]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[309].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[296]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[268].dn"
+connectAttr "cartoonCharacterRN.phl[1279]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[663].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[297]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[228].dn"
+connectAttr "cartoonCharacterRN.phl[1280]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[298]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "cartoonCharacterRN.phl[1281]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[253].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[299]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[717].dn"
+connectAttr "cartoonCharacterRN.phl[1282]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[731].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[300]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[773].dn"
+connectAttr "cartoonCharacterRN.phl[1283]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[509].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[301]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[696].dn"
+connectAttr "cartoonCharacterRN.phl[1284]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[374].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[302]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[432].dn"
+connectAttr "cartoonCharacterRN.phl[1285]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[254].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[303]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[348].dn"
+connectAttr "cartoonCharacterRN.phl[1286]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[472].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[304]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[346].dn"
+connectAttr "cartoonCharacterRN.phl[1287]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[125].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[305]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[68].dn"
+connectAttr "cartoonCharacterRN.phl[1288]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[257].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[306]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[254].dn"
+connectAttr "cartoonCharacterRN.phl[1289]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[567].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[307]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[233].dn"
+connectAttr "cartoonCharacterRN.phl[1290]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[656].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[308]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[459].dn"
+connectAttr "cartoonCharacterRN.phl[1291]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[394].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[309]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[701].dn"
+connectAttr "cartoonCharacterRN.phl[1292]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[670].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[310]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[468].dn"
+connectAttr "cartoonCharacterRN.phl[1293]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[311]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[472].dn"
+connectAttr "cartoonCharacterRN.phl[1294]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[626].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[312]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[566].dn"
+connectAttr "cartoonCharacterRN.phl[1295]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[527].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[313]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+connectAttr "cartoonCharacterRN.phl[1296]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[95].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[314]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[281].dn"
+connectAttr "cartoonCharacterRN.phl[1297]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[407].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[315]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[301].dn"
+connectAttr "cartoonCharacterRN.phl[1298]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[167].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[316]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[351].dn"
+connectAttr "cartoonCharacterRN.phl[1299]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[588].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[317]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+connectAttr "cartoonCharacterRN.phl[1300]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[711].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[318]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[768].dn"
+connectAttr "cartoonCharacterRN.phl[1301]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[385].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[319]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[115].dn"
+connectAttr "cartoonCharacterRN.phl[1302]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[551].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[320]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[427].dn"
+connectAttr "cartoonCharacterRN.phl[1303]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[445].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[321]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[570].dn"
+connectAttr "cartoonCharacterRN.phl[1304]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[637].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[322]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[574].dn"
+connectAttr "cartoonCharacterRN.phl[1305]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[568].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[323]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[47].dn"
+connectAttr "cartoonCharacterRN.phl[1306]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[324]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[196].dn"
+connectAttr "cartoonCharacterRN.phl[1307]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[325]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[632].dn"
+connectAttr "cartoonCharacterRN.phl[1308]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[128].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[326]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[388].dn"
+connectAttr "cartoonCharacterRN.phl[1309]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[531].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[327]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[484].dn"
+connectAttr "cartoonCharacterRN.phl[1310]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[353].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[328]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[776].dn"
+connectAttr "cartoonCharacterRN.phl[1311]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[250].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[329]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[145].dn"
+connectAttr "cartoonCharacterRN.phl[1312]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[157].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[330]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[163].dn"
+connectAttr "cartoonCharacterRN.phl[1313]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[554].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[331]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[461].dn"
+connectAttr "cartoonCharacterRN.phl[1314]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[645].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[332]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
+connectAttr "cartoonCharacterRN.phl[1315]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[520].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[333]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[710].dn"
+connectAttr "cartoonCharacterRN.phl[1316]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[152].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[334]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[645].dn"
+connectAttr "cartoonCharacterRN.phl[1317]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[54].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[335]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[564].dn"
+connectAttr "cartoonCharacterRN.phl[1318]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[427].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[336]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[222].dn"
+connectAttr "cartoonCharacterRN.phl[1319]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[43].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[337]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "cartoonCharacterRN.phl[1320]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[390].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[338]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[45].dn"
+connectAttr "cartoonCharacterRN.phl[1321]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[517].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[339]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[672].dn"
+connectAttr "cartoonCharacterRN.phl[1322]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[719].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[340]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[495].dn"
+connectAttr "cartoonCharacterRN.phl[1323]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[64].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[341]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[272].dn"
+connectAttr "cartoonCharacterRN.phl[1324]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[579].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[342]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[232].dn"
+connectAttr "cartoonCharacterRN.phl[1325]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[558].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[343]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[549].dn"
+connectAttr "cartoonCharacterRN.phl[1326]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[466].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[344]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[237].dn"
+connectAttr "cartoonCharacterRN.phl[1327]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[279].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[345]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[260].dn"
+connectAttr "cartoonCharacterRN.phl[1328]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[359].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[346]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[707].dn"
+connectAttr "cartoonCharacterRN.phl[1329]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[158].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[347]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[143].dn"
+connectAttr "cartoonCharacterRN.phl[1330]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[362].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[348]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[383].dn"
+connectAttr "cartoonCharacterRN.phl[1331]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[642].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[349]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[646].dn"
+connectAttr "cartoonCharacterRN.phl[1332]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[378].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[350]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[340].dn"
+connectAttr "cartoonCharacterRN.phl[1333]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[184].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[351]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+connectAttr "cartoonCharacterRN.phl[1334]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[60].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[352]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[471].dn"
+connectAttr "cartoonCharacterRN.phl[1335]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[241].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[353]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[744].dn"
+connectAttr "cartoonCharacterRN.phl[1336]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[275].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[354]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[503].dn"
+connectAttr "cartoonCharacterRN.phl[1337]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[665].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[355]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[72].dn"
+connectAttr "cartoonCharacterRN.phl[1338]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[94].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[356]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[598].dn"
+connectAttr "cartoonCharacterRN.phl[1339]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[285].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[357]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[369].dn"
+connectAttr "cartoonCharacterRN.phl[1340]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[476].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[358]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[142].dn"
+connectAttr "cartoonCharacterRN.phl[1341]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[213].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[359]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[494].dn"
+connectAttr "cartoonCharacterRN.phl[1342]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[187].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[360]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[424].dn"
+connectAttr "cartoonCharacterRN.phl[1343]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[582].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[361]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[139].dn"
+connectAttr "cartoonCharacterRN.phl[1344]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[386].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[362]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[221].dn"
+connectAttr "cartoonCharacterRN.phl[1345]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[405].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[363]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[770].dn"
+connectAttr "cartoonCharacterRN.phl[1346]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[416].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[364]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[365].dn"
+connectAttr "cartoonCharacterRN.phl[1347]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[66].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[365]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[61].dn"
+connectAttr "cartoonCharacterRN.phl[1348]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[236].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[366]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[608].dn"
+connectAttr "cartoonCharacterRN.phl[1349]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[380].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[367]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[767].dn"
+connectAttr "cartoonCharacterRN.phl[1350]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[569].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[368]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[586].dn"
+connectAttr "cartoonCharacterRN.phl[1351]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[528].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[369]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[79].dn"
+connectAttr "cartoonCharacterRN.phl[1352]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[35].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[370]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[464].dn"
+connectAttr "cartoonCharacterRN.phl[1353]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[318].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[371]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[210].dn"
+connectAttr "cartoonCharacterRN.phl[1354]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[464].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[372]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[739].dn"
+connectAttr "cartoonCharacterRN.phl[1355]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[574].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[373]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[56].dn"
+connectAttr "cartoonCharacterRN.phl[1356]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[358].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[374]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[581].dn"
+connectAttr "cartoonCharacterRN.phl[1357]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[614].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[375]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[98].dn"
+connectAttr "cartoonCharacterRN.phl[1358]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[190].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[376]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[585].dn"
+connectAttr "cartoonCharacterRN.phl[1359]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[384].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[377]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[397].dn"
+connectAttr "cartoonCharacterRN.phl[1360]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[200].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[378]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[665].dn"
+connectAttr "cartoonCharacterRN.phl[1361]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[433].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[379]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[636].dn"
+connectAttr "cartoonCharacterRN.phl[1362]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[108].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[380]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[687].dn"
+connectAttr "cartoonCharacterRN.phl[1363]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[381]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[244].dn"
+connectAttr "cartoonCharacterRN.phl[1364]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[178].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[382]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[185].dn"
+connectAttr "cartoonCharacterRN.phl[1365]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[662].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[383]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[575].dn"
+connectAttr "cartoonCharacterRN.phl[1366]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[384]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[759].dn"
+connectAttr "cartoonCharacterRN.phl[1367]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[395].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[385]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[303].dn"
+connectAttr "cartoonCharacterRN.phl[1368]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[593].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[386]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[368].dn"
+connectAttr "cartoonCharacterRN.phl[1369]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[485].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[387]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[332].dn"
+connectAttr "cartoonCharacterRN.phl[1370]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[177].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[388]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[420].dn"
+connectAttr "cartoonCharacterRN.phl[1371]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[389]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[171].dn"
+connectAttr "cartoonCharacterRN.phl[1372]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[559].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[390]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[165].dn"
+connectAttr "cartoonCharacterRN.phl[1373]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[462].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[391]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[602].dn"
+connectAttr "cartoonCharacterRN.phl[1374]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[238].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[392]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[737].dn"
+connectAttr "cartoonCharacterRN.phl[1375]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[523].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[393]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[426].dn"
+connectAttr "cartoonCharacterRN.phl[1376]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[585].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[394]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[688].dn"
+connectAttr "cartoonCharacterRN.phl[1377]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[631].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[395]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[78].dn"
+connectAttr "cartoonCharacterRN.phl[1378]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[299].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[396]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[425].dn"
+connectAttr "cartoonCharacterRN.phl[1379]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[440].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[397]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[337].dn"
+connectAttr "cartoonCharacterRN.phl[1380]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[749].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[398]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[510].dn"
+connectAttr "cartoonCharacterRN.phl[1381]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[261].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[399]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[521].dn"
+connectAttr "cartoonCharacterRN.phl[1382]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[505].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[400]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[723].dn"
+connectAttr "cartoonCharacterRN.phl[1383]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[49].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[401]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[193].dn"
+connectAttr "cartoonCharacterRN.phl[1384]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[410].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[402]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[290].dn"
+connectAttr "cartoonCharacterRN.phl[1385]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[118].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[403]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[603].dn"
+connectAttr "cartoonCharacterRN.phl[1386]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[720].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[404]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[542].dn"
+connectAttr "cartoonCharacterRN.phl[1387]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[671].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[405]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[367].dn"
+connectAttr "cartoonCharacterRN.phl[1388]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[473].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[406]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[154].dn"
+connectAttr "cartoonCharacterRN.phl[1389]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[407]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[328].dn"
+connectAttr "cartoonCharacterRN.phl[1390]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[193].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[408]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[538].dn"
+connectAttr "cartoonCharacterRN.phl[1391]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[216].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[409]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[55].dn"
+connectAttr "cartoonCharacterRN.phl[1392]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[400].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[410]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[746].dn"
+connectAttr "cartoonCharacterRN.phl[1393]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[524].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[411]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[361].dn"
+connectAttr "cartoonCharacterRN.phl[1394]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[265].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[412]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[649].dn"
+connectAttr "cartoonCharacterRN.phl[1395]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[404].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[413]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[558].dn"
+connectAttr "cartoonCharacterRN.phl[1396]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[592].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[414]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[720].dn"
+connectAttr "cartoonCharacterRN.phl[1397]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[700].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[415]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[339].dn"
+connectAttr "cartoonCharacterRN.phl[1398]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[590].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[416]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[408].dn"
+connectAttr "cartoonCharacterRN.phl[1399]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[486].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[417]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[703].dn"
+connectAttr "cartoonCharacterRN.phl[1400]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[591].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[418]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+connectAttr "cartoonCharacterRN.phl[1401]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[136].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[419]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[612].dn"
+connectAttr "cartoonCharacterRN.phl[1402]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[725].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[420]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[530].dn"
+connectAttr "cartoonCharacterRN.phl[1403]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[402].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[421]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[176].dn"
+connectAttr "cartoonCharacterRN.phl[1404]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[422]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[727].dn"
+connectAttr "cartoonCharacterRN.phl[1405]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[224].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[423]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[448].dn"
+connectAttr "cartoonCharacterRN.phl[1406]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[657].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[424]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[390].dn"
+connectAttr "cartoonCharacterRN.phl[1407]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[304].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[425]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[618].dn"
+connectAttr "cartoonCharacterRN.phl[1408]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[389].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[426]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[389].dn"
+connectAttr "cartoonCharacterRN.phl[1409]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[526].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[427]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[743].dn"
+connectAttr "cartoonCharacterRN.phl[1410]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[229].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[428]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[151].dn"
+connectAttr "cartoonCharacterRN.phl[1411]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[100].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[429]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[546].dn"
+connectAttr "cartoonCharacterRN.phl[1412]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[242].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[430]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[504].dn"
+connectAttr "cartoonCharacterRN.phl[1413]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[120].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[431]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[173].dn"
+connectAttr "cartoonCharacterRN.phl[1414]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[312].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[432]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[526].dn"
+connectAttr "cartoonCharacterRN.phl[1415]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[314].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[433]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[89].dn"
+connectAttr "cartoonCharacterRN.phl[1416]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[62].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[434]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[123].dn"
+connectAttr "cartoonCharacterRN.phl[1417]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[734].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[435]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[662].dn"
+connectAttr "cartoonCharacterRN.phl[1418]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[478].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[436]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[377].dn"
+connectAttr "cartoonCharacterRN.phl[1419]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[278].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[437]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[657].dn"
+connectAttr "cartoonCharacterRN.phl[1420]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[354].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[438]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[456].dn"
+connectAttr "cartoonCharacterRN.phl[1421]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[624].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[439]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[284].dn"
+connectAttr "cartoonCharacterRN.phl[1422]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[730].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[440]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[548].dn"
+connectAttr "cartoonCharacterRN.phl[1423]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[747].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[441]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[177].dn"
+connectAttr "cartoonCharacterRN.phl[1424]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[575].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[442]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[248].dn"
+connectAttr "cartoonCharacterRN.phl[1425]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[555].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[443]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[405].dn"
+connectAttr "cartoonCharacterRN.phl[1426]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[234].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[444]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[667].dn"
+connectAttr "cartoonCharacterRN.phl[1427]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[457].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[445]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[106].dn"
+connectAttr "cartoonCharacterRN.phl[1428]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[542].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[446]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[381].dn"
+connectAttr "cartoonCharacterRN.phl[1429]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[596].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[447]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[554].dn"
+connectAttr "cartoonCharacterRN.phl[1430]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[78].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[448]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[307].dn"
+connectAttr "cartoonCharacterRN.phl[1431]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[667].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[449]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[70].dn"
+connectAttr "cartoonCharacterRN.phl[1432]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[300].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[450]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[544].dn"
+connectAttr "cartoonCharacterRN.phl[1433]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[453].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[451]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[430].dn"
+connectAttr "cartoonCharacterRN.phl[1434]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[207].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[452]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[235].dn"
+connectAttr "cartoonCharacterRN.phl[1435]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[289].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[453]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[563].dn"
+connectAttr "cartoonCharacterRN.phl[1436]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[454]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[755].dn"
+connectAttr "cartoonCharacterRN.phl[1437]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[148].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[455]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[149].dn"
+connectAttr "cartoonCharacterRN.phl[1438]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[83].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[456]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[195].dn"
+connectAttr "cartoonCharacterRN.phl[1439]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[194].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[457]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[738].dn"
+connectAttr "cartoonCharacterRN.phl[1440]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[641].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[458]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[162].dn"
+connectAttr "cartoonCharacterRN.phl[1441]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[71].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[459]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[310].dn"
+connectAttr "cartoonCharacterRN.phl[1442]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[330].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[460]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[155].dn"
+connectAttr "cartoonCharacterRN.phl[1443]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[447].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[461]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[263].dn"
+connectAttr "cartoonCharacterRN.phl[1444]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[145].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[462]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[229].dn"
+connectAttr "cartoonCharacterRN.phl[1445]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[230].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[463]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[317].dn"
+connectAttr "cartoonCharacterRN.phl[1446]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[367].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[464]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[611].dn"
+connectAttr "cartoonCharacterRN.phl[1447]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[101].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[465]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[758].dn"
+connectAttr "cartoonCharacterRN.phl[1448]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[50].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[466]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[172].dn"
+connectAttr "cartoonCharacterRN.phl[1449]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[717].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[467]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[375].dn"
+connectAttr "cartoonCharacterRN.phl[1450]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[521].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[468]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[685].dn"
+connectAttr "cartoonCharacterRN.phl[1451]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[506].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[469]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[384].dn"
+connectAttr "cartoonCharacterRN.phl[1452]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[176].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[470]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[333].dn"
+connectAttr "cartoonCharacterRN.phl[1453]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[716].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[471]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "cartoonCharacterRN.phl[1454]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[724].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[472]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[184].dn"
+connectAttr "cartoonCharacterRN.phl[1455]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[448].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[473]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[626].dn"
+connectAttr "cartoonCharacterRN.phl[1456]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[169].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[474]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[355].dn"
+connectAttr "cartoonCharacterRN.phl[1457]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[255].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[475]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[732].dn"
+connectAttr "cartoonCharacterRN.phl[1458]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[739].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[476]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[245].dn"
+connectAttr "cartoonCharacterRN.phl[1459]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[634].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[477]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[329].dn"
+connectAttr "cartoonCharacterRN.phl[1460]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[76].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[478]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[663].dn"
+connectAttr "cartoonCharacterRN.phl[1461]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[45].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[479]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[274].dn"
+connectAttr "cartoonCharacterRN.phl[1462]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[270].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[480]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[215].dn"
+connectAttr "cartoonCharacterRN.phl[1463]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[117].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[481]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[550].dn"
+connectAttr "cartoonCharacterRN.phl[1464]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[649].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[482]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[488].dn"
+connectAttr "cartoonCharacterRN.phl[1465]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[703].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[483]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[596].dn"
+connectAttr "cartoonCharacterRN.phl[1466]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[269].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[484]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[362].dn"
+connectAttr "cartoonCharacterRN.phl[1467]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[461].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[485]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[568].dn"
+connectAttr "cartoonCharacterRN.phl[1468]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[556].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[486]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[752].dn"
+connectAttr "cartoonCharacterRN.phl[1469]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[106].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[487]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[269].dn"
+connectAttr "cartoonCharacterRN.phl[1470]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[744].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[488]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[403].dn"
+connectAttr "cartoonCharacterRN.phl[1471]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[597].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[489]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[493].dn"
+connectAttr "cartoonCharacterRN.phl[1472]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[490]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[409].dn"
+connectAttr "cartoonCharacterRN.phl[1473]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[491]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[91].dn"
+connectAttr "cartoonCharacterRN.phl[1474]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[640].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[492]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[382].dn"
+connectAttr "cartoonCharacterRN.phl[1475]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[611].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[493]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[435].dn"
+connectAttr "cartoonCharacterRN.phl[1476]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[346].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[494]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[363].dn"
+connectAttr "cartoonCharacterRN.phl[1477]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[425].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[495]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[267].dn"
+connectAttr "cartoonCharacterRN.phl[1478]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[583].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[496]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[319].dn"
+connectAttr "cartoonCharacterRN.phl[1479]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[497]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[278].dn"
+connectAttr "cartoonCharacterRN.phl[1480]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[180].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[498]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[613].dn"
+connectAttr "cartoonCharacterRN.phl[1481]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[248].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[499]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[447].dn"
+connectAttr "cartoonCharacterRN.phl[1482]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[668].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[500]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[364].dn"
+connectAttr "cartoonCharacterRN.phl[1483]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[698].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[501]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[643].dn"
+connectAttr "cartoonCharacterRN.phl[1484]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[436].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[502]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[774].dn"
+connectAttr "cartoonCharacterRN.phl[1485]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[256].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[503]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[230].dn"
+connectAttr "cartoonCharacterRN.phl[1486]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[536].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[504]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[190].dn"
+connectAttr "cartoonCharacterRN.phl[1487]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[347].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[505]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[547].dn"
+connectAttr "cartoonCharacterRN.phl[1488]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[130].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[506]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[124].dn"
+connectAttr "cartoonCharacterRN.phl[1489]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[507].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[507]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[325].dn"
+connectAttr "cartoonCharacterRN.phl[1490]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[508]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[380].dn"
+connectAttr "cartoonCharacterRN.phl[1491]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[729].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[509]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[584].dn"
+connectAttr "cartoonCharacterRN.phl[1492]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[510]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[280].dn"
+connectAttr "cartoonCharacterRN.phl[1493]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[323].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[511]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[107].dn"
+connectAttr "cartoonCharacterRN.phl[1494]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[681].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[512]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[270].dn"
+connectAttr "cartoonCharacterRN.phl[1495]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[93].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[513]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[754].dn"
+connectAttr "cartoonCharacterRN.phl[1496]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[221].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[514]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[532].dn"
+connectAttr "cartoonCharacterRN.phl[1497]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[678].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[515]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[522].dn"
+connectAttr "cartoonCharacterRN.phl[1498]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[516]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[689].dn"
+connectAttr "cartoonCharacterRN.phl[1499]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[301].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[517]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[644].dn"
+connectAttr "cartoonCharacterRN.phl[1500]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[429].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[518]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[686].dn"
+connectAttr "cartoonCharacterRN.phl[1501]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[195].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[519]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[560].dn"
+connectAttr "cartoonCharacterRN.phl[1502]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[231].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[520]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[528].dn"
+connectAttr "cartoonCharacterRN.phl[1503]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[111].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[521]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[385].dn"
+connectAttr "cartoonCharacterRN.phl[1504]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[751].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[522]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[218].dn"
+connectAttr "cartoonCharacterRN.phl[1505]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[759].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[523]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[265].dn"
+connectAttr "cartoonCharacterRN.phl[1506]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[630].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[524]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[669].dn"
+connectAttr "cartoonCharacterRN.phl[1507]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[714].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[525]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[92].dn"
+connectAttr "cartoonCharacterRN.phl[1508]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[288].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[526]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[578].dn"
+connectAttr "cartoonCharacterRN.phl[1509]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[61].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[527]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[619].dn"
+connectAttr "cartoonCharacterRN.phl[1510]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[126].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[528]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[323].dn"
+connectAttr "cartoonCharacterRN.phl[1511]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[396].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[529]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
+connectAttr "cartoonCharacterRN.phl[1512]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[401].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[530]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[69].dn"
+connectAttr "cartoonCharacterRN.phl[1513]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[459].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[531]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[360].dn"
+connectAttr "cartoonCharacterRN.phl[1514]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[513].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[532]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[647].dn"
+connectAttr "cartoonCharacterRN.phl[1515]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[74].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[533]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[241].dn"
+connectAttr "cartoonCharacterRN.phl[1516]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[598].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[534]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[660].dn"
+connectAttr "cartoonCharacterRN.phl[1517]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[295].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[535]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[201].dn"
+connectAttr "cartoonCharacterRN.phl[1518]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[206].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[536]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[736].dn"
+connectAttr "cartoonCharacterRN.phl[1519]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[337].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[537]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[487].dn"
+connectAttr "cartoonCharacterRN.phl[1520]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[311].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[538]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[668].dn"
+connectAttr "cartoonCharacterRN.phl[1521]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[141].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[539]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[724].dn"
+connectAttr "cartoonCharacterRN.phl[1522]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[33].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[540]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[178].dn"
+connectAttr "cartoonCharacterRN.phl[1523]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[651].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[541]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[742].dn"
+connectAttr "cartoonCharacterRN.phl[1524]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[647].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[542]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[300].dn"
+connectAttr "cartoonCharacterRN.phl[1525]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[87].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[543]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[194].dn"
+connectAttr "cartoonCharacterRN.phl[1526]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[621].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[544]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[87].dn"
+connectAttr "cartoonCharacterRN.phl[1527]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[326].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[545]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[722].dn"
+connectAttr "cartoonCharacterRN.phl[1528]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[537].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[546]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[299].dn"
+connectAttr "cartoonCharacterRN.phl[1529]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[287].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[547]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[321].dn"
+connectAttr "cartoonCharacterRN.phl[1530]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[341].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[548]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[716].dn"
+connectAttr "cartoonCharacterRN.phl[1531]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[688].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[549]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[84].dn"
+connectAttr "cartoonCharacterRN.phl[1532]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[701].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[550]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[711].dn"
+connectAttr "cartoonCharacterRN.phl[1533]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[609].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[551]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[54].dn"
+connectAttr "cartoonCharacterRN.phl[1534]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[313].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[552]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+connectAttr "cartoonCharacterRN.phl[1535]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[319].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[553]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[191].dn"
+connectAttr "cartoonCharacterRN.phl[1536]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[658].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[554]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[674].dn"
+connectAttr "cartoonCharacterRN.phl[1537]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[715].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[555]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[113].dn"
+connectAttr "cartoonCharacterRN.phl[1538]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[493].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[556]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[543].dn"
+connectAttr "cartoonCharacterRN.phl[1539]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[623].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[557]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[714].dn"
+connectAttr "cartoonCharacterRN.phl[1540]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[198].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[558]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[473].dn"
+connectAttr "cartoonCharacterRN.phl[1541]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[559]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[105].dn"
+connectAttr "cartoonCharacterRN.phl[1542]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[185].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[560]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[234].dn"
+connectAttr "cartoonCharacterRN.phl[1543]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[113].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[561]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[170].dn"
+connectAttr "cartoonCharacterRN.phl[1544]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[612].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[562]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[485].dn"
+connectAttr "cartoonCharacterRN.phl[1545]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[58].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[563]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+connectAttr "cartoonCharacterRN.phl[1546]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[331].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[564]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[745].dn"
+connectAttr "cartoonCharacterRN.phl[1547]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[565]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[766].dn"
+connectAttr "cartoonCharacterRN.phl[1548]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[418].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[566]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[697].dn"
+connectAttr "cartoonCharacterRN.phl[1549]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[723].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[567]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[462].dn"
+connectAttr "cartoonCharacterRN.phl[1550]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[538].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[568]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[111].dn"
+connectAttr "cartoonCharacterRN.phl[1551]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[569]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[478].dn"
+connectAttr "cartoonCharacterRN.phl[1552]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[86].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[570]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[693].dn"
+connectAttr "cartoonCharacterRN.phl[1553]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[469].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[571]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[206].dn"
+connectAttr "cartoonCharacterRN.phl[1554]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[504].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[572]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[728].dn"
+connectAttr "cartoonCharacterRN.phl[1555]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[421].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[573]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[615].dn"
+connectAttr "cartoonCharacterRN.phl[1556]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[622].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[574]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[51].dn"
+connectAttr "cartoonCharacterRN.phl[1557]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[159].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[575]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[705].dn"
+connectAttr "cartoonCharacterRN.phl[1558]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[186].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[576]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[444].dn"
+connectAttr "cartoonCharacterRN.phl[1559]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[722].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[577]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[577].dn"
+connectAttr "cartoonCharacterRN.phl[1560]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[629].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[578]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[391].dn"
+connectAttr "cartoonCharacterRN.phl[1561]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[377].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[579]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[666].dn"
+connectAttr "cartoonCharacterRN.phl[1562]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[334].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[580]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[540].dn"
+connectAttr "cartoonCharacterRN.phl[1563]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[732].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[581]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[421].dn"
+connectAttr "cartoonCharacterRN.phl[1564]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[685].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[582]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[490].dn"
+connectAttr "cartoonCharacterRN.phl[1565]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[583]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[109].dn"
+connectAttr "cartoonCharacterRN.phl[1566]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[561].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[584]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[623].dn"
+connectAttr "cartoonCharacterRN.phl[1567]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[154].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[585]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[182].dn"
+connectAttr "cartoonCharacterRN.phl[1568]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[349].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[586]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[315].dn"
+connectAttr "cartoonCharacterRN.phl[1569]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[361].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[587]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[53].dn"
+connectAttr "cartoonCharacterRN.phl[1570]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[501].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[588]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[760].dn"
+connectAttr "cartoonCharacterRN.phl[1571]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[105].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[589]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[735].dn"
+connectAttr "cartoonCharacterRN.phl[1572]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[552].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[590]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[650].dn"
+connectAttr "cartoonCharacterRN.phl[1573]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[283].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[591]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[225].dn"
+connectAttr "cartoonCharacterRN.phl[1574]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[577].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[592]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[676].dn"
+connectAttr "cartoonCharacterRN.phl[1575]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[669].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[593]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[204].dn"
+connectAttr "cartoonCharacterRN.phl[1576]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[489].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[594]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[326].dn"
+connectAttr "cartoonCharacterRN.phl[1577]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[144].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[595]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[725].dn"
+connectAttr "cartoonCharacterRN.phl[1578]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[613].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[596]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[306].dn"
+connectAttr "cartoonCharacterRN.phl[1579]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[251].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[597]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[698].dn"
+connectAttr "cartoonCharacterRN.phl[1580]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[205].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[598]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[153].dn"
+connectAttr "cartoonCharacterRN.phl[1581]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[325].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[599]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[203].dn"
+connectAttr "cartoonCharacterRN.phl[1582]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[82].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[600]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[642].dn"
+connectAttr "cartoonCharacterRN.phl[1583]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[77].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[601]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[729].dn"
+connectAttr "cartoonCharacterRN.phl[1584]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[69].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[602]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[120].dn"
+connectAttr "cartoonCharacterRN.phl[1585]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[413].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[603]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[52].dn"
+connectAttr "cartoonCharacterRN.phl[1586]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[605].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[604]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[640].dn"
+connectAttr "cartoonCharacterRN.phl[1587]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[150].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[605]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[112].dn"
+connectAttr "cartoonCharacterRN.phl[1588]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[98].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[606]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[695].dn"
+connectAttr "cartoonCharacterRN.phl[1589]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[694].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[607]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[271].dn"
+connectAttr "cartoonCharacterRN.phl[1590]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[226].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[608]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[604].dn"
+connectAttr "cartoonCharacterRN.phl[1591]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[335].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[609]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[138].dn"
+connectAttr "cartoonCharacterRN.phl[1592]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[571].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[610]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[289].dn"
+connectAttr "cartoonCharacterRN.phl[1593]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[586].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[611]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[49].dn"
+connectAttr "cartoonCharacterRN.phl[1594]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[483].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[612]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[489].dn"
+connectAttr "cartoonCharacterRN.phl[1595]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[137].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[613]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[135].dn"
+connectAttr "cartoonCharacterRN.phl[1596]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[475].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[614]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[257].dn"
+connectAttr "cartoonCharacterRN.phl[1597]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[652].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[615]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[641].dn"
+connectAttr "cartoonCharacterRN.phl[1598]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[708].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[616]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[370].dn"
+connectAttr "cartoonCharacterRN.phl[1599]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[691].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[617]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[562].dn"
+connectAttr "cartoonCharacterRN.phl[1600]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[510].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[618]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[376].dn"
+connectAttr "cartoonCharacterRN.phl[1601]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[495].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[619]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[750].dn"
+connectAttr "cartoonCharacterRN.phl[1602]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[679].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[620]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[282].dn"
+connectAttr "cartoonCharacterRN.phl[1603]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[535].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[621]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[275].dn"
+connectAttr "cartoonCharacterRN.phl[1604]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[81].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[622]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[507].dn"
+connectAttr "cartoonCharacterRN.phl[1605]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[623]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[67].dn"
+connectAttr "cartoonCharacterRN.phl[1606]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[328].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[624]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[682].dn"
+connectAttr "cartoonCharacterRN.phl[1607]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[444].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[625]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[150].dn"
+connectAttr "cartoonCharacterRN.phl[1608]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[280].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[626]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[587].dn"
+connectAttr "cartoonCharacterRN.phl[1609]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[84].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[627]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[652].dn"
+connectAttr "cartoonCharacterRN.phl[1610]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[422].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[628]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[481].dn"
+connectAttr "cartoonCharacterRN.phl[1611]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[543].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[629]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[330].dn"
+connectAttr "cartoonCharacterRN.phl[1612]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[713].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[630]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[433].dn"
+connectAttr "cartoonCharacterRN.phl[1613]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[550].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[631]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[677].dn"
+connectAttr "cartoonCharacterRN.phl[1614]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[115].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[632]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[399].dn"
+connectAttr "cartoonCharacterRN.phl[1615]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[153].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[633]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[331].dn"
+connectAttr "cartoonCharacterRN.phl[1616]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[92].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[634]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[476].dn"
+connectAttr "cartoonCharacterRN.phl[1617]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[308].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[635]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[451].dn"
+connectAttr "cartoonCharacterRN.phl[1618]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[693].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[636]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[678].dn"
+connectAttr "cartoonCharacterRN.phl[1619]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[706].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[637]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[704].dn"
+connectAttr "cartoonCharacterRN.phl[1620]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[80].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[638]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[81].dn"
+connectAttr "cartoonCharacterRN.phl[1621]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[540].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[639]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[509].dn"
+connectAttr "cartoonCharacterRN.phl[1622]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[594].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[640]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[474].dn"
+connectAttr "cartoonCharacterRN.phl[1623]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[243].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[641]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[505].dn"
+connectAttr "cartoonCharacterRN.phl[1624]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[203].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[642]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[133].dn"
+connectAttr "cartoonCharacterRN.phl[1625]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[644].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[643]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[512].dn"
+connectAttr "cartoonCharacterRN.phl[1626]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[208].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[644]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[313].dn"
+connectAttr "cartoonCharacterRN.phl[1627]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[752].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[645]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[556].dn"
+connectAttr "cartoonCharacterRN.phl[1628]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[754].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[646]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
+connectAttr "cartoonCharacterRN.phl[1629]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[379].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[647]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
+connectAttr "cartoonCharacterRN.phl[1630]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[431].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[648]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[552].dn"
+connectAttr "cartoonCharacterRN.phl[1631]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[296].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[649]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[205].dn"
+connectAttr "cartoonCharacterRN.phl[1632]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[697].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[650]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
+connectAttr "cartoonCharacterRN.phl[1633]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[97].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[651]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[334].dn"
+connectAttr "cartoonCharacterRN.phl[1634]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[471].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[652]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[529].dn"
+connectAttr "cartoonCharacterRN.phl[1635]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[131].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[653]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[591].dn"
+connectAttr "cartoonCharacterRN.phl[1636]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[458].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[654]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[311].dn"
+connectAttr "cartoonCharacterRN.phl[1637]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[655]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[250].dn"
+connectAttr "cartoonCharacterRN.phl[1638]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[173].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[656]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[555].dn"
+connectAttr "cartoonCharacterRN.phl[1639]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[477].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[657]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[483].dn"
+connectAttr "cartoonCharacterRN.phl[1640]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[480].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[658]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[438].dn"
+connectAttr "cartoonCharacterRN.phl[1641]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[47].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[659]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[62].dn"
+connectAttr "cartoonCharacterRN.phl[1642]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[302].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[660]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[157].dn"
+connectAttr "cartoonCharacterRN.phl[1643]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[210].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[661]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[118].dn"
+connectAttr "cartoonCharacterRN.phl[1644]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[662]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[553].dn"
+connectAttr "cartoonCharacterRN.phl[1645]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[357].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[663]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[508].dn"
+connectAttr "cartoonCharacterRN.phl[1646]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[503].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[664]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[541].dn"
+connectAttr "cartoonCharacterRN.phl[1647]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[408].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[665]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[734].dn"
+connectAttr "cartoonCharacterRN.phl[1648]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[426].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[666]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[765].dn"
+connectAttr "cartoonCharacterRN.phl[1649]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[371].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[667]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[410].dn"
+connectAttr "cartoonCharacterRN.phl[1650]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[532].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[668]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[264].dn"
+connectAttr "cartoonCharacterRN.phl[1651]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[310].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[669]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[411].dn"
+connectAttr "cartoonCharacterRN.phl[1652]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[420].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[670]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[249].dn"
+connectAttr "cartoonCharacterRN.phl[1653]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[632].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[671]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[537].dn"
+connectAttr "cartoonCharacterRN.phl[1654]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[219].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[672]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[718].dn"
+connectAttr "cartoonCharacterRN.phl[1655]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[107].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[673]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[258].dn"
+connectAttr "cartoonCharacterRN.phl[1656]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[291].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[674]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[198].dn"
+connectAttr "cartoonCharacterRN.phl[1657]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[227].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[675]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[401].dn"
+connectAttr "cartoonCharacterRN.phl[1658]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[51].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[676]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[146].dn"
+connectAttr "cartoonCharacterRN.phl[1659]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[743].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[677]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[309].dn"
+connectAttr "cartoonCharacterRN.phl[1660]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[465].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[678]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+connectAttr "cartoonCharacterRN.phl[1661]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[497].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[679]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[467].dn"
+connectAttr "cartoonCharacterRN.phl[1662]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[161].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[680]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[164].dn"
+connectAttr "cartoonCharacterRN.phl[1663]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[606].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[681]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[713].dn"
+connectAttr "cartoonCharacterRN.phl[1664]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[197].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[682]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[637].dn"
+connectAttr "cartoonCharacterRN.phl[1665]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[201].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[683]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[141].dn"
+connectAttr "cartoonCharacterRN.phl[1666]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[57].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[684]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[631].dn"
+connectAttr "cartoonCharacterRN.phl[1667]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[434].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[685]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[415].dn"
+connectAttr "cartoonCharacterRN.phl[1668]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[664].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[686]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+connectAttr "cartoonCharacterRN.phl[1669]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[529].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[687]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[545].dn"
+connectAttr "cartoonCharacterRN.phl[1670]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[674].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[688]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
+connectAttr "cartoonCharacterRN.phl[1671]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[741].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[689]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[116].dn"
+connectAttr "cartoonCharacterRN.phl[1672]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[129].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[690]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[240].dn"
+connectAttr "cartoonCharacterRN.phl[1673]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[240].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[691]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[159].dn"
+connectAttr "cartoonCharacterRN.phl[1674]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[601].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[692]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[200].dn"
+connectAttr "cartoonCharacterRN.phl[1675]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[63].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[693]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[761].dn"
+connectAttr "cartoonCharacterRN.phl[1676]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[168].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[694]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[227].dn"
+connectAttr "cartoonCharacterRN.phl[1677]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[463].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[695]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[100].dn"
+connectAttr "cartoonCharacterRN.phl[1678]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[321].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[696]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[511].dn"
+connectAttr "cartoonCharacterRN.phl[1679]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[127].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[697]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+connectAttr "cartoonCharacterRN.phl[1680]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[372].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[698]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[192].dn"
+connectAttr "cartoonCharacterRN.phl[1681]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[388].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[699]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[621].dn"
+connectAttr "cartoonCharacterRN.phl[1682]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[455].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[700]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[336].dn"
+connectAttr "cartoonCharacterRN.phl[1683]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[284].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[701]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[216].dn"
+connectAttr "cartoonCharacterRN.phl[1684]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[432].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[702]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[499].dn"
+connectAttr "cartoonCharacterRN.phl[1685]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[541].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[703]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[648].dn"
+connectAttr "cartoonCharacterRN.phl[1686]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[553].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[704]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[243].dn"
+connectAttr "cartoonCharacterRN.phl[1687]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[705]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[127].dn"
+connectAttr "cartoonCharacterRN.phl[1688]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[615].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[706]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[288].dn"
+connectAttr "cartoonCharacterRN.phl[1689]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[223].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[707]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[413].dn"
+connectAttr "cartoonCharacterRN.phl[1690]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[548].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[708]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[630].dn"
+connectAttr "cartoonCharacterRN.phl[1691]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[602].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[709]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[246].dn"
+connectAttr "cartoonCharacterRN.phl[1692]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[572].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[710]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[316].dn"
+connectAttr "cartoonCharacterRN.phl[1693]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[235].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[711]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[231].dn"
+connectAttr "cartoonCharacterRN.phl[1694]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[306].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[712]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "cartoonCharacterRN.phl[1695]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[340].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[713]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[294].dn"
+connectAttr "cartoonCharacterRN.phl[1696]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[55].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[714]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[180].dn"
+connectAttr "cartoonCharacterRN.phl[1697]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[654].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[715]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[387].dn"
+connectAttr "cartoonCharacterRN.phl[1698]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[391].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[716]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[638].dn"
+connectAttr "cartoonCharacterRN.phl[1699]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[757].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[717]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[404].dn"
+connectAttr "cartoonCharacterRN.phl[1700]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[112].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[718]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[653].dn"
+connectAttr "cartoonCharacterRN.phl[1701]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[635].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[719]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[469].dn"
+connectAttr "cartoonCharacterRN.phl[1702]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[155].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[720]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[386].dn"
+connectAttr "cartoonCharacterRN.phl[1703]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[196].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[721]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+connectAttr "cartoonCharacterRN.phl[1704]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[88].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[722]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[220].dn"
+connectAttr "cartoonCharacterRN.phl[1705]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[415].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[723]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[539].dn"
+connectAttr "cartoonCharacterRN.phl[1706]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[441].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[724]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[601].dn"
+connectAttr "cartoonCharacterRN.phl[1707]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[580].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[725]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[374].dn"
+connectAttr "cartoonCharacterRN.phl[1708]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[576].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[726]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[709].dn"
+connectAttr "cartoonCharacterRN.phl[1709]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[225].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[727]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[71].dn"
+connectAttr "cartoonCharacterRN.phl[1710]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[151].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[728]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[757].dn"
+connectAttr "cartoonCharacterRN.phl[1711]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[182].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[729]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[63].dn"
+connectAttr "cartoonCharacterRN.phl[1712]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[746].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[730]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[694].dn"
+connectAttr "cartoonCharacterRN.phl[1713]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[344].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[731]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[741].dn"
+connectAttr "cartoonCharacterRN.phl[1714]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[373].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[732]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[395].dn"
+connectAttr "cartoonCharacterRN.phl[1715]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[560].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[733]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[751].dn"
+connectAttr "cartoonCharacterRN.phl[1716]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[365].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[734]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[597].dn"
+connectAttr "cartoonCharacterRN.phl[1717]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[68].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[735]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[416].dn"
+connectAttr "cartoonCharacterRN.phl[1718]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[298].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[736]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[600].dn"
+connectAttr "cartoonCharacterRN.phl[1719]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[59].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[737]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[731].dn"
+connectAttr "cartoonCharacterRN.phl[1720]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[140].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[738]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[175].dn"
+connectAttr "cartoonCharacterRN.phl[1721]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[739]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[777].dn"
+connectAttr "cartoonCharacterRN.phl[1722]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[740]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[223].dn"
+connectAttr "cartoonCharacterRN.phl[1723]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[721].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[741]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[214].dn"
+connectAttr "cartoonCharacterRN.phl[1724]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[67].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[742]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[671].dn"
+connectAttr "cartoonCharacterRN.phl[1725]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[281].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[743]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[298].dn"
+connectAttr "cartoonCharacterRN.phl[1726]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[482].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[744]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[277].dn"
+connectAttr "cartoonCharacterRN.phl[1727]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[534].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[745]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[417].dn"
+connectAttr "cartoonCharacterRN.phl[1728]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[643].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[746]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[251].dn"
+connectAttr "cartoonCharacterRN.phl[1729]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[589].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[747]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+connectAttr "cartoonCharacterRN.phl[1730]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[246].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[748]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[551].dn"
+connectAttr "cartoonCharacterRN.phl[1731]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[428].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[749]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[655].dn"
+connectAttr "cartoonCharacterRN.phl[1732]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[160].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[750]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[673].dn"
+connectAttr "cartoonCharacterRN.phl[1733]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[387].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[751]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[74].dn"
+connectAttr "cartoonCharacterRN.phl[1734]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[726].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[752]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[168].dn"
+connectAttr "cartoonCharacterRN.phl[1735]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[119].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[753]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "cartoonCharacterRN.phl[1736]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[276].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[754]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[589].dn"
+connectAttr "cartoonCharacterRN.phl[1737]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[435].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[755]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[762].dn"
+connectAttr "cartoonCharacterRN.phl[1738]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[492].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[756]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[131].dn"
+connectAttr "cartoonCharacterRN.phl[1739]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[403].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[757]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[740].dn"
+connectAttr "cartoonCharacterRN.phl[1740]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[655].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[758]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[99].dn"
+connectAttr "cartoonCharacterRN.phl[1741]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[618].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[759]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[681].dn"
+connectAttr "cartoonCharacterRN.phl[1742]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[737].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[760]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[342].dn"
+connectAttr "cartoonCharacterRN.phl[1743]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[661].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[761]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[771].dn"
+connectAttr "cartoonCharacterRN.phl[1744]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[329].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[762]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[338].dn"
+connectAttr "cartoonCharacterRN.phl[1745]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[164].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[763]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[57].dn"
+connectAttr "cartoonCharacterRN.phl[1746]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[468].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[764]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[114].dn"
+connectAttr "cartoonCharacterRN.phl[1747]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[56].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[765]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[101].dn"
+connectAttr "cartoonCharacterRN.phl[1748]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[683].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[766]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[496].dn"
+connectAttr "cartoonCharacterRN.phl[1749]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[516].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[767]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[308].dn"
+connectAttr "cartoonCharacterRN.phl[1750]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[363].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[768]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[620].dn"
+connectAttr "cartoonCharacterRN.phl[1751]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[188].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[769]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[679].dn"
+connectAttr "cartoonCharacterRN.phl[1752]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[360].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[770]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[35].dn"
+connectAttr "cartoonCharacterRN.phl[1753]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[437].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[771]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[440].dn"
+connectAttr "cartoonCharacterRN.phl[1754]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[286].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[772]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[436].dn"
+connectAttr "cartoonCharacterRN.phl[1755]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[773]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[517].dn"
+connectAttr "cartoonCharacterRN.phl[1756]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[756].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[774]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[314].dn"
+connectAttr "cartoonCharacterRN.phl[1757]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[687].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[775]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[437].dn"
+connectAttr "cartoonCharacterRN.phl[1758]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[581].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[776]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[295].dn"
+connectAttr "cartoonCharacterRN.phl[1759]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[143].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[777]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[402].dn"
+connectAttr "cartoonCharacterRN.phl[1760]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[179].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[778]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[482].dn"
+connectAttr "cartoonCharacterRN.phl[1761]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[546].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[779]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[712].dn"
+connectAttr "cartoonCharacterRN.phl[1762]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[121].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[780]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[412].dn"
+connectAttr "cartoonCharacterRN.phl[1763]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[218].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[781]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[347].dn"
+connectAttr "cartoonCharacterRN.phl[1764]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[40].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[782]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[470].dn"
+connectAttr "cartoonCharacterRN.phl[1765]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[499].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[783]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[219].dn"
+connectAttr "cartoonCharacterRN.phl[1766]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[258].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[784]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[137].dn"
+connectAttr "cartoonCharacterRN.phl[1767]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[370].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[785]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[108].dn"
+connectAttr "cartoonCharacterRN.phl[1768]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[753].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[786]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[569].dn"
+connectAttr "cartoonCharacterRN.phl[1769]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[172].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[787]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[446].dn"
+connectAttr "cartoonCharacterRN.phl[1770]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[333].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[788]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[452].dn"
+connectAttr "cartoonCharacterRN.phl[1771]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[350].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[789]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[266].dn"
+connectAttr "cartoonCharacterRN.phl[1772]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[490].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[790]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[393].dn"
+connectAttr "cartoonCharacterRN.phl[1773]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[293].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[791]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[407].dn"
+connectAttr "cartoonCharacterRN.phl[1774]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[139].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[792]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[255].dn"
+connectAttr "cartoonCharacterRN.phl[1775]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[502].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[793]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[721].dn"
+connectAttr "cartoonCharacterRN.phl[1776]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[170].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[794]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[318].dn"
+connectAttr "cartoonCharacterRN.phl[1777]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[103].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[795]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[97].dn"
+connectAttr "cartoonCharacterRN.phl[1778]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[545].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[796]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[83].dn"
+connectAttr "cartoonCharacterRN.phl[1779]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[282].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[797]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[651].dn"
+connectAttr "cartoonCharacterRN.phl[1780]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[798]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[422].dn"
+connectAttr "cartoonCharacterRN.phl[1781]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[677].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[799]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[590].dn"
+connectAttr "cartoonCharacterRN.phl[1782]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[268].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[800]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[253].dn"
+connectAttr "cartoonCharacterRN.phl[1783]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[636].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[801]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[449].dn"
+connectAttr "cartoonCharacterRN.phl[1784]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[220].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[802]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[60].dn"
+connectAttr "cartoonCharacterRN.phl[1785]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[272].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[803]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[573].dn"
+connectAttr "cartoonCharacterRN.phl[1786]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[584].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[804]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[82].dn"
+connectAttr "cartoonCharacterRN.phl[1787]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[52].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[805]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[513].dn"
+connectAttr "cartoonCharacterRN.phl[1788]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[338].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[806]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[128].dn"
+connectAttr "cartoonCharacterRN.phl[1789]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[217].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[807]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[160].dn"
+connectAttr "cartoonCharacterRN.phl[1790]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[214].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[808]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[357].dn"
+connectAttr "cartoonCharacterRN.phl[1791]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[72].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[809]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[778].dn"
+connectAttr "cartoonCharacterRN.phl[1792]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[727].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[810]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[152].dn"
+connectAttr "cartoonCharacterRN.phl[1793]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[484].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[811]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[292].dn"
+connectAttr "cartoonCharacterRN.phl[1794]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[104].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[812]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[296].dn"
+connectAttr "cartoonCharacterRN.phl[1795]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[736].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[813]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[691].dn"
+connectAttr "cartoonCharacterRN.phl[1796]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[814]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[302].dn"
+connectAttr "cartoonCharacterRN.phl[1797]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[496].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[815]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[700].dn"
+connectAttr "cartoonCharacterRN.phl[1798]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[142].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[816]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[443].dn"
+connectAttr "cartoonCharacterRN.phl[1799]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[336].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[817]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[262].dn"
+connectAttr "cartoonCharacterRN.phl[1800]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[616].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[818]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[373].dn"
+connectAttr "cartoonCharacterRN.phl[1801]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[273].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[819]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[65].dn"
+connectAttr "cartoonCharacterRN.phl[1802]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[443].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[820]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[186].dn"
+connectAttr "cartoonCharacterRN.phl[1803]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[467].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[821]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[708].dn"
+connectAttr "cartoonCharacterRN.phl[1804]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[277].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[822]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[450].dn"
+connectAttr "cartoonCharacterRN.phl[1805]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[147].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[823]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[454].dn"
+connectAttr "cartoonCharacterRN.phl[1806]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[498].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[824]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[343].dn"
+connectAttr "cartoonCharacterRN.phl[1807]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[233].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[825]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[428].dn"
+connectAttr "cartoonCharacterRN.phl[1808]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[39].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[826]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[86].dn"
+connectAttr "cartoonCharacterRN.phl[1809]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[728].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[827]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[475].dn"
+connectAttr "cartoonCharacterRN.phl[1810]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[672].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[828]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[48].dn"
+connectAttr "cartoonCharacterRN.phl[1811]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[745].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[829]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[486].dn"
+connectAttr "cartoonCharacterRN.phl[1812]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[648].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[830]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[479].dn"
+connectAttr "cartoonCharacterRN.phl[1813]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[831]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[136].dn"
+connectAttr "cartoonCharacterRN.phl[1814]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[689].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[832]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[392].dn"
+connectAttr "cartoonCharacterRN.phl[1815]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[41].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[833]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+connectAttr "cartoonCharacterRN.phl[1816]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[114].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[834]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[209].dn"
+connectAttr "cartoonCharacterRN.phl[1817]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[211].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[835]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[238].dn"
+connectAttr "cartoonCharacterRN.phl[1818]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[718].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[836]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[579].dn"
+connectAttr "cartoonCharacterRN.phl[1819]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[271].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[837]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[633].dn"
+connectAttr "cartoonCharacterRN.phl[1820]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[650].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[838]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[763].dn"
+connectAttr "cartoonCharacterRN.phl[1821]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[412].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[839]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[59].dn"
+connectAttr "cartoonCharacterRN.phl[1822]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[89].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[840]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[431].dn"
+connectAttr "cartoonCharacterRN.phl[1823]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[452].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[841]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[571].dn"
+connectAttr "cartoonCharacterRN.phl[1824]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[409].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[842]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[352].dn"
+connectAttr "cartoonCharacterRN.phl[1825]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[456].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[843]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[453].dn"
+connectAttr "cartoonCharacterRN.phl[1826]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[290].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[844]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[726].dn"
+connectAttr "cartoonCharacterRN.phl[1827]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[262].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[845]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "cartoonCharacterRN.phl[1828]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[65].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[846]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[592].dn"
+connectAttr "cartoonCharacterRN.phl[1829]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[638].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[847]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[293].dn"
+connectAttr "cartoonCharacterRN.phl[1830]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[680].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[848]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[605].dn"
+connectAttr "cartoonCharacterRN.phl[1831]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[156].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[849]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[520].dn"
+connectAttr "cartoonCharacterRN.phl[1832]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[99].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[850]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[670].dn"
+connectAttr "cartoonCharacterRN.phl[1833]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[500].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[851]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[122].dn"
+connectAttr "cartoonCharacterRN.phl[1834]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[423].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[852]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[181].dn"
+connectAttr "cartoonCharacterRN.phl[1835]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[249].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[853]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[305].dn"
+connectAttr "cartoonCharacterRN.phl[1836]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[75].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[854]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[593].dn"
+connectAttr "cartoonCharacterRN.phl[1837]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[91].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[855]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[187].dn"
+connectAttr "cartoonCharacterRN.phl[1838]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[192].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[856]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[256].dn"
+connectAttr "cartoonCharacterRN.phl[1839]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[557].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[857]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[396].dn"
+connectAttr "cartoonCharacterRN.phl[1840]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[460].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[858]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[634].dn"
+connectAttr "cartoonCharacterRN.phl[1841]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[610].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[859]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[252].dn"
+connectAttr "cartoonCharacterRN.phl[1842]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[267].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[860]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[429].dn"
+connectAttr "cartoonCharacterRN.phl[1843]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[406].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[861]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[769].dn"
+connectAttr "cartoonCharacterRN.phl[1844]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[46].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[862]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[434].dn"
+connectAttr "cartoonCharacterRN.phl[1845]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[189].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[863]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[88].dn"
+connectAttr "cartoonCharacterRN.phl[1846]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[381].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[864]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[207].dn"
+connectAttr "cartoonCharacterRN.phl[1847]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[709].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[865]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[33].dn"
+connectAttr "cartoonCharacterRN.phl[1848]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[522].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[866]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[341].dn"
+connectAttr "cartoonCharacterRN.phl[1849]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[659].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[867]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[627].dn"
+connectAttr "cartoonCharacterRN.phl[1850]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[351].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[868]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[85].dn"
+connectAttr "cartoonCharacterRN.phl[1851]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[355].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[869]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[226].dn"
+connectAttr "cartoonCharacterRN.phl[1852]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[297].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[870]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[418].dn"
+connectAttr "cartoonCharacterRN.phl[1853]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[264].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[871]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[291].dn"
+connectAttr "cartoonCharacterRN.phl[1854]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[748].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[872]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[169].dn"
+connectAttr "cartoonCharacterRN.phl[1855]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[750].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[873]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[680].dn"
+connectAttr "cartoonCharacterRN.phl[1856]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[599].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[874]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[719].dn"
+connectAttr "cartoonCharacterRN.phl[1857]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[595].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[875]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[439].dn"
+connectAttr "cartoonCharacterRN.phl[1858]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[707].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[876]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[344].dn"
+connectAttr "cartoonCharacterRN.phl[1859]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[138].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[877]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[406].dn"
+connectAttr "cartoonCharacterRN.phl[1860]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[149].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[878]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[606].dn"
+connectAttr "cartoonCharacterRN.phl[1861]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[533].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[879]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[398].dn"
+connectAttr "cartoonCharacterRN.phl[1862]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[880]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
+connectAttr "cartoonCharacterRN.phl[1863]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[102].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[881]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[372].dn"
+connectAttr "cartoonCharacterRN.phl[1864]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[578].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[882]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+connectAttr "cartoonCharacterRN.phl[1865]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[352].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[883]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[525].dn"
+connectAttr "cartoonCharacterRN.phl[1866]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[675].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[884]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[322].dn"
+connectAttr "cartoonCharacterRN.phl[1867]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[885]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[622].dn"
+connectAttr "cartoonCharacterRN.phl[1868]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[600].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[886]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[502].dn"
+connectAttr "cartoonCharacterRN.phl[1869]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[738].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[887]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[559].dn"
+connectAttr "cartoonCharacterRN.phl[1870]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[215].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[888]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[371].dn"
+connectAttr "cartoonCharacterRN.phl[1871]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[369].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[889]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[134].dn"
+connectAttr "cartoonCharacterRN.phl[1872]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[70].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[890]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[345].dn"
+connectAttr "cartoonCharacterRN.phl[1873]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[263].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[891]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[297].dn"
+connectAttr "cartoonCharacterRN.phl[1874]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[692].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[892]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[492].dn"
+connectAttr "cartoonCharacterRN.phl[1875]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[398].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[893]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[183].dn"
+connectAttr "cartoonCharacterRN.phl[1876]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[110].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[894]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[174].dn"
+connectAttr "cartoonCharacterRN.phl[1877]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[733].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[895]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[572].dn"
+connectAttr "cartoonCharacterRN.phl[1878]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[704].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[896]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[324].dn"
+connectAttr "cartoonCharacterRN.phl[1879]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[166].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[897]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+connectAttr "cartoonCharacterRN.phl[1880]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[204].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[898]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[261].dn"
+connectAttr "cartoonCharacterRN.phl[1881]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[232].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[899]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[501].dn"
+connectAttr "cartoonCharacterRN.phl[1882]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[162].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[900]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
+connectAttr "cartoonCharacterRN.phl[1883]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[625].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[901]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[514].dn"
+connectAttr "cartoonCharacterRN.phl[1884]" "pairBlend4.itx1";
+connectAttr "cartoonCharacterRN.phl[1885]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[181].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[902]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[588].dn"
+connectAttr "cartoonCharacterRN.phl[1886]" "pairBlend4.ity1";
+connectAttr "cartoonCharacterRN.phl[1887]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[124].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[903]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[683].dn"
+connectAttr "cartoonCharacterRN.phl[1888]" "pairBlend4.itz1";
+connectAttr "cartoonCharacterRN.phl[1889]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[199].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[904]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[690].dn"
+connectAttr "cartoonCharacterRN.phl[1890]" "pairBlend3.itx1";
+connectAttr "cartoonCharacterRN.phl[1891]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[383].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[905]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[379].dn"
+connectAttr "cartoonCharacterRN.phl[1892]" "pairBlend3.ity1";
+connectAttr "cartoonCharacterRN.phl[1893]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[442].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[906]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[599].dn"
+connectAttr "cartoonCharacterRN.phl[1894]" "pairBlend3.itz1";
+connectAttr "cartoonCharacterRN.phl[1895]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[450].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[907]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[213].dn"
+connectAttr "cartoonCharacterRN.phl[1896]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[508].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[908]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+connectAttr "cartoonCharacterRN.phl[1897]" "pairBlend2.irx1";
+connectAttr "cartoonCharacterRN.phl[1898]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[305].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[909]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[610].dn"
+connectAttr "cartoonCharacterRN.phl[1899]" "pairBlend2.iry1";
+connectAttr "cartoonCharacterRN.phl[1900]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[514].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[910]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[445].dn"
+connectAttr "cartoonCharacterRN.phl[1901]" "pairBlend4.irz1";
+connectAttr "cartoonCharacterRN.phl[1902]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[563].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[911]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[400].dn"
+connectAttr "cartoonCharacterRN.phl[1903]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[912]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[304].dn"
+connectAttr "cartoonCharacterRN.phl[1904]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[375].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[913]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[279].dn"
+connectAttr "cartoonCharacterRN.phl[1905]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[44].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[914]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[66].dn"
+connectAttr "cartoonCharacterRN.phl[1906]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[392].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[915]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
+connectAttr "cartoonCharacterRN.phl[1907]" "pairBlend1.irx1";
+connectAttr "cartoonCharacterRN.phl[1908]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[512].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[916]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[130].dn"
+connectAttr "cartoonCharacterRN.phl[1909]" "pairBlend1.iry1";
+connectAttr "cartoonCharacterRN.phl[1910]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[690].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[917]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[565].dn"
+connectAttr "cartoonCharacterRN.phl[1911]" "pairBlend3.irz1";
+connectAttr "cartoonCharacterRN.phl[1912]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[266].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[918]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[378].dn"
+connectAttr "cartoonCharacterRN.phl[1913]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[411].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[919]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[43].dn"
+connectAttr "cartoonCharacterRN.phl[1914]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[530].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[920]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[77].dn"
+connectAttr "cartoonCharacterRN.phl[1915]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[171].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[921]" "pairBlend2.irx1";
-connectAttr "cartoonCharacterRN.phl[922]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[533].dn"
+connectAttr "cartoonCharacterRN.phl[1916]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[449].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[923]" "pairBlend2.iry1";
-connectAttr "cartoonCharacterRN.phl[924]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[536].dn"
+connectAttr "cartoonCharacterRN.phl[1917]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[479].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[925]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[519].dn"
+connectAttr "cartoonCharacterRN.phl[1918]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[356].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[926]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[96].dn"
+connectAttr "cartoonCharacterRN.phl[1919]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[109].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[927]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[119].dn"
+connectAttr "cartoonCharacterRN.phl[1920]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[570].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[928]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[211].dn"
+connectAttr "cartoonCharacterRN.phl[1921]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[146].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[929]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[125].dn"
+connectAttr "cartoonCharacterRN.phl[1922]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[342].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[930]" "pairBlend1.irx1";
-connectAttr "cartoonCharacterRN.phl[931]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[460].dn"
+connectAttr "cartoonCharacterRN.phl[1923]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[133].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[932]" "pairBlend1.iry1";
-connectAttr "cartoonCharacterRN.phl[933]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[500].dn"
+connectAttr "cartoonCharacterRN.phl[1924]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[646].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[934]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[580].dn"
+connectAttr "cartoonCharacterRN.phl[1925]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[539].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[935]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[764].dn"
+connectAttr "cartoonCharacterRN.phl[1926]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[348].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[936]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[147].dn"
+connectAttr "cartoonCharacterRN.phl[1927]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[317].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[937]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[126].dn"
+connectAttr "cartoonCharacterRN.phl[1928]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[37].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[938]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[37].dn"
+connectAttr "cartoonCharacterRN.phl[1929]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[660].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[939]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "cartoonCharacterRN.phl[1930]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[544].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[940]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[594].dn"
+connectAttr "cartoonCharacterRN.phl[1931]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[292].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[941]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[283].dn"
+connectAttr "cartoonCharacterRN.phl[1932]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[430].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[942]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[609].dn"
+connectAttr "cartoonCharacterRN.phl[1933]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[603].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[943]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[524].dn"
+connectAttr "cartoonCharacterRN.phl[1934]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[519].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[944]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[217].dn"
+connectAttr "cartoonCharacterRN.phl[1935]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[307].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[945]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[466].dn"
+connectAttr "cartoonCharacterRN.phl[1936]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[135].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[946]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[276].dn"
+connectAttr "cartoonCharacterRN.phl[1937]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[758].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[947]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[132].dn"
+connectAttr "cartoonCharacterRN.phl[1938]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[620].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[948]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[675].dn"
+connectAttr "cartoonCharacterRN.phl[1939]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[339].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[949]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[423].dn"
+connectAttr "cartoonCharacterRN.phl[1940]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[438].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[950]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[715].dn"
+connectAttr "cartoonCharacterRN.phl[1941]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[419].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[951]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+connectAttr "cartoonCharacterRN.phl[1942]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[617].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[952]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[582].dn"
+connectAttr "cartoonCharacterRN.phl[1943]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[491].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[953]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[212].dn"
+connectAttr "cartoonCharacterRN.phl[1944]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[134].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[954]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
+connectAttr "cartoonCharacterRN.phl[1945]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[627].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[955]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[394].dn"
+connectAttr "cartoonCharacterRN.phl[1946]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[446].dn"
 		;
-connectAttr "cartoonCharacterRN.phl[956]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[104].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[957]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[349].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[958]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[335].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[959]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[140].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[960]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[557].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[961]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[158].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[962]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[772].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[963]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[202].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[964]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[595].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[965]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[497].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[966]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[617].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[967]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[706].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[968]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[93].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[969]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[664].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[970]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[414].dn"
-		;
-connectAttr "cartoonCharacterRN.phl[971]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[527].dn"
-		;
-connectAttr "skinCluster1.og[0]" "GenericMesh5ShapeDeformed.i";
+connectAttr "glasses_scaleConstraint1.w0" "glasses_scaleConstraint1.tg[0].tw";
+connectAttr "glasses_parentConstraint1.w0" "glasses_parentConstraint1.tg[0].tw";
+connectAttr "polyTweakUV2.out" "GenericMesh5ShapeDeformed.i";
+connectAttr "polyTweakUV2.uvtk[0]" "GenericMesh5ShapeDeformed.uvst[0].uvtw";
 connectAttr "eye_focus.t" "RightEye_aimConstraint1.tg[0].tt";
 connectAttr "eye_focus.rp" "RightEye_aimConstraint1.tg[0].trp";
 connectAttr "eye_focus.rpt" "RightEye_aimConstraint1.tg[0].trt";
 connectAttr "eye_focus.pm" "RightEye_aimConstraint1.tg[0].tpm";
 connectAttr "RightEye_aimConstraint1.w0" "RightEye_aimConstraint1.tg[0].tw";
+connectAttr "RightEye_parentConstraint1.w0" "RightEye_parentConstraint1.tg[0].tw"
+		;
 connectAttr "eye_focus.t" "LeftEye_aimConstraint1.tg[0].tt";
 connectAttr "eye_focus.rp" "LeftEye_aimConstraint1.tg[0].trp";
 connectAttr "eye_focus.rpt" "LeftEye_aimConstraint1.tg[0].trt";
 connectAttr "eye_focus.pm" "LeftEye_aimConstraint1.tg[0].tpm";
 connectAttr "LeftEye_aimConstraint1.w0" "LeftEye_aimConstraint1.tg[0].tw";
+connectAttr "LeftEye_parentConstraint1.w0" "LeftEye_parentConstraint1.tg[0].tw";
 connectAttr "cartoonCharacter:L_clav_J.s" "cartoonCharacter:L_shold_J.is";
 connectAttr "cartoonCharacter:L_shold_J.s" "cartoonCharacter:L_Elbow_J.is";
 connectAttr "cartoonCharacter:L_Elbow_J.s" "cartoonCharacter:L_Wrist_J.is";
@@ -25911,37 +26335,6 @@ connectAttr "RightEye_aimConstraint1.crx" "pairBlend1.irx2";
 connectAttr "RightEye_aimConstraint1.cry" "pairBlend1.iry2";
 connectAttr "LeftEye_aimConstraint1.crx" "pairBlend2.irx2";
 connectAttr "LeftEye_aimConstraint1.cry" "pairBlend2.iry2";
-connectAttr "GenericMesh5ShapeDeformedOrig.w" "skinCluster1.ip[0].ig";
-connectAttr "GenericMesh5ShapeDeformedOrig.o" "skinCluster1.orggeom[0]";
-connectAttr "bindPose1.msg" "skinCluster1.bp";
-connectAttr "cartoonCharacter:L_Hip_J.wm" "skinCluster1.ma[6]";
-connectAttr "cartoonCharacter:L_Knee_J.wm" "skinCluster1.ma[7]";
-connectAttr "cartoonCharacter:L_Ankle_J.wm" "skinCluster1.ma[8]";
-connectAttr "cartoonCharacter:L_Ball_J.wm" "skinCluster1.ma[9]";
-connectAttr "cartoonCharacter:L_clav_J.wm" "skinCluster1.ma[35]";
-connectAttr "cartoonCharacter:L_shold_J.wm" "skinCluster1.ma[36]";
-connectAttr "cartoonCharacter:L_Elbow_J.wm" "skinCluster1.ma[37]";
-connectAttr "cartoonCharacter:L_Wrist_J.wm" "skinCluster1.ma[38]";
-connectAttr "cartoonCharacter:L_Thumb_J_0.wm" "skinCluster1.ma[39]";
-connectAttr "cartoonCharacter:L_Thumb_J_1.wm" "skinCluster1.ma[40]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Thumb_J_0|cartoonCharacter:L_Thumb_J_1|cartoonCharacter:L_Middle_J_2.wm" "skinCluster1.ma[41]"
-		;
-connectAttr "cartoonCharacter:L_Index_J_0.wm" "skinCluster1.ma[42]";
-connectAttr "cartoonCharacter:L_Index_J_1.wm" "skinCluster1.ma[43]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Index_J_0|cartoonCharacter:L_Index_J_1|cartoonCharacter:L_Middle_J_2.wm" "skinCluster1.ma[44]"
-		;
-connectAttr "cartoonCharacter:L_Middle_J_0.wm" "skinCluster1.ma[45]";
-connectAttr "cartoonCharacter:L_Middle_J_1.wm" "skinCluster1.ma[46]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Middle_J_0|cartoonCharacter:L_Middle_J_1|cartoonCharacter:L_Middle_J_2.wm" "skinCluster1.ma[47]"
-		;
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2.wm" "skinCluster1.ma[48]"
-		;
-connectAttr "cartoonCharacter:L_Ring_J_1.wm" "skinCluster1.ma[49]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2|cartoonCharacter:L_Ring_J_1|cartoonCharacter:L_Ring_J_2.wm" "skinCluster1.ma[50]"
-		;
-connectAttr "cartoonCharacter:L_Pinky_J_0.wm" "skinCluster1.ma[51]";
-connectAttr "cartoonCharacter:L_Pinky_J_1.wm" "skinCluster1.ma[52]";
-connectAttr "cartoonCharacter:L_Pinky_J_2.wm" "skinCluster1.ma[53]";
 connectAttr "cartoonCharacter:L_Hip_J.liw" "skinCluster1.lw[6]";
 connectAttr "cartoonCharacter:L_Knee_J.liw" "skinCluster1.lw[7]";
 connectAttr "cartoonCharacter:L_Ankle_J.liw" "skinCluster1.lw[8]";
@@ -25970,6 +26363,34 @@ connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonC
 connectAttr "cartoonCharacter:L_Pinky_J_0.liw" "skinCluster1.lw[51]";
 connectAttr "cartoonCharacter:L_Pinky_J_1.liw" "skinCluster1.lw[52]";
 connectAttr "cartoonCharacter:L_Pinky_J_2.liw" "skinCluster1.lw[53]";
+connectAttr "cartoonCharacter:L_Hip_J.wm" "skinCluster1.ma[6]";
+connectAttr "cartoonCharacter:L_Knee_J.wm" "skinCluster1.ma[7]";
+connectAttr "cartoonCharacter:L_Ankle_J.wm" "skinCluster1.ma[8]";
+connectAttr "cartoonCharacter:L_Ball_J.wm" "skinCluster1.ma[9]";
+connectAttr "cartoonCharacter:L_clav_J.wm" "skinCluster1.ma[35]";
+connectAttr "cartoonCharacter:L_shold_J.wm" "skinCluster1.ma[36]";
+connectAttr "cartoonCharacter:L_Elbow_J.wm" "skinCluster1.ma[37]";
+connectAttr "cartoonCharacter:L_Wrist_J.wm" "skinCluster1.ma[38]";
+connectAttr "cartoonCharacter:L_Thumb_J_0.wm" "skinCluster1.ma[39]";
+connectAttr "cartoonCharacter:L_Thumb_J_1.wm" "skinCluster1.ma[40]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Thumb_J_0|cartoonCharacter:L_Thumb_J_1|cartoonCharacter:L_Middle_J_2.wm" "skinCluster1.ma[41]"
+		;
+connectAttr "cartoonCharacter:L_Index_J_0.wm" "skinCluster1.ma[42]";
+connectAttr "cartoonCharacter:L_Index_J_1.wm" "skinCluster1.ma[43]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Index_J_0|cartoonCharacter:L_Index_J_1|cartoonCharacter:L_Middle_J_2.wm" "skinCluster1.ma[44]"
+		;
+connectAttr "cartoonCharacter:L_Middle_J_0.wm" "skinCluster1.ma[45]";
+connectAttr "cartoonCharacter:L_Middle_J_1.wm" "skinCluster1.ma[46]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Middle_J_0|cartoonCharacter:L_Middle_J_1|cartoonCharacter:L_Middle_J_2.wm" "skinCluster1.ma[47]"
+		;
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2.wm" "skinCluster1.ma[48]"
+		;
+connectAttr "cartoonCharacter:L_Ring_J_1.wm" "skinCluster1.ma[49]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2|cartoonCharacter:L_Ring_J_1|cartoonCharacter:L_Ring_J_2.wm" "skinCluster1.ma[50]"
+		;
+connectAttr "cartoonCharacter:L_Pinky_J_0.wm" "skinCluster1.ma[51]";
+connectAttr "cartoonCharacter:L_Pinky_J_1.wm" "skinCluster1.ma[52]";
+connectAttr "cartoonCharacter:L_Pinky_J_2.wm" "skinCluster1.ma[53]";
 connectAttr "cartoonCharacter:L_Hip_J.obcc" "skinCluster1.ifcl[6]";
 connectAttr "cartoonCharacter:L_Knee_J.obcc" "skinCluster1.ifcl[7]";
 connectAttr "cartoonCharacter:L_Ankle_J.obcc" "skinCluster1.ifcl[8]";
@@ -25998,6 +26419,10 @@ connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonC
 connectAttr "cartoonCharacter:L_Pinky_J_0.obcc" "skinCluster1.ifcl[51]";
 connectAttr "cartoonCharacter:L_Pinky_J_1.obcc" "skinCluster1.ifcl[52]";
 connectAttr "cartoonCharacter:L_Pinky_J_2.obcc" "skinCluster1.ifcl[53]";
+connectAttr "cartoonCharacter:L_Thumb_J_0.msg" "skinCluster1.ptt";
+connectAttr "polyPlanarProj1.out" "skinCluster1.ip[0].ig";
+connectAttr "GenericMesh5ShapeDeformedOrig.o" "skinCluster1.orggeom[0]";
+connectAttr "bindPose1.msg" "skinCluster1.bp";
 connectAttr "Root_Joint.msg" "bindPose1.m[0]";
 connectAttr "cartoonCharacter:L_Hip_J.msg" "bindPose1.m[7]";
 connectAttr "cartoonCharacter:L_Knee_J.msg" "bindPose1.m[8]";
@@ -26027,6 +26452,35 @@ connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonC
 connectAttr "cartoonCharacter:L_Pinky_J_0.msg" "bindPose1.m[52]";
 connectAttr "cartoonCharacter:L_Pinky_J_1.msg" "bindPose1.m[53]";
 connectAttr "cartoonCharacter:L_Pinky_J_2.msg" "bindPose1.m[54]";
+connectAttr "Root_Joint.bps" "bindPose1.wm[0]";
+connectAttr "cartoonCharacter:L_Hip_J.bps" "bindPose1.wm[7]";
+connectAttr "cartoonCharacter:L_Knee_J.bps" "bindPose1.wm[8]";
+connectAttr "cartoonCharacter:L_Ankle_J.bps" "bindPose1.wm[9]";
+connectAttr "cartoonCharacter:L_Ball_J.bps" "bindPose1.wm[10]";
+connectAttr "cartoonCharacter:L_clav_J.bps" "bindPose1.wm[36]";
+connectAttr "cartoonCharacter:L_shold_J.bps" "bindPose1.wm[37]";
+connectAttr "cartoonCharacter:L_Elbow_J.bps" "bindPose1.wm[38]";
+connectAttr "cartoonCharacter:L_Wrist_J.bps" "bindPose1.wm[39]";
+connectAttr "cartoonCharacter:L_Thumb_J_0.bps" "bindPose1.wm[40]";
+connectAttr "cartoonCharacter:L_Thumb_J_1.bps" "bindPose1.wm[41]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Thumb_J_0|cartoonCharacter:L_Thumb_J_1|cartoonCharacter:L_Middle_J_2.bps" "bindPose1.wm[42]"
+		;
+connectAttr "cartoonCharacter:L_Index_J_0.bps" "bindPose1.wm[43]";
+connectAttr "cartoonCharacter:L_Index_J_1.bps" "bindPose1.wm[44]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Index_J_0|cartoonCharacter:L_Index_J_1|cartoonCharacter:L_Middle_J_2.bps" "bindPose1.wm[45]"
+		;
+connectAttr "cartoonCharacter:L_Middle_J_0.bps" "bindPose1.wm[46]";
+connectAttr "cartoonCharacter:L_Middle_J_1.bps" "bindPose1.wm[47]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Middle_J_0|cartoonCharacter:L_Middle_J_1|cartoonCharacter:L_Middle_J_2.bps" "bindPose1.wm[48]"
+		;
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2.bps" "bindPose1.wm[49]"
+		;
+connectAttr "cartoonCharacter:L_Ring_J_1.bps" "bindPose1.wm[50]";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2|cartoonCharacter:L_Ring_J_1|cartoonCharacter:L_Ring_J_2.bps" "bindPose1.wm[51]"
+		;
+connectAttr "cartoonCharacter:L_Pinky_J_0.bps" "bindPose1.wm[52]";
+connectAttr "cartoonCharacter:L_Pinky_J_1.bps" "bindPose1.wm[53]";
+connectAttr "cartoonCharacter:L_Pinky_J_2.bps" "bindPose1.wm[54]";
 connectAttr "bindPose1.w" "bindPose1.p[0]";
 connectAttr "bindPose1.m[0]" "bindPose1.p[1]";
 connectAttr "bindPose1.m[1]" "bindPose1.p[2]";
@@ -26082,99 +26536,87 @@ connectAttr "bindPose1.m[50]" "bindPose1.p[51]";
 connectAttr "bindPose1.m[39]" "bindPose1.p[52]";
 connectAttr "bindPose1.m[52]" "bindPose1.p[53]";
 connectAttr "bindPose1.m[53]" "bindPose1.p[54]";
-connectAttr "Root_Joint.bps" "bindPose1.wm[0]";
-connectAttr "cartoonCharacter:L_Hip_J.bps" "bindPose1.wm[7]";
-connectAttr "cartoonCharacter:L_Knee_J.bps" "bindPose1.wm[8]";
-connectAttr "cartoonCharacter:L_Ankle_J.bps" "bindPose1.wm[9]";
-connectAttr "cartoonCharacter:L_Ball_J.bps" "bindPose1.wm[10]";
-connectAttr "cartoonCharacter:L_clav_J.bps" "bindPose1.wm[36]";
-connectAttr "cartoonCharacter:L_shold_J.bps" "bindPose1.wm[37]";
-connectAttr "cartoonCharacter:L_Elbow_J.bps" "bindPose1.wm[38]";
-connectAttr "cartoonCharacter:L_Wrist_J.bps" "bindPose1.wm[39]";
-connectAttr "cartoonCharacter:L_Thumb_J_0.bps" "bindPose1.wm[40]";
-connectAttr "cartoonCharacter:L_Thumb_J_1.bps" "bindPose1.wm[41]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Thumb_J_0|cartoonCharacter:L_Thumb_J_1|cartoonCharacter:L_Middle_J_2.bps" "bindPose1.wm[42]"
+connectAttr "GenericMesh5ShapeDeformedOrig.w" "polyPlanarProj1.ip";
+connectAttr "GenericMesh5ShapeDeformed.wm" "polyPlanarProj1.mp";
+connectAttr "skinCluster1.og[0]" "polyTweakUV1.ip";
+connectAttr "polyTweakUV1.out" "polyMapCut1.ip";
+connectAttr "polyMapCut1.out" "polyTweakUV2.ip";
+connectAttr "RightEye_parentConstraint1.ctx" "pairBlend3.itx2";
+connectAttr "RightEye_parentConstraint1.cty" "pairBlend3.ity2";
+connectAttr "RightEye_parentConstraint1.ctz" "pairBlend3.itz2";
+connectAttr "RightEye_parentConstraint1.crz" "pairBlend3.irz2";
+connectAttr "LeftEye_parentConstraint1.ctx" "pairBlend4.itx2";
+connectAttr "LeftEye_parentConstraint1.cty" "pairBlend4.ity2";
+connectAttr "LeftEye_parentConstraint1.ctz" "pairBlend4.itz2";
+connectAttr "LeftEye_parentConstraint1.crz" "pairBlend4.irz2";
+connectAttr "glasses_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
 		;
-connectAttr "cartoonCharacter:L_Index_J_0.bps" "bindPose1.wm[43]";
-connectAttr "cartoonCharacter:L_Index_J_1.bps" "bindPose1.wm[44]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Index_J_0|cartoonCharacter:L_Index_J_1|cartoonCharacter:L_Middle_J_2.bps" "bindPose1.wm[45]"
+connectAttr "pairBlend4.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[42].dn";
+connectAttr "pairBlend3.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[48].dn";
+connectAttr "cartoonCharacter:L_Pinky_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[96].dn"
 		;
-connectAttr "cartoonCharacter:L_Middle_J_0.bps" "bindPose1.wm[46]";
-connectAttr "cartoonCharacter:L_Middle_J_1.bps" "bindPose1.wm[47]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Middle_J_0|cartoonCharacter:L_Middle_J_1|cartoonCharacter:L_Middle_J_2.bps" "bindPose1.wm[48]"
+connectAttr "RightEye_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[132].dn"
 		;
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2.bps" "bindPose1.wm[49]"
+connectAttr "eye_focus.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[163].dn";
+connectAttr "cartoonCharacter:L_Knee_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[174].dn"
 		;
-connectAttr "cartoonCharacter:L_Ring_J_1.bps" "bindPose1.wm[50]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2|cartoonCharacter:L_Ring_J_1|cartoonCharacter:L_Ring_J_2.bps" "bindPose1.wm[51]"
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[209].dn"
 		;
-connectAttr "cartoonCharacter:L_Pinky_J_0.bps" "bindPose1.wm[52]";
-connectAttr "cartoonCharacter:L_Pinky_J_1.bps" "bindPose1.wm[53]";
-connectAttr "cartoonCharacter:L_Pinky_J_2.bps" "bindPose1.wm[54]";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Index_J_0|cartoonCharacter:L_Index_J_1|cartoonCharacter:L_Middle_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "LeftEye_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[222].dn"
 		;
-connectAttr "cartoonCharacter:L_Ball_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[44].dn"
+connectAttr "cartoonCharacter:L_Index_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[245].dn"
 		;
-connectAttr "cartoonCharacter:L_Ring_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[76].dn"
+connectAttr "cartoonCharacter:L_Pinky_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[247].dn"
 		;
-connectAttr "skinCluster1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[102].dn";
-connectAttr "bindPose1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[103].dn";
-connectAttr "cartoonCharacter:L_Hip_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[110].dn"
+connectAttr "LeftEye_aimConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[252].dn"
 		;
-connectAttr "cartoonCharacter:L_shold_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[144].dn"
+connectAttr "cartoonCharacter:L_Hip_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[315].dn"
 		;
-connectAttr "GenericMesh5ShapeDeformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[161].dn"
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2|cartoonCharacter:L_Ring_J_1|cartoonCharacter:L_Ring_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[320].dn"
 		;
-connectAttr "cartoonCharacter:L_Index_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[166].dn"
+connectAttr "glasses_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[364].dn"
 		;
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2|cartoonCharacter:L_Ring_J_1|cartoonCharacter:L_Ring_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[167].dn"
+connectAttr "skinCluster1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[366].dn";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Thumb_J_0|cartoonCharacter:L_Thumb_J_1|cartoonCharacter:L_Middle_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[382].dn"
 		;
-connectAttr "LeftEye_aimConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[179].dn"
+connectAttr "cartoonCharacter:L_Elbow_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[393].dn"
 		;
-connectAttr "cartoonCharacter:L_Pinky_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[188].dn"
+connectAttr "cartoonCharacter:L_Ring_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[399].dn"
 		;
-connectAttr "cartoonCharacter:L_Thumb_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[208].dn"
+connectAttr "GenericMesh5ShapeDeformedOrig.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[417].dn"
 		;
-connectAttr "pairBlend1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[239].dn";
-connectAttr "GenericMesh5ShapeDeformedOrig.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[273].dn"
+connectAttr "pairBlend1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[424].dn";
+connectAttr "sharedReferenceNode.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[439].dn"
 		;
-connectAttr "eye_focusShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[286].dn"
+connectAttr "cartoonCharacter:L_Middle_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[470].dn"
 		;
-connectAttr "cartoonCharacter:L_Pinky_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[312].dn"
+connectAttr "cartoonCharacter:L_Pinky_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[474].dn"
 		;
-connectAttr "eye_focus.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[356].dn";
-connectAttr "cartoonCharacter:L_Index_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[358].dn"
+connectAttr "GenericMesh5ShapeDeformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[481].dn"
 		;
-connectAttr "cartoonCharacter:L_Wrist_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[359].dn"
+connectAttr "cartoonCharacter:L_Ankle_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[494].dn"
 		;
-connectAttr "sharedReferenceNode.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[442].dn"
+connectAttr "cartoonCharacter:L_clav_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[525].dn"
 		;
-connectAttr "cartoonCharacter:L_Middle_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[455].dn"
+connectAttr "eye_focusShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[566].dn"
 		;
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Ring_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[457].dn"
+connectAttr "cartoonCharacter:L_Thumb_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[587].dn"
 		;
-connectAttr "cartoonCharacter:L_Thumb_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[515].dn"
+connectAttr "cartoonCharacter:L_Ball_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[608].dn"
 		;
-connectAttr "cartoonCharacter:L_Knee_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[518].dn"
+connectAttr "cartoonCharacter:L_shold_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[619].dn"
 		;
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Middle_J_0|cartoonCharacter:L_Middle_J_1|cartoonCharacter:L_Middle_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[576].dn"
+connectAttr "RightEye_aimConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[639].dn"
 		;
-connectAttr "pairBlend2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[616].dn";
-connectAttr "cartoonCharacter:L_Elbow_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[625].dn"
+connectAttr "Root_Joint.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[686].dn";
+connectAttr "bindPose1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[696].dn";
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Middle_J_0|cartoonCharacter:L_Middle_J_1|cartoonCharacter:L_Middle_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[705].dn"
 		;
-connectAttr "cartoonCharacter:L_Middle_J_0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[635].dn"
+connectAttr "cartoonCharacter:L_Wrist_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[735].dn"
 		;
-connectAttr "Root_Joint.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[661].dn";
-connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Thumb_J_0|cartoonCharacter:L_Thumb_J_1|cartoonCharacter:L_Middle_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[684].dn"
+connectAttr "|cartoonCharacterRNfosterParent1|cartoonCharacter:L_clav_J|cartoonCharacter:L_shold_J|cartoonCharacter:L_Elbow_J|cartoonCharacter:L_Wrist_J|cartoonCharacter:L_Index_J_0|cartoonCharacter:L_Index_J_1|cartoonCharacter:L_Middle_J_2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[742].dn"
 		;
-connectAttr "cartoonCharacter:L_clav_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[692].dn"
-		;
-connectAttr "cartoonCharacter:L_Ankle_J.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[702].dn"
-		;
-connectAttr "cartoonCharacter:L_Pinky_J_1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[753].dn"
-		;
-connectAttr "RightEye_aimConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[775].dn"
-		;
+connectAttr "pairBlend2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[755].dn";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "GenericMesh5ShapeDeformed.iog" ":initialShadingGroup.dsm" -na;
 // End of Cartoon Character Rigged.ma
